@@ -1,0 +1,4 @@
+<!--pages/epihpv/epihpv.wxml-->
+<text>pages/epihpv/epihpv.wxml</text>
+<view>{{msg}}</view>
+<image src='./img/01.jpg'></image>

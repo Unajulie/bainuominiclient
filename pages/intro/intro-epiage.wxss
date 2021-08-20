@@ -1,0 +1,9 @@
+/* pages/intro/intro-epiage.wxss */
+.container{
+  width: 100%;
+  height: auto;
+}
+image{
+  width: 100%;
+  
+}

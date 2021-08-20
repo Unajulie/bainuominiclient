@@ -1,0 +1,28 @@
+<view>
+  <view class='img_wrap'>
+    <image mode='widthFix' lazy-load='true' src='https://bainuo.beijingepidial.com/public/img/lab.jpg'></image>
+  </view>
+  <view class='blank'></view>
+  <navigator url='../report_epiage/report_epiage'>
+    <button class='epiage_button'>
+      <text>生物学年龄报告查询</text>
+    </button>
+  </navigator>
+
+</view>
+<view class='blank'></view>
+<view>
+  <navigator url='../report_epiliver/report_epiliver'>
+    <button class='epiliver_button'>
+      <text>肝癌筛查报告查询</text>
+    </button>
+  </navigator>
+</view>
+<view class='blank'></view>
+<view>
+  <navigator url='../report_epihpv/report_epihpv'>
+    <button class='epihpv_button'>
+      <text>宫颈癌检查报告查询</text>
+    </button>
+  </navigator>
+</view>
