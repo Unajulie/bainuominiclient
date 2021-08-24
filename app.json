@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/epihpvreport/epihpvreport",
     "pages/report_epihpv/report_epihpv",
+    "pages/epihpvreport/epihpvreport",
     "pages/index/index",
     "pages/epiage/epiage",
     "pages/agreemnt/agreemnt",

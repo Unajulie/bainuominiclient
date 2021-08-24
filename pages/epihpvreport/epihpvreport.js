@@ -21,8 +21,8 @@ Page({
         "Content-Type": "application/x-www-form-urlencoded"
       },
       method: "POST",
-      //data: {"barcode": options.barcode},
-      data: {"barcode": 1121032800079},
+      data: {"barcode": options.barcode},
+      // data: {"barcode": 1121032800079},
       complete: function (res) {
         //console.info(res)
         oThis.setData({
