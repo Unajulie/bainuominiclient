@@ -61,7 +61,7 @@ Page({
       data: {"barcode": options.barcode},
       // data: {"barcode": 1121032800079},
       complete: function (res) {
-        console.info(res.data)
+        // console.info(res.data)
         oThis.setData({
           hpvs: res.data
         })

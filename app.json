@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/report/report",
     "pages/service/service",
     "pages/epiage/epiage",
-    "pages/index/index",
     "pages/epihpv/epihpv",
     "pages/liver/liver",
     "pages/submit/epiagesbsuccess",
@@ -23,7 +23,6 @@
     "pages/login/login",
     "pages/register/register",
     "pages/agreement/agreement",
-    
     "pages/reser_epihpv/reser_epihpv",
     "pages/reser_epiliver/reser_epiliver",
     "pages/reser_epiage/reser_epiage",
@@ -44,26 +43,26 @@
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "img/home.png",
-        "selectedIconPath": "img/_home.png"
+        "iconPath": "/img/home.png",
+        "selectedIconPath": "/img/_home.png"
       },
       {
         "pagePath": "pages/service/service",
         "text": "预约",
-        "iconPath": "img/about.png",
-        "selectedIconPath": "img/_about.png"
+        "iconPath": "/img/about.png",
+        "selectedIconPath": "/img/_about.png"
       },
       {
         "pagePath": "pages/report/report",
         "text": "报告",
-        "iconPath": "img/rep.png",
-        "selectedIconPath": "img/_rep.png"
+        "iconPath": "/img/rep.jpg",
+        "selectedIconPath": "/img/_rep.png"
       },
       {
         "pagePath": "pages/mine/mine",
         "text": "报告",
-        "iconPath": "img/user.png",
-        "selectedIconPath": "img/_user.png"
+        "iconPath": "/img/user.png",
+        "selectedIconPath": "/img/_user.png"
       }
     ],
     "color": "#000000",
