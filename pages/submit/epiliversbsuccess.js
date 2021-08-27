@@ -1,28 +1,11 @@
-// pages/epiage/epiage.js
-
+// pages/submit/epiliversbsuccess.js
 Page({
-  radioChange(e) {
-    console.log('radio发生change事件，携带value值为：', e.detail.value)
-
-    
-  },
-
-  goToPage1: function () {
-    wx.navigateTo({
-      url: '/pages/submit/epiliversbsuccess',
-    })
-  },
 
   /**
    * 页面的初始数据
    */
   data: {
-    isSubmit: false,
-    warn: "",
-    name:"",
-    tel: "",
-    sex: "",
-items:[{name:"male",value:"男"},{name:"female",value:"女"}]
+
   },
 
   /**
@@ -80,5 +63,4 @@ items:[{name:"male",value:"男"},{name:"female",value:"女"}]
   onShareAppMessage: function () {
 
   }
-  
 })

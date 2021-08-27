@@ -151,7 +151,7 @@
       </view>
     </view>
   </view>
-  <view class="page" style="width: 100%;height: 2450rpx;border: 1rpx solid #e3eae4;">
+  <view class="page" style="width: 100%;height: 2600rpx;border: 1rpx solid #e3eae4;">
     <view style="width: 100%;height: 30rpx;"></view>
     <view style="width: 90%;height: auto;margin: 0 auto;">
       <view
@@ -159,7 +159,7 @@
         检测项目-人乳头瘤病毒（HPV）检测
       </view>
       <view style="width: 100%;height: 30rpx;"></view>
-      <view style="width: 100%;height:900rpx;border: 1rpx solid grey;">
+      <view style="width: 100%;height:1000rpx;border: 1rpx solid grey;">
         <view style="width:98%;height: 400rpx;margin: 0 auto;">
           <view
             style="width: 100%;height: 100rpx;line-height: 100rpx;font-weight: 700; font-weight: 700; color:#cc552c;">
@@ -195,7 +195,7 @@
             </view>
             <view style="width: 50%;height: 100rpx;line-height: 80rpx; float: left;">
               <text style="width: 50%;height: 100rpx; float: left;">样本性状：</text>
-              <text style="width:50%;height: 100rpx;float: left;"> </text>
+              <text style="width:50%;height: 100rpx;float: left;">{{inserval.samplesta}}</text>
             </view>
           </view>
           <view style="width: 100%;height: 100rpx; overflow: hidden;">
@@ -209,14 +209,16 @@
             </view>
           </view>
 
-          <view style="width: 100%;height: 100rpx; overflow: hidden;">
-            <view style="width: 45%;height: 100rpx;line-height: 80rpx; float: left;">
-              <text style="width: 50%;height: 100rpx; float: left;">送检医生：</text>
-              <text style="width:50%;height: 100rpx;float: left;"> </text>
+          <view style="width: 100%;height: 100rpx; overflow: hidden;background-color: #f6fdf8;">
+            <view style="width: 100%;height: 100rpx;line-height: 80rpx; float: left;">
+              <text style="width: 30%;height: 100rpx; float: left;">送检医生：</text>
+              <text style="width:70%;height: 100rpx;float: left;">{{inserval.deliverdoc}}</text>
             </view>
-            <view style="width: 55%;height: 100rpx;line-height: 80rpx; float: left;">
-              <text style="width: 45%;height: 100rpx; float: left;">联系电话：</text>
-              <text style="width:55%;height: 100rpx;float: left;"> </text>
+          </view>
+          <view style="width: 100%;height: 100rpx; overflow: hidden;">
+            <view style="width: 100%;height: 100rpx;line-height: 80rpx; float: left;">
+              <text style="width: 30%;height: 100rpx; float: left;">联系电话：</text>
+              <text style="width:70%;height: 100rpx;float: left;">{{inserval.deliverdoctel}} </text>
             </view>
           </view>
           <view style="width: 100%;height: 100rpx; overflow: hidden;background-color: #f6fdf8;">
@@ -252,40 +254,12 @@
         检测方法: <text>PCR-反向点杂交法</text> </view>
       <view style="width: 100%;height: 100rpx;line-height: 100rpx;font-size: 34rpx;font-weight: 700; color:#cc552c;">
         检测结果:</view>
-      <view style="width:100%;height: 300rpx;border: 1rpx solid#e3eae4;font-size: 22rpx;">
-        <view style="width:100%;height: 60rpx;font-size: 22rpx;">
-          <view style="width: 20%;height: 60rpx;line-height: 50rpx;float: left;">HPV31型：</view>
-          <view style="width: 20%;height: 60rpx;line-height: 50rpx;float: left;">HPV73型：</view>
-          <view style="width: 20%;height: 60rpx;line-height: 50rpx;float: left;">HPV35型：</view>
-          <view style="width: 20%;height: 60rpx;line-height: 50rpx;float: left;">HPV39型：</view>
-          <view style="width: 20%;height: 60rpx;line-height: 50rpx;float: left;">HPV45型：</view>
-        </view>
-        <view style="width:100%;height: 60rpx;font-size: 22rpx;background-color:#f6fdf8 ;">
-          <view style="width: 20%;height: 60rpx;line-height: 50rpx;float: left;">HPV51型：</view>
-          <view style="width: 20%;height: 60rpx;line-height: 50rpx;float: left;">HPV52型：</view>
-          <view style="width: 20%;height: 60rpx;line-height: 50rpx;float: left;">HPV53型：</view>
-          <view style="width: 20%;height: 60rpx;line-height: 50rpx;float: left;">HPV56型：</view>
-          <view style="width: 20%;height: 60rpx;line-height: 50rpx;float: left;">HPV58型：</view>
-        </view>
-        <view style="width:100%;height: 60rpx;font-size: 22rpx;">
-          <view style="width: 20%;height: 60rpx;line-height: 50rpx;float: left;">HPV59型：</view>
-          <view style="width: 20%;height: 60rpx;line-height: 50rpx;float: left;">HPV66型：</view>
-          <view style="width: 20%;height: 60rpx;line-height: 50rpx;float: left;">HPV68型：</view>
-          <view style="width: 20%;height: 60rpx;line-height: 50rpx;float: left;">HPV33型：</view>
-          <view style="width: 20%;height: 60rpx;line-height: 50rpx;float: left;">HPV82型：</view>
-        </view>
-        <view style="width:100%;height: 60rpx;font-size: 22rpx;background-color:#f6fdf8;">
-          <view style="width: 20%;height: 60rpx;line-height: 50rpx;float: left;">HPV83型：</view>
-          <view style="width: 20%;height: 60rpx;line-height: 50rpx;float: left;">HPV6型：</view>
-          <view style="width: 20%;height: 60rpx;line-height: 50rpx;float: left;">HPV11型：</view>
-          <view style="width: 20%;height: 60rpx;line-height: 50rpx;float: left;">HPV42型：</view>
-          <view style="width: 20%;height: 60rpx;line-height: 50rpx;float: left;">HPV43型：</view>
-        </view>
-        <view style="width:100%;height: 60rpx;font-size: 22rpx;">
-          <view style="width: 20%;height: 60rpx;line-height: 50rpx;float: left;">HPV81型：</view>
-          <view style="width: 20%;height: 60rpx;line-height: 50rpx;float: left;">HPV18型：</view>
-          <view style="width: 20%;height: 60rpx;line-height: 50rpx;float: left;">HPV16型：</view>
-        </view>
+      <view  style="width:100%;height: 360rpx;border: 1rpx solid#e3eae4;font-size: 22rpx;">
+        <view id="inservals" style="width:100%;height: 60rpx;font-size: 20rpx;background-color:#f6fdf8">
+        <block wx:for="{{hpvs}}" wx:for-item="hpvs">
+          <view style="width: 25%;height: 60rpx;line-height: 50rpx;float: left;background-color:#f6fdf8">{{hpvs.HospRptItemName}}<text>: {{hpvs.Result_Ref}}</text> </view>
+        </block>
+        </view> 
       </view>
       <view style="width:100%;height: 90rpx;line-height: 40rpx;font-size: 22rpx;">
         备注：本检测结果仅对来样负责，供临床参考，如有疑问请于7个工作日内与本单位联系。</view>
@@ -321,7 +295,7 @@
     <view style="width: 90%;height: 1000;margin: 0 auto;font-size: 28rpx;">
       <view style="width: 100%;height: 100rpx;line-height: 100rpx;font-size: 34rpx;font-weight: 700; color:#cc552c;">
         温馨提示：</view>
-      <view style="width: 100%;height: auto;"><text space="emsp">  HPV疫苗可以激活我们的免疫系统，在体内形成抗体，以抵抗HPV病毒的入侵。以HPV高危型别16型为例，科学家发现疫苗接种者的免疫系统产生的抗体量是未接种感染者体内抗体量的7.7倍。</text></view>
+      <view style="width: 100%;height: auto;overflow: hidden;"><text space="emsp">  HPV疫苗可以激活我们的免疫系统，在体内形成抗体，以抵抗HPV病毒的入侵。以HPV高危型别16型为例，科学家发现疫苗接种者的免疫系统产生的抗体量是未接种感染者体内抗体量的7.7倍。</text></view>
       <view style="width: 100%;height: 30rpx;"></view>
       <view style="width: 100%;height: auto;"><text space="emsp">  现有的疫苗大多是针对高危型HPV研制的，并不能帮助免疫于所有HPV病毒感染。例如二价疫苗只针对HPV病毒的16型和18型两种高危型别，因此接种过该疫苗的女性也应该定期检查生殖道的HPV感染。</text></view>
       <view style="width: 100%;height: 30rpx;"></view>

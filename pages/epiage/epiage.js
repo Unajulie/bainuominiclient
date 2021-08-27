@@ -8,9 +8,8 @@ Page({
   },
 
   goToPage1: function () {
-    
     wx.navigateTo({
-      url: '/pages/index/index',
+      url: '/pages/submit/epiagesbsuccess',
     })
   },
 

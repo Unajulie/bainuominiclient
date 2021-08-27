@@ -1,7 +1,7 @@
 <!--pages/service/service.wxml-->
 <view>
   <view class='img_wrap'>
-    <image mode='widthFix' lazy-load='true' src='https://bainuo.beijingepidial.com/public/img/lab.jpg'></image>
+    <image mode='widthFix' lazy-load='true' src='https://bainuo.beijingepidial.com/public/img/reserve.jpg'></image>
   </view>
   <view class='blank'></view>
   <navigator url='../epiage/epiage'>

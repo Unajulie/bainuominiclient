@@ -24,7 +24,7 @@
     <view class="wrap">
       <radio name="agreement" value="" checked="" />
       <navigator open-type="reLaunch" url="/pages/agreement/agreement" hover-class="navigator-hover">
-      <label>同意并接受条款</label>
+      <text>同意并接受条款</text>
       </navigator>
     </view>
     <view class="submitwrap">

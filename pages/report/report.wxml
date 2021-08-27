@@ -1,6 +1,6 @@
-<view>
+<view style="width: 100%;height: auto;">
   <view class='img_wrap'>
-    <image mode='widthFix' lazy-load='true' src='https://bainuo.beijingepidial.com/public/img/lab.jpg'></image>
+    <image mode='widthFix'  src='https://bainuo.beijingepidial.com/public/img/report.jpg'></image>
   </view>
   <view class='blank'></view>
   <navigator url='../report_epiage/report_epiage'>

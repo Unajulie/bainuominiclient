@@ -1,0 +1,4 @@
+<view style="width: 100%;height: auto;">
+<view style="margin-top: 200rpx;margin-left: 35%;"><image mode='widthFix' lazy-load='true' style="width: 30%;height: 100rpx;text-align: center;" src='https://bainuo.beijingepidial.com/public/img/tick.png'></image></view>
+<view style="width: 90%;height: 100rpx;margin-top: 100rpx;font-size: 46rpx;text-align: center;">您的预约信息已成功提交!</view>
+</view>

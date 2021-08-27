@@ -1,9 +1,58 @@
 <!--pages/mine/mine.wxml-->
-<text>pages/mine/mine.wxml</text>
-<view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<view style="width: 100%;height: auto;">
+  <view style="width: 100%;height: 300rpx;background-color: #f8f8f8;">
+    <view style="width:100%; height: 200rpx;">
+      <view style="width: 100%;height: 60rpx;"></view>
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"
+        style="background-color:transparent; text-align: center;">授权登陆
+        >> </button>
+      <block wx:else style="width: 100%;height: 148rpx;">
+        <view style="width: 100%;height: 148rpx;flex-direction: row;">
+          <view style="width: 40%;height: 148rpx;float: left;text-align: center;">
+            <image bindtap="bindViewTap" mode="aspectFill" style="width: 148rpx;height: 148rpx;border-radius: 50%;"
+              src="{{userInfo.avatarUrl}}" mode="cover"></image>
+          </view>
+          <view style="width: 60%;height: 148rpx;float: left;line-height: 148rpx;">
+            <text>{{userInfo.nickName}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+
   </view>
+  <view style="width: 100%;height: auto;">
+    <view style="width: 100%;height: 20rpx;background-color: #ededed;"></view>
+    <view style="width: 90%;height: auto;margin: 0 auto;">
+      <navigator url='.././report_epihpv/report_epihpv'>
+      <view style="width: 100%;height: 120rpx;border-bottom: 1rpx solid #ededed;">
+        <view style="width: 20%;height: 120rpx;float: left;">
+          <image mode='widthFix' lazy-load="true" style="width: 60%;height: 100rpx;margin-top: 20rpx;"
+            src='https://bainuo.beijingepidial.com/public/img/uc3.png'></image>
+        </view>
+        <view style="width: 60%;height: 120rpx;float: left;line-height: 120rpx;">个人报告</view>
+        <view style="width: 20%;height: 120rpx;float: left;line-height: 120rpx;">></view>
+      </view>
+    </navigator>
+      <navigator url='../mine/qna'>
+        <view style="width: 100%;height: 120rpx;border-bottom: 1rpx solid #ededed;">
+          <view style="width: 20%;height: 120rpx;float: left;">
+            <image mode='widthFix' lazy-load="true" style="width: 60%;height: 100rpx;margin-top: 20rpx;"
+              src='https://bainuo.beijingepidial.com/public/img/uc1.png'></image>
+          </view>
+          <view style="width: 60%;height: 120rpx;float: left;line-height: 120rpx;">常见问题</view>
+          <view style="width: 20%;height: 120rpx;float: left;line-height: 120rpx;">></view>
+        </view>
+      </navigator>
+      <navigator url='../mine/contact'>
+        <view style="width: 100%;height: 120rpx;border-bottom: 1rpx solid #ededed;">
+          <view style="width: 20%;height: 120rpx;float: left;">
+            <image mode='widthFix' lazy-load="true" style="width: 60%;height: 100rpx;margin-top: 20rpx;"
+              src='https://bainuo.beijingepidial.com/public/img/uc6.png'></image>
+          </view>
+          <view style="width: 60%;height: 120rpx;float: left;line-height: 120rpx;">联系客服</view>
+          <view style="width: 20%;height: 120rpx;float: left;line-height: 120rpx;">></view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>

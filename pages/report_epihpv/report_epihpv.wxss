@@ -7,8 +7,8 @@ page{
   .head{
     position: fixed;
     width: 100%;
-    height: 30px; 
-    line-height: 30px;
+    height: 60rpx; 
+    line-height: 60rpx;
     background: #fff;
     top: 0;
     left: 0;
@@ -22,7 +22,7 @@ page{
 .chech_report{
   text-align: center;
   font-size: 60rpx;
-  line-height:1.8;
+  line-height:60rpx;
   color: #ffffff;
   font-weight: 400;
 }
@@ -32,7 +32,7 @@ page{
   font-size:36rpx;
   color: #ffffff;
   font-weight: 300;
-  line-height:1.8;
+  line-height:60rpx;
 
 }
 .bgepihpv{
@@ -63,11 +63,11 @@ page{
   align-self: center;
   text-align: center;
   vertical-align: middle;
-  border: 2px solid #916ae5;
+  border: 2rpx solid #916ae5;
 }
 .submit-wrap{
 width: 80%;
-height: 40px;
+height: 80rpx;
 display: flex;
 align-items: center;
 justify-content: center; 
@@ -75,11 +75,12 @@ background-color: green;
 }
 .submit{
   width:80%;
-  height: 50px;
-  margin-top: 40px;
+  height: 100rpx;
+  margin-top: 80rpx;
+  font-size: 38rpx;
   background-color: #916ae5;
   color: white;
-  border-radius: 15px;
+  border-radius: 30rpx;
   display: flex;
   flex-direction: row;
   align-items: center;

@@ -1,11 +1,28 @@
-// pages/epihpv/epihpv.js
+// pages/epiage/epiage.js
+
 Page({
+  radioChange(e) {
+    console.log('radio发生change事件，携带value值为：', e.detail.value)
+
+    
+  },
+
+  goToPage1: function () {
+    wx.navigateTo({
+      url: '/pages/submit/epihpvsbsuccess',
+    })
+  },
 
   /**
    * 页面的初始数据
    */
   data: {
-msg:"epihpv test appointment"
+    isSubmit: false,
+    warn: "",
+    name:"",
+    tel: "",
+    sex: "",
+items:[{name:"male",value:"男"},{name:"female",value:"女"}]
   },
 
   /**
@@ -63,4 +80,5 @@ msg:"epihpv test appointment"
   onShareAppMessage: function () {
 
   }
+  
 })

@@ -6,6 +6,8 @@ Page({
    */
   data: {
     report: {},
+    inserval:{},
+    hpvs:{},
     reportid: '',
   },
 
@@ -30,14 +32,44 @@ Page({
         })
         //  这里的this指向的是wx.request方法，不是epihpvreport页面
         //由barcode查询到report数据库中的对应数据，再根据该条数据中的reportid查询result数据库中的对应结果
-
-
-
-
       }
     })
+    //向服务端请求实验室人员在后台报告页面输入的数据并返回来
+    wx.request({
+      url: "https://bainuo.beijingepidial.com/admin/epihpv/hpvinserval",
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      method: "POST",
+      data: {"barcode": options.barcode},
+      // data: {"barcode": 1121032800079},
+      complete: function (res) {
+        // console.info(res)
+        oThis.setData({
+          inserval: res.data[0]
+        })
+//这里接受到的数据表数据是在第一个数组里res.data[0]
+      }
+    })
+    //先服务端请求数据库result表里一个barcode对应的各种hpv型的数据渲染到页面
+    wx.request({
+      url: "https://bainuo.beijingepidial.com/admin/epihpv/inserval",
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      method: "POST",
+      data: {"barcode": options.barcode},
+      // data: {"barcode": 1121032800079},
+      complete: function (res) {
+        console.info(res.data)
+        oThis.setData({
+          hpvs: res.data
+        })
+      }
 
+    })
 
+    
   },
 
   /**
