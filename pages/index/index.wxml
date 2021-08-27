@@ -11,7 +11,7 @@ height:calc(100vw*352/1125)
       <image mode='widthFix' lazy-load="true" src="https://bainuo.beijingepidial.com/public/img/scroll2.jpg"></image>
     </swiper-item>
     <swiper-item>
-      <image mode='widthFix' lazy-load="true" src='https://bainuo.beijingepidial.com/public/img/scroll3.jpg'></image>
+      <image mode="widthFix" lazy-load="true" src='https://bainuo.beijingepidial.com/public/img/scroll3.jpg'></image>
     </swiper-item>
   </swiper>
   <view class="products">
