@@ -12,7 +12,7 @@
 
       <view
         style='width:90%;height:100rpx;margin-left: 5%;margin-top: 20rpx; border: 2rpx solid #916ae5; display:inline-block; background:#fff;align-self: center;'>
-        <input style='width:80%;display:inline-block;height:100rpx;line-height: 100rpx; padding-left: 2%;color: black;'
+        <input style='width:80%;display:inline-block;height:100rpx;line-height: 80rpx; padding-left: 2%;color: black;'
           placeholder-style='font-size:40rpx;' placeholder='条形码' type='text' bindinput="inputVal"
           value='{{scanCodeMsg}}'></input>
         <view style='width:18%;display:inline-block;height:70rpx;margin-bottom: 10rpx;margin-top: 10rpx;'>

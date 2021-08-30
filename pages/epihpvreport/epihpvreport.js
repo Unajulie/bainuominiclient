@@ -26,12 +26,14 @@ Page({
       data: {"barcode": options.barcode},
       // data: {"barcode": 1121032800079},
       complete: function (res) {
-        //console.info(res)
+        console.info("------------------")
+        console.info(res.data)
         oThis.setData({
           report: res.data
         })
         //  这里的this指向的是wx.request方法，不是epihpvreport页面
-        //由barcode查询到report数据库中的对应数据，再根据该条数据中的reportid查询result数据库中的对应结果
+        //由barcode查询到report数据库中的对应数据，再根据该条数据中的reportid查询result数据库
+        //中的对应结果
       }
     })
     //向服务端请求实验室人员在后台报告页面输入的数据并返回来
@@ -61,7 +63,8 @@ Page({
       data: {"barcode": options.barcode},
       // data: {"barcode": 1121032800079},
       complete: function (res) {
-        // console.info(res.data)
+        console.info("*******************")
+        console.info(res.data)
         oThis.setData({
           hpvs: res.data
         })

@@ -5,7 +5,7 @@
 height:calc(100vw*352/1125)
 -->
     <swiper-item>
-      <image mode='widthFix' lazy-load="true" src='https://bainuo.beijingepidial.com/public/img/scroll1.jpg'></image>
+      <image  mode='widthFix' lazy-load="true" src="https://bainuo.beijingepidial.com/public/img/scroll1.jpg"></image>
     </swiper-item>
     <swiper-item>
       <image mode='widthFix' lazy-load="true" src="https://bainuo.beijingepidial.com/public/img/scroll2.jpg"></image>
@@ -17,10 +17,10 @@ height:calc(100vw*352/1125)
   <view class="products">
     <view class="pro-title">产品推荐</view>
     <navigator url="/pages/intro/intro-epiage" hover-class="navigator-hover">
-      <image  mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index1.jpg"></image>
+      <image lazy-load="true"  mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index1.jpg"></image>
     </navigator>
     <view class="block"></view>
-    <navigator url="/pages/intro/intro-epiliver" hover-class="navigator-hover">
+    <navigator lazy-load="true" url="/pages/intro/intro-epiliver" hover-class="navigator-hover">
       <image  mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index2.jpg"></image>
     </navigator>
     <view class="block"></view>

@@ -166,7 +166,7 @@
             <text style="width:30%;height: 100rpx; float: left">送检单位：</text>
             <text style="width:70%;height: 100rpx;float: left;"></text>
           </view>
-          <view style="width: 100%;height: 100rpx; overflow: hidden;background-color: #f6fdf8;">
+          <view style="width: 100%;height: 100rpx; overflow: hidden;background-color: #f6fdf8;font-size: 34rpx;">
             <view style="width: 50%;height: 100rpx;line-height: 80rpx; float: left;">
               <text style="width: 30%;height: 100rpx; float: left;">姓名：</text>
               <text style="width:70%;height: 100rpx;float: left;">{{report.Pat_Name}}</text>
@@ -176,7 +176,7 @@
               <text style="width:70%;height: 100rpx;float: left;">{{report.Pat_Sex}}</text>
             </view>
           </view>
-          <view style="width: 100%;height: 100rpx; overflow: hidden;">
+          <view style="width: 100%;height: 100rpx; overflow: hidden;font-size: 34rpx;">
             <view style="width: 50%;height: 100rpx;line-height: 80rpx; float: left;">
               <text style="width: 30%;height: 100rpx; float: left;">年龄：</text>
               <text style="width:70%;height: 100rpx;float: left;">{{report.Pat_AgeStr}}</text>
@@ -188,7 +188,7 @@
           </view>
 
 
-          <view style="width: 100%;height: 100rpx; overflow: hidden;background-color: #f6fdf8;">
+          <view style="width: 100%;height: 100rpx; overflow: hidden;background-color: #f6fdf8;font-size: 34rpx;">
             <view style="width: 50%;height: 100rpx;line-height: 80rpx; float: left;">
               <text style="width: 50%;height: 100rpx; float: left;">样本类型：</text>
               <text style="width:50%;height: 100rpx;float: left;">脱落细胞</text>
@@ -198,7 +198,7 @@
               <text style="width:50%;height: 100rpx;float: left;">{{inserval.samplesta}}</text>
             </view>
           </view>
-          <view style="width: 100%;height: 100rpx; overflow: hidden;">
+          <view style="width: 100%;height: 100rpx; overflow: hidden;font-size: 34rpx;">
             <view style="width: 50%;height: 100rpx;line-height: 80rpx; float: left;">
               <text style="width: 60%;height: 100rpx; float: left;">门诊/住院号：</text>
               <text style="width:40%;height: 100rpx;float: left;"></text>
@@ -209,31 +209,31 @@
             </view>
           </view>
 
-          <view style="width: 100%;height: 100rpx; overflow: hidden;background-color: #f6fdf8;">
+          <view style="width: 100%;height: 100rpx; overflow: hidden;background-color: #f6fdf8;font-size: 34rpx;">
             <view style="width: 100%;height: 100rpx;line-height: 80rpx; float: left;">
               <text style="width: 30%;height: 100rpx; float: left;">送检医生：</text>
               <text style="width:70%;height: 100rpx;float: left;">{{inserval.deliverdoc}}</text>
             </view>
           </view>
-          <view style="width: 100%;height: 100rpx; overflow: hidden;">
+          <view style="width: 100%;height: 100rpx; overflow: hidden;font-size: 34rpx;">
             <view style="width: 100%;height: 100rpx;line-height: 80rpx; float: left;">
               <text style="width: 30%;height: 100rpx; float: left;">联系电话：</text>
               <text style="width:70%;height: 100rpx;float: left;">{{inserval.deliverdoctel}} </text>
             </view>
           </view>
-          <view style="width: 100%;height: 100rpx; overflow: hidden;background-color: #f6fdf8;">
+          <view style="width: 100%;height: 100rpx; overflow: hidden;background-color: #f6fdf8;font-size: 34rpx;">
             <view style="width: 100%;height: 100rpx;line-height: 80rpx; float: left;">
               <text style="width: 30%;height: 100rpx; float: left;">样本编号：</text>
               <text style="width:70%;height: 100rpx;float: left;">{{report.SampleNo}}</text>
             </view>
           </view>
-          <view style="width: 100%;height: 100rpx; overflow: hidden;">
+          <view style="width: 100%;height: 100rpx; overflow: hidden;font-size: 34rpx;">
             <view style="width: 100%;height: 100rpx;line-height: 80rpx; float: left;">
               <text style="width: 30%;height: 100rpx; float: left;">采样日期：</text>
               <text style="width:70%;height: 100rpx;float: left;">{{report. SampleDate}}</text>
             </view>
           </view>
-          <view style="width: 100%;height: 100rpx; overflow: hidden;background-color: #f6fdf8;">
+          <view style="width: 100%;height: 100rpx; overflow: hidden;background-color: #f6fdf8;font-size: 34rpx;">
             <view style="width: 100%;height: 100rpx;line-height: 80rpx; float: left;">
               <text style="width: 30%;height: 100rpx; float: left;">接收日期：</text>
               <text style="width:70%;height: 100rpx;float: left;">{{report.Sampled_Dt}}</text>
@@ -256,9 +256,9 @@
         检测结果:</view>
       <view  style="width:100%;height: 360rpx;border: 1rpx solid#e3eae4;font-size: 22rpx;">
         <view id="inservals" style="width:100%;height: 60rpx;font-size: 20rpx;background-color:#f6fdf8">
-        <block wx:for="{{hpvs}}" wx:for-item="hpvs">
-          <view style="width: 25%;height: 60rpx;line-height: 50rpx;float: left;background-color:#f6fdf8">{{hpvs.HospRptItemName}}<text>: {{hpvs.Result_Ref}}</text> </view>
-        </block>
+        <!-- <block wx:for="{{hpvs}}" wx:for-item="hpvs" key="inservals">
+          <view style="width: 25%;height: 60rpx;line-height: 50rpx;float: left;font-size: 30rpx; background-color:#f6fdf8">{{hpvs.HospRptItemName}}<text>: {{hpvs.Result_Ref}}</text> </view>
+        </block> -->
         </view> 
       </view>
       <view style="width:100%;height: 90rpx;line-height: 40rpx;font-size: 22rpx;">

@@ -22,8 +22,7 @@ Page({
 
 //获取到hpv报告页面输入的值，查询mysql数据库，并返回状态
 inputVal: function (e) {
-
-    let barcode = e.detail.value
+    let barcode = e.detail.value.replace(/\s+/g, '')
     console.info(barcode)
     this.setData({
       barcode: barcode
