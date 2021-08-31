@@ -272,10 +272,10 @@
       <view style="width: 100%;height: 100rpx;line-height: 100rpx;font-size: 34rpx;font-weight: 700; color:#cc552c;">
         检测结果:</view>
       <view style="width:100%;height: 480rpx;border: 1rpx solid#e3eae4;overflow: hidden;">
-        <view id="inservals" style="width:100%;height: 60rpx;font-size: 20rpx;background-color:#f6fdf8">
-          <block wx:for="{{hpvs}}" wx:for-item="hpvs" key="inservals">
-          <view style="width: 33.3%;height: 60rpx;line-height: 50rpx;float: left;font-size: 30rpx; background-color:#f6fdf8">{{hpvs.HospRptItemName}}<text>: {{hpvs.Result_Ref}}</text> </view>
-        </block>
+        <view id="inservals" style="width:100%;height: 60rpx;font-size: 26rpx;background-color:#f6fdf8">
+          <view wx:for="{{hpvs}}" wx:for-item="hpv" wx:key="i"style="width: 33.3%;height: 60rpx;line-height: 50rpx;float: left; background-color:#f6fdf8" >
+          {{hpv.HospRptItemName}}: {{hpv.Result_Str}}
+        </view>
         </view>
       </view>
       <view style="width:100%;height: 90rpx;line-height: 40rpx;font-size: 22rpx;">
@@ -284,7 +284,7 @@
         结果分析及提示:</view>
       <view style="width: 100%;height: 120rpx;background-color: #f6fdf8;border-radius: 30rpx;">
         <view style="width: 100%;height: 20rpx;"></view>
-        <view style="width: 90%;height: 100rpx;margin: 0 auto;">
+        <view style="width: 100%;height: 100rpx;margin: 0 auto;">
           {{report.Report_Comm}}
         </view>
       </view>
@@ -315,15 +315,15 @@
     <view style="width: 90%;height: 1000;margin: 0 auto;font-size: 28rpx;">
       <view style="width: 100%;height: 100rpx;line-height: 100rpx;font-size: 34rpx;font-weight: 700; color:#cc552c;overflow: hidden;">
         温馨提示：</view>
-      <view style="width: 100%;height: auto;overflow: hidden;"><text space="emsp">  HPV疫苗可以激活我们的免疫系统，在体内形成抗体，以抵抗HPV病毒的入侵。以HPV高危型别16型为例，科学家发现疫苗接种者的免疫系统产生的抗体量是未接种感染者体内抗体量的7.7倍。</text></view>
+      <view style="width: 100%;height: auto;overflow: hidden;"><text space="emsp" user-select="true">  HPV疫苗可以激活我们的免疫系统，在体内形成抗体，以抵抗HPV病毒的入侵。以HPV高危型别16型为例，科学家发现疫苗接种者的免疫系统产生的抗体量是未接种感染者体内抗体量的7.7倍。</text></view>
       <view style="width: 100%;height: 30rpx;"></view>
-      <view style="width: 100%;height: auto;"><text space="emsp">  现有的疫苗大多是针对高危型HPV研制的，并不能帮助免疫于所有HPV病毒感染。例如二价疫苗只针对HPV病毒的16型和18型两种高危型别，因此接种过该疫苗的女性也应该定期检查生殖道的HPV感染。</text></view>
+      <view style="width: 100%;height: auto;"><text space="emsp" user-select="true">  现有的疫苗大多是针对高危型HPV研制的，并不能帮助免疫于所有HPV病毒感染。例如二价疫苗只针对HPV病毒的16型和18型两种高危型别，因此接种过该疫苗的女性也应该定期检查生殖道的HPV感染。</text></view>
       <view style="width: 100%;height: 30rpx;"></view>
-      <view style="width: 100%;height: auto;"><text space="emsp">  HPV病毒可以通过接触传染。例如健康人接触到被HPV病毒感染者污染过的物品可能导致感染。因此，大家日常应该做好个人防护，避免到与他人的内衣、裤、毛巾等个人用品混合使用与清洗。</text></view>
+      <view style="width: 100%;height: auto;"><text space="emsp" user-select="true">  HPV病毒可以通过接触传染。例如健康人接触到被HPV病毒感染者污染过的物品可能导致感染。因此，大家日常应该做好个人防护，避免到与他人的内衣、裤、毛巾等个人用品混合使用与清洗。</text></view>
       <view style="width: 100%;height: 30rpx;"></view>
-      <view style="width: 100%;height: auto;"> <text space="emsp">  对于HPV感染者使用过的毛巾、床单等物品，务必需要煮沸且在太阳下暴晒消毒，才能有效切断传播途径。使用公共坐便器前，务必进行消毒处理。如果条件允许，推荐使用一次性马桶垫，或者卫生纸围制马桶坐垫。</text></view>
+      <view style="width: 100%;height: auto;"> <text space="emsp"user-select="true">  对于HPV感染者使用过的毛巾、床单等物品，务必需要煮沸且在太阳下暴晒消毒，才能有效切断传播途径。使用公共坐便器前，务必进行消毒处理。如果条件允许，推荐使用一次性马桶垫，或者卫生纸围制马桶坐垫。</text></view>
       <view style="width: 100%;height: 30rpx;"></view>
-      <view style="width: 100%;height: auto;"> <text space="emsp">  其实，HPV感染比大家认知的要普遍，在一部分人的皮肤中就可能存在HPV病毒。HPV病毒感染通常属于一过性的，感染者自身免疫系统即可对其清除。所以大家也没有必要对与HPV病毒恐惧，更不要抱着被HPV病毒感染就等同于耀患宫颈癌的想法，自己吓自己。</text>
+      <view style="width: 100%;height: auto;"> <text space="emsp"user-select="true">  其实，HPV感染比大家认知的要普遍，在一部分人的皮肤中就可能存在HPV病毒。HPV病毒感染通常属于一过性的，感染者自身免疫系统即可对其清除。所以大家也没有必要对与HPV病毒恐惧，更不要抱着被HPV病毒感染就等同于耀患宫颈癌的想法，自己吓自己。</text>
       </view>
     </view>
     <view style="position: absolute;width: 100%;height: 300rpx;">
