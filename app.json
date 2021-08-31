@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/report/report",
+    "pages/report_epihpv/report_epihpv",
+    "pages/index/index",
     "pages/service/service",
     "pages/epiage/epiage",
     "pages/epihpv/epihpv",
@@ -12,7 +13,6 @@
     "pages/mine/qna",
     "pages/mine/contact",
     "pages/mine/mine",
-    "pages/report_epihpv/report_epihpv",
     "pages/epihpvreport/epihpvreport",
     "pages/agreemnt/agreemnt",
     "pages/intro/intro-epiliver",

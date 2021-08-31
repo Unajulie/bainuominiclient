@@ -9,16 +9,18 @@
     <form bindsubmit='searchBox'>
       <view id="check-contain"><text class="privacy">为了保护您的隐私，请输入\扫描条形码查询报告</text>
       </view>
-
-      <view
-        style='width:90%;height:100rpx;margin-left: 5%;margin-top: 20rpx; border: 2rpx solid #916ae5; display:inline-block; background:#fff;align-self: center;'>
-        <input style='width:80%;display:inline-block;height:100rpx;line-height: 80rpx; padding-left: 2%;color: black;'
-          placeholder-style='font-size:40rpx;' placeholder='条形码' type='text' bindinput="inputVal"
-          value='{{scanCodeMsg}}'></input>
-        <view style='width:18%;display:inline-block;height:70rpx;margin-bottom: 10rpx;margin-top: 10rpx;'>
-          <image src='https://bainuo.beijingepidial.com/public/img/scan.jpg' bindtap="scanCode" style='display:inline;'
-            mode="aspectFit">
-          </image>
+      <view style="width: 100%;height: 20rpx;"></view>
+      <view style="width: 100%;height: 110rpx;overflow: hidden;">
+        <view
+          style='width:90%;height:100rpx;margin-left: 5%;border: 2rpx solid #916ae5; display:inline-block; background:#fff;align-self: center;position: relative;'>
+          <input style='width:80%;display:inline-block;height:100rpx;left: 10rpx; color: black;font-size: 40rpx; position: absolute;'
+            placeholder-style='font-size:40rpx;' placeholder='条形码' type='text' bindinput="inputVal"
+            value='{{scanCodeMsg}}'></input>
+          <view style='width:16%;display:inline-block;height:70rpx;bottom: 16rpx;right: 20rpx; position: absolute;'>
+            <image src='https://bainuo.beijingepidial.com/public/img/scan.jpg' bindtap="scanCode"
+              style='display:inline;' mode="aspectFit">
+            </image>
+          </view>
         </view>
       </view>
       <view>

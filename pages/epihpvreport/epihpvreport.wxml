@@ -95,7 +95,7 @@
         <image mode="widthFix" style="width: 70%;height: 50rpx;margin-left: 10%;margin-top: 30rpx; align-self: center;"
           src='https://bainuo.beijingepidial.com/public/img/tick1.jpg'></image>
       </view>
-      <view style="width: 85%;height: 130rpx;float: left;line-height: 50rpx;margin-top: 10rpx;">
+      <view style="width: 85%;height: 130rpx;float: left;line-height: 50rpx;margin-top: 10rpx;font-size: 32rpx;">
         年龄超过21岁的女性，且性生活时间刚开始不超过三年者。
       </view>
     </view>
@@ -105,7 +105,7 @@
         <image mode="widthFix" style="width: 70%;height: 50rpx;margin-left: 10%;margin-top: 30rpx; align-self: center;"
           src='https://bainuo.beijingepidial.com/public/img/tick1.jpg'></image>
       </view>
-      <view style="width: 85%;height: 100rpx;float: left;line-height: 100rpx;">
+      <view style="width: 85%;height: 100rpx;float: left;line-height: 100rpx;font-size: 32rpx;">
         拥有多个伴侣的女性
       </view>
     </view>
@@ -115,7 +115,7 @@
         <image mode="widthFix" style="width: 70%;height: 50rpx;margin-left: 10%;margin-top: 30rpx; align-self: center;"
           src='https://bainuo.beijingepidial.com/public/img/tick1.jpg'></image>
       </view>
-      <view style="width: 85%;height: 100rpx;float: left;line-height: 100rpx;">
+      <view style="width: 85%;height: 100rpx;float: left;line-height: 100rpx;font-size: 32rpx;">
         性生活开始过早的女性
       </view>
     </view>
@@ -125,7 +125,7 @@
         <image mode="widthFix" style="width: 70%;height: 50rpx;margin-left: 10%;margin-top: 30rpx; align-self: center;"
           src='https://bainuo.beijingepidial.com/public/img/tick1.jpg'></image>
       </view>
-      <view style="width: 85%;height: 130rpx;float: left;line-height: 130rpx;">
+      <view style="width: 85%;height: 130rpx;float: left;line-height: 130rpx;font-size: 32rpx;">
         拥有HIV/HPV病毒感染史的女性
       </view>
     </view>
@@ -135,7 +135,7 @@
         <image mode="widthFix" style="width: 70%;height: 50rpx;margin-left: 10%;margin-top: 30rpx; align-self: center;"
           src='https://bainuo.beijingepidial.com/public/img/tick1.jpg'></image>
       </view>
-      <view style="width: 85%;height: 130rpx;float: left;line-height: 50rpx;margin-top: 10rpx;">
+      <view style="width: 85%;height: 130rpx;float: left;line-height: 50rpx;margin-top: 10rpx;font-size: 32rpx;">
         年龄超过21岁的女性，且性生活时间刚开始不超过三年者。
       </view>
     </view>
@@ -151,7 +151,7 @@
       </view>
     </view>
   </view>
-  <view class="page" style="width: 100%;height: 2600rpx;border: 1rpx solid #e3eae4;">
+  <view class="page" style="width: 100%;height: 2760rpx;border: 1rpx solid #e3eae4;">
     <view style="width: 100%;height: 30rpx;"></view>
     <view style="width: 90%;height: auto;margin: 0 auto;">
       <view
@@ -159,36 +159,37 @@
         检测项目-人乳头瘤病毒（HPV）检测
       </view>
       <view style="width: 100%;height: 30rpx;"></view>
-      <view style="width: 100%;height:1000rpx;border: 1rpx solid grey;">
+      <view style="width: 100%;height:1000rpx;border: 1rpx solid grey;font-size: 32rpx;">
         <view style="width:98%;height: 400rpx;margin: 0 auto;">
           <view
             style="width: 100%;height: 100rpx;line-height: 100rpx;font-weight: 700; font-weight: 700; color:#cc552c;">
             <text style="width:30%;height: 100rpx; float: left">送检单位：</text>
             <text style="width:70%;height: 100rpx;float: left;"></text>
           </view>
-          <view style="width: 100%;height: 100rpx; overflow: hidden;background-color: #f6fdf8;font-size: 34rpx;">
+          <view style="width: 100%;height: 100rpx; overflow: hidden;background-color: #f6fdf8;font-size: 32rpx;">
             <view style="width: 50%;height: 100rpx;line-height: 80rpx; float: left;">
               <text style="width: 30%;height: 100rpx; float: left;">姓名：</text>
               <text style="width:70%;height: 100rpx;float: left;">{{report.Pat_Name}}</text>
             </view>
             <view style="width: 50%;height: 100rpx;line-height: 80rpx;float: left;">
-              <text style="width: 30%;float: left;">性别：</text>
-              <text style="width:70%;height: 100rpx;float: left;">{{report.Pat_Sex}}</text>
+              <text  style="width: 40%;float: left;">性别：</text>
+              <text style="width:60%;height: 100rpx;float: left;" wx:if="{{report.Pat_Sex}}==1">女</text>
+              <text style="width:60%;height: 100rpx;float: left;" wx:else>男</text>
             </view>
           </view>
-          <view style="width: 100%;height: 100rpx; overflow: hidden;font-size: 34rpx;">
-            <view style="width: 50%;height: 100rpx;line-height: 80rpx; float: left;">
+          <view style="width: 100%;height: 100rpx; overflow: hidden;font-size: 32rpx;">
+            <view style="width: 40%;height: 100rpx;line-height: 80rpx; float: left;">
               <text style="width: 30%;height: 100rpx; float: left;">年龄：</text>
               <text style="width:70%;height: 100rpx;float: left;">{{report.Pat_AgeStr}}</text>
             </view>
-            <view style="width: 50%;height: 100rpx;line-height: 80rpx;float: left;">
+            <view style="width: 60%;height: 100rpx;line-height: 80rpx;float: left;">
               <text style="width: 30%;float: left;">条码：</text>
               <text style="width:70%;height: 100rpx;float: left;">{{report.Barcode}}</text>
             </view>
           </view>
 
 
-          <view style="width: 100%;height: 100rpx; overflow: hidden;background-color: #f6fdf8;font-size: 34rpx;">
+          <view style="width: 100%;height: 100rpx; overflow: hidden;background-color: #f6fdf8;font-size: 32rpx;">
             <view style="width: 50%;height: 100rpx;line-height: 80rpx; float: left;">
               <text style="width: 50%;height: 100rpx; float: left;">样本类型：</text>
               <text style="width:50%;height: 100rpx;float: left;">脱落细胞</text>
@@ -198,42 +199,42 @@
               <text style="width:50%;height: 100rpx;float: left;">{{inserval.samplesta}}</text>
             </view>
           </view>
-          <view style="width: 100%;height: 100rpx; overflow: hidden;font-size: 34rpx;">
+          <view style="width: 100%;height: 100rpx; overflow: hidden;font-size: 32rpx;">
             <view style="width: 50%;height: 100rpx;line-height: 80rpx; float: left;">
-              <text style="width: 60%;height: 100rpx; float: left;">门诊/住院号：</text>
+              <text style="width: 70%;height: 100rpx; float: left;">门诊/住院号：</text>
               <text style="width:40%;height: 100rpx;float: left;"></text>
             </view>
             <view style="width: 50%;height: 100rpx;line-height: 80rpx; float: left;">
-              <text style="width: 50%;height: 100rpx; float: left;">科室/病区：</text>
-              <text style="width:50%;height: 100rpx;float: left;">{{report.RptUnitID}}</text>
+              <text style="width: 60%;height: 100rpx; float: left;">科室/病区：</text>
+              <text style="width:40%;height: 100rpx;float: left;">{{report.RptUnitID}}</text>
             </view>
           </view>
 
-          <view style="width: 100%;height: 100rpx; overflow: hidden;background-color: #f6fdf8;font-size: 34rpx;">
+          <view style="width: 100%;height: 100rpx; overflow: hidden;background-color: #f6fdf8;font-size: 32rpx;">
             <view style="width: 100%;height: 100rpx;line-height: 80rpx; float: left;">
               <text style="width: 30%;height: 100rpx; float: left;">送检医生：</text>
               <text style="width:70%;height: 100rpx;float: left;">{{inserval.deliverdoc}}</text>
             </view>
           </view>
-          <view style="width: 100%;height: 100rpx; overflow: hidden;font-size: 34rpx;">
+          <view style="width: 100%;height: 100rpx; overflow: hidden;font-size: 32rpx;">
             <view style="width: 100%;height: 100rpx;line-height: 80rpx; float: left;">
               <text style="width: 30%;height: 100rpx; float: left;">联系电话：</text>
               <text style="width:70%;height: 100rpx;float: left;">{{inserval.deliverdoctel}} </text>
             </view>
           </view>
-          <view style="width: 100%;height: 100rpx; overflow: hidden;background-color: #f6fdf8;font-size: 34rpx;">
+          <view style="width: 100%;height: 100rpx; overflow: hidden;background-color: #f6fdf8;font-size: 32rpx;">
             <view style="width: 100%;height: 100rpx;line-height: 80rpx; float: left;">
               <text style="width: 30%;height: 100rpx; float: left;">样本编号：</text>
               <text style="width:70%;height: 100rpx;float: left;">{{report.SampleNo}}</text>
             </view>
           </view>
-          <view style="width: 100%;height: 100rpx; overflow: hidden;font-size: 34rpx;">
+          <view style="width: 100%;height: 100rpx; overflow: hidden;font-size: 32rpx;">
             <view style="width: 100%;height: 100rpx;line-height: 80rpx; float: left;">
               <text style="width: 30%;height: 100rpx; float: left;">采样日期：</text>
               <text style="width:70%;height: 100rpx;float: left;">{{report. SampleDate}}</text>
             </view>
           </view>
-          <view style="width: 100%;height: 100rpx; overflow: hidden;background-color: #f6fdf8;font-size: 34rpx;">
+          <view style="width: 100%;height: 100rpx; overflow: hidden;background-color: #f6fdf8;font-size: 32rpx;">
             <view style="width: 100%;height: 100rpx;line-height: 80rpx; float: left;">
               <text style="width: 30%;height: 100rpx; float: left;">接收日期：</text>
               <text style="width:70%;height: 100rpx;float: left;">{{report.Sampled_Dt}}</text>
@@ -241,25 +242,41 @@
           </view>
         </view>
       </view>
-      <view style="width: 100%;height: 100rpx;line-height: 100rpx;font-weight: 700;font-weight: 700;color:#cc552c;">
+      <view style="width: 100%;height: 100rpx;line-height: 100rpx;font-weight: 700;font-weight: 700;color:#cc552c;font-size: 34rpx;">
         检测内容:</view>
-      <view
-        style="width:100%;height: 200rpx;background-color: #f6fdf8;border-radius: 50rpx; padding-left: 20rpx;padding-top: 20rpx;">
+      <!-- <view style="width:100%;height: 300rpx;background-color: #f6fdf8;border-radius: 50rpx;font-size: 34rpx; ">
         <view style="width: 100%;height: 10rpx;"></view>
-        <view style="width: 98%;height: 100rpx;line-height: 50rpx;margin: 0 auto;">
-          高危型HPV病毒亚型：16,18,31,33,35,39,45,51,52,53,56,58,59,66,68,73,82</view>
-        <view style="width: 100%;height: 90rpx;line-height: 50rpx;margin-top: 10rpx;">低危型HPV病毒亚型：6,11,42,43,81,83</view>
+        <view style="width: 98%;height: 150rpx;margin: 0 auto;">
+          <view style="width: 100%;height: 150rpx;line-height: 50rpx;overflow: hidden;">
+            高危型HPV病毒亚型：16,18,31,33,35,39,45,51,52,53,56,58,59,66,68,73,82</view>
+          <view style="width: 100%;height: 90rpx;line-height: 50rpx;">低危型HPV病毒亚型：6,11,42,43,81,83
+          </view>
+        </view>
+      </view> -->
+      <view style="width:100%;height: 250rpx;overflow: hidden;">
+      <view
+        style="width:90%;height: 250rpx;background-color: #f6fdf8;font-size: 32rpx; border-radius: 50rpx;margin: 0 auto;">
+        <view style="width: 100%;height: 10rpx;"></view>
+    
+        <view style="width: 100%;height: 130rpx;float: left;line-height: 50rpx;">
+          高危型HPV病毒亚型：16,18,31,33,35,39,45,51,52,53,56,58,59,66,68,73,82
+        </view>
+        <view style="width: 100%;height: 130rpx;float: left;">
+          低危型HPV病毒亚型：6,11,42,43,81,83
+        </view>
       </view>
+    </view>
+
       <view style="width: 100%;height: 100rpx;line-height: 100rpx;font-size: 34rpx;font-weight: 700; color:#cc552c;">
         检测方法: <text>PCR-反向点杂交法</text> </view>
       <view style="width: 100%;height: 100rpx;line-height: 100rpx;font-size: 34rpx;font-weight: 700; color:#cc552c;">
         检测结果:</view>
-      <view  style="width:100%;height: 360rpx;border: 1rpx solid#e3eae4;font-size: 22rpx;">
+      <view style="width:100%;height: 480rpx;border: 1rpx solid#e3eae4;overflow: hidden;">
         <view id="inservals" style="width:100%;height: 60rpx;font-size: 20rpx;background-color:#f6fdf8">
-        <!-- <block wx:for="{{hpvs}}" wx:for-item="hpvs" key="inservals">
-          <view style="width: 25%;height: 60rpx;line-height: 50rpx;float: left;font-size: 30rpx; background-color:#f6fdf8">{{hpvs.HospRptItemName}}<text>: {{hpvs.Result_Ref}}</text> </view>
-        </block> -->
-        </view> 
+          <block wx:for="{{hpvs}}" wx:for-item="hpvs" key="inservals">
+          <view style="width: 33.3%;height: 60rpx;line-height: 50rpx;float: left;font-size: 30rpx; background-color:#f6fdf8">{{hpvs.HospRptItemName}}<text>: {{hpvs.Result_Ref}}</text> </view>
+        </block>
+        </view>
       </view>
       <view style="width:100%;height: 90rpx;line-height: 40rpx;font-size: 22rpx;">
         备注：本检测结果仅对来样负责，供临床参考，如有疑问请于7个工作日内与本单位联系。</view>
@@ -268,18 +285,21 @@
       <view style="width: 100%;height: 120rpx;background-color: #f6fdf8;border-radius: 30rpx;">
         <view style="width: 100%;height: 20rpx;"></view>
         <view style="width: 90%;height: 100rpx;margin: 0 auto;">
-         {{report.Report_Comm}}
+          {{report.Report_Comm}}
         </view>
       </view>
       <view style="width: 100%;height: 90rpx;line-height: 50rpx;margin-top: 40rpx;font-size: 24rpx;">
-        <view style="width: 20%;height: 90rpx;float: left;">主检：<text style="text-decoration: underline;">{{report.Report_Username}}</text></view>
-        <view style="width: 25%;height: 90rpx;float: left;">审核：<text style="text-decoration: underline;">{{report.Rechk_Username}}</text></view>
-        <view style="width: 55%;height: 90rpx;float: left;">报告时间：<text style="text-decoration: underline;">{{report.Upload_Time}}</text></view>
+        <view style="width: 20%;height: 90rpx;float: left;">主检：<text
+            style="text-decoration: underline;">{{report.Report_Username}}</text></view>
+        <view style="width: 25%;height: 90rpx;float: left;">审核：<text
+            style="text-decoration: underline;">{{report.Rechk_Username}}</text></view>
+        <view style="width: 55%;height: 90rpx;float: left;">报告时间：<text
+            style="text-decoration: underline;">{{report.Upload_Time}}</text></view>
       </view>
     </view>
     <!-- middle end -->
     <view style="width: 100%;height: 20rpx;overflow: hidden;"></view>
-    <view style="width: 100%;height: 100rpx;">
+    <view style="width: 100%;height: 100rpx;overflow: hidden;">
       <view style="width: 90%;height: 100rpx;margin: 0 auto;">
         <view style="width: 40%;height:100rpx;float: left;">
           <image mode="widthFix" style="width: 70%;height: 30rpx;"
@@ -290,10 +310,10 @@
       </view>
     </view>
   </view>
-  <view class="page" style="width: 100%;height: 1320rpx;border: 1rpx solid grey;position: relative;">
+  <view class="page" style="width: 100%;height: 1360rpx;border: 1rpx solid grey;position: relative;">
     <view style="width: 100%;height: 30rpx;"></view>
     <view style="width: 90%;height: 1000;margin: 0 auto;font-size: 28rpx;">
-      <view style="width: 100%;height: 100rpx;line-height: 100rpx;font-size: 34rpx;font-weight: 700; color:#cc552c;">
+      <view style="width: 100%;height: 100rpx;line-height: 100rpx;font-size: 34rpx;font-weight: 700; color:#cc552c;overflow: hidden;">
         温馨提示：</view>
       <view style="width: 100%;height: auto;overflow: hidden;"><text space="emsp">  HPV疫苗可以激活我们的免疫系统，在体内形成抗体，以抵抗HPV病毒的入侵。以HPV高危型别16型为例，科学家发现疫苗接种者的免疫系统产生的抗体量是未接种感染者体内抗体量的7.7倍。</text></view>
       <view style="width: 100%;height: 30rpx;"></view>
@@ -306,8 +326,8 @@
       <view style="width: 100%;height: auto;"> <text space="emsp">  其实，HPV感染比大家认知的要普遍，在一部分人的皮肤中就可能存在HPV病毒。HPV病毒感染通常属于一过性的，感染者自身免疫系统即可对其清除。所以大家也没有必要对与HPV病毒恐惧，更不要抱着被HPV病毒感染就等同于耀患宫颈癌的想法，自己吓自己。</text>
       </view>
     </view>
-<view style="position: absolute;width: 100%;height: 300rpx;">
-  <view style="width: 90%;height: 250rpx;position: absolute;top: 950rpx;">
+    <view style="position: absolute;width: 100%;height: 300rpx;">
+      <view style="width: 90%;height: 250rpx;position: absolute;top: 950rpx;">
         <view style="width: 30%;height:250rpx;float: left;">
           <image mode="widthFix" style="width: 70%;height: 30rpx;margin-top: 170rpx;"
             src='https://bainuo.beijingepidial.com/public/img/bainuo-logo.png'></image>
@@ -318,6 +338,6 @@
         </view>
         <view style="width: 4%;float: left;height: auto;margin-top:190rpx ;">5</view>
       </view>
-</view>
+    </view>
   </view>
 </view>

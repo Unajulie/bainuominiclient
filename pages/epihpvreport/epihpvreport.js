@@ -15,6 +15,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.info(options)
     //页面的this才有setdata放法，微信的request不能直接用this。微信的this没有setdata方法。
     let oThis = this
     wx.request({
@@ -24,12 +25,14 @@ Page({
       },
       method: "POST",
       data: {"barcode": options.barcode},
+      
       // data: {"barcode": 1121032800079},
       complete: function (res) {
         console.info("------------------")
-        console.info(res.data)
+        console.info(res.data.ReportID)
         oThis.setData({
-          report: res.data
+          report: res.data,
+          reportid:res.data.ReportID
         })
         //  这里的this指向的是wx.request方法，不是epihpvreport页面
         //由barcode查询到report数据库中的对应数据，再根据该条数据中的reportid查询result数据库
@@ -46,6 +49,7 @@ Page({
       data: {"barcode": options.barcode},
       // data: {"barcode": 1121032800079},
       complete: function (res) {
+        // console.info("******************")
         // console.info(res)
         oThis.setData({
           inserval: res.data[0]
@@ -53,24 +57,7 @@ Page({
 //这里接受到的数据表数据是在第一个数组里res.data[0]
       }
     })
-    //先服务端请求数据库result表里一个barcode对应的各种hpv型的数据渲染到页面
-    wx.request({
-      url: "https://bainuo.beijingepidial.com/admin/epihpv/inserval",
-      header: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      method: "POST",
-      data: {"barcode": options.barcode},
-      // data: {"barcode": 1121032800079},
-      complete: function (res) {
-        console.info("*******************")
-        console.info(res.data)
-        oThis.setData({
-          hpvs: res.data
-        })
-      }
 
-    })
 
     
   },
@@ -79,7 +66,25 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    //通过reportid向服务端请求数据库result表里对应的各种hpv型的数据渲染到页面
+    let oThis = this
+    wx.request({
+      url: "https://bainuo.beijingepidial.com/admin/epihpv/inserval",
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      method: "POST",
+      data: {"reportid":this.data.reportid},
+      
+      // data: {"barcode": 1121032800079},
+      complete: function (res) {
+        console.info("++++++++++++++++++++++")
+        console.info(res.data)
+        oThis.setData({
+          hpvs: res.data
+        })
+      }
+    })
   },
 
   /**
