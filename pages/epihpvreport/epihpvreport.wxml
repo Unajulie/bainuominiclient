@@ -44,7 +44,7 @@
           style="width: 90%;height: 80rpx;margin: 0 auto; line-height: 80rpx; padding-top: 20rpx;font-size: 40rpx;color:#cc552c;">
           临床应用及意义：</view>
         <view style="width: 90%;height: auto; font-size: 26rpx;margin: 0 auto;padding-top: 10rpx;"><text
-            space="emsp">目前，已经发现的HPV约有30多种型别，均可以感染人类女性生殖道黏膜，其中一部分型别很容易导致宫颈癌，故被称为高危型HPV。HPV16、18、31、33、35、39、45、51、52、56、58、59、66及68型。</text>
+            space="emsp">目前，已经发现的HPV约有30多种型别，均可以感染人类女性生殖道黏膜，其中一部分型别很容易导致宫颈癌，故被称为高危型HPV。HPV16、18、31、33、35、39、45、51、52、56、58、59、66及68型</text>
         </view>
         <view style="width: 100%;height: 10rpx;"></view>
         <view style="width: 90%;height: auto; font-size: 26rpx;margin: 0 auto;padding-top: 10rpx;"><text
@@ -255,7 +255,7 @@
       </view> -->
       <view style="width:100%;height: 250rpx;overflow: hidden;">
       <view
-        style="width:90%;height: 250rpx;background-color: #f6fdf8;font-size: 32rpx; border-radius: 50rpx;margin: 0 auto;">
+        style="width:100%;height: 250rpx;background-color: #f6fdf8;font-size: 32rpx; border-radius: 50rpx;margin: 0 auto;">
         <view style="width: 100%;height: 10rpx;"></view>
     
         <view style="width: 100%;height: 130rpx;float: left;line-height: 50rpx;">

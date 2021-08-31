@@ -15,7 +15,7 @@
           style='width:90%;height:100rpx;margin-left: 5%;border: 2rpx solid #916ae5; display:inline-block; background:#fff;align-self: center;position: relative;'>
           <input style='width:80%;display:inline-block;height:100rpx;left: 10rpx; color: black;font-size: 40rpx; position: absolute;'
             placeholder-style='font-size:40rpx;' placeholder='条形码' type='text' bindinput="inputVal"
-            value='{{scanCodeMsg}}'></input>
+            value='{{barcode}}'></input>
           <view style='width:16%;display:inline-block;height:70rpx;bottom: 16rpx;right: 20rpx; position: absolute;'>
             <image src='https://bainuo.beijingepidial.com/public/img/scan.jpg' bindtap="scanCode"
               style='display:inline;' mode="aspectFit">

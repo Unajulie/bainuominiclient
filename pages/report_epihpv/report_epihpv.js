@@ -12,7 +12,7 @@ Page({
     wx.scanCode({
       onlyFromCamera: true,
       success(res) {
-        console.log(res)
+        console.log(res.result)
         that.setData({
           barcode: res.result
         });

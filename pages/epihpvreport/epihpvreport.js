@@ -14,11 +14,11 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad:async function (options) {
     console.info(options)
     //页面的this才有setdata放法，微信的request不能直接用this。微信的this没有setdata方法。
     let oThis = this
-    wx.request({
+    await  wx.request({
       url: "https://bainuo.beijingepidial.com/admin/epihpv/epihpvreport",
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
@@ -40,7 +40,7 @@ Page({
       }
     })
     //向服务端请求实验室人员在后台报告页面输入的数据并返回来
-    wx.request({
+    await  wx.request({
       url: "https://bainuo.beijingepidial.com/admin/epihpv/hpvinserval",
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
@@ -49,8 +49,8 @@ Page({
       data: {"barcode": options.barcode},
       // data: {"barcode": 1121032800079},
       complete: function (res) {
-        // console.info("******************")
-        // console.info(res)
+        console.info("******************")
+        console.info(res)
         oThis.setData({
           inserval: res.data[0]
         })
@@ -65,10 +65,10 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady:async function () {
     //通过reportid向服务端请求数据库result表里对应的各种hpv型的数据渲染到页面
     let oThis = this
-    wx.request({
+    await wx.request({
       url: "https://bainuo.beijingepidial.com/admin/epihpv/inserval",
       header: {
         "Content-Type": "application/x-www-form-urlencoded"
