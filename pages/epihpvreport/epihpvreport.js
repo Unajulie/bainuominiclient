@@ -27,16 +27,26 @@ Page({
       
       // data: {"barcode": 1121032800079},
        complete: function (res) {
-      console.info(res.data)
+        //  for(var i in res.data){
+        //    if(Result_Flag==positive){
+        //      this.setData({
+        //       HospRptItemName:res.data[i].HospRptItemName,
+        //       Result_Str:res.data[i].Result_Str,
+        //       Result_Flag:res.data[i].Result_Flag})
+        //     }
+        //   //  console.info()
+        //   }
+            //先刷选出阳性数据
         oThis.setData({
           report: res.data[0],
           hpvs:res.data,
+          positive:res.data.filter(function(e){if(e.Result_Flag=="P"){return e}})
         })
         //  这里的this指向的是wx.request方法，不是epihpvreport页面
         //由barcode查询到report数据库中的对应数据，再根据该条数据中的reportid查询result数据库
         //中的对应结果
       }
-    })
+    }),
     
     //向服务端请求实验室人员在后台报告页面输入的数据并返回来
      wx.request({

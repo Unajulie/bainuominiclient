@@ -30,7 +30,7 @@
     <view style="width: 90%;height: 1300px;margin: 0 auto;position: relative;">
       <view
         style="width: 100%;height: 100rpx;font-size: 40rpx;color: #cc552c; background-color: #f6fdf8;border-radius: 50rpx;text-align: center;line-height: 100rpx;margin-top: 30rpx; ">
-        <text space="emsp">认识导致宫颈癌的   杀手</text>
+        <text space="emsp">认识导致宫颈癌的 杀手</text>
       </view>
       <image mode="widthFix" style="width: 20%;height: 30rpx;top: -2rpx; margin-left: 60%;position: absolute;"
         src='https://bainuo.beijingepidial.com/public/img/rep.png'></image>
@@ -172,7 +172,7 @@
               <text style="width:70%;height: 100rpx;float: left;">{{report.Pat_Name}}</text>
             </view>
             <view style="width: 50%;height: 100rpx;line-height: 80rpx;float: left;">
-              <text  style="width: 40%;float: left;">性别：</text>
+              <text style="width: 40%;float: left;">性别：</text>
               <text style="width:60%;height: 100rpx;float: left;" wx:if="{{report.Pat_Sex}}==1">女</text>
               <text style="width:60%;height: 100rpx;float: left;" wx:else>男</text>
             </view>
@@ -242,7 +242,8 @@
           </view>
         </view>
       </view>
-      <view style="width: 100%;height: 100rpx;line-height: 100rpx;font-weight: 700;font-weight: 700;color:#cc552c;font-size: 34rpx;">
+      <view
+        style="width: 100%;height: 100rpx;line-height: 100rpx;font-weight: 700;font-weight: 700;color:#cc552c;font-size: 34rpx;">
         检测内容:</view>
       <!-- <view style="width:100%;height: 300rpx;background-color: #f6fdf8;border-radius: 50rpx;font-size: 34rpx; ">
         <view style="width: 100%;height: 10rpx;"></view>
@@ -254,18 +255,18 @@
         </view>
       </view> -->
       <view style="width:100%;height: 250rpx;overflow: hidden;">
-      <view
-        style="width:100%;height: 250rpx;background-color: #f6fdf8;font-size: 32rpx; border-radius: 50rpx;margin: 0 auto;">
-        <view style="width: 100%;height: 10rpx;"></view>
-    
-        <view style="width: 100%;height: 130rpx;float: left;line-height: 50rpx;">
-          高危型HPV病毒亚型：16,18,31,33,35,39,45,51,52,53,56,58,59,66,68,73,82
-        </view>
-        <view style="width: 100%;height: 130rpx;float: left;">
-          低危型HPV病毒亚型：6,11,42,43,81,83
+        <view
+          style="width:100%;height: 250rpx;background-color: #f6fdf8;font-size: 32rpx; border-radius: 50rpx;margin: 0 auto;">
+          <view style="width: 100%;height: 10rpx;"></view>
+
+          <view style="width: 100%;height: 130rpx;float: left;line-height: 50rpx;">
+            高危型HPV病毒亚型：16,18,31,33,35,39,45,51,52,53,56,58,59,66,68,73,82
+          </view>
+          <view style="width: 100%;height: 130rpx;float: left;">
+            低危型HPV病毒亚型：6,11,42,43,81,83
+          </view>
         </view>
       </view>
-    </view>
 
       <view style="width: 100%;height: 100rpx;line-height: 100rpx;font-size: 34rpx;font-weight: 700; color:#cc552c;">
         检测方法: <text>PCR-反向点杂交法</text> </view>
@@ -273,9 +274,10 @@
         检测结果:</view>
       <view style="width:100%;height: 480rpx;border: 1rpx solid#e3eae4;overflow: hidden;">
         <view id="inservals" style="width:100%;height: 60rpx;font-size: 26rpx;background-color:#f6fdf8">
-          <view wx:for="{{hpvs}}" wx:for-item="hpv" wx:key="i"style="width: 33.3%;height: 60rpx;line-height: 50rpx;float: left; background-color:#f6fdf8" >
-          {{hpv.HospRptItemName}}: {{hpv.Result_Str}}
-        </view>
+          <view wx:for="{{hpvs}}" wx:for-item="hpv" wx:key="i"
+            style="width: 33.3%;height: 60rpx;line-height: 50rpx;float: left; background-color:#f6fdf8">
+            {{hpv.HospRptItemName}}: {{hpv.Result_Str}}
+          </view>
         </view>
       </view>
       <view style="width:100%;height: 90rpx;line-height: 40rpx;font-size: 22rpx;">
@@ -284,9 +286,15 @@
         结果分析及提示:</view>
       <view style="width: 100%;height: 120rpx;background-color: #f6fdf8;border-radius: 30rpx;">
         <view style="width: 100%;height: 20rpx;"></view>
-        <view style="width: 100%;height: 100rpx;margin: 0 auto;">
-          {{report.Report_Comm}}
+        <view wx:if="{{positive.length==0}}">HPV阴性</view>
+        <view wx:else>
+          <view wx:for="{{positive}}" wx:for-item="item" wx:key="j">
+            <view style="width: 100%;height: 150rpx;">
+              <view style="width: 50%;float: left;">{{item.HospRptItemName}}: {{item.Result_Str}}</view>
+          </view>
+          </view>
         </view>
+       
       </view>
       <view style="width: 100%;height: 90rpx;line-height: 50rpx;margin-top: 40rpx;font-size: 24rpx;">
         <view style="width: 20%;height: 90rpx;float: left;">主检：<text
@@ -313,17 +321,23 @@
   <view class="page" style="width: 100%;height: 1360rpx;border: 1rpx solid grey;position: relative;">
     <view style="width: 100%;height: 30rpx;"></view>
     <view style="width: 90%;height: 1000;margin: 0 auto;font-size: 28rpx;">
-      <view style="width: 100%;height: 100rpx;line-height: 100rpx;font-size: 34rpx;font-weight: 700; color:#cc552c;overflow: hidden;">
+      <view
+        style="width: 100%;height: 100rpx;line-height: 100rpx;font-size: 34rpx;font-weight: 700; color:#cc552c;overflow: hidden;">
         温馨提示：</view>
-      <view style="width: 100%;height: auto;overflow: hidden;"><text space="emsp" user-select="true">  HPV疫苗可以激活我们的免疫系统，在体内形成抗体，以抵抗HPV病毒的入侵。以HPV高危型别16型为例，科学家发现疫苗接种者的免疫系统产生的抗体量是未接种感染者体内抗体量的7.7倍。</text></view>
+      <view style="width: 100%;height: auto;overflow: hidden;"><text space="emsp" user-select="true">
+          HPV疫苗可以激活我们的免疫系统，在体内形成抗体，以抵抗HPV病毒的入侵。以HPV高危型别16型为例，科学家发现疫苗接种者的免疫系统产生的抗体量是未接种感染者体内抗体量的7.7倍。</text></view>
       <view style="width: 100%;height: 30rpx;"></view>
-      <view style="width: 100%;height: auto;"><text space="emsp" user-select="true">  现有的疫苗大多是针对高危型HPV研制的，并不能帮助免疫于所有HPV病毒感染。例如二价疫苗只针对HPV病毒的16型和18型两种高危型别，因此接种过该疫苗的女性也应该定期检查生殖道的HPV感染。</text></view>
+      <view style="width: 100%;height: auto;"><text space="emsp" user-select="true">
+          现有的疫苗大多是针对高危型HPV研制的，并不能帮助免疫于所有HPV病毒感染。例如二价疫苗只针对HPV病毒的16型和18型两种高危型别，因此接种过该疫苗的女性也应该定期检查生殖道的HPV感染。</text></view>
       <view style="width: 100%;height: 30rpx;"></view>
-      <view style="width: 100%;height: auto;"><text space="emsp" user-select="true">  HPV病毒可以通过接触传染。例如健康人接触到被HPV病毒感染者污染过的物品可能导致感染。因此，大家日常应该做好个人防护，避免到与他人的内衣、裤、毛巾等个人用品混合使用与清洗。</text></view>
+      <view style="width: 100%;height: auto;"><text space="emsp" user-select="true">
+          HPV病毒可以通过接触传染。例如健康人接触到被HPV病毒感染者污染过的物品可能导致感染。因此，大家日常应该做好个人防护，避免到与他人的内衣、裤、毛巾等个人用品混合使用与清洗。</text></view>
       <view style="width: 100%;height: 30rpx;"></view>
-      <view style="width: 100%;height: auto;"> <text space="emsp"user-select="true">  对于HPV感染者使用过的毛巾、床单等物品，务必需要煮沸且在太阳下暴晒消毒，才能有效切断传播途径。使用公共坐便器前，务必进行消毒处理。如果条件允许，推荐使用一次性马桶垫，或者卫生纸围制马桶坐垫。</text></view>
+      <view style="width: 100%;height: auto;"> <text space="emsp" user-select="true">
+          对于HPV感染者使用过的毛巾、床单等物品，务必需要煮沸且在太阳下暴晒消毒，才能有效切断传播途径。使用公共坐便器前，务必进行消毒处理。如果条件允许，推荐使用一次性马桶垫，或者卫生纸围制马桶坐垫。</text></view>
       <view style="width: 100%;height: 30rpx;"></view>
-      <view style="width: 100%;height: auto;"> <text space="emsp"user-select="true">  其实，HPV感染比大家认知的要普遍，在一部分人的皮肤中就可能存在HPV病毒。HPV病毒感染通常属于一过性的，感染者自身免疫系统即可对其清除。所以大家也没有必要对与HPV病毒恐惧，更不要抱着被HPV病毒感染就等同于耀患宫颈癌的想法，自己吓自己。</text>
+      <view style="width: 100%;height: auto;"> <text space="emsp" user-select="true">
+          其实，HPV感染比大家认知的要普遍，在一部分人的皮肤中就可能存在HPV病毒。HPV病毒感染通常属于一过性的，感染者自身免疫系统即可对其清除。所以大家也没有必要对与HPV病毒恐惧，更不要抱着被HPV病毒感染就等同于耀患宫颈癌的想法，自己吓自己。</text>
       </view>
     </view>
     <view style="position: absolute;width: 100%;height: 300rpx;">
