@@ -1,8 +1,11 @@
 {
   "pages": [
-    "pages/report/report",
-    "pages/report_epihpv/report_epihpv",
     "pages/index/index",
+    "pages/report/report",
+    "pages/pdf/epiliverpdf",
+    "pages/pdf/epihpvpdf",
+    "pages/pdf/epiagepdf",
+    "pages/report_epihpv/report_epihpv",
     "pages/service/service",
     "pages/epiage/epiage",
     "pages/epihpv/epihpv",

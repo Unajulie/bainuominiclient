@@ -27,15 +27,6 @@ Page({
       
       // data: {"barcode": 1121032800079},
        complete: function (res) {
-        //  for(var i in res.data){
-        //    if(Result_Flag==positive){
-        //      this.setData({
-        //       HospRptItemName:res.data[i].HospRptItemName,
-        //       Result_Str:res.data[i].Result_Str,
-        //       Result_Flag:res.data[i].Result_Flag})
-        //     }
-        //   //  console.info()
-        //   }
             //先刷选出阳性数据
         oThis.setData({
           report: res.data[0],

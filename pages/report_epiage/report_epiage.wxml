@@ -24,7 +24,7 @@
       </view>
      
       <view>
-        <button class="submit" bindtap="checkHpvReport">查询</button>
+        <button class="submit" bindtap="checkEpiageReport">查询</button>
       </view>
     </form>
   </view>

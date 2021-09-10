@@ -4,7 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    barcode: "",
+    sampleid: "",
   },
   scanCode: function () {
     var that = this;
@@ -14,7 +14,7 @@ Page({
       success(res) {
         console.log(res)
         that.setData({
-          barcode: res.result
+          sampleid: res.result
         });
       }
     })
@@ -23,22 +23,43 @@ Page({
 //获取到hpv报告页面输入的值，查询mysql数据库，并返回状态
 inputVal: function (e) {
 
-    let barcode = e.detail.value
-    console.info(barcode)
+    let sampleid = e.detail.value
+    console.info(sampleid)
     this.setData({
-      barcode: barcode
+      sampleid: sampleid
     })
 
   },
   //  
-  checkHpvReport: function () {
-    wx.navigateTo({
-      url: '../epihpvreport/epihpvreport?barcode=' + this.data.barcode,
-      success:function(res){
-        console.info("success")
+  checkEpiageReport: function () {
+    var that = this
+    console.info(this.data.sampleid+"-----")
+    wx.request({
+      url: "https://bainuo.beijingepidial.com/admin/epiage/checkepiageval",
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
       },
-      fail:function(){
-        console.info("failed")
+      method: "POST",
+      data: {"sampleid":that.data.sampleid},
+      // data: {"sampleid": 1121032800079},
+      complete: function (res) {
+        console.info("++++++++++++++++++++++")
+        console.info(res.data)
+if(!res.data){
+  wx.showModal({
+    title: '提示',
+    content:"请输入正确的条码"
+  })
+}else{
+       if(res.data.pdf){
+        wx.navigateTo({url: '../pdf/epiagepdf?pdf=' + res.data.pdf})
+       }else{
+         wx.showModal({
+           title: '提示',
+           content:"报告还未生成，请耐心等待！"
+         })
+       }
+      }
       }
     })
 

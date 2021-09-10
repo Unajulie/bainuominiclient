@@ -1,7 +1,7 @@
 <!-- <view class="head"></view> -->
 <view id="container">
   <view class='epihpv-wrapper'>
-    <view class="chech_report">肝癌检测报告查询</view>
+    <view class="chech_report">肝癌早筛报告查询</view>
     <view class='easy'> <text decode="true">方便&nbsp;快捷&nbsp;安全</text></view>
     <image mode='widthFix' class="bgepihpv" src="https://bainuo.beijingepidial.com/public/img/01.jpg"></image>
   </view>
@@ -23,8 +23,9 @@
         </view>
       </view>
       <view>
-        <button class="submit" bindtap="checkHpvReport">查询</button>
+        <button class="submit" bindtap="checkLiverReport">查询</button>
       </view>
+   
     </form>
   </view>
 </view>

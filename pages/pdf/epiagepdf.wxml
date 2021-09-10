@@ -1,0 +1,1 @@
+<web-view src="https://bainuo.beijingepidial.com/public/pdffile/{{pdfname}}"></web-view>
