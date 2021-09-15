@@ -52,6 +52,8 @@ if(!res.data){
   })
 }else{
        if(res.data.pdf){
+        //  console.info(res.data.pdf)
+        
         wx.navigateTo({url: '../pdf/epiagepdf?pdf=' + res.data.pdf})
        }else{
          wx.showModal({

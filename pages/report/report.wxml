@@ -13,7 +13,7 @@
 <view>
   <navigator url='../report_epiliver/report_epiliver'>
     <button class='epiliver_button'>
-      <text>肝癌筛查报告查询</text>
+      <text>肝癌早期筛查报告查询</text>
     </button>
   </navigator>
 </view>

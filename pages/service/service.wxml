@@ -15,7 +15,7 @@
 <view>
   <navigator url='../epiliver/epiliver'>
     <button class='epiliver_button'>
-      <text>肝癌筛查预约</text>
+      <text>肝癌早期筛查预约</text>
     </button>
   </navigator>
 </view>

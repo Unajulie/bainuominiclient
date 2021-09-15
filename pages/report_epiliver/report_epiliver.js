@@ -32,45 +32,42 @@ inputVal: function (e) {
   },
   //  
   checkLiverReport: function () {
-    var that = this
-    wx.request({
-      url: "https://bainuo.beijingepidial.com/admin/epiliver/checkliverval",
-      header: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      method: "POST",
-      data: {"sampleid":that.data.sampleid},
-      // data: {"sampleid": 1121032800079},
-      complete: function (res) {
-        console.info("++++++++++++++++++++++")
-        console.info(res.data)
-if(!res.data){
-  wx.showModal({
-    title: '提示',
-    content:"请输入正确的条码"
-  })
-}else{
-       if(res.data.pdf){
-        wx.navigateTo({url: '../pdf/epiliverpdf?pdf=' + res.data.pdf})
-       }else{
-         wx.showModal({
-           title: '提示',
-           content:"报告还未生成，请耐心等待！"
-         })
-       }
-      }
-      }
-    })
-    // var params = options.params;
-    // var id = options.pgxTestBasicId;
-    // that.setData({
-    //   reportUrl: params + '?pgxTestBasicId=' + id
-    // })
-    // that.setData({
-    //   reportShow: false
-    // })
-   
-
+    let oThat=this
+    //console.info("https://bainuo.beijingepidial.com/public/pdffile/"+this.data.sampleid+".pdf")
+    wx.showToast({title: '加载中', icon: 'loading', duration: 10000});
+    wx.downloadFile({
+      url:"https://bainuo.beijingepidial.com/public/pdffile/"+this.data.sampleid+".pdf",  
+      header: {},
+      success: function(res) {
+        var filePath = res.tempFilePath;
+        console.log(res);
+        if (res.statusCode == 404) {
+          wx.showToast({title: '请输入正确的二维码！',icon: 'success',duration: 2000})
+        } else {
+          wx.openDocument({
+            filePath: filePath,
+            fileType: 'pdf',
+            success: function(res) {
+              console.log(res);
+              wx.showToast({title: "打开成功",icon: 'success',duration: 2000})
+            },
+            fail: function(res) {
+              wx.showToast({title: "打开失败",icon: 'success',duration: 2000})
+            },   
+            complete: function(res) {
+              
+              console.log(res);
+            }
+            })
+          }
+        },
+        fail: function(res) { 
+          console.info(res)
+          console.log('文件下载失败');
+        },
+        complete: function(res) {},
+        
+        })
   },
   
   /**
