@@ -1,0 +1,123 @@
+<!--pages/report_epiage/report_epistatus.wxml-->
+<view>
+    <view style="width: 100%;height: auto; position:absolute">
+        <image style="width: 100% ;position:absolute" mode="widthFix" src="../../img/statusbg.png"></image>
+        <view style="width: 100%;height: auto; display:flex;position: absolute ;top:30px;">
+            <view style="width: 100%;height: auto;">
+                <image style="width: 25%;" mode="widthFix" src="../../img/logo.png"></image>
+            </view>
+            <view style="width: 60%;height: auto;position: absolute;top:24px;left: -35px;">
+                <view style="text-align: right;font-weight: 700;font-size: 20px;">进度查询</view>
+            </view>
+        </view>
+        <view style="width: 100%;height: auto;position: absolute ;top: 135px;">
+            <view style="width: 80%;height: auto;margin: 0 auto;font-weight: 700;">当前进度!</view>
+        </view>
+        <view style="width: 100%;height:auto;position: absolute;top:160px">
+            <view style="width: 80%;height:auto;margin: 0 auto;display: flex">
+                <view style="width: 10%;height: 534px;">
+                    <view style="width: 100%;height: auto;flex-direction: column;">
+                        <view
+                            style="border-radius: 23px; width: 23px;height:23px; background-color: #7c7c7c;text-align: center;color: white;position: absolute;margin-top:20px;font-weight: 700;">
+                            √</view>
+                        <view
+                            style="border-radius: 23px; width: 23px;height:23px; background-color: #069ce8;text-align: center;color: white;position: absolute;top:90px;font-weight: 700;">
+                            √</view>
+                        <view
+                            style="border-radius: 23px; width: 23px;height:23px; background-color: #7c7c7c;text-align: center;color: white;position: absolute;top:160px;font-weight: 700;">
+                            √</view>
+                        <view
+                            style="border-radius: 23px; width: 23px;height:23px; background-color: #7c7c7c;text-align: center;color: white;position: absolute;top:230px;font-weight: 700;">
+                            √</view>
+                        <view
+                            style="border-radius: 23px; width: 23px;height:23px; background-color: #7c7c7c;text-align: center;color: white;position: absolute;top:300px;font-weight: 700;">
+                            √</view>
+                        <view
+                            style="border-radius: 23px; width: 23px;height:23px; background-color: #7c7c7c;text-align: center;color: white;position: absolute;top:370px;font-weight: 700;">
+                            √</view>
+                        <view
+                            style="border-radius: 23px; width: 23px;height:23px; background-color: #7c7c7c;text-align: center;color: white;position: absolute;top:440px;font-weight: 700;">
+                            √</view>
+                    </view>
+                    <view style="width: 15%;height: 534px;margin: 0 auto;background-color: #b5b5b5;"></view>
+                </view>
+                <view style="width: 100%;height: 534px;">
+                    <view style="width: 100%;height: 30px;display: flex;">
+                        <!-- 空盒子 -->
+                        <view style="width: 0%;height: 35px;margin-left: 5px;"></view>
+                        <view style="width: 80%;height: 35px;background-color: #7b7c7e;display: flex;border-radius: 5px;margin-top: 15px;">
+                            <view style="width: 20%;height: 35px;position: relative;">
+                                <image style="position: absolute;top:5px;left:8px;;width: 25px;height: 30px ;" mode="widthFix" src="../../img/status01.png"></image>
+                            </view>
+                            <view style="width: 80%;height: 35px;line-height: 35px;margin-left:8px;font-size: 12px;color: white;">该条码等待检测中</view>
+                        </view>
+                    </view>
+
+                    <view style="width: 100%;height: 30px;display: flex;">
+                        <!-- 空盒子 -->
+                        <view style="width: 20%;height: 35px;margin-left: 5px;"></view>
+                        <view style="width: 80%;height: 35px;background-color: #069ce8;display: flex;border-radius: 5px;margin-top: 55px;">
+                            <view style="width: 20%;height: 35px;position: relative;">
+                                <image style="position: absolute;top:5px;left:8px;;width: 25px;height: 30px ;" mode="widthFix" src="../../img/status02.png"></image>
+                            </view>
+                            <view style="width: 80%;height: 35px;line-height: 35px;margin-left:8px;font-size: 12px;color: white;">试剂盒已从实验室寄出</view>
+                        </view>
+                    </view>
+                    <view style="width: 100%;height: 30px;display: flex;">
+                        <!-- 空盒子 -->
+                        <view style="width: 0%;height: 35px;margin-left: 5px;"></view>
+                        <view style="width: 80%;height: 35px;background-color: #7b7c7e;display: flex;border-radius: 5px;margin-top: 95px;">
+                            <view style="width: 20%;height: 35px;position: relative;">
+                                <image style="position: absolute;top:5px;left:8px;;width: 25px;height: 30px ;" mode="widthFix" src="../../img/status03.png"></image>
+                            </view>
+                            <view style="width: 80%;height: 35px;line-height: 35px;margin-left:8px;font-size: 12px;color: white;">实验室已收到您寄回的样本</view>
+                        </view>
+                    </view>
+                    <view style="width: 100%;height: 30px;display: flex;">
+                        <!-- 空盒子 -->
+                        <view style="width: 0%;height: 35px;margin-left: 5px;"></view>
+                        <view style="width: 80%;height: 35px;background-color: #7b7c7e;display: flex;border-radius: 5px;margin-top: 135px;">
+                            <view style="width: 20%;height: 35px;position: relative;">
+                                <image style="position: absolute;top:5px;left:8px;;width: 25px;height: 30px ;" mode="widthFix" src="../../img/status04.png"></image>
+                            </view>
+                            <view style="width: 80%;height: 35px;line-height: 35px;margin-left:8px;font-size: 12px;color: white;">样本等待检测中</view>
+                        </view>
+                    </view>
+                    <view style="width: 100%;height: 30px;display: flex;">
+                        <!-- 空盒子 -->
+                        <view style="width: 0%;height: 35px;margin-left: 5px;"></view>
+                        <view style="width: 80%;height: 35px;background-color: #7b7c7e;display: flex;border-radius: 5px;margin-top: 175px;">
+                            <view style="width: 20%;height: 35px;position: relative;">
+                                <image style="position: absolute;top:5px;left:8px;;width: 25px;height: 30px ;" mode="widthFix" src="../../img/status05.png"></image>
+                            </view>
+                            <view style="width: 80%;height: 35px;line-height: 35px;margin-left:8px;font-size: 12px;color: white;">样本DNA正在提取中</view>
+                        </view>
+                    </view>
+                    <view style="width: 100%;height: 30px;display: flex;">
+                        <!-- 空盒子 -->
+                        <view style="width: 0%;height: 35px;margin-left: 5px;"></view>
+                        <view style="width: 80%;height: 35px;background-color: #7b7c7e;display: flex;border-radius: 5px;margin-top: 225px;">
+                            <view style="width: 20%;height: 35px;position: relative;">
+                                <image style="position: absolute;top:5px;left:8px;;width: 25px;height: 30px ;" mode="widthFix" src="../../img/status06.png"></image>
+                            </view>
+                            <view style="width: 80%;height: 35px;line-height: 35px;margin-left:8px;font-size: 12px;color: white;">样本DNA序列正在分析中</view>
+                        </view>
+                    </view>
+                    <view style="width: 100%;height: 30px;display: flex;">
+                        <!-- 空盒子 -->
+                        <view style="width: 0%;height: 35px;margin-left: 5px;"></view>
+                        <view style="width: 80%;height: 35px;background-color: #7b7c7e;display: flex;border-radius: 5px;margin-top: 255px;">
+                            <view style="width: 20%;height: 35px;position: relative;">
+                                <image style="position: absolute;top:5px;left:8px;;width: 25px;height: 30px ;" mode="widthFix" src="../../img/status07.png"></image>
+                            </view>
+                            <view style="width: 80%;height: 35px;line-height: 35px;margin-left:8px;font-size: 12px;color: white;">样本报告已生成</view>
+                        </view>
+                    </view>
+                   
+
+                </view>
+            </view>
+
+        </view>
+    </view>
+</view>

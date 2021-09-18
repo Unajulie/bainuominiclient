@@ -6,6 +6,7 @@ Page({
   data: {
     sampleid: "",
   },
+  
   scanCode: function () {
     var that = this;
     // 只允许从相机扫码
@@ -46,33 +47,55 @@ inputVal: function (e) {
         console.info(res.data)
         switch (res.data.status){
           case "INVALID":
-            wx.showModal({title: '提示',content:"库存查无该条码，请联系客服"})
+            // wx.showModal({title: '提示',content:"库存查无该条码，请联系客服"})
+            
+            wx.navigateTo({
+              url: '../report_epiage/report_epistatus?INVALID=res.data.status',
+            })
             break;
           case "NO_STATUS":
-            wx.showModal({title: '提示',content:"该条码等待检测中"})
+            // wx.showModal({title: '提示',content:"该条码等待检测中"})
+            wx.navigateTo({
+              url: '../report_epiage/report_epistatus?NO_STATUS',
+            })
             break;
           case "POST_FROM_LAB":
-            wx.showModal({title: '提示',content:"试剂盒已从实验室寄出"})
+            // wx.showModal({title: '提示',content:"试剂盒已从实验室寄出"})
+            wx.navigateTo({
+              url: '../report_epiage/report_epistatus?POST_FROM_LAB',
+            })
             break;
           case "PARCEL_RECEIVED":
-            wx.showModal({title: '提示',content:"实验室已收到您寄回的样本包裹"})
+            // wx.showModal({title: '提示',content:"实验室已收到您寄回的样本包裹"})
+            wx.navigateTo({
+              url: '../report_epiage/report_epistatus?PARCEL_RECEIVED',
+            })
             break;
             case "REGISTERED_IN_LIMS":
-              wx.showModal({title: '提示',content:"样本已经等待检测"})
+              // wx.showModal({title: '提示',content:"样本已经等待检测"})
+              wx.navigateTo({
+                url: '../report_epiage/report_epistatus?REGISTERED_IN_LIMS',
+              })
               break;
               case "WAITING_DNA_PREP":
-                wx.showModal({title: '提示',content:"等待DNA提取"})
+                // wx.showModal({title: '提示',content:"等待DNA提取"})
+                wx.navigateTo({
+                  url: '../report_epiage/report_epistatus?WAITING_DNA_PREP',
+                })
                 break;
               case "SEQUENCING":
-                wx.showModal({title: '提示',content:"分析DNA序列中"})
+                // wx.showModal({title: '提示',content:"分析DNA序列中"})
+                wx.navigateTo({
+                  url: '../report_epiage/report_epistatus?SEQUENCING',
+                })
                 break;  
           case "Completed":
-            if(res.data.pdf){
+            /* if(res.data.pdf){
               wx.showToast({title: '加载中', icon: 'loading', duration: 10000});
               wx.navigateTo({url: '../pdf/epiagepdf?pdf=' + res.data.pdf})
             }else{
               wx.showModal({title: '提示',content:"报告已经生成,等待管理员生成PDF报告"})
-            }
+            } */
             break;
         }
      
