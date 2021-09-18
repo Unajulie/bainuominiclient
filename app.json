@@ -1,6 +1,9 @@
 {
   "pages": [
+    "pages/epiage/login",
     "pages/index/index",
+    "pages/epiage/fgpwd",
+    "pages/epiage/register",
     "pages/report/report",
     "pages/pdf/epiliverpdf",
     "pages/pdf/epihpvpdf",
@@ -31,7 +34,6 @@
     "pages/reser_epiage/reser_epiage",
     "pages/report_epiliver/report_epiliver",
     "pages/report_epiage/report_epiage",
-
     "pages/logs/logs"
   ],
   "window": {

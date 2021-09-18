@@ -1,0 +1,4 @@
+/* pages/liver/register.wxss */
+.phcolor{
+    color: #cecece;
+}

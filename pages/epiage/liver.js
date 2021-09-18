@@ -1,4 +1,4 @@
-// pages/report/report.js
+// pages/liver/liver.js
 Page({
 
   /**
@@ -11,19 +11,6 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  btnlogin:function(e){
-    console.info(wx.getStorageSync("sessionuser"))
-   if(!wx.getStorageSync("sessionuser")){
-    wx.navigateTo({
-      url: "../epiage/login"
-    })
-   }else{
-    wx.navigateTo({
-      url: "../report_epiage/report_epiage"
-    })
-   }
-   
-  },
   onLoad: function (options) {
 
   },

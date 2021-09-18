@@ -3,11 +3,9 @@
     <image mode='widthFix'  src='https://bainuo.beijingepidial.com/public/img/report.jpg'></image>
   </view>
   <view class='blank'></view>
-  <navigator url='../report_epiage/report_epiage'>
-    <button class='epiage_button'>
+    <button bindtap="btnlogin" class='epiage_button'>
       <text>生物学年龄报告查询</text>
     </button>
-  </navigator>
 </view>
 <view class='blank'></view>
 <view>

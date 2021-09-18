@@ -1,0 +1,4 @@
+/* pages/epiage/fgpwd.wxss */
+.phcolor{
+    color: #cecece;
+}
