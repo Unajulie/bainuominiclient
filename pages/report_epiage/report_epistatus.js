@@ -1,24 +1,19 @@
 // pages/report_epiage/report_epistatus.js
 Page({
-    onLoad: function(options) {  
-        console.info(options.INVALID )
-        this.setData({
-              
-            INVALID: options.INVALID  
-        })  
-      } ,
+
     /**
      * 页面的初始数据
      */
     data: {
-    INVALID:''
+   
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        console.info(options.status )
+        this.setData({status: options.status }) 
     },
 
     /**

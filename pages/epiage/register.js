@@ -119,13 +119,14 @@ Page({
                 duration: 2000
             })    
         }
-        else if(!this.data.vdcodein){
-            wx.showToast({
-                title: '验证码必填',
-                icon: 'error',
-                duration: 2000
-            })  
-        }else if(!this.data.inputpwd){
+        // else if(!this.data.vdcodein){
+        //     wx.showToast({
+        //         title: '验证码必填',
+        //         icon: 'error',
+        //         duration: 2000
+        //     })  
+        // }
+        else if(!this.data.inputpwd){
             wx.showToast({
                 title: '请输入密码',
                 icon: 'error',
@@ -143,13 +144,15 @@ Page({
                 icon: 'error',
                 duration: 2000
             })
-        }else if(this.data.vdcodein!=this.data.vdcode){
-            wx.showToast({
-                title: '验证码输入有误',
-                icon: 'error',
-                duration: 2000
-            })
-        }else{
+        }
+        // else if(this.data.vdcodein!=this.data.vdcode){
+        //     wx.showToast({
+        //         title: '验证码输入有误',
+        //         icon: 'error',
+        //         duration: 2000
+        //     })
+        // }
+        else{
             let sessionuser={}
             sessionuser.phone=this.data.phone
             sessionuser.password=this.data.inputpwd
@@ -165,20 +168,23 @@ Page({
                 complete: function (res) {
                     console.info(res.data)
                    if(res.data.status=="success"){
-                    wx.showModal({
-                        title: '提示',
-                        content: '注册成功',
-                        success (res) {
-                          if (res.confirm) {
-                            wx.setStorage({'sessionuser':sessionuser})
-                            wx.navigateTo({
-                                url: "../report_epiage/report_epiage"
-                              })
-                          } else if (res.cancel) {
-                            console.log('用户点击取消')
-                          }
+                    wx.setStorage({
+                        key: "sessionuser",
+                        data: sessionuser,
+                        success: function(res){
+                            console.info(res)
+                            wx.navigateTo({url: "../report_epiage/report_epiage"})
+                        },
+                        fail:function(res){
+                            console.info(res)
+                            wx.showToast({
+                                title: '登陆状态保存失败',
+                                icon: 'error',
+                                duration: 2000
+                            })
                         }
-                      })
+                      })  
+                   
                    }
                     // wx.navigateTo({
                     //     url: "../report_epiage/report_epiage"
@@ -251,4 +257,4 @@ Page({
     onShareAppMessage: function () {
 
     }
-})
+}) 

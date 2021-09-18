@@ -73,9 +73,22 @@ Page({
             complete: function (res) {
                 console.info(res.data)
                if(res.data.status=="success"){
-                wx.setStorage({'sessionuser':sessionuser})
-                console.info(wx.getStorageSync('sessionuser'))
-                wx.navigateTo({url: "../report_epiage/report_epiage"})
+                wx.setStorage({
+                  key: "sessionuser",
+                  data: sessionuser,
+                  success: function(res){
+                      console.info(res)
+                      wx.navigateTo({url: "../report_epiage/report_epiage"})
+                  },
+                  fail:function(res){
+                      console.info(res)
+                      wx.showToast({
+                          title: '登陆状态保存失败',
+                          icon: 'error',
+                          duration: 2000
+                      })
+                  }
+                })                 
                }else{
                 wx.showToast({
                     title: '账号有误',

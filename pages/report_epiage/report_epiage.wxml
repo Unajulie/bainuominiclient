@@ -22,10 +22,26 @@
           </view>
         </view>
       </view>
-     
       <view>
         <button class="submit" bindtap="checkEpiageReport">查询</button>
       </view>
+      <view style="width: 100%;height: 10px;"></view>
+      <view wx:if="{{barcodebox.length>0}}" style="width: 100%;height: auto;">
+      <view style="width: 100%;height: auto;">
+        <view style="width: 80%;height: auto;margin: 0 auto;">
+        
+          <view style="color: #808080;">已注册条码:</view>
+          <block wx:key="i" wx:for="{{barcodebox}}" wx:for-item="data">
+          <view style="width: 100%;height: 5px;"></view>
+            <view data-simpleid="{{data.sampleid}}"  bindtap="checkEpiageReport" style="width:100%;height: 45px;border: 1px  dashed #808080; border-radius: 5px;">
+              <view style="color:#808080;">条码：{{data.sampleid}}</view>
+              <view style="color:#808080;">状态：{{data.status=="NO_STATUS"?"等待检测中":data.status=="POST_FROM_LAB"?"已从实验室寄出":data.status=="PARCEL_RECEIVED"?"实验室已取得唾液样本":data.status=="REGISTERED_IN_LIMS"?"样本已录入检测队列":data.status=="WAITING_DNA_PREP"?"等待提取DNA":data.status=="SEQUENCING"?"分析DNA序列中":"已完成检测，请查看报告"}}</view>
+            </view>
+             
+          </block>
+        </view>
+      </view>
+    </view> 
     </form>
   </view>
 </view>
