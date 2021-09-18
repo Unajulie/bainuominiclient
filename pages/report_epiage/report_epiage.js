@@ -41,21 +41,21 @@ inputVal: function (e) {
       key:'sessionuser',
       success:function (res) {
         console.log('s:' + res.data)
+        let phone =e.currentTarget.dataset.phone?e.currentTarget.dataset.phone:res.data.phone
         wx.request({
           url: "https://bainuo.beijingepidial.com/client/epiage/uploadbarcode",
           header: {"Content-Type": "application/x-www-form-urlencoded"},
           method: "POST",
-          data: {"barcode":barcode,"phone":e.currentTarget.dataset.phone?e.currentTarget.dataset.phone:res.data.phone},
+          data: {"barcode":barcode,"phone":phone},
           // data: {"sampleid": 1121032800079},
           complete: function (res) {
-            console.info("++++++++++++++++++++++")
             console.info("xxxxx-->"+res.data)
             //如果是空字符串
-            if(res.data==""){wx.showModal({title: '提示',content:"库存查无该条码，请联系客服"});return}
-            wx.navigateTo({
-              url: "../report_epiage/report_epistatus?status="+res.data.status,
-            })
-        
+            if(res.data==""){wx.showModal({title: '提示',content:"库存查无该条码，请联系客服"})}
+            else{
+              let url="../report_epiage/report_epistatus?status="+res.data.status+"&barcode="+barcode+"&phone="+phone
+              wx.navigateTo({ url:url })
+            }
           },
         fail:function(res){
         }})

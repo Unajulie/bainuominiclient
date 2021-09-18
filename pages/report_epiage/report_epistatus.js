@@ -7,13 +7,35 @@ Page({
     data: {
    
     },
-
+    showpdf:function(e){
+        let phone=e.currentTarget.dataset.phone
+        let barcode=e.currentTarget.dataset.barcode
+        wx.request({
+            url: "https://bainuo.beijingepidial.com/client/epiage/ckreport",
+            header: {"Content-Type": "application/x-www-form-urlencoded"},
+            method: "POST",
+            data: {"barcode":barcode,"phone":phone},
+            // data: {"sampleid": 1121032800079},
+            complete: function (res) {
+              console.info(res.data)
+              if(res.data.pdf){
+                let url="../pdf/epiagepdf?pdfname="+res.data.pdf
+                wx.navigateTo({ url:url })
+              }else{
+                wx.showModal({title: '提示',content:"PDF努力生成中,请耐心等待"})
+              }
+             
+          
+            },
+          fail:function(res){
+          }})
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
         console.info(options.status )
-        this.setData({status: options.status }) 
+        this.setData({status: options.status ,phone:options.phone,barcode:options.barcode}) 
     },
 
     /**

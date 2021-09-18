@@ -13,7 +13,7 @@ Page({
      */
     onLoad: function (options) {
         console.info(options)
-        this.setData({pdfname:options.pdf})
+        this.setData({pdfname:options.pdfname})
     },
 
     /**

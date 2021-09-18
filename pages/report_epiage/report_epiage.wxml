@@ -39,6 +39,7 @@
             </view>
              
           </block>
+          <view style="width: 100%;height: 20px;"></view>
         </view>
       </view>
     </view> 
