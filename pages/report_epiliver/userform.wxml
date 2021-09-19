@@ -8,7 +8,7 @@
     <view style="width: 100%;height: auto;">
       <view style="width: 100%;height: 100rpx;display: flex;">
         <label>姓名<span style="color: red;">*</span> :  </label><input name="idname" type="text" placeholder="请输入" bindinput='bininput_name'
-          value="" />
+          value="{{username}}" />
       </view>
       <view style="width: 100%;height: 100rpx;display: flex;">
         <radio-group name="sex" bindchange="radioChange" style="display: flex;">
@@ -19,26 +19,25 @@
         </radio-group>
       </view>
       <view style="width: 100%;height: 100rpx;display: flex;">
-        <label>电话<span style="color: red;">*</span> ：</label><input name="tel" type="number" value="" bindinput='bininput_mobile'
+        <label>电话<span style="color: red;">*</span> ：</label><input name="tel" type="number" value="{{phone}}" bindinput='bininput_mobile'
           placeholder="请输入" />
       </view>
       <view style="width: 100%;height: 100rpx;display: flex;">
-        <label>身份证<span style="color: red;">*</span> ：</label><input name="identity" type="idcard" value=""
+        <label>身份证<span style="color: red;">*</span> ：</label><input name="identity" type="idcard" value="{{identity}}"
           placeholder="请输入" bindinput='bininput_identity' auto-focus="true"/>
       </view>
       <view style="width: 100%;height: 100rpx;display: flex;">
-        <label>样本编码</label><span style="color: red;">*</span> ：<input name="sampid" type="text" value="" bindinput='bininput_sampleid'
-          placeholder="请输入" />
+        <label>样本编码</label><span style="color: red;">*</span> ：<input  name="sampleid" type="text" value="{{sampleid}}" />
       </view>
       <view style="width: 100%;height: 100rpx;line-height: 100rpx; display: flex;">
         <radio name="agreement" value="" checked="" />
-        <navigator open-type="reLaunch" url="/pages/agreement/agreement" hover-class="navigator-hover">
+        <navigator  url="/pages/agreement/agreement" hover-class="navigator-hover">
           <view style="font-size:36rpx ;height: 100rpx;line-height: 100rpx;">同意并接受条款</view>
         </navigator>
       </view>
   <view style="width: 100%;height: 40rpx;overflow: hiddden;"></view>
       <view class="submitwrap">
-        <button class='epiliver_button' bindtap="goToPage1">查询报告</button>
+        <button class='epiliver_button' bindtap="btnckreport">查询报告</button>
       </view>
     </view>
   </form>

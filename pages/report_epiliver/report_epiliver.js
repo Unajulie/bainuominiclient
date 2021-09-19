@@ -48,17 +48,11 @@ inputVal: function (e) {
           data: {"sampleid":oThis.data.sampleid,"phone":phone},
           // data: {"sampleid": 1121032800079},
           complete: function (res) {
-            console.info("xxxxx-->"+res.data)
+            console.info(res.data)
             //如果是空字符串
-            if(res.data==""){wx.showModal({title: '提示',content:"库存查无该条码，请联系客服"})}
-            else if(res.data.status=="user_empty"){
-              wx.navigateTo({
-                url: 'userform',
-              })
-            }
+            if(res.data.status=="fail"){wx.showModal({title: '提示',content:"库存查无该条码，请联系客服"})}
             else{
-              let url="../report_epiage/report_epistatus?status="+res.data.status+"&barcode="+barcode+"&phone="+phone
-              wx.navigateTo({ url:url })
+              wx.navigateTo({url: 'userform?sampleid='+oThis.data.sampleid})
             }
           },
         fail:function(res){
