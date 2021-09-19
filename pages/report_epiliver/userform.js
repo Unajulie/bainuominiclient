@@ -5,9 +5,30 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        items: [{sex:'男',value:'male'},{sex:'女',value:'female'}]
+    
     },
 
+//绑定输入的姓名 
+bininput_name: function (e) {  this.setData({   idname: e.detail.value  }) 
+console.info(e.detail.value )
+},
+//绑定选择的性别 
+bininput_sex: function (e) {  this.setData({   sex: e.detail  }) 
+console.info(e.detail.value )
+}, 
+//绑定输入的身份证 
+bininput_identity: function (e) {  this.setData({   identity: e.detail.value  }) 
+console.info(e.detail.value )
+}, 
+//绑定输入的电话 
+bininput_mobile: function (e) {  this.setData({   mobile: e.detail.value  }) 
+console.info(e.detail.value )
+},
+//绑定输入的样本编码
+bininput_sampleid: function (e) {  this.setData({   identity: e.detail.value  }) 
+console.info(e.detail.value )
+}, 
     /**
      * 生命周期函数--监听页面加载
      */

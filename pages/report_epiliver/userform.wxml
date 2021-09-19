@@ -1,34 +1,45 @@
 <view class="container">
-  <view class="title">肝癌筛查</view>
-  <view class="sub-title">用户信息登记表</view>
+  <view class="title" style="width: 100%;height: 100rpx;line-height: 100rpx;font-size: 46rpx; text-align: center;">
+    肝癌早期筛查</view>
+  <view class="sub-title" style="width: 100%;height: 50rpx;line-height: 50rpx;font-size: 36rpx; text-align: center;">
+    用户信息登记表</view>
   <form bindsubmit="formSubmit" bindreset="formReset" report-submit="true">
-    <view class="wrap">
-      <label>姓名<span style="color: red;">*</span> :</label><input name="username" type="text" placeholder="请输入"
-        value="" />
-    </view>
-    <view class="wrap">
-      <radio-group name="sex" bindchange="radioChange">
-        <label>性别<span style="color: red;">*</span> :</label>
-        <label style="display:block;" wx:for-items="{{items}}">
-          <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
-        </label>
-      </radio-group>
-    </view>
-    <view class="wrap">
-      <label>电话<span style="color: red;">*</span>：</label><input name="tel" type="number" value="" placeholder="请输入" />
-    </view>
-    <view class="wrap">
-      <label>样本编码</label><span style="color: red;">*</span>：<input name="sampid" type="text" value=""
-        placeholder="请输入" />
-    </view>
-    <view class="wrap">
-      <radio name="agreement" value="" checked="" />
-      <navigator open-type="reLaunch" url="/pages/agreement/agreement" hover-class="navigator-hover">
-      <label>同意并接受条款</label>
-      </navigator>
-    </view>
-    <view class="submitwrap">
-      <button class='submit' bindtap="goToPage1">查询报告</button>
+    <view style="width: 100%;height: 40rpx;"></view>
+    <view style="width: 100%;height: auto;">
+      <view style="width: 100%;height: 100rpx;display: flex;">
+        <label>姓名<span style="color: red;">*</span> :  </label><input name="idname" type="text" placeholder="请输入" bindinput='bininput_name'
+          value="" />
+      </view>
+      <view style="width: 100%;height: 100rpx;display: flex;">
+        <radio-group name="sex" bindchange="radioChange" style="display: flex;">
+          <label>性别<span style="color: red;">*</span> : </label>
+          <label style="display:block;margin-left: 10rpx;" wx:for-items="{{items}}">
+            <radio bindinput='bininput_sex' value="{{items.value}}" checked="{{items.checked}}" />{{item.sex}}
+          </label>
+        </radio-group>
+      </view>
+      <view style="width: 100%;height: 100rpx;display: flex;">
+        <label>电话<span style="color: red;">*</span> ：</label><input name="tel" type="number" value="" bindinput='bininput_mobile'
+          placeholder="请输入" />
+      </view>
+      <view style="width: 100%;height: 100rpx;display: flex;">
+        <label>身份证<span style="color: red;">*</span> ：</label><input name="identity" type="idcard" value=""
+          placeholder="请输入" bindinput='bininput_identity' auto-focus="true"/>
+      </view>
+      <view style="width: 100%;height: 100rpx;display: flex;">
+        <label>样本编码</label><span style="color: red;">*</span> ：<input name="sampid" type="text" value="" bindinput='bininput_sampleid'
+          placeholder="请输入" />
+      </view>
+      <view style="width: 100%;height: 100rpx;line-height: 100rpx; display: flex;">
+        <radio name="agreement" value="" checked="" />
+        <navigator open-type="reLaunch" url="/pages/agreement/agreement" hover-class="navigator-hover">
+          <view style="font-size:36rpx ;height: 100rpx;line-height: 100rpx;">同意并接受条款</view>
+        </navigator>
+      </view>
+  <view style="width: 100%;height: 40rpx;overflow: hiddden;"></view>
+      <view class="submitwrap">
+        <button class='epiliver_button' bindtap="goToPage1">查询报告</button>
+      </view>
     </view>
   </form>
   <view wx:if="{{isSubmit}}">

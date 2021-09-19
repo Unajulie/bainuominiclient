@@ -1,5 +1,8 @@
 /* pages/service/service.wxss */
-
+container{
+  width: 90%;
+  margin: 0 auto;
+}
 view {
     height: auto;
     /* width: calc(750rpx*100/375); */
@@ -9,10 +12,6 @@ view {
     align-self: center;
   }
   
-  img_wrap {
-    width: 100%;
-    height: 400rpx;
-  }
   image{
     width: 100%;
     height: auto;
