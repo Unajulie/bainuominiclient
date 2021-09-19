@@ -78,7 +78,9 @@ Page({
                   data: sessionuser,
                   success: function(res){
                       console.info(res)
-                      wx.navigateTo({url: "../report_epiage/report_epiage"})
+                      //直接跳到tab首页
+                      wx.switchTab({url: '../index/index'})
+                     
                   },
                   fail:function(res){
                       console.info(res)

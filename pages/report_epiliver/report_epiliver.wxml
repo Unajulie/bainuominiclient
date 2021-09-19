@@ -23,7 +23,7 @@
         </view>
       </view>
       <view>
-        <button class="submit" bindtap="checkLiverReport">查询</button>
+        <button class="submit" bindtap="checkLiverReport">查询/注册/上传</button>
       </view>
    
     </form>

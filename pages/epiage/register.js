@@ -173,7 +173,7 @@ Page({
                         data: sessionuser,
                         success: function(res){
                             console.info(res)
-                            wx.navigateTo({url: "../report_epiage/report_epiage"})
+                            wx.switchTab({url: '../index/index'})
                         },
                         fail:function(res){
                             console.info(res)
