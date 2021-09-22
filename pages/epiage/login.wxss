@@ -6,3 +6,10 @@
 button::after {
     border: none
   }
+  page{
+    overflow: hidden;
+    position: fixed;
+    background-image: url("https://bainuo.beijingepidial.com/public/img/linverloginbg.png");
+    margin: 0;
+    background-size: 100% 100%;
+  }
