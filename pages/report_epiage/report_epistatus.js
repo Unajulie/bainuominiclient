@@ -8,13 +8,16 @@ Page({
    
     },
     showpdf:function(e){
-        let phone=e.currentTarget.dataset.phone
-        let barcode=e.currentTarget.dataset.barcode
+        let data={}
+        data.phone=e.currentTarget.dataset.phone
+        data.barcode=e.currentTarget.dataset.barcode
+        console.info(data)
+        wx.showLoading({title: '加载中', mask:true})
         wx.request({
             url: "https://bainuo.beijingepidial.com/client/epiage/ckreport",
             header: {"Content-Type": "application/x-www-form-urlencoded"},
             method: "POST",
-            data: {"barcode":barcode,"phone":phone},
+            data: data,
             // data: {"sampleid": 1121032800079},
             complete: function (res) {
               console.info(res.data)

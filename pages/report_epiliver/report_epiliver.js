@@ -40,17 +40,17 @@ Page({
       key: 'sessionuser',
       success: function (res) {
         console.log('s:' + res.data)
-        let phone = e.currentTarget.dataset.phone ? e.currentTarget.dataset.phone : res.data.phone
+        let data={}
+        data.phone = e.currentTarget.dataset.phone ? e.currentTarget.dataset.phone : res.data.phone
+        data.sampleid= e.currentTarget.dataset.simpleid ? e.currentTarget.dataset.simpleid : oThis.data.sampleid
+        console.info(data)
         wx.request({
           url: "https://bainuo.beijingepidial.com/client/liver/uploadbarcode",
           header: {
             "Content-Type": "application/x-www-form-urlencoded"
           },
           method: "POST",
-          data: {
-            "sampleid": oThis.data.sampleid,
-            "phone": phone
-          },
+          data: data,
           // data: {"sampleid": 1121032800079},
           complete: function (res) {
             console.info(res.data)
@@ -119,6 +119,30 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let oThis=this
+    wx.getStorage({
+      key:'sessionuser',
+      success:function (res) {
+        console.log('s:' + res.data)
+        wx.request({
+          url: "https://bainuo.beijingepidial.com/client/liver/barcodes",
+          header: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          method: "POST",
+          data: {"tel":res.data.phone},
+          // data: {"sampleid": 1121032800079},
+          complete: function (res) {
+            oThis.setData({barcodebox:res.data})
+            }
+          })
+      },
+      fail:function(res){
+        wx.navigateTo({
+          url: '../epiage/login',
+        })
+      }
+    }) 
     // wx.showLoading({
     //   title: '报告加载中',
     // })

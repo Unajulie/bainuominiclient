@@ -8,37 +8,46 @@ Page({
 
   },
   showpdf: function (e) {
-    let phone = e.currentTarget.dataset.phone
-    let barcode = e.currentTarget.dataset.barcode
-    wx.request({
-      url: "https://bainuo.beijingepidial.com/client/epiage/ckreport",
-      header: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      method: "POST",
-      data: {
-        "barcode": barcode,
-        "phone": phone
-      },
-      // data: {"sampleid": 1121032800079},
-      complete: function (res) {
-        console.info(res.data)
-        if (res.data.pdf) {
-          let url = "../pdf/epiagepdf?pdfname=" + res.data.pdf
-          wx.navigateTo({
-            url: url
-          })
-        } else {
-          wx.showModal({
-            title: '提示',
-            content: "PDF努力生成中,请耐心等待"
-          })
-        }
+    let oThis=this
+    wx.getStorage({
+      key: 'sessionuser',
+      success: function (res) {
+        let data={}
+        data.phone = e.currentTarget.dataset.phone ? e.currentTarget.dataset.phone : res.data.phone
+        data.sampleid = e.currentTarget.dataset.barcode ? e.currentTarget.dataset.barcode : oThis.data.sampleid
+        console.info(data)
+        wx.request({
+          url: "https://bainuo.beijingepidial.com/client/liver/ckstatus",
+          header: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          method: "POST",
+          data: data,
+          // data: {"sampleid": 1121032800079},
+          complete: function (res) {
+            console.info("00")
+            console.info(res.data)
+            if (res.data.pdf) {
+              wx.showLoading({title: '加载中', mask:true})
+              let url = "../pdf/epiliverpdf?pdfname=" + res.data.pdf
+              wx.navigateTo({url: url})
+            } else {
+              wx.showModal({
+                title: '提示',
+                content: "请耐心等待实验室人员生成PDF报告"
+              })
+            }
 
 
+          },
+          fail: function (res) {}
+        })
       },
-      fail: function (res) {}
+      fail: function (e) {
+        wx.navigateTo({url: '../epiage/login'})
+      }
     })
+
   },
   /**
    * 生命周期函数--监听页面加载
@@ -55,7 +64,9 @@ Page({
         console.info(data)
         wx.request({
           url: "https://bainuo.beijingepidial.com/client/liver/ckstatus",
-          header: { "Content-Type": "application/x-www-form-urlencoded"},
+          header: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
           method: "POST",
           data: data,
           // data: {"sampleid": 1121032800079},
