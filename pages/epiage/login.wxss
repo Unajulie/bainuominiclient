@@ -1,6 +1,7 @@
 /* pages/liver/login.wxss */
 .phcolor{
     color: #b8b8b8;
+    font-size: 32rpx;
 }
 button::after {
     border: none

@@ -1,10 +1,12 @@
 /* pages/service/service.wxss */
 .phcolor{
   color: #0081cc;
+  font-size: 30rpx;
 }
 radio .wx-radio-input{
   height: 24rpx;
   width: 24rpx;
+  background: transparent;
 }
 radio .wx-radio-input.wx-radio-input-checked::before{
   width: 24rpx;
@@ -16,6 +18,7 @@ radio .wx-radio-input.wx-radio-input-checked::before{
     color: #fff;			/* 白色勾  */
     background: #0081cc;
     transform: translate(-50%, -50%) scale(1);
+    background-color: #0081cc;
 }
 
 
