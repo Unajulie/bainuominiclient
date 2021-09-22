@@ -12,7 +12,7 @@ Page({
             sex: '女',
             value: 'female'
         }] */
-        checked:''
+        checked:true
 
     },
 
@@ -40,7 +40,7 @@ Page({
     //绑定输入的电话 
     bininput_mobile: function (e) {
         this.setData({
-            mobile: e.detail.value
+            phone: e.detail.value
         })
         console.info(e.detail.value)
     },
@@ -52,9 +52,9 @@ Page({
         console.info(e.detail.value)
     },
     //协议点击按钮
-    agreementInput:function(){
+    checkedTap:function(){
        this.setData({
-         checked:!this.data.checkde  
+         checked:!this.data.checked  
        })
     },
     btnckreport: function (e) {
@@ -65,7 +65,7 @@ Page({
                 duration: 2000
             })
         }
-        else if (!(/^1[3456789]\d{9}$/.test(this.data.mobile))) {
+        else if (!(/^1[3456789]\d{9}$/.test(this.data.phone))) {
             wx.showToast({
                 title: '手机号格式错误',
                 icon: 'error',
@@ -77,7 +77,7 @@ Page({
                 icon: 'error',
                 duration: 2000
             })
-        }else if (this.data.checkde == ''){
+        }else if (! this.data.checked){
             wx.showToast({
               title: '请勾选用户协议',
               icon: 'none',

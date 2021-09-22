@@ -1,40 +1,92 @@
-<view class="container">
-  <view class="title" style="width: 100%;height: 100rpx;line-height: 100rpx;font-size: 46rpx; text-align: center;">
-    肝癌早期筛查</view>
-  <view class="sub-title" style="width: 100%;height: 50rpx;line-height: 50rpx;font-size: 36rpx; text-align: center;">
-    用户信息登记表</view>
-  <form bindsubmit="formSubmit" bindreset="formReset" report-submit="true">
-    <view style="width: 100%;height: 40rpx;"></view>
-    <view style="width: 100%;height: auto;">
-      <view style="width: 100%;height: 100rpx;display: flex;">
-        <label>姓名<span style="color: red;">*</span> :  </label><input name="idname" type="text" placeholder="请输入" bindinput='bininput_name'
-          value="{{username}}" />
-      </view>
-      
-      <view style="width: 100%;height: 100rpx;display: flex;">
-        <label>电话<span style="color: red;">*</span> ：</label><input name="tel" type="number" value="{{phone}}" bindinput='bininput_mobile'
-          placeholder="请输入" />
-      </view>
-      <view style="width: 100%;height: 100rpx;display: flex;">
-        <label>身份证<span style="color: red;">*</span> ：</label><input name="identity" type="idcard" value="{{identity}}"
-          placeholder="请输入" bindinput='bininput_identity' auto-focus="true"/>
-      </view>
-      <view style="width: 100%;height: 100rpx;display: flex;">
-        <label>样本编码</label><span style="color: red;">*</span> ：<input  name="sampleid" type="text" value="{{sampleid}}" />
-      </view>
-      <view style="width: 100%;height: 100rpx;line-height: 100rpx; display: flex;">
-        <radio name="agreement" value="agree" checked="{{}}" bindtap="agreementInput"/>
-        <navigator  url="/pages/agreement/agreement" hover-class="navigator-hover">
-          <view style="font-size:36rpx ;height: 100rpx;line-height: 100rpx;">同意并接受条款</view>
-        </navigator>
-      </view>
-  <view style="width: 100%;height: 40rpx;overflow: hiddden;"></view>
-      <view class="submitwrap">
-        <button class='epiliver_button' bindtap="btnckreport">查询报告</button>
+<view>
+  <view style="width: 100%;height: auto; position:absolute">
+    <image style="width: 100% ;position:absolute" mode="widthFix" src="../../img/userbg.png"></image>
+
+    <view style="width: 100%;height: auto;position: absolute ;top: 190px;">
+      <view style="width: 80%;height: auto;margin: 0 auto;font-weight: 700;text-align: center;color: #0081cc;">用户信息登记表
       </view>
     </view>
-  </form>
-  <view wx:if="{{isSubmit}}">
-    {{warn ? warn : "name："+name+"，手机号："+tel+"，性别："+sex}}
+
+    <view>
+      <view style="position: absolute; width: 100%;height: auto;top: 200px;flex: auto;">
+        <view style="width: 80%;height: auto;margin: 0 auto;">
+          <view style="width: 90%;height: auto;margin:20px auto;">
+
+
+            <view>
+              <view view style="display: flex;width: 100%;border-bottom: solid 1px #0081cc;">
+                <view style="width: 30px;height: 45px;position: relative;">
+                  <image style="width: 18px;height: 45px;position: absolute;top: 15px;right: 5px;" mode="widthFix"
+                    src="../../img/user03.png">
+                  </image>
+                </view>
+                <view style="width: 300px;height: auto;">
+                  <input style="width: 100%;height: 45px;font-size: 15px;" type="text" placeholder="姓名"
+                  value="{{username}}" bindinput='bininput_name' placeholder-class="phcolor" />
+
+                </view>
+
+              </view>
+            </view>
+            <view>
+              <view view style="display: flex;width: 100%;border-bottom: solid 1px #0081cc;">
+                <view style="width: 30px;height: 45px;position: relative;">
+                  <image style="width: 18px;height: 45px;position: absolute;top: 15px;right: 5px;" mode="widthFix"
+                    src="../../img/phone01.png">
+                  </image>
+                </view>
+                <view style="width: 300px;height: auto;">
+                  <input style="width: 100%;height: 45px;font-size: 15px;" type="number" value="{{phone}}" bindinput='bininput_mobile' placeholder="手机号码"
+                    bindinput="vdcodeIn" placeholder-class="phcolor" />
+
+                </view>
+
+              </view>
+            </view>
+
+            <view view style="display: flex;width: 100%;border-bottom: solid 1px #0081cc;">
+              <view style="width: 30px;height: 45px;position: relative;">
+                <image style="width: 18px;height: 45px;position: absolute;top: 15px;right: 5px;" mode="widthFix"
+                  src="../../img/identify.png">
+                </image>
+              </view>
+              <view style="width: 300px;height: auto;">
+                <input style="width: 100%;height: 45px;font-size: 15px;"  type="idcard" value="{{identity}}"
+          bindinput='bininput_identity' auto-focus="true" placeholder="身份证" placeholder-class="phcolor" />
+              </view>
+
+            </view>
+            <view view style="display: flex;width: 100%;border-bottom: solid 1px #0081cc;">
+              <view style="width: 30px;height: 45px;position: relative;">
+                <image style="width: 18px;height: 45px;position: absolute;top: 15px;right: 5px;" mode="widthFix"
+                  src="../../img/barcode.png">
+                </image>
+              </view>
+              <view style="width: 300px;height: auto;">
+                <input style="width: 100%;height: 45px;font-size: 15px;" type="text" value="{{sampleid}}" placeholder="样本编号"
+                  placeholder-class="phcolor" bindinput="cmpwdIn" />
+              </view>
+            </view>
+            <view view style="display: flex;width: 100%;">
+
+              <view style="width: 100%;height: auto;line-height: 100rpx; display: flex;">
+                <radio name="agreement" value="agree" checked="{{checked}}" bindtap="checkedTap" />
+                <navigator url="/pages/agreement/agreement" hover-class="navigator-hover">
+                  <view style="font-size:25rpx ;height: 100rpx;line-height: 100rpx;color: #797979;">同意并接受条款</view>
+                </navigator>
+              </view>
+            </view>
+            <view style="width: 100%; height: auto;margin-top: 25px;">
+              <button bindtap="btnckreport"
+                style="margin: 0 auto ;width: 70%;color: white;text-align: center;line-height: 45px;border-radius:25px;background: #43b4f6;">
+                查询报告</button>
+            </view>
+          </view>
+
+        </view>
+
+      </view>
+    </view>
+
   </view>
 </view>

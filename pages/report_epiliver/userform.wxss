@@ -1,63 +1,22 @@
 /* pages/service/service.wxss */
-container{
-  width: 90%;
-  margin: 0 auto;
+.phcolor{
+  color: #0081cc;
 }
-view {
-    height: auto;
-    /* width: calc(750rpx*100/375); */
-    width: 100%;
-    font-size: 36rpx;
-    margin: 0 auto;
-    align-self: center;
-  }
-  
-  image{
-    width: 100%;
-    height: auto;
-  }
-  
-  .epiage_button {
-    width: 90%;
-    height: 100rpx;
-    background-color: #00a5bb;
+radio .wx-radio-input{
+  height: 24rpx;
+  width: 24rpx;
+}
+radio .wx-radio-input.wx-radio-input-checked::before{
+  width: 24rpx;
+    height: 24rpx;
+    border-radius: 50%;     /* 圆角 */
+    line-height: 24rpx;
     text-align: center;
-  
-    color: white;
-  }
-  
-  .epiliver_button {
-    width: 90%;
-    height: 100rpx;
-    background-color: #167bd7;
-    text-align: center;
-    color: white;
-  }
-  .blank{
-    width: 100%;
-    height:20rpx;
-  }
-  .epihpv_button {
-    width: 90%;
-    background-color: #9770e5;
-    text-align: center;
-    height: 100rpx;
-    color: white;
-  }
-  
-  text {
-    width: 60%;
-    height: 100rpx;
-    text-align: center;
-    line-height: 100rpx;
-    font-size: 36rpx;
-  }
-  
-  navigator {
-    width: 100%;
-    height: 100rpx;
-    line-height: 100rpx;
-    font-size: 36px;
-  
-  }
+    font-size: 30rpx;       /* 勾大小 */
+    color: #fff;			/* 白色勾  */
+    background: #0081cc;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+
   
