@@ -67,7 +67,11 @@ Page({
           }
         })
       },
-      fail: function (res) {}
+      fail: function (res) {
+        wx.navigateTo({
+          url: '../epiage/login',
+        })
+      }
     })
   },
 

@@ -5,13 +5,14 @@ Page({
      * 页面的初始数据
      */
     data: {
-        items: [{
+ /*        items: [{
             sex: '男',
             value: 'male'
         }, {
             sex: '女',
             value: 'female'
-        }]
+        }] */
+        checked:''
 
     },
 
@@ -50,7 +51,40 @@ Page({
         })
         console.info(e.detail.value)
     },
+    //协议点击按钮
+    agreementInput:function(){
+       this.setData({
+         checked:!this.data.checkde  
+       })
+    },
     btnckreport: function (e) {
+        if(!this.data.username){
+            wx.showToast({
+                title: '姓名必填',
+                icon: 'error',
+                duration: 2000
+            })
+        }
+        else if (!(/^1[3456789]\d{9}$/.test(this.data.mobile))) {
+            wx.showToast({
+                title: '手机号格式错误',
+                icon: 'error',
+                duration: 2000
+            })
+        } else if(!(/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(this.data.identity))){
+            wx.showToast({
+                title: '身份证格式错误',
+                icon: 'error',
+                duration: 2000
+            })
+        }else if (this.data.checkde == ''){
+            wx.showToast({
+              title: '请勾选用户协议',
+              icon: 'none',
+              duration: 2000
+            })
+          }
+        else{
         let oThis = this
         let formdata = {}
         formdata.idCard = this.data.identity
@@ -79,10 +113,14 @@ Page({
                 })
             },
             fail: function (res) {
-                wx.showModal({title: '提示',content:"用户登录状态失效，请重新登录"})
+                //wx.showModal({title: '提示',content:"用户登录状态失效，请重新登录"})
+                wx.navigateTo({
+                  url: '../epiage/login',
+                })
             }
         })
-    },
+    }
+},
     /**
      * 生命周期函数--监听页面加载
      */

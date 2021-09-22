@@ -10,14 +10,7 @@
         <label>姓名<span style="color: red;">*</span> :  </label><input name="idname" type="text" placeholder="请输入" bindinput='bininput_name'
           value="{{username}}" />
       </view>
-      <view style="width: 100%;height: 100rpx;display: flex;">
-        <radio-group name="sex" bindchange="radioChange" style="display: flex;">
-          <label>性别<span style="color: red;">*</span> : </label>
-          <label style="display:block;margin-left: 10rpx;" wx:for-items="{{items}}">
-            <radio bindinput='bininput_sex' value="{{items.value}}" checked="{{items.checked}}" />{{item.sex}}
-          </label>
-        </radio-group>
-      </view>
+      
       <view style="width: 100%;height: 100rpx;display: flex;">
         <label>电话<span style="color: red;">*</span> ：</label><input name="tel" type="number" value="{{phone}}" bindinput='bininput_mobile'
           placeholder="请输入" />
@@ -30,7 +23,7 @@
         <label>样本编码</label><span style="color: red;">*</span> ：<input  name="sampleid" type="text" value="{{sampleid}}" />
       </view>
       <view style="width: 100%;height: 100rpx;line-height: 100rpx; display: flex;">
-        <radio name="agreement" value="" checked="" />
+        <radio name="agreement" value="agree" checked="{{}}" bindtap="agreementInput"/>
         <navigator  url="/pages/agreement/agreement" hover-class="navigator-hover">
           <view style="font-size:36rpx ;height: 100rpx;line-height: 100rpx;">同意并接受条款</view>
         </navigator>

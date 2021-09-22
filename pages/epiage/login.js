@@ -80,7 +80,6 @@ Page({
                       console.info(res)
                       //直接跳到tab首页
                       wx.switchTab({url: '../index/index'})
-                     
                   },
                   fail:function(res){
                       console.info(res)

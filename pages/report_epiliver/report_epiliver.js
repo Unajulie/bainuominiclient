@@ -21,8 +21,8 @@ Page({
     })
   },
 
-//获取到hpv报告页面输入的值，查询mongodb数据库，并返回状态
-inputVal: function (e) {
+  //获取到hpv报告页面输入的值，查询mongodb数据库，并返回状态
+  inputVal: function (e) {
     let sampleid = e.detail.value
     console.info(sampleid)
     this.setData({
@@ -32,33 +32,50 @@ inputVal: function (e) {
   },
   //  
   checkLiverReport: function (e) {
-    let oThat=this
+    let oThat = this
     //console.info("https://bainuo.beijingepidial.com/public/pdffile/"+this.data.sampleid+".pdf")
     //wx.showToast({title: '加载中', icon: 'loading', duration: 10000});
-    let oThis=this
+    let oThis = this
     wx.getStorage({
-      key:'sessionuser',
-      success:function (res) {
+      key: 'sessionuser',
+      success: function (res) {
         console.log('s:' + res.data)
-        let phone =e.currentTarget.dataset.phone?e.currentTarget.dataset.phone:res.data.phone
+        let phone = e.currentTarget.dataset.phone ? e.currentTarget.dataset.phone : res.data.phone
         wx.request({
           url: "https://bainuo.beijingepidial.com/client/liver/uploadbarcode",
-          header: {"Content-Type": "application/x-www-form-urlencoded"},
+          header: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
           method: "POST",
-          data: {"sampleid":oThis.data.sampleid,"phone":phone},
+          data: {
+            "sampleid": oThis.data.sampleid,
+            "phone": phone
+          },
           // data: {"sampleid": 1121032800079},
           complete: function (res) {
             console.info(res.data)
             //如果是空字符串
-            if(res.data.status=="fail"){wx.showModal({title: '提示',content:"库存查无该条码，请联系客服"})}
-            else{
-              wx.navigateTo({url: 'userform?sampleid='+oThis.data.sampleid})
+            if (res.data.status == "fail") {
+              wx.showModal({
+                title: '提示',
+                content: "库存查无该条码，请联系客服"
+              })
+            } else {
+              wx.navigateTo({
+                url: 'userform?sampleid=' + oThis.data.sampleid
+              })
             }
           },
-        fail:function(res){
-        }})
+          fail: function (res) {
+            console.info(res)
+          }
+        })
+      },fail:function(e){
+         wx.navigateTo({
+           url: '../epiage/login',
+         })
       }
-    }) 
+    })
 
 
 
@@ -83,7 +100,7 @@ inputVal: function (e) {
     //           wx.showToast({title: "打开失败",icon: 'success',duration: 2000})
     //         },   
     //         complete: function(res) {
-              
+
     //           console.log(res);
     //         }
     //         })
@@ -94,10 +111,10 @@ inputVal: function (e) {
     //       console.log('文件下载失败');
     //     },
     //     complete: function(res) {},
-        
+
     //     })
   },
-  
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -105,9 +122,9 @@ inputVal: function (e) {
     // wx.showLoading({
     //   title: '报告加载中',
     // })
-   
+
   },
-  onHide:function(){
-  
+  onHide: function () {
+
   }
 })
