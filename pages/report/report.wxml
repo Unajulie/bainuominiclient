@@ -1,25 +1,28 @@
-<view style="width: 100%;height: auto;">
-  <view class='img_wrap'>
-    <image mode='widthFix'  src='https://bainuo.beijingepidial.com/public/img/report.jpg'></image>
+<view style="width: 100%;height: auto;display: flex;flex-direction: column;margin-top: 40px;">
+  <view style="width: 100;height: auto;display: flex;">
+
+    <view style="width: 100%;height: auto;">
+      <image style="width: 25%;" mode="widthFix" src="../../img/logo.png"></image>
+    </view>
+    <view style="width: 60%;height: auto;position: absolute;top:65px;left: -35px;">
+      <view style="text-align: right;font-weight: 700;font-size: 25px;color: #7b7a7a;">报告查询</view>
+    </view>
+
   </view>
-  <view class='blank'></view>
-    <button bindtap="btnlogin" class='epiage_button'>
-      <text>生物学年龄报告查询</text>
-    </button>
-</view>
-<view class='blank'></view>
-<view>
-  <navigator url='../report_epiliver/report_epiliver'>
-    <button class='epiliver_button'>
-      <text>肝癌早期筛查报告查询</text>
-    </button>
-  </navigator>
-</view>
-<view class='blank'></view>
-<view>
-  <navigator url='../report_epihpv/report_epihpv'>
-    <button class='epihpv_button'>
-      <text>宫颈癌检查报告查询</text>
-    </button>
-  </navigator>
+  <view style="width: 80%;height: auto;margin: 0 auto;margin-top: 30px;color: #949293;">根据您预约的检测项目
+  </view>
+  <view style="width: 80%;height: auto;margin:0 auto;margin-bottom: 30px;color: #949293;">请点击选择相应的项目查询报告</view>
+  <view style="width: 100%;height: 100px;margin:0 auto;position: relative;"bindtap="epilogin">
+    <image style="width: 103%;height: 100%;position: absolute;right: -2px;" mode="widthFix" src="../../img/age01.png"></image>
+  </view>
+  <view style="width: 100%;height: 100px;margin:0 auto;margin-top: 55px;"bindtap="liverlogin">
+    
+    <image style="width: 100%;height: 100%;" mode="widthFix" src="../../img/liver02.png"></image>
+ 
+  </view>
+  <view style="width: 100%;height: 100px;margin:0 auto;margin-top: 57PX;"bindtap="uteruslogin">
+   
+    <image style="width: 100%;height: 100%;" mode="widthFix" src="../../img/uterus03.png"></image>
+  
+  </view>
 </view>

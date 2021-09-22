@@ -11,7 +11,23 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  btnlogin:function(e){
+  liverlogin:function(e){
+    wx.getStorage({
+      key:'sessionuser',
+      success:function (res) {
+        console.log('s:' + res.data)
+        wx.navigateTo({
+          url: "../report_epiliver/report_epiliver"
+        })
+      },
+      fail:function(res){
+        wx.navigateTo({
+          url: "../epiage/login"
+        })
+      }
+    })
+  },
+  epilogin:function(e){
     wx.getStorage({
       key:'sessionuser',
       success:function (res) {
@@ -27,6 +43,23 @@ Page({
       }
     })   
   },
+  uteruslogin:function(e){
+    wx.getStorage({
+      key:'sessionuser',
+      success:function (res) {
+        console.log('s:' + res.data)
+        wx.navigateTo({
+          url: "../report_epihpv/report_epihpv"
+        })
+      },
+      fail:function(res){
+        wx.navigateTo({
+          url: "../epiage/login"
+        })
+      }
+    })   
+  },
+
   onLoad: function (options) {
 
   },
