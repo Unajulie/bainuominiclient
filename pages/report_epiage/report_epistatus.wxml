@@ -4,11 +4,9 @@
         <!-- <image style="width: 100% ;position:absolute" mode="widthFix" src="../../img/statusbg.png"></image> -->
         <view style="width: 100%;height: auto; display:flex;position: absolute ;top:30px;">
             <view style="width: 100%;height: auto;">
-                <image style="width: 25%;" mode="widthFix" src="../../img/logo.png"></image>
+                <image style="width: 50%;" mode="widthFix" src="../../img/progress.png"></image>
             </view>
-            <view style="width: 60%;height: auto;position: absolute;top:24px;left: -35px;">
-                <view style="text-align: right;font-weight: 700;font-size: 20px;">进度查询</view>
-            </view>
+    
         </view>
         <view style="width: 100%;height: auto;position: absolute ;top: 135px;">
             <view style="width: 80%;height: auto;margin: 0 auto;font-weight: 700;">当前进度!</view>
@@ -39,9 +37,9 @@
                             style="border-radius: 20px; width: 20px;height:20px; background-color: {{status=='Completed'?'#069ce8':'#7b7c7e'}};text-align: center;color: white;position: absolute;top:440px;font-weight: 700;">
                             <image style="width: 20px;height:20px;" mode="widthFix" src="../../img/arrow.png"></image></view>
                     </view>
-                    <view style="width: 15%;height: 534px;margin: 0 auto;background-color: #b5b5b5;"></view>
+                    <view style="width: 15%;height: 1080rpx;margin: 0 auto;background-color: #b5b5b5;"></view>
                 </view>
-                <view style="width: 100%;height: 534px;">
+                <view style="width: 100%;height: 1080rpx;">
                     <view style="width: 100%;height: 30px;display: flex;">
                         <!-- 空盒子 -->
                         <view style="width:{{status=='NO_STATUS'?'20%':'0px'}};height: 35px;margin-left: 5px;"></view>

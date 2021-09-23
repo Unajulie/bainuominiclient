@@ -10,7 +10,8 @@ Page({
   data: {
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    login:false
   },
 //事件处理函数
 bindViewTap: function() {
@@ -18,11 +19,46 @@ bindViewTap: function() {
     url: '../logs/logs'
   })
 },
-
+onShow:function(){
+  let oThis=this
+  wx.getStorage({
+    key:"sessionuser",
+    success:function(session){
+      console.info("success")
+      oThis.setData({login:true})
+    },
+    fail:function(){
+      console.info("fail")
+      oThis.setData({login:false})
+    }
+  })
+},
   /**
    * 生命周期函数--监听页面卸载
    */
+  login:function(){
+    console.info("fuckyou")
+    let oThis=this
+    if(this.data.login){
+      wx.removeStorage({
+        key: 'sessionuser',
+        success: function(res) {
+          oThis.setData({login:false})
+          wx.switchTab({
+            url: '../index/index',
+          })
+        },
+      })
+
+    }else{
+      wx.navigateTo({
+        url: '../user/login',
+      })
+    }
+   
+  },
   onLoad: function () {
+  
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

@@ -24,12 +24,12 @@ Page({
       },
     btnForget:function(e){
         wx.navigateTo({
-          url: "../epiage/fgpwd"
+          url: "../user/fgpwd"
         })
       },
       next:function(e){
         wx.navigateTo({
-          url: "../epiage/register"
+          url: "../user/register"
         })
       },
       inputUsername:function(e){
