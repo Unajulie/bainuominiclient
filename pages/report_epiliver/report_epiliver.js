@@ -35,13 +35,18 @@ Page({
     //console.info("https://bainuo.beijingepidial.com/public/pdffile/"+this.data.sampleid+".pdf")
     //wx.showToast({title: '加载中', icon: 'loading', duration: 10000});
     let oThis = this
+    wx.showLoading({
+      title: '加载中',
+      duration: 10000,
+      mask: true
+    })
     wx.getStorage({
       key: 'sessionuser',
       success: function (res) {
-        console.log( res.data)
-        let data={}
+        console.log(res.data)
+        let data = {}
         data.phone = e.currentTarget.dataset.phone ? e.currentTarget.dataset.phone : res.data.phone
-        data.sampleid= e.currentTarget.dataset.sampleid ?e.currentTarget.dataset.sampleid : oThis.data.sampleid
+        data.sampleid = e.currentTarget.dataset.sampleid ? e.currentTarget.dataset.sampleid : oThis.data.sampleid
         wx.request({
           url: "https://bainuo.beijingepidial.com/client/liver/uploadbarcode",
           header: {
@@ -59,6 +64,7 @@ Page({
                 content: "库存查无该条码，请联系客服"
               })
             } else {
+              wx.hideLoading()
               wx.navigateTo({
                 url: 'userform?sampleid=' + data.sampleid
               })
@@ -68,10 +74,11 @@ Page({
             console.info(res)
           }
         })
-      },fail:function(e){
-         wx.navigateTo({
-           url: '../user/login',
-         })
+      },
+      fail: function (e) {
+        wx.navigateTo({
+          url: '../user/login',
+        })
       }
     })
 
@@ -117,10 +124,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let oThis=this
+    let oThis = this
     wx.getStorage({
-      key:'sessionuser',
-      success:function (res) {
+      key: 'sessionuser',
+      success: function (res) {
         console.log('s:' + res.data)
         wx.request({
           url: "https://bainuo.beijingepidial.com/client/liver/barcodes",
@@ -128,19 +135,23 @@ Page({
             "Content-Type": "application/x-www-form-urlencoded"
           },
           method: "POST",
-          data: {"tel":res.data.phone},
+          data: {
+            "tel": res.data.phone
+          },
           // data: {"sampleid": 1121032800079},
           complete: function (res) {
-            oThis.setData({barcodebox:res.data})
-            }
-          })
+            oThis.setData({
+              barcodebox: res.data
+            })
+          }
+        })
       },
-      fail:function(res){
+      fail: function (res) {
         wx.navigateTo({
           url: '../epiage/login',
         })
       }
-    }) 
+    })
     // wx.showLoading({
     //   title: '报告加载中',
     // })

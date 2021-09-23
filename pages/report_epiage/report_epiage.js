@@ -32,6 +32,11 @@ Page({
   },
   //  
   checkEpiageReport: function (e) {
+    wx.showLoading({
+      title: '加载中',
+      duration: 10000,
+      mask: true
+    })
     console.info("simpleid:" + e.currentTarget.dataset.simpleid)
     let barcode = e.currentTarget.dataset.simpleid ? e.currentTarget.dataset.simpleid : this.data.sampleid
     var that = this
@@ -55,6 +60,7 @@ Page({
           // data: {"sampleid": 1121032800079},
           complete: function (res) {
             console.info("xxxxx-->" + res.data)
+            wx.hideLoading()
             //如果是空字符串
             if (res.data == "") {
               wx.showModal({
