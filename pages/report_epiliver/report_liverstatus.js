@@ -16,6 +16,7 @@ Page({
         data.phone = e.currentTarget.dataset.phone ? e.currentTarget.dataset.phone : res.data.phone
         data.sampleid = e.currentTarget.dataset.barcode ? e.currentTarget.dataset.barcode : oThis.data.sampleid
         console.info(data)
+        wx.showLoading({title: '加载中', mask:true})
         wx.request({
           url: "https://bainuo.beijingepidial.com/client/liver/ckstatus",
           header: {
@@ -28,10 +29,12 @@ Page({
             console.info("00")
             console.info(res.data)
             if (res.data.pdf) {
-              wx.showLoading({title: '加载中', mask:true})
+              
               let url = "../pdf/epiliverpdf?pdfname=" + res.data.pdf
               wx.navigateTo({url: url})
+              wx.hideLoading() 
             } else {
+              wx.hideLoading() 
               wx.showModal({
                 title: '提示',
                 content: "请耐心等待实验室人员生成PDF报告"

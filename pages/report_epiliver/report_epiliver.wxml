@@ -33,7 +33,7 @@
             <view style="color: #808080;">已注册条码:</view>
             <block wx:key="i" wx:for="{{barcodebox}}" wx:for-item="data">
               <view style="width: 100%;height: 5px;"></view>
-              <view data-simpleid="{{data.sampleid}}"  bindtap="checkLiverReport"
+              <view data-sampleid="{{data.sampleid}}"  bindtap="checkLiverReport"
                 style="width:100%;height: 45px;border: 1px  dashed #808080; border-radius: 5px;">
                 <view style="color:#808080;">条码：{{data.sampleid}}</view>
                 <view style="color:#808080;">

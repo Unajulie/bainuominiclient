@@ -12,7 +12,7 @@ Page({
         data.phone=e.currentTarget.dataset.phone
         data.barcode=e.currentTarget.dataset.barcode
         console.info(data)
-        wx.showLoading({title: '加载中', mask:true})
+        wx.showLoading({title: '加载中', mask:true,duration:10000})
         wx.request({
             url: "https://bainuo.beijingepidial.com/client/epiage/ckreport",
             header: {"Content-Type": "application/x-www-form-urlencoded"},
@@ -24,7 +24,9 @@ Page({
               if(res.data.pdf){
                 let url="../pdf/epiagepdf?pdfname="+res.data.pdf
                 wx.navigateTo({ url:url })
+                wx.hideLoading() 
               }else{
+                wx.hideLoading()
                 wx.showModal({title: '提示',content:"PDF努力生成中,请耐心等待"})
               }
              

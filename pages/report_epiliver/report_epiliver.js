@@ -32,18 +32,16 @@ Page({
   },
   //  
   checkLiverReport: function (e) {
-    let oThat = this
     //console.info("https://bainuo.beijingepidial.com/public/pdffile/"+this.data.sampleid+".pdf")
     //wx.showToast({title: '加载中', icon: 'loading', duration: 10000});
     let oThis = this
     wx.getStorage({
       key: 'sessionuser',
       success: function (res) {
-        console.log('s:' + res.data)
+        console.log( res.data)
         let data={}
         data.phone = e.currentTarget.dataset.phone ? e.currentTarget.dataset.phone : res.data.phone
-        data.sampleid= e.currentTarget.dataset.simpleid ? e.currentTarget.dataset.simpleid : oThis.data.sampleid
-        console.info(data)
+        data.sampleid= e.currentTarget.dataset.sampleid ?e.currentTarget.dataset.sampleid : oThis.data.sampleid
         wx.request({
           url: "https://bainuo.beijingepidial.com/client/liver/uploadbarcode",
           header: {
@@ -62,7 +60,7 @@ Page({
               })
             } else {
               wx.navigateTo({
-                url: 'userform?sampleid=' + oThis.data.sampleid
+                url: 'userform?sampleid=' + data.sampleid
               })
             }
           },
