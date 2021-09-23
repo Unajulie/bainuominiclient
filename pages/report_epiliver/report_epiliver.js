@@ -72,7 +72,7 @@ Page({
         })
       },fail:function(e){
          wx.navigateTo({
-           url: '../epiage/login',
+           url: '../user/login',
          })
       }
     })

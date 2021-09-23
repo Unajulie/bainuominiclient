@@ -115,7 +115,7 @@ Page({
             fail: function (res) {
                 //wx.showModal({title: '提示',content:"用户登录状态失效，请重新登录"})
                 wx.navigateTo({
-                  url: '../epiage/login',
+                  url: '../user/login',
                 })
             }
         })

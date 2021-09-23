@@ -22,7 +22,7 @@ Page({
       },
       fail:function(res){
         wx.navigateTo({
-          url: "../epiage/login"
+          url: "../user/login"
         })
       }
     })
@@ -38,7 +38,7 @@ Page({
       },
       fail:function(res){
         wx.navigateTo({
-          url: "../epiage/login"
+          url: "../user/login"
         })
       }
     })   
@@ -54,7 +54,7 @@ Page({
       },
       fail:function(res){
         wx.navigateTo({
-          url: "../epiage/login"
+          url: "../user/login"
         })
       }
     })   

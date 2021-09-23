@@ -1,7 +1,7 @@
 <!--pages/report_epiage/report_epistatus.wxml-->
 <view>
     <view style="width: 100%;height: auto; position:absolute">
-        <image style="width: 100% ;position:absolute" mode="widthFix" src="../../img/statusbg.png"></image>
+        <!-- <image style="width: 100% ;position:absolute" mode="widthFix" src="../../img/statusbg.png"></image> -->
         <view style="width: 100%;height: auto; display:flex;position: absolute ;top:30px;">
             <view style="width: 100%;height: auto;">
                 <image style="width: 25%;" mode="widthFix" src="../../img/logo.png"></image>

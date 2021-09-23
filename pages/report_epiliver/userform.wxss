@@ -20,6 +20,13 @@ radio .wx-radio-input.wx-radio-input-checked::before{
     transform: translate(-50%, -50%) scale(1);
     background-color: #0081cc;
 }
+page{
+  overflow: hidden;
+  position: fixed;
+  background-image: url("https://bainuo.beijingepidial.com/public/img/userbg.png");
+  margin: 0;
+  background-size: 100% 100%;
+}
 
 
   
