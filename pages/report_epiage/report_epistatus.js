@@ -22,9 +22,58 @@ Page({
             complete: function (res) {
               console.info(res.data)
               if(res.data.pdf){
-                let url="../pdf/epiagepdf?pdfname="+res.data.pdf
-                wx.navigateTo({ url:url })
-                wx.hideLoading() 
+                wx.downloadFile({
+                  url: "https://bainuo.beijingepidial.com/public/pdffile/" +res.data.pdf,
+                  header: {},
+                  success: function (res) {
+                    wx.showLoading({
+                      title: '加载中',
+                      duration:10000,
+                      mask: true
+                    })
+                    var filePath = res.tempFilePath;
+                    console.log(res);
+                    if (res.statusCode == 404) {
+                      wx.showToast({
+                        title: '请输入正确的二维码！',
+                        icon: 'success',
+                        duration: 2000
+                      })
+                    } else {
+                      wx.openDocument({
+                        filePath: filePath,
+                        fileType: 'pdf',
+                        success: function (res) {
+                          wx.hideLoading()
+                          console.log(res);
+                          wx.showToast({
+                            title: "打开成功",
+                            icon: 'success',
+                            duration: 2000
+                          })
+                        },
+                        fail: function (res) {
+                          wx.hideLoading()
+                          wx.showToast({
+                            title: "打开失败",
+                            icon: 'success',
+                            duration: 2000
+                          })
+                        },
+                        complete: function (res) {
+
+                          console.log(res);
+                        }
+                      })
+                    }
+                  },
+                  fail: function (res) {
+                    console.info(res)
+                    console.log('文件下载失败');
+                  },
+                  complete: function (res) {},
+
+                })
               }else{
                 wx.hideLoading()
                 wx.showModal({title: '提示',content:"PDF努力生成中,请耐心等待"})
