@@ -108,8 +108,8 @@ showModal: function () {
       duration: 10000,
       mask: true
     })
-    console.info("simpleid:" + e.currentTarget.dataset.simpleid)
-    let barcode = e.currentTarget.dataset.simpleid ? e.currentTarget.dataset.simpleid : this.data.sampleid
+    console.info("simpleid:" + e.currentTarget.dataset.sampleid)
+    let barcode = e.currentTarget.dataset.sampleid ? e.currentTarget.dataset.sampleid : this.data.sampleid
     var that = this
     console.info(this.data.sampleid + "-----")
 
