@@ -21,7 +21,7 @@
                                     <input style="width:100%;height: 45px;;font-size: 30rpx;" type="text"
                                         placeholder="请输入电话号码" placeholder-class="phcolor" bindinput="phoneInput"/>
                                     <view ><button disabled="{{disabled}}" bindtap="btnclic"
-                                            style="height: 35px;width: 200rpx;background: {{color}};line-height: 60rpx;font-size: 28rpx;color: white;">{{msg}}</button>
+                                            style="height: 60rpx;width: 200rpx;background: {{color}};line-height: 60rpx;font-size: 28rpx;color: white;">{{msg}}</button>
                                     </view>
                                 </view>
 

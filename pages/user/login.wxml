@@ -1,8 +1,6 @@
 <view >
     <view style="width:100%;height: auto; ">
         <view style="position: absolute;width: 100%;height: auto;">
-            <image style="width: 100%;" mode="widthFix"
-                src="https://bainuo.beijingepidial.com/public/img/linverloginbg.png"> </image>
             <view>
                 <view style="position: absolute; width: 100%;height: auto;top: 200px;flex: auto;">
                     <view style="width: 80%;height: auto;margin: 0 auto;">
