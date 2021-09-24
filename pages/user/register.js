@@ -73,7 +73,7 @@ Page({
                 oThis.setData({post:false})
                 //通过barcode查询宫颈癌报告,1先获取输入的值，返回给后台数据库去查询是否存在这个barcode,如果有数据有返回，没有数据就提示错误信息或输入正确的barcode.
                 wx.request({
-                    url: "https://bainuo.beijingepidial.com/admin/epiage/sms",
+                    url: "https://bainuo.beijingepidial.com/client/user/sms",
                     header: {"Content-Type": "application/x-www-form-urlencoded"},
                     method: "POST",
                     data: {"phone": oThis.data.phone},
@@ -119,13 +119,13 @@ Page({
                 duration: 2000
             })    
         }
-        else if(!this.data.vdcodein){
-            wx.showToast({
-                title: '验证码必填',
-                icon: 'error',
-                duration: 2000
-            })  
-        }
+        // else if(!this.data.vdcodein){
+        //     wx.showToast({
+        //         title: '验证码必填',
+        //         icon: 'error',
+        //         duration: 2000
+        //     })  
+        // }
         else if(!this.data.inputpwd){
             wx.showToast({
                 title: '请输入密码',
@@ -145,13 +145,13 @@ Page({
                 duration: 2000
             })
         }
-        else if(this.data.vdcodein!=this.data.vdcode){
-            wx.showToast({
-                title: '验证码输入有误',
-                icon: 'error',
-                duration: 2000
-            })
-        }
+        // else if(this.data.vdcodein!=this.data.vdcode){
+        //     wx.showToast({
+        //         title: '验证码输入有误',
+        //         icon: 'error',
+        //         duration: 2000
+        //     })
+        // }
         else{
             let sessionuser={}
             sessionuser.phone=this.data.phone

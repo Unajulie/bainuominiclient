@@ -68,7 +68,8 @@ Page({
                 content: "库存查无该条码，请联系客服"
               })
             } else {
-              let url = "../report_epiage/report_epistatus?status=" + res.data.status + "&barcode=" + barcode + "&phone=" + phone
+              // let url = "../report_epiage/report_epistatus?status=" + res.data.status + "&barcode=" + barcode + "&phone=" + phone
+              let url = "../report_epiage/userform?status=" + res.data.status + "&sampleid=" + barcode + "&phone=" + phone
               wx.navigateTo({
                 url: url
               })

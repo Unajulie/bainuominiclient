@@ -88,8 +88,38 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        console.info(options.status )
-        this.setData({status: options.status ,phone:options.phone,barcode:options.barcode}) 
+      let oThis = this
+      wx.getStorage({
+        key: 'sessionuser',
+        success: function (res) {
+          //console.info(options.status )
+          let data = {}
+          data.sampleid = options.sampleid
+          data.phone = options.phone
+          console.info(data)
+          wx.request({
+            url: "https://bainuo.beijingepidial.com/client/epiage/ckreport",
+            header: {
+              "Content-Type": "application/x-www-form-urlencoded"
+            },
+            method: "POST",
+            data: data,
+            // data: {"sampleid": 1121032800079},
+            complete: function (res) {
+              oThis.setData({
+                status: res.data.status,
+                sampleid: res.data.sampleid
+              })
+            }
+          })
+        },
+        fail: function (res) {
+          wx.navigateTo({
+            url: '../user/login',
+          })
+        }
+      })
+
     },
 
     /**

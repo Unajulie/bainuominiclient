@@ -65,7 +65,7 @@ Page({
             sessionuser.phone=this.data.phone
             sessionuser.password=this.data.pwd
         wx.request({
-            url: "https://bainuo.beijingepidial.com/admin/epiage/login",
+            url: "https://bainuo.beijingepidial.com/client/user/login",
             header: {"Content-Type": "application/x-www-form-urlencoded"},
             method: "POST",
             data: sessionuser,
