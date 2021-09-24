@@ -1,6 +1,6 @@
 /* pages/service/service.wxss */
 .phcolor{
-  color: #0081cc;
+  color: #ffa85f;
   font-size: 30rpx;
 }
 radio .wx-radio-input{
@@ -16,14 +16,14 @@ radio .wx-radio-input.wx-radio-input-checked::before{
     text-align: center;
     font-size: 30rpx;       /* 勾大小 */
     color: #fff;			/* 白色勾  */
-    background: #0081cc;
+    background:#ffa85f;
     transform: translate(-50%, -50%) scale(1);
-    background-color: #0081cc;
+    border: 3rpx solid #ffa85f;
 }
 page{
   overflow: hidden;
   position: fixed;
-  background-image: url("https://bainuo.beijingepidial.com/public/img/userbg.png");
+  background-image: url("https://bainuo.beijingepidial.com/public/img/userbg02.png");
   margin: 0;
   background-size: 100% 100%;
 }

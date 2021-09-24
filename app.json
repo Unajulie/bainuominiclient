@@ -1,12 +1,13 @@
 {
   "pages": [
-    "pages/report/report",
-    "pages/report_epiliver/report_epiliver",
     "pages/index/index",
+    "pages/report_epiage/userform",
+    "pages/report_epiliver/userform",
+    "pages/report_epiliver/report_epiliver",
+    "pages/report/report",
     "pages/report_epiage/report_epistatus",
     "pages/mine/mine",
     "pages/user/login",
-    "pages/report_epiliver/userform",
     "pages/user/register",
     "pages/report_epiliver/report_liverstatus",
     "pages/report_epiage/report_epiage",
@@ -37,6 +38,8 @@
     "pages/reser_epiliver/reser_epiliver",
     "pages/reser_epiage/reser_epiage",
     "pages/logs/logs"
+    
+    
   ],
   "window": {
     "backgroundTextStyle": "dark",

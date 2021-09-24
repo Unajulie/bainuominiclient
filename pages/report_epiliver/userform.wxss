@@ -18,7 +18,7 @@ radio .wx-radio-input.wx-radio-input-checked::before{
     color: #fff;			/* 白色勾  */
     background: #0081cc;
     transform: translate(-50%, -50%) scale(1);
-    background-color: #0081cc;
+    border: 1rpx solid #0081cc;
 }
 page{
   overflow: hidden;
