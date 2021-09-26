@@ -92,7 +92,7 @@ Page({
                       wx.hideLoading()
                       wx.showModal({
                         title: '提示',
-                        content: "请耐心等待实验室人员生成PDF报告"
+                        content: "检测报告生成中，请稍等"
                       })
                     }
 
@@ -132,8 +132,10 @@ Page({
           // data: {"sampleid": 1121032800079},
           complete: function (res) {
             oThis.setData({
+              phone:res.data.tel,
               status: res.data.status,
-              sampleid: res.data.sampleid
+              sampleid: res.data.sampleid,
+              pdfIsbuild:res.data.pdf?true:false
             })
           }
         })

@@ -11,6 +11,7 @@ Page({
         let data={}
         data.phone=e.currentTarget.dataset.phone
         data.barcode=e.currentTarget.dataset.barcode
+      
         console.info(data)
         wx.showLoading({title: '加载中', mask:true,duration:10000})
         wx.request({
@@ -76,7 +77,7 @@ Page({
                 })
               }else{
                 wx.hideLoading()
-                wx.showModal({title: '提示',content:"PDF努力生成中,请耐心等待"})
+                wx.showModal({title: '提示',content:"检测报告生成中，请稍等"})
               }
              
           
@@ -91,10 +92,10 @@ Page({
       let oThis = this
       wx.getStorage({
         key: 'sessionuser',
-        success: function (res) {
+        success: function (sessionuser) {
           //console.info(options.status )
           let data = {}
-          data.sampleid = options.sampleid
+          data.barcode = options.sampleid
           data.phone = options.phone
           console.info(data)
           wx.request({
@@ -106,10 +107,15 @@ Page({
             data: data,
             // data: {"sampleid": 1121032800079},
             complete: function (res) {
+              console.info(res.data)
               oThis.setData({
+                phone:sessionuser.data.phone,
                 status: res.data.status,
-                sampleid: res.data.sampleid
+                sampleid: res.data.sampleid,
+                pdfIsbuild:res.data.pdf?true:false
               })
+              console.info(res.data.pdf)
+              console.info(oThis.data)
             }
           })
         },
