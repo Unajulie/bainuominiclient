@@ -11,7 +11,9 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    login:false
+    login:false,
+    username:'',
+    phone:''
   },
 //事件处理函数
 bindViewTap: function() {
@@ -24,12 +26,18 @@ onShow:function(){
   wx.getStorage({
     key:"sessionuser",
     success:function(session){
+      console.info(session.data)
       console.info("success")
-      oThis.setData({login:true})
+      oThis.setData({
+        login:true,
+        phone:session.data.phone
+      })
     },
     fail:function(){
-      console.info("fail")
-      oThis.setData({login:false})
+      oThis.setData({
+        login:false,
+        phone:''
+      })
     }
   })
 },
@@ -37,13 +45,12 @@ onShow:function(){
    * 生命周期函数--监听页面卸载
    */
   login:function(){
-    console.info("fuckyou")
     let oThis=this
     if(this.data.login){
       wx.removeStorage({
         key: 'sessionuser',
         success: function(res) {
-          oThis.setData({login:false})
+          oThis.setData({login:false,phone:''})
           wx.switchTab({
             url: '../index/index',
           })
@@ -57,35 +64,30 @@ onShow:function(){
     }
    
   },
-  onLoad: function () {
   
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
+  /* onLoad: function (options) {
+    let oThis = this
+      wx.getStorage({
+        key: 'sessionuser',
+        success: function (res) {
+          oThis.setData({
+            
+            phone: res.data.phone
+          })
+        },
+        fail: function (res) {
+        if(!oThis.data.login){
+          wx.removeStorage({
+            key: 'sessionuser',
+            success: function(res) {
+              oThis.setData({username:'',phone:''})
+            },
           })
         }
+        }
       })
-    }
-  },
+   
+  }, */
   getUserInfo: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo

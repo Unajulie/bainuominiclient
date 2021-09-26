@@ -1,61 +1,40 @@
-<!--pages/mine/mine.wxml-->
 <view style="width: 100%;height: auto;">
-  <view style="width: 100%;height: 300rpx;background-color: #f8f8f8;">
-    <view style="width:100%; height: 200rpx;">
-      <view style="width: 100%;height: 60rpx;"></view>
-      <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"
-        style="width: 50%;height: 80rpx; background-color:transparent; text-align: center;border: none;">授权登陆
-        >> </button> -->
-        <button  bindtap="login"
-        style="width: 50%;height: 80rpx; background-color:transparent; text-align: center;border: none;">{{login?"退出登录":"登录/注册"}}
-      </button>
-      <block style="width: 100%;height: 148rpx;">
-        <view style="width: 100%;height: 148rpx;flex-direction: row;">
-          <view style="width: 40%;height: 148rpx;float: left;text-align: center;">
-            <image bindtap="bindViewTap" mode="aspectFill" style="width: 148rpx;height: 148rpx;border-radius: 50%;"
-              src="{{userInfo.avatarUrl}}" mode="cover"></image>
-          </view>
-          <view style="width: 60%;height: 148rpx;float: left;line-height: 148rpx;">
-            <text>{{userInfo.nickName}}</text>
-          </view>
-        </view>
-      </block>
-    </view>
+<view style="width: 90%;height: auto;display: flex;flex-direction: column;margin:0 auto;margin-top: 50rpx ;">
+<view style="width: 100%;height: auto;margin:0 auto;display: flex;flex-direction: column;">
+<image style="width: 100%;height: auto;position: relative;" mode="widthFix" src="../../img/idcard.png">
+</image>
 
-  </view>
-  <view style="width: 100%;height: auto;">
-    <view style="width: 100%;height: 20rpx;background-color: #ededed;"></view>
-    <view style="width: 90%;height: auto;margin: 0 auto;">
-      <!-- <navigator url='.././report_epihpv/report_epihpv'>
-      <view style="width: 100%;height: 120rpx;border-bottom: 1rpx solid #ededed;">
-        <view style="width: 20%;height: 120rpx;float: left;">
-          <image mode='widthFix' lazy-load="true" style="width: 60%;height: 100rpx;margin-top: 20rpx;"
-            src='https://bainuo.beijingepidial.com/public/img/uc3.png'></image>
-        </view>
-        <view style="width: 60%;height: 120rpx;float: left;line-height: 120rpx;">个人报告</view>
-        <view style="width: 20%;height: 120rpx;float: left;line-height: 120rpx;">></view>
-      </view>
-    </navigator> -->
-      <navigator url='../mine/qna'>
-        <view style="width: 100%;height: 120rpx;border-bottom: 1rpx solid #ededed;">
+<view style="width:70%;height: 70rpx;margin:0 auto;position: absolute;top:368rpx;left: 130rpx;color: white;font-size: 30rpx;">{{phone}}</view>
+</view>
+<navigator url='../mine/qna'>
+        <view style="width: 90%;height: 120rpx;margin:0 auto">
           <view style="width: 20%;height: 120rpx;float: left;">
             <image mode='widthFix' lazy-load="true" style="width: 60%;height: 100rpx;margin-top: 20rpx;"
-              src='https://bainuo.beijingepidial.com/public/img/uc1.png'></image>
+              src='../../img/ques.png'></image>
           </view>
           <view style="width: 60%;height: 120rpx;float: left;line-height: 120rpx;">常见问题</view>
-          <view style="width: 20%;height: 120rpx;float: left;line-height: 120rpx;">></view>
+          <view style="width: 20%;height: 120rpx;float: right;line-height: 120rpx;">
+            <image mode='widthFix' lazy-load="true" style="width: 20%;height: 100rpx;margin-top: 40rpx;float: right;"
+              src='../../img/darrow.png'></image>
+          </view>
         </view>
       </navigator>
       <navigator url='../mine/contact'>
-        <view style="width: 100%;height: 120rpx;border-bottom: 1rpx solid #ededed;">
+        <view style="width: 90%;height: 120rpx;margin:0 auto">
           <view style="width: 20%;height: 120rpx;float: left;">
             <image mode='widthFix' lazy-load="true" style="width: 60%;height: 100rpx;margin-top: 20rpx;"
-              src='https://bainuo.beijingepidial.com/public/img/uc6.png'></image>
+              src='../../img/ser.png'></image>
           </view>
           <view style="width: 60%;height: 120rpx;float: left;line-height: 120rpx;">联系客服</view>
-          <view style="width: 20%;height: 120rpx;float: left;line-height: 120rpx;">></view>
+          <view style="width: 20%;height: 120rpx;float: left;line-height: 120rpx;">
+            <image mode='widthFix' lazy-load="true" style="width: 20%;height: 100rpx;margin-top: 40rpx;float: right;"
+              src='../../img/darrow.png'></image>
+          </view>
         </view>
       </navigator>
-    </view>
-  </view>
+
+      <button  bindtap="login"
+        style="width: 50%;height: 80rpx;line-height: 80rpx; background-color:#0e6eb8; text-align: center;border: none;margin:0 auto;margin-top: 200rpx;color: white;">{{login?"退出登录":"登录/注册"}}
+      </button>  
+</view>
 </view>
