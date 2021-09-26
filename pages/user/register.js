@@ -119,13 +119,13 @@ Page({
                 duration: 2000
             })    
         }
-        // else if(!this.data.vdcodein){
-        //     wx.showToast({
-        //         title: '验证码必填',
-        //         icon: 'error',
-        //         duration: 2000
-        //     })  
-        // }
+        else if(!this.data.vdcodein){
+            wx.showToast({
+                title: '验证码必填',
+                icon: 'error',
+                duration: 2000
+            })  
+        }
         else if(!this.data.inputpwd){
             wx.showToast({
                 title: '请输入密码',
@@ -145,13 +145,13 @@ Page({
                 duration: 2000
             })
         }
-        // else if(this.data.vdcodein!=this.data.vdcode){
-        //     wx.showToast({
-        //         title: '验证码输入有误',
-        //         icon: 'error',
-        //         duration: 2000
-        //     })
-        // }
+        else if(this.data.vdcodein!=this.data.vdcode){
+            wx.showToast({
+                title: '验证码输入有误',
+                icon: 'error',
+                duration: 2000
+            })
+        }
         else{
             let sessionuser={}
             sessionuser.phone=this.data.phone

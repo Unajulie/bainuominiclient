@@ -6,20 +6,20 @@ Page({
     sampleid: "",
     reportUrl: null,
     reportShow: false,
-    optionList:['所有','选项1','选项2'],
- value:'所有',
+
+
  hideFlag: true,
  animationData: {},
   },
 // 下滑入框
 // 点击选项
-getOption:function(e){
-  var that = this;
-  that.setData({
-   value:e.currentTarget.dataset.value,
-   hideFlag: true
-  })
-  },
+// getOption:function(e){
+//   var that = this;
+//   that.setData({
+//    value:e.currentTarget.dataset.value,
+//    hideFlag: true
+//   })
+//   },
   //取消
   mCancel: function () {
   var that = this;
@@ -84,9 +84,9 @@ showModal: function () {
     wx.scanCode({
       onlyFromCamera: true,
       success(res) {
-        console.log(res)
+        console.log(res.result)
         that.setData({
-          barcode: res.result
+          sampleid: res.result
         });
       }
     })
@@ -95,11 +95,9 @@ showModal: function () {
   //获取到hpv报告页面输入的值，查询mongodb数据库，并返回状态
   inputVal: function (e) {
     let sampleid = e.detail.value
-    console.info(sampleid)
     this.setData({
       sampleid: sampleid
     })
-
   },
   //  
   checkLiverReport: function (e) {

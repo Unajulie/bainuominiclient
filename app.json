@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/report/report",
     "pages/index/index",
     "pages/report_epiage/userform",
     "pages/report_epiliver/userform",
     "pages/report_epiliver/report_epiliver",
-    "pages/report/report",
     "pages/report_epiage/report_epistatus",
     "pages/mine/mine",
     "pages/user/login",
