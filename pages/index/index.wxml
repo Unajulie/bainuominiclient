@@ -1,44 +1,23 @@
-<!--index.wxml-->
-<view class="container">
-  <swiper autoplay='3000' circular='true' indicator-dots indicator-color='#ffffff' indicator-active-color='#036eae'>
-    <!-- swiper宽度 /swiper 高度=原图宽/原图高 
-height:calc(100vw*352/1125)
--->
-    <swiper-item>
-      <image mode='widthFix' lazy-load="true" src="https://bainuo.beijingepidial.com/public/img/scroll1.jpg"></image>
-    </swiper-item>
-    <swiper-item>
-      <image mode='widthFix' lazy-load="true" src="https://bainuo.beijingepidial.com/public/img/scroll2.jpg"></image>
-    </swiper-item>
-    <swiper-item>
-      <image mode="widthFix" lazy-load="true" src='https://bainuo.beijingepidial.com/public/img/scroll3.jpg'></image>
-    </swiper-item>
-  </swiper>
-  <view class="products">
-    <view class="pro-title">产品推荐</view>
-    <navigator url="/pages/intro/intro-epiage" hover-class="navigator-hover">
-      <image lazy-load="true" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index1.jpg"></image>
-    </navigator>
-    <view class="block"></view>
-    <navigator lazy-load="true" url="/pages/intro/intro-epiliver" hover-class="navigator-hover">
-      <image mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index2.jpg"></image>
-    </navigator>
-    <view class="block"></view>
-    <navigator url="/pages/intro/intro-epihpv" hover-class="navigator-hover">
-      <image mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index3.jpg"></image>
-    </navigator>
-    <view class="block"></view>
+<view style="width: 100%;height: auto; ">
+  <view style="width: 95%;height: auto; display: flex;flex-direction: column;margin: 0 auto;">
+  <view style="width: 100%; height: auto;margin-top: 30rpx;">
+    <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index/more1.jpg"></image>
   </view>
-  <view class="f7f9fc"></view>
-  <view class="otherpro-container">
-    <view class="other-pro">其他检测</view>
-    <view class="block"></view>
-    <navigator url="/pages/intro/intro-depress" hover-class="navigator-hover">
-      <image mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index4.jpg"></image>
+  <view style="width: 100%; height: auto;margin-top: 50rpx;">产品推荐</view>
+  <view style="width: 100%; height: auto;">
+    <navigator url="/pages/intro/intro-epiage" hover-class="navigator-hover">
+      <image style="width: 100%; height: auto;" lazy-load="true" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index/more2.jpg"></image>
     </navigator>
-    <view class="block"></view>
-    <navigator url="/pages/intro/intro-dull" hover-class="navigator-hover">
-      <image mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index5.jpg"></image>
+  </view>
+  <view style="width: 100%; height: auto;">
+    <navigator url="/pages/intro/intro-epiage" hover-class="navigator-hover">
+      <image style="width: 100%; height: auto;" lazy-load="true" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index/more3.jpg"></image>
     </navigator>
+  </view>
+  <view style="width: 100%; height: auto;">
+    <navigator url="/pages/intro/intro-epiage" hover-class="navigator-hover">
+      <image style="width: 100%; height: auto;" lazy-load="true" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index/more4.jpg"></image>
+    </navigator>
+  </view>
   </view>
 </view>

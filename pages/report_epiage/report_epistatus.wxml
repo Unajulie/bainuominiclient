@@ -1,19 +1,19 @@
 <!--pages/report_epiage/report_epistatus.wxml-->
 <view>
-    <view style="width: 100%;height: auto; position:absolute">
+    <view style="width: 100%;height: auto;">
         <!-- <image style="width: 100% ;position:absolute" mode="widthFix" src="../../img/statusbg.png"></image> -->
-        <view style="width: 100%;height: auto; display:flex;position: absolute ;top:30px;">
+        <view style="width: 100%;height: auto; display:flex;margin-top: 50rpx;">
             <view style="width: 100%;height: auto;">
                 <image style="width: 50%;" mode="widthFix" src="../../img/progress.png"></image>
             </view>
     
         </view>
-        <view style="width: 100%;height: auto;position: absolute ;top: 135px;">
+        <view style="width: 100%;height: auto;margin-top: 50rpx;">
             <view style="width: 80%;height: auto;margin: 0 auto;font-weight: 700;">当前进度!</view>
         </view>
-        <view style="width: 100%;height:auto;position: absolute;top:160px">
+        <view style="width: 100%;height:auto;position: relative;top:20rpx;">
             <view style="width: 80%;height:auto;margin: 0 auto;display: flex">
-                <view style="width: 10%;height: 534px;">
+                <view style="width: 10%;height: 1000rpx;">
                     <view style="width: 100%;height: auto;flex-direction: column;">
                         <view
                             style="border-radius: 20px; width: 20px;height:20px; background-color:{{status=='NO_STATUS'?'#069ce8':'#7b7c7e'}};text-align: center;color: white;position: absolute;margin-top:20px;font-weight: 700;">
@@ -37,9 +37,9 @@
                             style="border-radius: 20px; width: 20px;height:20px; background-color: {{status=='Completed'?'#069ce8':'#7b7c7e'}};text-align: center;color: white;position: absolute;top:440px;font-weight: 700;">
                             <image style="width: 20px;height:20px;" mode="widthFix" src="../../img/arrow.png"></image></view>
                     </view>
-                    <view style="width: 15%;height: 1080rpx;margin: 0 auto;background-color: #b5b5b5;"></view>
+                    <view style="width: 15%;height: 970rpx;margin: 0 auto;background-color: #b5b5b5;"></view>
                 </view>
-                <view style="width: 100%;height: 1080rpx;">
+                <view style="width: 100%;height: 970rpx;">
                     <view style="width: 100%;height: 30px;display: flex;">
                         <!-- 空盒子 -->
                         <view style="width:{{status=='NO_STATUS'?'20%':'0px'}};height: 35px;margin-left: 5px;"></view>
@@ -117,5 +117,6 @@
             </view>
 
         </view>
+        <view style="width: 50%;height: auto;margin:0 auto;text-align: center;color: #069ce8;">复制链接地址</view>
     </view>
 </view>

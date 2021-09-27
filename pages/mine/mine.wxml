@@ -1,21 +1,26 @@
-<view style="width: 100%;height: auto;">
-<view style="width: 90%;height: auto;display: flex;flex-direction: column;margin:0 auto;margin-top: 50rpx ;">
-<view style="width: 100%;height: auto;margin:0 auto;display: flex;flex-direction: column;">
-<image style="width: 100%;height: auto;position: relative;" mode="widthFix" src="../../img/idcard.png">
-</image>
-
-<view style="width:70%;height: 70rpx;margin:0 auto;position: absolute;top:368rpx;left: 130rpx;color: white;font-size: 30rpx;">{{phone}}</view>
+<view style="width: 100%;height: auto;display: flex;flex-direction: column;"> 
+<view style="width: 100%;height: 400rpx;background-color: #f6f7f9;">
+<view style="width: 20%;height: auto; display: flex;flex-direction: column;margin:0 auto;margin-top: 70rpx;">
+<view ><image style="width: 100%;height: auto; margin:0 auto" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index/center1.jpg"></image></view>
+<view style="width: 100%;height: auto;display: flex;flex-direction: row;">
+<View style="width: 45%;height:auto;text-align: center;">登录</View>
+<view style="width: 5%;height: 30rpx;border-right:1px solid #b8b9bb;margin-top: 10rpx;"></view>
+<view style="width: 5%;height: 30rpx;"></view>
+<View style="width: 45%;height:auto;text-align: center;">注册</View>
 </view>
+</view>
+</view>
+<view style="width: 90%;height: 800rpx;margin:0 auto;margin-top: 80rpx;">
 <navigator url='../mine/qna'>
         <view style="width: 90%;height: 120rpx;margin:0 auto">
           <view style="width: 20%;height: 120rpx;float: left;">
             <image mode='widthFix' lazy-load="true" style="width: 60%;height: 100rpx;margin-top: 20rpx;"
-              src='../../img/ques.png'></image>
+              src='https://bainuo.beijingepidial.com/public/img/index/center2.jpg'></image>
           </view>
           <view style="width: 60%;height: 120rpx;float: left;line-height: 120rpx;">常见问题</view>
           <view style="width: 20%;height: 120rpx;float: right;line-height: 120rpx;">
             <image mode='widthFix' lazy-load="true" style="width: 20%;height: 100rpx;margin-top: 40rpx;float: right;"
-              src='../../img/darrow.png'></image>
+              src='https://bainuo.beijingepidial.com/public/img/index/center4.png'></image>
           </view>
         </view>
       </navigator>
@@ -23,18 +28,14 @@
         <view style="width: 90%;height: 120rpx;margin:0 auto">
           <view style="width: 20%;height: 120rpx;float: left;">
             <image mode='widthFix' lazy-load="true" style="width: 60%;height: 100rpx;margin-top: 20rpx;"
-              src='../../img/ser.png'></image>
+              src='https://bainuo.beijingepidial.com/public/img/index/center3s.jpg'></image>
           </view>
           <view style="width: 60%;height: 120rpx;float: left;line-height: 120rpx;">联系客服</view>
           <view style="width: 20%;height: 120rpx;float: left;line-height: 120rpx;">
             <image mode='widthFix' lazy-load="true" style="width: 20%;height: 100rpx;margin-top: 40rpx;float: right;"
-              src='../../img/darrow.png'></image>
+              src='https://bainuo.beijingepidial.com/public/img/index/center4.png'></image>
           </view>
         </view>
       </navigator>
-
-      <button  bindtap="login"
-        style="width: 50%;height: 80rpx;line-height: 80rpx; background-color:#0e6eb8; text-align: center;border: none;margin:0 auto;margin-top: 200rpx;color: white;">{{login?"退出登录":"登录/注册"}}
-      </button>  
-</view>
+    </view>
 </view>
