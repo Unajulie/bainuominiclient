@@ -9,13 +9,13 @@ Page({
         disabled: false,
         color: "linear-gradient(#64a3ff,#307ffd)",
         phone: '',
-        post:true,
-        inputpwd:'',
+        post: true,
+        inputpwd: '',
         truePwd: false,
-        enablereg:false,
-        regcolor:"linear-gradient(#64a3ff,#307ffd)",
-        userName:'',
-        vdcodein:''
+        enablereg: false,
+        regcolor: "linear-gradient(#64a3ff,#307ffd)",
+        userName: '',
+        vdcodein: ''
     },
 
     /**
@@ -34,7 +34,7 @@ Page({
         })
 
     },
-    userIn:function (e) {
+    userIn: function (e) {
         console.info(e.detail.value)
         this.setData({
 
@@ -48,6 +48,7 @@ Page({
     //15767088850
 
     btnclic: function () {
+        let post = true
         //验证手机号码
         if (!(/^1[3456789]\d{9}$/.test(this.data.phone))) {
             wx.showToast({
@@ -56,136 +57,183 @@ Page({
                 duration: 2000
             })
         } else {
-            let times = 60;
             let oThis = this;
-            this.setData({ color: "#cecece", disabled: true })
-            ///admin/epiage/sms
-            let time = setInterval(function () {
-                times--
-                oThis.setData({
-                    msg: "请等待" + times + "秒"
-                })
-                if (times == 0) {
-                    oThis.setData({color: "linear-gradient(#64a3ff,#307ffd)",  disabled: false,  msg: "发送验证码",post:true,regcolor:"linear-gradient(#64a3ff,#307ffd)",enablereg:false})
-                    clearInterval(time)
-                }
-                if(oThis.data.post){
-                oThis.setData({post:false})
-                //通过barcode查询宫颈癌报告,1先获取输入的值，返回给后台数据库去查询是否存在这个barcode,如果有数据有返回，没有数据就提示错误信息或输入正确的barcode.
-                wx.request({
-                    url: "https://bainuo.beijingepidial.com/client/user/sms",
-                    header: {"Content-Type": "application/x-www-form-urlencoded"},
-                    method: "POST",
-                    data: {"phone": oThis.data.phone},
-                    // data: {"barcode": 1121032800079},
-                    complete: function (res) {
-                      console.info(res.data)
-                        oThis.setData({vdcode:res.data.code})    
-                    },
-                    fail:function(e){
+            wx.request({
+                url: "https://bainuo.beijingepidial.com/client/user/finduser",
+                header: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                method: "POST",
+                data: {
+                    "phone": oThis.data.phone
+                },
+                // data: {"barcode": 1121032800079},
+                complete: function (res) {
+                    console.info(res.data)
+                    if (!res.data) {
+                        let times = 120;
+                        oThis.setData({
+                            color: "#cecece",
+                            disabled: true
+                        })
+                        ///admin/epiage/sms
+                        let timeClock = setInterval(function () {
+                            times--
+                            oThis.setData({
+                                msg: "请等待" + times + "秒"
+                            })
+                            if (times == 0) {
+                                oThis.setData({
+                                    color: "linear-gradient(#64a3ff,#307ffd)",
+                                    disabled: false,
+                                    msg: "发送验证码",
+                                    post: true,
+                                    regcolor: "linear-gradient(#64a3ff,#307ffd)",
+                                    enablereg: false
+                                })
+                                clearInterval(timeClock)
+                            }
+                            if (post) {
+                                post = false
+                                //通过barcode查询宫颈癌报告,1先获取输入的值，返回给后台数据库去查询是否存在这个barcode,如果有数据有返回，没有数据就提示错误信息或输入正确的barcode.
+                                wx.request({
+                                    url: "https://bainuo.beijingepidial.com/client/user/sms",
+                                    header: {
+                                        "Content-Type": "application/x-www-form-urlencoded"
+                                    },
+                                    method: "POST",
+                                    data: {
+                                        "phone": oThis.data.phone
+                                    },
+                                    // data: {"barcode": 1121032800079},
+                                    complete: function (res) {
+                                        console.info(res.data)
+                                        oThis.setData({
+                                            vdcode: res.data.code
+                                        })
+                                    },
+                                    fail: function (e) {
+                                        wx.showToast({
+                                            title: '接收验证码失败',
+                                            icon: 'error',
+                                            duration: 2000
+                                        })
+                                    }
+                                })
+                            }
+                        }, 1000)
+                    } else {
                         wx.showToast({
-                            title: '接收验证码失败',
+                            title: '电话号码已经注册',
                             icon: 'error',
                             duration: 2000
                         })
                     }
-                })
-            }
-            }, 1000)
+                }
+            })
 
-        }    
+
+
+        }
 
     },
-    vdcodeIn:function(e){
-        this.setData({vdcodein: e.detail.value})
+    vdcodeIn: function (e) {
+        this.setData({
+            vdcodein: e.detail.value
+        })
         console.info(this.data.vdcodein)
     },
-    cmpwdIn:function(e){
-        this.setData({cmpwd: e.detail.value})
+    cmpwdIn: function (e) {
+        this.setData({
+            cmpwd: e.detail.value
+        })
         console.info(this.data.cmpwd)
     },
-    btnreg:function(e){
+    btnreg: function (e) {
         console.info(this.data.vdcodeIn)
-        if(!this.data.phone){
+        if (!this.data.phone) {
             wx.showToast({
                 title: '手机号必填',
                 icon: 'error',
                 duration: 2000
-            }) 
-        }else if(!this.data.userName){
+            })
+        } else if (!this.data.userName) {
             wx.showToast({
                 title: '用户名必填',
                 icon: 'error',
                 duration: 2000
-            })    
-        }
-        else if(!this.data.vdcodein){
+            })
+        } else if (!this.data.vdcodein) {
             wx.showToast({
                 title: '验证码必填',
                 icon: 'error',
                 duration: 2000
-            })  
-        }
-        else if(!this.data.inputpwd){
+            })
+        } else if (!this.data.inputpwd) {
             wx.showToast({
                 title: '请输入密码',
                 icon: 'error',
                 duration: 2000
             })
-        }else if(!this.data.cmpwd){
+        } else if (!this.data.cmpwd) {
             wx.showToast({
                 title: '请输入确认密码',
                 icon: 'error',
                 duration: 2000
             })
-        }else if(this.data.cmpwd!=this.data.inputpwd){
+        } else if (this.data.cmpwd != this.data.inputpwd) {
             wx.showToast({
                 title: '密码不一致',
                 icon: 'error',
                 duration: 2000
             })
-        }
-        else if(this.data.vdcodein!=this.data.vdcode){
+        } else if (this.data.vdcodein != this.data.vdcode) {
             wx.showToast({
                 title: '验证码输入有误',
                 icon: 'error',
                 duration: 2000
             })
-        }
-        else{
-            let sessionuser={}
-            sessionuser.phone=this.data.phone
-            sessionuser.password=this.data.inputpwd
-            sessionuser.username=this.data.userName
+        } else {
+            let sessionuser = {}
+            sessionuser.phone = this.data.phone
+            sessionuser.password = this.data.inputpwd
+            sessionuser.username = this.data.userName
             console.info(sessionuser)
-            this.setData({enablereg:true,regcolor:"grey"})
+            this.setData({
+                enablereg: true,
+                regcolor: "grey"
+            })
             wx.request({
                 url: "https://bainuo.beijingepidial.com/admin/epiage/adduser",
-                header: {"Content-Type": "application/x-www-form-urlencoded"},
+                header: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
                 method: "POST",
                 data: sessionuser,
                 // data: {"barcode": 1121032800079},
                 complete: function (res) {
                     console.info(res.data)
-                   if(res.data.status=="success"){
-                    wx.setStorage({
-                        key: "sessionuser",
-                        data: sessionuser,
-                        success: function(res){
-                            console.info(res)
-                            wx.switchTab({url: '../index/index'})
-                        },
-                        fail:function(res){
-                            console.info(res)
-                            wx.showToast({
-                                title: '登陆状态保存失败',
-                                icon: 'error',
-                                duration: 2000
-                            })
-                        }
-                      })  
-                   
-                   }
+                    if (res.data.status == "success") {
+                        wx.setStorage({
+                            key: "sessionuser",
+                            data: sessionuser,
+                            success: function (res) {
+                                console.info(res)
+                                wx.switchTab({
+                                    url: '../index/index'
+                                })
+                            },
+                            fail: function (res) {
+                                console.info(res)
+                                wx.showToast({
+                                    title: '登陆状态保存失败',
+                                    icon: 'error',
+                                    duration: 2000
+                                })
+                            }
+                        })
+
+                    }
                     // wx.navigateTo({
                     //     url: "../report_epiage/report_epiage"
                     //   })
@@ -193,21 +241,23 @@ Page({
             })
         }
     },
-    vdpwd:function(e){
+    vdpwd: function (e) {
         console.info(this.data.inputpwd)
         if (!/[0-9a-zA-Z]{6,12}/.test(this.data.inputpwd)) {
-             // console.log("cwoca")
-             wx.showModal({
+            // console.log("cwoca")
+            wx.showModal({
                 title: '提示',
                 content: '密码由6~12位由数字或英文字母混合而成',
                 showCancel: false
             })
-         }
+        }
     },
     passwordInput: function (e) {
         console.info(e.detail.value)
-        this.setData({inputpwd: e.detail.value}) 
-       
+        this.setData({
+            inputpwd: e.detail.value
+        })
+
     },
     /**
      * 生命周期函数--监听页面初次渲染完成
@@ -257,4 +307,4 @@ Page({
     onShareAppMessage: function () {
 
     }
-}) 
+})
