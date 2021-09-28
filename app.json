@@ -1,19 +1,16 @@
 {
   "pages": [
+    "pages/mine/mine",
     "pages/report/report",
     "pages/index/index",
+    "pages/report_epiliver/report_liverstatus",
+    "pages/report_epiage/report_epistatus",
     "pages/report_epiage/userform",
     "pages/report_epiliver/userform",
     "pages/report_epiliver/report_epiliver",
-    "pages/report_epiage/report_epistatus",
-    "pages/epiage/login",
     "pages/report_epiage/report_epiage",
-    "pages/epiage/fgpwd",
-    "pages/epiage/register",
-    "pages/mine/mine",
     "pages/user/login",
     "pages/user/register",
-    "pages/report_epiliver/report_liverstatus",
     "pages/user/fgpwd",
     "pages/pdf/epiliverpdf",
     "pages/pdf/epihpvpdf",
@@ -71,6 +68,7 @@
         "text": "我的",
         "iconPath": "/img/user.png",
         "selectedIconPath": "/img/_user.png"
+        
       }
     ],
     "color": "#000000",

@@ -10,12 +10,12 @@
     </navigator>
   </view>
   <view style="width: 100%; height: auto;">
-    <navigator url="/pages/intro/intro-epiage" hover-class="navigator-hover">
+    <navigator url="/pages/intro/intro-epiliver" hover-class="navigator-hover">
       <image style="width: 100%; height: auto;" lazy-load="true" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index/more3.jpg"></image>
     </navigator>
   </view>
   <view style="width: 100%; height: auto;">
-    <navigator url="/pages/intro/intro-epiage" hover-class="navigator-hover">
+    <navigator url="/pages/intro/intro-epihpv" hover-class="navigator-hover">
       <image style="width: 100%; height: auto;" lazy-load="true" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index/more4.jpg"></image>
     </navigator>
   </view>

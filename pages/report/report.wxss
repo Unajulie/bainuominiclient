@@ -1,1 +1,18 @@
 
+<<<<<<< Updated upstream
+=======
+ .head{
+  color:#4d4d4d;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "hansans";
+  src: url("https://bainuo.beijingepidial.com/public/fonts/SourceHanSansCN-Bold-Alphabetic.ttf");
+}
+
+
+
+
+
+
+>>>>>>> Stashed changes

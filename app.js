@@ -22,9 +22,28 @@ App({
         },
         fail: console.log
       })
+    //外部字体
+ /*    wx.loadFontFace({
+      family: 'en',
+      source: 'url("https://bainuo.beijingepidial.com/public/fonts/SourceHanSansCN-Bold-Alphabetic.ttf")',
+      success: res => {
+        console.log('font load success', res)
+      },
+      fail: err => {
+        console.log('font load fail', err)
+      }
+    }) */
+   
     
   },
+  onShow:function(){
+  
+  }
+  ,
   globalData: {
     userInfo: null
-  }
+  },
+  
+
+
 })

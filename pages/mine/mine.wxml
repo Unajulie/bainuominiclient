@@ -1,12 +1,12 @@
 <view style="width: 100%;height: auto;display: flex;flex-direction: column;"> 
 <view style="width: 100%;height: 400rpx;background-color: #f6f7f9;">
-<view style="width: 20%;height: auto; display: flex;flex-direction: column;margin:0 auto;margin-top: 70rpx;">
-<view ><image style="width: 100%;height: auto; margin:0 auto" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index/center1.jpg"></image></view>
-<view style="width: 100%;height: auto;display: flex;flex-direction: row;">
-<View style="width: 45%;height:auto;text-align: center;">登录</View>
-<view style="width: 5%;height: 30rpx;border-right:1px solid #b8b9bb;margin-top: 10rpx;"></view>
+<view style="width: 30%;height: auto; display: flex;flex-direction: column;margin:0 auto;margin-top: 70rpx;">
+<view style="width: 70%;height: auto; margin:0 auto"><image style="width: 100%;height: auto; margin:0 auto" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index/center1.jpg"></image></view>
+<view style="width: 100%;height: auto;display: flex;flex-direction: row;"  bindtap="login">
+<View style="width: 100%;height:auto;text-align: center;">{{login?"退出登录":"登录 | 注册"}}</View>
+<!-- <view style="width: 5%;height: 30rpx;border-right:1px solid #b8b9bb;margin-top: 10rpx;"></view>
 <view style="width: 5%;height: 30rpx;"></view>
-<View style="width: 45%;height:auto;text-align: center;">注册</View>
+<View style="width: 45%;height:auto;text-align: center;">注册</View> -->
 </view>
 </view>
 </view>
@@ -17,7 +17,7 @@
             <image mode='widthFix' lazy-load="true" style="width: 60%;height: 100rpx;margin-top: 20rpx;"
               src='https://bainuo.beijingepidial.com/public/img/index/center2.jpg'></image>
           </view>
-          <view style="width: 60%;height: 120rpx;float: left;line-height: 120rpx;">常见问题</view>
+          <view style="width: 60%;height: 120rpx;float: left;line-height: 120rpx;color: #656565;">常见问题</view>
           <view style="width: 20%;height: 120rpx;float: right;line-height: 120rpx;">
             <image mode='widthFix' lazy-load="true" style="width: 20%;height: 100rpx;margin-top: 40rpx;float: right;"
               src='https://bainuo.beijingepidial.com/public/img/index/center4.png'></image>
@@ -30,7 +30,7 @@
             <image mode='widthFix' lazy-load="true" style="width: 60%;height: 100rpx;margin-top: 20rpx;"
               src='https://bainuo.beijingepidial.com/public/img/index/center3s.jpg'></image>
           </view>
-          <view style="width: 60%;height: 120rpx;float: left;line-height: 120rpx;">联系客服</view>
+          <view style="width: 60%;height: 120rpx;float: left;line-height: 120rpx;color: #656565;">联系客服</view>
           <view style="width: 20%;height: 120rpx;float: left;line-height: 120rpx;">
             <image mode='widthFix' lazy-load="true" style="width: 20%;height: 100rpx;margin-top: 40rpx;float: right;"
               src='https://bainuo.beijingepidial.com/public/img/index/center4.png'></image>
