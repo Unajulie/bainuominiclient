@@ -102,11 +102,11 @@ showModal: function () {
     //console.info("https://bainuo.beijingepidial.com/public/pdffile/"+this.data.sampleid+".pdf")
     //wx.showToast({title: '加载中', icon: 'loading', duration: 10000});
     let oThis = this
-    wx.showLoading({
-      title: '加载中',
-      duration: 10000,
-      mask: true
-    })
+    // wx.showLoading({
+    //   title: '加载中',
+    //   duration: 10000,
+    //   mask: true
+    // })
     wx.getStorage({
       key: 'sessionuser',
       success: function (res) {

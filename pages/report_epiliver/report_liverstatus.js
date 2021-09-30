@@ -40,11 +40,11 @@ Page({
                       data: data,
                       // data: {"sampleid": 1121032800079},
                       complete: function (res) {
-                        wx.showLoading({
-                          title: '加载中',
-                          duration:10000,
-                          mask: true
-                        })
+                        // wx.showLoading({
+                        //   title: '加载中',
+                        //   duration:10000,
+                        //   mask: true
+                        // })
                         if (res.data.pdf) {
                            wx.downloadFile({
                           url: "https://bainuo.beijingepidial.com/public/pdffile/" +res.data.pdf,

@@ -4,7 +4,23 @@
   <view style="width: 90%;height: auto;margin: 0 auto;">
     <view style="width: 100%;height: 100rpx;"></view>
   </view>
-  <image mode='widthFix' lazy-load='true' style="width: 50%;height: 150rpx;margin-left: 25%;"
+  <view style="width: 90%;margin: 0 auto;">
+  <image mode='widthFix' lazy-load='true' style="width: 100%;height: 150rpx;"
+    src='https://bainuo.beijingepidial.com/public/img/contact4.jpg'></image>
+    <view style="width: 100%;height: 20rpx;"></view>
+    <image catchtap='makcall' mode='widthFix' lazy-load='true' style="width: 100%;height: 150rpx;"
+    src='https://bainuo.beijingepidial.com/public/img/contact1.jpg'></image>
+    <view style="width: 100%;height: 20rpx;"></view>
+    <image mode='widthFix' lazy-load='true' style="width: 100%;height: 150rpx;"
+    src='https://bainuo.beijingepidial.com/public/img/contact2.jpg'></image>
+    <view style="width: 100%;height: 20rpx;"></view>
+    <image mode='widthFix' lazy-load='true' style="width: 100%;height: 150rpx;"
+    src='https://bainuo.beijingepidial.com/public/img/contact3.jpg'></image>
+    <view style="width: 100%;height: 20rpx;"></view>
+    <image mode='widthFix' lazy-load='true' style="width: 20%;margin-left: 70%; height: 50rpx;"
+    src='https://bainuo.beijingepidial.com/public/img/contact5.jpg'></image>
+
+  <!-- <image mode='widthFix' lazy-load='true' style="width: 50%;height: 150rpx;margin-left: 25%;"
     src='https://bainuo.beijingepidial.com/public/img/bainuo-logo.png'></image>
     <view style="width: 100%;height: 100rpx;"></view>
     <view style="width:100%;height: 400rpx;">
@@ -15,5 +31,6 @@
     <view style="width: 90%;height: 90rpx;line-height: 50rpx;margin: 0 auto;">
     公司地址：深圳市南山区西丽街道松坪山路1号源兴科技大厦东座2层202室
     </view>
-    </view>
+    </view> -->
+</view>
 </view>
