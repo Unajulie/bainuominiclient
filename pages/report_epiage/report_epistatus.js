@@ -7,7 +7,20 @@ Page({
     data: {
    
     },
+    //点击自动复制pdf链接地址
+    textPaste:function(){
+      let that=this
+      wx.showToast({
+        title: 'pdf报告地址复制成功',
+      })
+      wx.setClipboardData({
+        data: that.data.pdfurl,
+        success: function (res) {
+        }
+      })
+    },
     showpdf:function(e){
+      let that=this
         let data={}
         data.phone=e.currentTarget.dataset.phone
         data.barcode=e.currentTarget.dataset.barcode
@@ -21,8 +34,11 @@ Page({
             data: data,
             // data: {"sampleid": 1121032800079},
             complete: function (res) {
+
               console.info(res.data)
+              console.info("https://bainuo.beijingepidial.com/public/pdffile/" +res.data.pdf)
               if(res.data.pdf){
+               
                 wx.downloadFile({
                   url: "https://bainuo.beijingepidial.com/public/pdffile/" +res.data.pdf,
                   header: {},
@@ -36,7 +52,7 @@ Page({
                     console.log(res);
                     if (res.statusCode == 404) {
                       wx.showToast({
-                        title: '请输入正确的二维码！',
+                        title: '请输入正确的条码！',
                         icon: 'success',
                         duration: 2000
                       })
@@ -112,8 +128,10 @@ Page({
                 phone:sessionuser.data.phone,
                 status: res.data.status,
                 sampleid: res.data.sampleid,
-                pdfIsbuild:res.data.pdf?true:false
+                pdfIsbuild:res.data.pdf?true:false,
+                pdfurl:res.data.pdf?"https://bainuo.beijingepidial.com/public/pdffile/" +res.data.pdf:""
               })
+              
               console.info(res.data.pdf)
               console.info(oThis.data)
             }

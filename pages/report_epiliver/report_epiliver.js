@@ -6,8 +6,6 @@ Page({
     sampleid: "",
     reportUrl: null,
     reportShow: false,
-
-
  hideFlag: true,
  animationData: {},
   },
@@ -209,6 +207,7 @@ showModal: function () {
           },
           // data: {"sampleid": 1121032800079},
           complete: function (res) {
+            console.info(res.data)
             oThis.setData({
               barcodebox: res.data
             })

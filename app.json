@@ -1,10 +1,10 @@
 {
   "pages": [
-    "pages/mine/mine",
     "pages/report/report",
+    "pages/report_epiage/report_epistatus",
+    "pages/mine/mine",
     "pages/index/index",
     "pages/report_epiliver/report_liverstatus",
-    "pages/report_epiage/report_epistatus",
     "pages/report_epiage/userform",
     "pages/report_epiliver/userform",
     "pages/report_epiliver/report_epiliver",
@@ -43,9 +43,9 @@
   ],
   "window": {
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#036eae",
+    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "深圳百诺医学检验",
-    "navigationBarTextStyle": "white",
+    "navigationBarTextStyle": "black",
     "enablePullDownRefresh": true
   },
   "tabBar": {
@@ -53,26 +53,28 @@
       {
         "pagePath": "pages/report/report",
         "text": "首页",
-        "iconPath": "/img/home.png",
-        "selectedIconPath": "/img/_home.png"
+        "iconPath": "/img/tab1.jpg",
+        "selectedIconPath": "/img/_tab1.jpg",
+        "selectedColor": "red"
       },
       {
         "pagePath": "pages/index/index",
         "text": "更多",
-        "iconPath": "/img/about.png",
-        "selectedIconPath": "/img/_about.png"
+        "iconPath": "/img/tab2.jpg",
+        "selectedIconPath": "/img/_tab2.jpg",
+        "selectedColor": "green"
       },
 
       {
         "pagePath": "pages/mine/mine",
         "text": "我的",
-        "iconPath": "/img/user.png",
-        "selectedIconPath": "/img/_user.png"
-        
+        "iconPath": "/img/tab3.jpg",
+        "selectedIconPath": "/img/_tab3.jpg",
+        "selectedColor": "pink"
       }
     ],
-    "color": "#000000",
-    "selectedColor": "#036eae"
+    "color": "#cdcdcd",
+    "selectedColor": "#000000"
   },
   "sitemapLocation": "sitemap.json"
 }

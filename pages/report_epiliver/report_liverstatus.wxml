@@ -114,11 +114,13 @@
                         </view>
                     
                     </view>
-                   
+                   <view style="width: 100%;height: 100rpx;"></view>
                 </view>
             </view>
         </view>
-        <view style="width: 50%;height: auto;margin:0 auto;text-align: center;color: #069ce8;">复制链接地址</view>
+        <view wx:if="{{pdfIsbuild}}">
+        <button bindtap='textPaste' style="width: 80%;height: auto;margin:0 auto;text-align: center;color: #069ce8;border: 1rpx solid grey;font-size: 24rpx; ">点击复制PDF报告链接地址,并粘贴到浏览器下载</button>
+        </view>
 
     </view>
 </view>

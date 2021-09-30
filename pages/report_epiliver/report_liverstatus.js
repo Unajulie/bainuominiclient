@@ -7,6 +7,18 @@ Page({
       data: {
 
       },
+       //点击自动复制pdf链接地址
+    textPaste:function(){
+      let that=this
+      wx.showToast({
+        title: 'pdf报告地址复制成功',
+      })
+      wx.setClipboardData({
+        data: that.data.pdfurl,
+        success: function (res) {
+        }
+      })
+    },
       showpdf: function (e) {
         let oThis = this
         wx.getStorage({
@@ -138,7 +150,8 @@ Page({
               phone:res.data.tel,
               status: res.data.status,
               sampleid: res.data.sampleid,
-              pdfIsbuild:res.data.pdf?true:false
+              pdfIsbuild:res.data.pdf?true:false,
+              pdfurl:res.data.pdf?"https://bainuo.beijingepidial.com/public/pdffile/" +res.data.pdf:""
             })
           }
         })
