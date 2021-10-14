@@ -1,20 +1,25 @@
-
-  <view style="width: 100%;height: 100%; position:absolute">
-    <image src="https://bainuo.beijingepidial.com/public/img/03age.jpg"style="width: 100%;height: auto;" mode="widthFix" ></image>
+<view>
+<view style="width: 100%;height: auto;">
+<view style="width: 100%;height: 100%; position:absolute;">
+  <image src="https://bainuo.beijingepidial.com/public/img/02hpv.jpg"style="width: 100%;height: auto;" mode="widthFix" ></image>
+    <!-- <view style="width: 100%;height: auto;position: absolute ;top: 450rpx;">
+      <view style="width: 80%;height: auto;margin: 0 auto;font-weight: 700;text-align: center;color: #c477f2;">用户信息登记表
+      </view>
+    </view> -->
     <view style="position: absolute;width: 100%;height: auto;top: 180rpx;flex: auto;">
-      <view style="width: 100%;font-size: 46rpx;font-weight: 700;text-align: center;color: grey;">生物学年龄早期筛查</view>
+      <view style="width: 100%;font-size: 46rpx;font-weight: 700;text-align: center;color: grey;">宫颈癌早期筛查</view>
     <view style="width: 100%;height: 280rpx;"></view>
     <view style="width: 100%;font-size: 50rpx;text-align: center;">用户信息登记表</view>
     <view style="width: 100%;height: 100rpx;"></view>
     </view>
-    <view>
+    <view style="width: 100%;height: auto;">
       <view style="position: absolute; width: 100%;height: auto;top: 550rpx;flex: auto;">
         <view style="width: 80%;height: auto;margin: 0 auto;">
-          <view style="width: 90%;height: auto;margin:20px auto;">
+          <view style="width: 90%;height: auto;margin:40rpx auto;">
             <view>
-              <view view style="display: flex;width: 100%;border-bottom: solid 1px #6ae2c3;">
-                <view style="width: 30px;height: 45px;position: relative;">
-                  <image style="width: 18px;height: 45px;position: absolute;top: 15px;right: 5px;" mode="widthFix"
+              <view view style="display: flex;width: 100%;border-bottom: solid 1px #c477f2;">
+                <view style="width: 60rpx;height: 60rpx;position: relative;">
+                  <image style="width: 40rpx;height: 60rpx;position: absolute;top: 15px;right: 5px;" mode="widthFix"
                     src="../../img/info-user.jpg">
                   </image>
                 </view>
@@ -27,7 +32,7 @@
               </view>
             </view>
             <view>
-              <view view style="display: flex;width: 100%;border-bottom: solid 1px #6ae2c3;">
+              <view view style="display: flex;width: 100%;border-bottom: solid 1px #c477f2;">
                 <view style="width: 60rpx;height: 60rpx;position: relative;">
                   <image style="width: 30rpx;height: 30rpx;position: absolute;top: 20rpx;right: 15rpx;" mode="widthFix"
                     src="../../img/info-phone.jpg">
@@ -35,14 +40,14 @@
                 </view>
                 <view style="width: 300px;height: auto;">
                   <input style="width: 100%;height: 45px;font-size: 15px;" type="number" value="{{phone}}" bindinput='bininput_mobile' placeholder="手机号码"
-                     placeholder-class="phcolor" />
+                    placeholder-class="phcolor" />
 
                 </view>
 
               </view>
             </view>
 
-            <view view style="display: flex;width: 100%;border-bottom: solid 1px #6ae2c3;">
+            <view view style="display: flex;width: 100%;border-bottom: solid 1px #c477f2;">
               <view style="width: 60rpx;height: 60rpx;position: relative;">
                 <image style="width: 40rpx;height: 60rpx;position: absolute;top: 15px;right: 5px;" mode="widthFix"
                   src="../../img/info-idcard.jpg">
@@ -54,19 +59,18 @@
               </view>
 
             </view>
-            <view view style="display: flex;width: 100%;border-bottom: solid 1px #6ae2c3;">
+            <view view style="display: flex;width: 100%;border-bottom: solid 1px #c477f2;">
               <view style="width: 60rpx;height: 60rpx;position: relative;">
                 <image style="width: 40rpx;height: 60rpx;position: absolute;top: 15px;right: 5px;" mode="widthFix"
                   src="../../img/info-barcode.jpg">
                 </image>
               </view>
               <view style="width: 300px;height: auto;">
-                <input disabled="true" style="width: 100%;height: 45px;font-size: 15px;" type="text" value="{{sampleid}}" placeholder="样本编号"
-                  placeholder-class="phcolor" bindinput="cmpwdIn" />
+                <input disabled="true" style="width: 100%;height: 45px;font-size: 15px;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" type="text" value="{{sampleid}}" placeholder="样本编号"
+                  placeholder-class="phcolor" bindinput="bininput_sampleid" />
               </view>
             </view>
             <view view style="display: flex;width: 100%;">
-
               <view style="width: 100%;height: auto;line-height: 100rpx; display: flex;">
                 <radio name="agreement" value="agree" checked="{{checked}}" bindtap="checkedTap" />
                 <navigator url="/pages/agreement/agreement" hover-class="navigator-hover">
@@ -74,9 +78,9 @@
                 </navigator>
               </view>
             </view>
-            <view style="width: 100%; height: auto;margin-top: 50rpx;">
+            <view style="width: 100%; height: auto;margin-top: 50rpx;margin-bottom: 100rpx;">
               <button bindtap="btnckreport"
-                style="margin: 0 auto ;width: 70%;color: white;text-align: center;line-height: 45px;font-size: 43rpx; border-radius:15rpx;background: #6ae2c3;box-shadow: 0px 5px 10px 3px #D1D1D1;">
+                style="margin: 0 auto ;width: 70%;color: white;font-size: 43rpx; text-align: center;line-height: 45px;border-radius:15rpx;background: #c477f2;box-shadow: 0px 5px 10px 3px #D1D1D1;">
                 查询报告</button>
             </view>
           </view>
@@ -84,3 +88,5 @@
       </view>
     </view>
   </view>
+</view>
+</view>

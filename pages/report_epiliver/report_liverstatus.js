@@ -59,7 +59,7 @@ Page({
                             console.log(res);
                             if (res.statusCode == 404) {
                               wx.showToast({
-                                title: '请输入正确的二维码！',
+                                title: '请输入正确的条形码！',
                                 icon: 'success',
                                 duration: 2000
                               })

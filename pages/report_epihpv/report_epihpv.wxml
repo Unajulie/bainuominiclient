@@ -1,12 +1,16 @@
 <view style="width:100%;height:auto">
   <view style="position: absolute;width: 100%;height: auto;">
-    <view style="position: absolute;width: 100%;height: auto;top: 600rpx;flex: auto;">
+  <image src="https://bainuo.beijingepidial.com/public/img/02hpv.jpg"style="width: 100%;height: auto;" mode="widthFix" ></image>
+  <view style="position: absolute;width: 100%;height: auto;top: 180rpx;flex: auto;">
+      <view style="width: 100%;font-size: 46rpx;font-weight: 700;text-align: center;color: grey;">宫颈癌早期筛查</view>
+    <view style="width: 100%;height: 280rpx;"></view>
+    <view style="width: 100%;font-size: 50rpx;text-align: center;">条码注册/报告查询</view>
       <form bindsubmit='searchBox'>
-        <view style="width: 100%;height: 20rpx;"></view>
+        <view style="width: 100%;height: 100rpx;"></view>
         <view style="width: 100%;height: 110rpx;overflow: hidden;">
-          <view style="width: 90%;height: 109rpx;background-color: #ff8080;margin: 0 auto;border-radius: 30rpx;">
+          <view style="width: 90%;height: 109rpx;margin: 0 auto;border-radius: 30rpx;">
             <view
-              style='width:97.5%;height:100rpx;margin-left: 1%;margin-top: 2rpx; border: 3rpx solid #ff8080; border-radius: 30rpx; display:inline-block; background:#fff;align-self: center;position: relative;'>
+              style='width:97.5%;height:100rpx;margin-left: 1%;margin-top: 2rpx; border: 3rpx solid #c477f2; border-radius: 15rpx; display:inline-block; background:#fff;align-self: center;position: relative;'>
               <input
                 style='width:80%;display:inline-block;height:100rpx;left: 10rpx; color: black;font-size: 40rpx; position: absolute;'
                 placeholder-style='font-size:40rpx;' placeholder='条形码' type='text' bindinput="inputVal"
@@ -23,8 +27,8 @@
         <view id="check-contain">
           <text class="privacy">*为了保护您的隐私，请输入\扫描条形码查询报告</text>
         </view>
-        <button class="submit" bindtap="checkEpiageReport">注册/查询</button>
-        <button class="history" bindtap="checkEpiageReport" bindtap="showModal">历史查询</button>
+        <button class="submit" bindtap="checkHpvReport">注册/查询</button>
+        <button class="history" bindtap="checkHpvReport" bindtap="showModal">历史查询</button>
       </form>
       <!-- 历史barcode查询下滑入框开始 -->
       <view class="wrap">

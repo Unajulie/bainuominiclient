@@ -1,6 +1,5 @@
 <view >
     <view style="width:100%;height: auto;margin-bottom: 100rpx; ">
-        <view style="position: absolute;width: 100%;height: auto;">
             <view>
                 <view style="position: absolute; width: 100%;height: auto;top: 200px;flex: auto;">
                     <view style="width: 80%;height: auto;margin: 0 auto;">
@@ -63,7 +62,5 @@
                     </view>
                 </view>
             </view>
-
-        </view>
     </view>
 </view>

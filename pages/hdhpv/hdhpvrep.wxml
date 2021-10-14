@@ -1,20 +1,16 @@
 <view style="width:100%;height:auto">
   <view style="position: absolute;width: 100%;height: auto;">
-  <image src="https://bainuo.beijingepidial.com/public/img/03age.jpg"style="width: 100%;height: auto;" mode="widthFix"></image>
-    <view style="position: absolute;width: 100%;height: auto;top: 180rpx;flex: auto;">
-      <view style="width: 100%;font-size: 46rpx;font-weight: 700;text-align: center;color: grey;">生物学年龄检测</view>
-    <view style="width: 100%;height: 280rpx;"></view>
-    <view style="width: 100%;font-size: 50rpx;text-align: center;">条码注册/报告查询</view>
+    <view style="position: absolute;width: 100%;height: auto;top: 600rpx;flex: auto;">
       <form bindsubmit='searchBox'>
-        <view style="width: 100%;height: 100rpx;"></view>
+        <view style="width: 100%;height: 20rpx;"></view>
         <view style="width: 100%;height: 110rpx;overflow: hidden;">
-          <view style="width: 90%;height: 109rpx;margin: 0 auto;border-radius: 30rpx;">
+          <view style="width: 90%;height: 109rpx;background-color: #ff8080;margin: 0 auto;border-radius: 30rpx;">
             <view
-              style='width:100%;height:100rpx;margin-left: 1%;margin-top: 2rpx; border: 3rpx solid #6ae2c3; border-radius: 15rpx; display:inline-block; background:#fff;align-self: center;position: relative;'>
+              style='width:97.5%;height:100rpx;margin-left: 1%;margin-top: 2rpx; border: 3rpx solid #ff8080; border-radius: 30rpx; display:inline-block; background:#fff;align-self: center;position: relative;'>
               <input
                 style='width:80%;display:inline-block;height:100rpx;left: 10rpx; color: black;font-size: 40rpx; position: absolute;'
                 placeholder-style='font-size:40rpx;' placeholder='条形码' type='text' bindinput="inputVal"
-                value='{{sampleid}}'></input>
+                value='{{barcode}}'></input>
               <view style='width:16%;display:inline-block;height:70rpx;bottom: 16rpx;right: 20rpx; position: absolute;'>
                 <image src='https://bainuo.beijingepidial.com/public/img/scan.jpg' bindtap="scanCode"
                   style='display:inline;' mode="aspectFit">
@@ -40,7 +36,7 @@
               <view wx:if="{{barcodebox.length>0}}" style="width: 100%;height: auto;">
                 <view style="text-align: center;font-weight: 600;font-size: 40rpx;">已注册条码</view>
                 <view wx:key="i" wx:for="{{barcodebox}}" wx:for-item="data" bindtap='getOption'>
-                    <view data-sampleid="{{data.sampleid}}" bindtap="checkEpiageReport" style="text-align: left;font-size: 34rpx;font-weight: 500;">条码：{{data.sampleid}}
+                    <view data-sampleid="{{data.sampleid}}" bindtap="checkHpvReport" style="text-align: left;font-size: 34rpx;font-weight: 500;">条码：{{data.sampleid}}
                       状态：{{data.status=="NO_STATUS"?"等待检测中":data.status=="POST_FROM_LAB"?"已从实验室寄出":data.status=="PARCEL_RECEIVED"?"实验室已取得唾液样本":data.status=="REGISTERED_IN_LIMS"?"样本已录入检测队列":data.status=="WAITING_DNA_PREP"?"等待提取DNA":data.status=="SEQUENCING"?"分析DNA序列中":"已完成检测"}}
                     </view>
                  

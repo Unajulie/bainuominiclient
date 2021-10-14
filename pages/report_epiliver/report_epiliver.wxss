@@ -1,11 +1,12 @@
 /* pages/report_epihpv/report_epihpv.wxss */
-page{
+/* page{
   overflow: hidden;
   position: fixed;
-  background-image: url("https://bainuo.beijingepidial.com/public/img/01.jpg");
+  background-image: url("https://bainuo.beijingepidial.com/public/img/01liver.jpg");
   margin: 0;
-  background-size: 100% 100%;
-}
+  background-repeat: no-repeat;
+  background-size: 100% 50%;
+} */
 
   .head{
     position: fixed;
@@ -61,27 +62,29 @@ page{
   align-self: center;
   text-align: center;
   vertical-align: middle;
-  border: 2px solid #2570dc;
+  border: 2px solid #f7b759;
 }
 .submit{
-  width:60%;
-  height: 50px;
-  margin-top: 40px;
-  background-color: #2570dc;
+  width:50%;
+  font-size: 46rpx;
+  height: 100rpx;
+  margin-top: 80rpx;
+  background-color: #f7b759;
   color: white;
-  border-radius: 15px;
+  border-radius: 15rpx;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 .history{
-  width:60%;
-  height: 50px;
-  margin-top: 20px;
-  background-color: #2570dc;
+  width:50%;
+  font-size: 46rpx;
+  height: 100rpx;
+  margin-top: 40rpx;
+  background-color: #f2c988;
   color: white;
-  border-radius: 15px;
+  border-radius: 15rpx;
   display: flex;
   flex-direction: row;
   align-items: center;

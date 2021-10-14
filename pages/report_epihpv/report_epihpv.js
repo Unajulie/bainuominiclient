@@ -1,26 +1,23 @@
-// pages/report_epihpv/report_epihpv.js
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    barcode: "",
+    sampleid: "",
     reportUrl: null,
     reportShow: false,
-    optionList:['所有','选项1','选项2'],
- value:'所有',
  hideFlag: true,
  animationData: {},
   },
 // 下滑入框
 // 点击选项
-getOption:function(e){
-  var that = this;
-  that.setData({
-   value:e.currentTarget.dataset.value,
-   hideFlag: true
-  })
-  },
+// getOption:function(e){
+//   var that = this;
+//   that.setData({
+//    value:e.currentTarget.dataset.value,
+//    hideFlag: true
+//   })
+//   },
   //取消
   mCancel: function () {
   var that = this;
@@ -78,6 +75,7 @@ showModal: function () {
    animationData: this.animation.export(),
   })
   },
+
   scanCode: function () {
     var that = this;
     // 只允许从相机扫码
@@ -86,58 +84,143 @@ showModal: function () {
       success(res) {
         console.log(res.result)
         that.setData({
-          barcode: res.result
+          sampleid: res.result
         });
       }
     })
   },
 
-//获取到hpv报告页面输入的值，查询mysql数据库，并返回状态
-inputVal: function (e) {
-  let oThis = this
-    let barcode = e.detail.value.replace(/\s+/g, '')
-    console.info(barcode)
-    oThis.setData({
-      barcode: barcode
+  //获取到hpv报告页面输入的值，查询mongodb数据库，并返回状态
+  inputVal: function (e) {
+    let sampleid = e.detail.value
+    this.setData({
+      sampleid: sampleid
     })
-
   },
   //  
-  checkHpvReport: function () {
-    //通过barcode查询宫颈癌报告,1先获取输入的值，返回给后台数据库去查询是否存在这个barcode,如果有数据有返回，没有数据就提示错误信息或输入正确的barcode.
+  checkHpvReport: function (e) {
+    //console.info("https://bainuo.beijingepidial.com/public/pdffile/"+this.data.sampleid+".pdf")
+    //wx.showToast({title: '加载中', icon: 'loading', duration: 10000});
     let oThis = this
-    wx.request({
-      url: "https://bainuo.beijingepidial.com/admin/epihpv/chechpval",
-      header: {
-        "Content-Type": "application/x-www-form-urlencoded"
+    wx.getStorage({
+      key: 'sessionuser',
+      success: function (res) {
+        console.log(res.data)
+        let data = {}
+        data.phone = e.currentTarget.dataset.phone ? e.currentTarget.dataset.phone : res.data.phone
+        data.sampleid = e.currentTarget.dataset.sampleid ? e.currentTarget.dataset.sampleid : oThis.data.sampleid
+        wx.request({
+          url: "https://bainuo.beijingepidial.com/client/hpv/uploadbarcode",
+          header: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          method: "POST",
+          data: data,
+          // data: {"sampleid": 1121032800079},
+          complete: function (res) {
+            console.info(res.data)
+            //如果是空字符串
+            if (res.data.status == "fail") {
+              wx.showModal({
+                title: '提示',
+                content: "库存查无此条码，请联系客服"
+              })
+            } else {
+              wx.hideLoading()
+              wx.navigateTo({
+                url: 'userform?sampleid=' + data.sampleid
+              })
+            }
+          },
+          fail: function (res) {
+            console.info(res)
+          }
+        })
       },
-      method: "POST",
-      data: {"barcode":this.data.barcode},
-      // data: {"barcode": 1121032800079},
-      complete: function (res) {
-        console.info("++++++++++++++++++++++")
-        console.info(res.data.Barcode)
-       if(res.data.Barcode){
-        wx.navigateTo({url: '../epihpvreport/epihpvreport?barcode=' + res.data.Barcode})
-       }else{
-         wx.showModal({
-           title: '提示',
-           content:"请输入正确的条码"
-         })
-       }
+      fail: function (e) {
+        wx.navigateTo({
+          url: '../user/login',
+        })
       }
     })
-    
 
+
+
+
+    // wx.downloadFile({
+    //   url:"https://bainuo.beijingepidial.com/public/pdffile/"+this.data.sampleid+".pdf",  
+    //   header: {},
+    //   success: function(res) {
+    //     var filePath = res.tempFilePath;
+    //     console.log(res);
+    //     if (res.statusCode == 404) {
+    //       wx.showToast({title: '请输入正确的二维码！',icon: 'success',duration: 2000})
+    //     } else {
+    //       wx.openDocument({
+    //         filePath: filePath,
+    //         fileType: 'pdf',
+    //         success: function(res) {
+    //           console.log(res);
+    //           wx.showToast({title: "打开成功",icon: 'success',duration: 2000})
+    //         },
+    //         fail: function(res) {
+    //           wx.showToast({title: "打开失败",icon: 'success',duration: 2000})
+    //         },   
+    //         complete: function(res) {
+
+    //           console.log(res);
+    //         }
+    //         })
+    //       }
+    //     },
+    //     fail: function(res) { 
+    //       console.info(res)
+    //       console.log('文件下载失败');
+    //     },
+    //     complete: function(res) {},
+
+    //     })
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let oThis = this
+    wx.getStorage({
+      key: 'sessionuser',
+      success: function (res) {
+        console.log('s:' + res.data)
+        wx.request({
+          url: "https://bainuo.beijingepidial.com/client/liver/barcodes",
+          header: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
+          method: "POST",
+          data: {
+            "tel": res.data.phone
+          },
+          // data: {"sampleid": 1121032800079},
+          complete: function (res) {
+            console.info(res.data)
+            oThis.setData({
+              barcodebox: res.data
+            })
+          }
+        })
+      },
+      fail: function (res) {
+        wx.navigateTo({
+          url: '../epiage/login',
+        })
+      }
+    })
+    // wx.showLoading({
+    //   title: '报告加载中',
+    // })
 
   },
-  onReady: function () {
-
+  onHide: function () {
 
   }
 })

@@ -69,6 +69,7 @@ Page({
                 },
                 // data: {"barcode": 1121032800079},
                 complete: function (res) {
+                    console.info(oThis.data.phone)
                     console.info(res.data)
                     if (!res.data) {
                         let times = 120;
@@ -124,7 +125,7 @@ Page({
                         }, 1000)
                     } else {
                         wx.showToast({
-                            title: '电话号码已经注册',
+                            title: '此号码已注册',
                             icon: 'error',
                             duration: 2000
                         })

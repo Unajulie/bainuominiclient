@@ -1,8 +1,8 @@
 /* pages/report_epiage/report_epistatus.wxss */
-page{
+/* page{
     overflow: hidden;
     position: fixed;
     background-image: url("https://bainuo.beijingepidial.com/public/img/statusbg.png");
     margin: 0;
     background-size: 100% 100%;
-  }
+  } */

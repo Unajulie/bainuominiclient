@@ -1,11 +1,11 @@
 /* pages/report_epihpv/report_epihpv.wxss */
-page{
+/* page{
   overflow: hidden;
   position: fixed;
   background-image: url("https://bainuo.beijingepidial.com/public/img/02.jpg");
   margin: 0;
   background-size: 100% 100%;
-}
+} */
 
 .chech_report{
   text-align: center;
@@ -38,32 +38,34 @@ page{
 .identity{
   width: 100%;
   height: 100rpx;
-  font-size: 18px;
+  font-size: 24rpx;
   line-height: 100rpx;
   align-self: center;
   text-align: center;
   vertical-align: middle;
-  border: 2px solid #ff8080;
+  border: 2px solid #c477f2;
 }
 .submit{
-  width:60%;
-  height: 50px;
-  margin-top: 40px;
-  background-color: #ff8080;
+  width:50%;
+  font-size: 46rpx;
+  height: 100rpx;
+  margin-top: 80rpx;
+  background-color: #c477f2;
   color: white;
-  border-radius: 15px;
+  border-radius: 15rpx;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 .history{
-  width:60%;
-  height: 50px;
-  margin-top: 20px;
-  background-color: #ff8080;
+  width:50%;
+  font-size: 46rpx;
+  height: 100rpx;
+  margin-top: 40rpx;
+  background-color: #c477f2;
   color: white;
-  border-radius: 15px;
+  border-radius: 15rpx;
   display: flex;
   flex-direction: row;
   align-items: center;

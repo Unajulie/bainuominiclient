@@ -1,21 +1,23 @@
 <view>
 <view style="width: 100%;height: auto;">
 <view style="width: 100%;height: 100%; position:absolute;">
-    <!-- <image style="width: 100% ;height: 120%;position: relative;" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/userbg.png"></image> -->
-
-    <view style="width: 100%;height: auto;position: absolute ;top: 450rpx;">
-      <view style="width: 80%;height: auto;margin: 0 auto;font-weight: 700;text-align: center;color: #0081cc;">用户信息登记表
-      </view>
+    <image src="https://bainuo.beijingepidial.com/public/img/01liver.jpg"style="width: 100%;height: auto;" mode="widthFix" ></image>
+    <view style="position: absolute;width: 100%;height: auto;top: 180rpx;flex: auto;">
+      <view style="width: 100%;font-size: 46rpx;font-weight: 700;text-align: center;color: grey;">肝癌早期筛查</view>
+    <view style="width: 100%;height: 280rpx;"></view>
+    <view style="width: 100%;font-size: 50rpx;text-align: center;">用户信息登记表</view>
+    <view style="width: 100%;height: 100rpx;"></view>
     </view>
+   
     <view style="width: 100%;height: auto;">
       <view style="position: absolute; width: 100%;height: auto;top: 550rpx;flex: auto;">
         <view style="width: 80%;height: auto;margin: 0 auto;">
           <view style="width: 90%;height: auto;margin:40rpx auto;">
             <view>
-              <view view style="display: flex;width: 100%;border-bottom: solid 1px #0081cc;">
-                <view style="width: 30px;height: 45px;position: relative;">
-                  <image style="width: 18px;height: 45px;position: absolute;top: 15px;right: 5px;" mode="widthFix"
-                    src="../../img/user03.png">
+              <view view style="display: flex;width: 100%;border-bottom: solid 1px #f7b759;">
+                <view style="width: 60rpx;height: 60rpx;position: relative;">
+                  <image style="width: 40rpx;height: 60rpx;position: absolute;top: 15px;right: 5px;" mode="widthFix"
+                    src="../../img/info-user.jpg">
                   </image>
                 </view>
                 <view style="width: 300px;height: auto;">
@@ -27,10 +29,10 @@
               </view>
             </view>
             <view>
-              <view view style="display: flex;width: 100%;border-bottom: solid 1px #0081cc;">
-                <view style="width: 30px;height: 45px;position: relative;">
-                  <image style="width: 18px;height: 45px;position: absolute;top: 15px;right: 5px;" mode="widthFix"
-                    src="../../img/phone01.png">
+              <view view style="display: flex;width: 100%;border-bottom: solid 1px #f7b759;">
+                <view style="width: 60rpx;height: 60rpx;position: relative;">
+                  <image style="width: 30rpx;height: 30rpx;position: absolute;top: 15rpx;right: 15rpx;" mode="widthFix"
+                    src="../../img/info-phone.jpg">
                   </image>
                 </view>
                 <view style="width: 300px;height: auto;">
@@ -42,10 +44,10 @@
               </view>
             </view>
 
-            <view view style="display: flex;width: 100%;border-bottom: solid 1px #0081cc;">
-              <view style="width: 30px;height: 45px;position: relative;">
-                <image style="width: 18px;height: 45px;position: absolute;top: 15px;right: 5px;" mode="widthFix"
-                  src="../../img/identify.png">
+            <view view style="display: flex;width: 100%;border-bottom: solid 1px #f7b759;">
+              <view style="width: 60rpx;height: 60rpx;position: relative;">
+                <image style="width: 40rpx;height: 60rpx;position: absolute;top: 15px;right: 15rpx;" mode="widthFix"
+                  src="../../img/info-idcard.jpg">
                 </image>
               </view>
               <view style="width: 300px;height: auto;">
@@ -54,10 +56,10 @@
               </view>
 
             </view>
-            <view view style="display: flex;width: 100%;border-bottom: solid 1px #0081cc;">
-              <view style="width: 30px;height: 45px;position: relative;">
-                <image style="width: 18px;height: 45px;position: absolute;top: 15px;right: 5px;" mode="widthFix"
-                  src="../../img/barcode.png">
+            <view view style="display: flex;width: 100%;border-bottom: solid 1px #f7b759;">
+              <view style="width: 60rpx;height: 60rpx;position: relative;">
+                <image style="width: 40rpx;height: 60rpx;position: absolute;top: 15px;right: 15rpx;" mode="widthFix"
+                  src="../../img/info-barcode.jpg">
                 </image>
               </view>
               <view style="width: 300px;height: auto;">
@@ -73,15 +75,14 @@
                 </navigator>
               </view>
             </view>
-            <view style="width: 100%; height: auto;margin-top: 50rpx;margin-bottom: 400rpx;">
+            <view style="width: 100%; height: auto;margin-top: 50rpx;">
               <button bindtap="btnckreport"
-                style="margin: 0 auto ;width: 70%;color: white;text-align: center;line-height: 45px;border-radius:25px;background: #43b4f6;box-shadow: 0px 5px 10px 3px #D1D1D1;">
+                style="margin: 0 auto ;width: 70%;color: white;text-align: center;font-size: 43rpx; line-height: 45px;border-radius:15rpx;background: #f7b759;box-shadow: 0px 5px 10px 3px #D1D1D1;">
                 查询报告</button>
             </view>
           </view>
         </view>
       </view>
-        <view style="width: 100%;height: 1000rpx;"></view>
     </view>
   </view>
 </view>
