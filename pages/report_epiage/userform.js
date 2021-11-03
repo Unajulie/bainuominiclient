@@ -33,7 +33,7 @@ Page({
     //绑定输入的身份证 
     bininput_identity: function (e) {
         this.setData({
-            identity: e.detail.value
+            identity: e.detail.value?e.detail.value=="undefined":""
         })
         console.info(e.detail.value)
     },
@@ -47,7 +47,7 @@ Page({
     //绑定输入的样本编码
     bininput_sampleid: function (e) {
         this.setData({
-            identity: e.detail.value
+            sampleid: e.detail.value?e.detail.value=="undefined":""
         })
         console.info(e.detail.value)
     },
@@ -71,13 +71,7 @@ Page({
                 icon: 'error',
                 duration: 2000
             })
-        } else if(!(/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(this.data.identity))){
-            wx.showToast({
-                title: '身份证格式错误',
-                icon: 'error',
-                duration: 2000
-            })
-        }else if (! this.data.checked){
+        } else if (! this.data.checked){
             wx.showToast({
               title: '请勾选用户协议',
               icon: 'none',
@@ -87,7 +81,7 @@ Page({
         else{
         let oThis = this
         let formdata = {}
-        formdata.idCard = this.data.identity
+        formdata.idCard = this.data.identity?this.data.identity=="undefined":""
         formdata.sex = 0
         formdata.tel = this.data.phone
         formdata.sampleid = this.data.sampleid
@@ -110,12 +104,12 @@ Page({
                     data: formdata,
                     // data: {"sampleid": 1121032800079},
                     complete: function (res) {
+                        console.info(res.data)
                         wx.hideLoading({
                           success: (res) => {},
                         })
-                        //    let url = "../report_epiage/report_epistatus?status=" + res.data.status + "&barcode=" + formdata.sampleid + "&phone=" + formdata.tel
-                        let url = '../report_epiage/report_epistatus?sampleid=' + formdata.sampleid + "&phone=" + formdata.tel+"&username="+formdata.username
-                        console.info(url)
+                        //    let url = "../report_epiage/report_epistatus?status=" + res.data.status + "&barcode=" + formdata.sampleid + "&phone=" + formdata.phone
+                        let url = '../report_epiage/report_epistatus?sampleid=' + formdata.sampleid + "&tel=" + formdata.tel+"&username="+formdata.username
                         wx.navigateTo({
                             url: url
                         })
@@ -142,6 +136,8 @@ Page({
         wx.getStorage({
             key: 'sessionuser',
             success: function (res) {
+                console.info("client/epiage/finduser 接收的phoe")
+                console.info(res.data.phone)
                 oThis.setData({
                     phone: res.data.phone,
                     sampleid: sampleid
@@ -160,7 +156,7 @@ Page({
                     // data: {"sampleid": 1121032800079},
                     complete: function (res) {
                         oThis.setData({
-                            identity: res.data.idCard,
+                            identity: res.data.idCard=="undefined"?res.data.idCard:"",
                             username: res.data.username
                         })
                         console.info(res.data)  

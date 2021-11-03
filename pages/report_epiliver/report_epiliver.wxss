@@ -112,7 +112,7 @@
   background: #fff;
  }
  .Mselect view:not(:last-of-type){
-  border-bottom: 1px solid #dfdede;
+  border-bottom: 1px solid #f2c988;
  }
  .Mcancel{
   background: #fff;

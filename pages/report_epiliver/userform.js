@@ -71,13 +71,7 @@ Page({
                 icon: 'error',
                 duration: 2000
             })
-        } else if(!(/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(this.data.identity))){
-            wx.showToast({
-                title: '身份证格式错误',
-                icon: 'error',
-                duration: 2000
-            })
-        }else if (! this.data.checked){
+        } else if (! this.data.checked){
             wx.showToast({
               title: '请勾选用户协议',
               icon: 'none',
@@ -104,6 +98,7 @@ Page({
                     data: formdata,
                     // data: {"sampleid": 1121032800079},
                     complete: function (res) {
+                        console.info(sessionuser.data.phone)
                         let url = '../report_epiliver/report_liverstatus?sampleid=' + oThis.data.sampleid + "&phone=" + sessionuser.data.phone+"&username"+oThis.data.username
                         console.info(url)
                         wx.navigateTo({

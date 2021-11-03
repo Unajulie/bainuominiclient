@@ -22,13 +22,14 @@ Page({
     showpdf:function(e){
       let that=this
         let data={}
-        data.phone=e.currentTarget.dataset.phone
-        data.barcode=e.currentTarget.dataset.barcode
-      
+        data.username=e.currentTarget.dataset.username
+        data.tel=e.currentTarget.dataset.tel
+        data.barcode=e.currentTarget.dataset.sampleid
+      console.info("7777777")
         console.info(data)
         wx.showLoading({title: '加载中', mask:true,duration:10000})
         wx.request({
-            url: "https://bainuo.beijingepidial.com/client/epiage/ckreport",
+            url: "https://bainuo.beijingepidial.com/client/epiage/ckstatus",
             header: {"Content-Type": "application/x-www-form-urlencoded"},
             method: "POST",
             data: data,
@@ -38,7 +39,6 @@ Page({
               console.info(res.data)
               console.info("https://bainuo.beijingepidial.com/public/pdffile/" +res.data.pdf)
               if(res.data.pdf){
-               
                 wx.downloadFile({
                   url: "https://bainuo.beijingepidial.com/public/pdffile/" +res.data.pdf,
                   header: {},
@@ -105,17 +105,24 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+      wx.showLoading({
+        title: '加载中',
+        duration:10000,
+        mask: true
+      })
       let oThis = this
       wx.getStorage({
         key: 'sessionuser',
         success: function (sessionuser) {
-          //console.info(options.status )
+          console.info("woshi option")
+          console.info(options )
           let data = {}
+          data.username=options.username
           data.barcode = options.sampleid
-          data.phone = options.phone
+          data.tel = options.tel
           console.info(data)
           wx.request({
-            url: "https://bainuo.beijingepidial.com/client/epiage/ckreport",
+            url: "https://bainuo.beijingepidial.com/client/epiage/ckstatus",
             header: {
               "Content-Type": "application/x-www-form-urlencoded"
             },
@@ -123,15 +130,16 @@ Page({
             data: data,
             // data: {"sampleid": 1121032800079},
             complete: function (res) {
+              console.info("%%%%%%%%%")
               console.info(res.data)
               oThis.setData({
-                phone:sessionuser.data.phone,
+                tel:sessionuser.data.tel,
                 status: res.data.status,
                 sampleid: res.data.sampleid,
                 pdfIsbuild:res.data.pdf?true:false,
                 pdfurl:res.data.pdf?"https://bainuo.beijingepidial.com/public/pdffile/" +res.data.pdf:""
               })
-              
+              wx.hideLoading()
               console.info(res.data.pdf)
               console.info(oThis.data)
             }

@@ -84,7 +84,6 @@ showModal: function () {
     wx.scanCode({
       onlyFromCamera: true,
       success(res) {
-        console.log(res)
         that.setData({
           sampleid: res.result
         });
@@ -95,28 +94,25 @@ showModal: function () {
   //获取到hpv报告页面输入的值，查询mysql数据库，并返回状态
   inputVal: function (e) {
     let sampleid = e.detail.value
-    console.info(sampleid)
     this.setData({
       sampleid: sampleid
     })
 
   },
-  //  
   checkEpiageReport: function (e) {
     wx.showLoading({
       title: '加载中',
       duration: 10000,
       mask: true
     })
-    console.info("simpleid:" + e.currentTarget.dataset.sampleid)
+    console.info(e.currentTarget.dataset.sampleid)
+    console.info( this.data.sampleid)
     let barcode = e.currentTarget.dataset.sampleid ? e.currentTarget.dataset.sampleid : this.data.sampleid
     var that = this
-    console.info(this.data.sampleid + "-----")
-
+  
     wx.getStorage({
       key: 'sessionuser',
       success: function (res) {
-        console.log('s:' + res.data)
         let phone = e.currentTarget.dataset.phone ? e.currentTarget.dataset.phone : res.data.phone
         wx.request({
           url: "https://bainuo.beijingepidial.com/client/epiage/uploadbarcode",
@@ -126,11 +122,11 @@ showModal: function () {
           method: "POST",
           data: {
             "barcode": barcode,
-            "phone": phone
+            "tel": phone
           },
           // data: {"sampleid": 1121032800079},
           complete: function (res) {
-            console.info("xxxxx-->" + res.data)
+            console.info(res.data)
             wx.hideLoading()
             //如果是空字符串
             if (res.data == "") {
@@ -140,6 +136,8 @@ showModal: function () {
               })
             } else {
               // let url = "../report_epiage/report_epistatus?status=" + res.data.status + "&barcode=" + barcode + "&phone=" + phone
+
+              console.info(res.data)
               let url = "../report_epiage/userform?status=" + res.data.status + "&sampleid=" + barcode + "&phone=" + phone
               wx.navigateTo({
                 url: url
@@ -174,7 +172,7 @@ showModal: function () {
           },
           method: "POST",
           data: {
-            "phone": res.data.phone
+            "tel": res.data.phone
           },
           // data: {"sampleid": 1121032800079},
           complete: function (res) {

@@ -125,10 +125,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '加载中',
+      duration:10000,
+      mask: true
+    })
     let oThis = this
     wx.getStorage({
       key: 'sessionuser',
       success: function (res) {
+
         //console.info(options.status )
         let data = {}
         data.sampleid = options.sampleid
@@ -153,6 +159,7 @@ Page({
               pdfIsbuild:res.data.pdf?true:false,
               pdfurl:res.data.pdf?"https://bainuo.beijingepidial.com/public/pdffile/" +res.data.pdf:""
             })
+            wx.hideLoading()
           }
         })
       },

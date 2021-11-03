@@ -6,8 +6,8 @@ Page({
     sampleid: "",
     reportUrl: null,
     reportShow: false,
- hideFlag: true,
- animationData: {},
+    hideFlag: true,
+    animationData: {},
   },
 // 下滑入框
 // 点击选项
@@ -143,43 +143,6 @@ showModal: function () {
         })
       }
     })
-
-
-
-
-    // wx.downloadFile({
-    //   url:"https://bainuo.beijingepidial.com/public/pdffile/"+this.data.sampleid+".pdf",  
-    //   header: {},
-    //   success: function(res) {
-    //     var filePath = res.tempFilePath;
-    //     console.log(res);
-    //     if (res.statusCode == 404) {
-    //       wx.showToast({title: '请输入正确的二维码！',icon: 'success',duration: 2000})
-    //     } else {
-    //       wx.openDocument({
-    //         filePath: filePath,
-    //         fileType: 'pdf',
-    //         success: function(res) {
-    //           console.log(res);
-    //           wx.showToast({title: "打开成功",icon: 'success',duration: 2000})
-    //         },
-    //         fail: function(res) {
-    //           wx.showToast({title: "打开失败",icon: 'success',duration: 2000})
-    //         },   
-    //         complete: function(res) {
-
-    //           console.log(res);
-    //         }
-    //         })
-    //       }
-    //     },
-    //     fail: function(res) { 
-    //       console.info(res)
-    //       console.log('文件下载失败');
-    //     },
-    //     complete: function(res) {},
-
-    //     })
   },
 
   /**
@@ -192,7 +155,7 @@ showModal: function () {
       success: function (res) {
         console.log('s:' + res.data)
         wx.request({
-          url: "https://bainuo.beijingepidial.com/client/liver/barcodes",
+          url: "https://bainuo.beijingepidial.com/client/hpv/barcodes",
           header: {
             "Content-Type": "application/x-www-form-urlencoded"
           },
@@ -218,9 +181,5 @@ showModal: function () {
     // wx.showLoading({
     //   title: '报告加载中',
     // })
-
   },
-  onHide: function () {
-
-  }
 })
