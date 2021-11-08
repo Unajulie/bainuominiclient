@@ -2,7 +2,7 @@
   <view style="width: 100%;height: 100%; position:absolute">
     <image src="https://bainuo.beijingepidial.com/public/img/03age.jpg"style="width: 100%;height: auto;" mode="widthFix" ></image>
     <view style="position: absolute;width: 100%;height: auto;top: 180rpx;flex: auto;">
-      <view style="width: 100%;font-size: 46rpx;font-weight: 700;text-align: center;color: grey;">生物学年龄早期筛查</view>
+      <view style="width: 100%;font-size: 46rpx;font-weight: 700;text-align: center;color: grey;">生物学年龄检测</view>
     <view style="width: 100%;height: 280rpx;"></view>
     <view style="width: 100%;font-size: 50rpx;text-align: center;">用户信息登记表</view>
     <view style="width: 100%;height: 100rpx;"></view>
@@ -70,7 +70,7 @@
 
               <view style="width: 100%;height: auto;line-height: 100rpx; display: flex;">
                 <radio name="agreement" value="agree" checked="{{checked}}" bindtap="checkedTap" />
-                <navigator url="/pages/agreement/epiage" hover-class="navigator-hover">
+                <navigator url="/pages/agreement/epiage" hover-class="none">
                   <view style="font-size:25rpx ;height: 100rpx;line-height: 100rpx;color: #797979;">同意并接受条款</view>
                 </navigator>
               </view>

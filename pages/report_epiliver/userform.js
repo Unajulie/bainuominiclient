@@ -83,11 +83,18 @@ Page({
         let oThis = this
         let formdata = {}
         formdata.idCard = this.data.identity
-        formdata.sex = 0
+        if(this.data.identity){
+            formdata.idstart= this.data.identity.length == 18 ? 16 : 14;
+            formdata.sex=this.data.identity.substr(formdata.idstart, 1) % 2
+         }else{formdata.sex=-1}
+        //if(formdata.idstart){}
+        //formdata.idstart=this.data.identity? this.data.identity.length == 18 ? 16 : 14 : "未填写";
+        //formdata.sex =this.data.identity? 1 -this.data.identity.substr(formdata.idstart, 1) % 2 : -1;
         formdata.tel = this.data.phone
         formdata.sampleid = this.data.sampleid
         formdata.username = this.data.username
         formdata.created = new Date().toLocaleDateString()
+        console.info(this.data.identity)
         console.info(formdata)
         wx.getStorage({
             key: 'sessionuser',

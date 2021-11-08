@@ -5,10 +5,10 @@
 
 .title {
     font-size: 38rpx;
+    font-weight: bold;
     margin: 0 auto;
     text-align: center;
     margin-top: 20rpx;
-    font-weight: 600;
 }
 
 .sub-contain {

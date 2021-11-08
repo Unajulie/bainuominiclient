@@ -18,7 +18,7 @@ DNA的独特表观遗传学特征进行深入研究而建立的， Moshe院士�
   <view class="content">3.本人并未得到检测结果百分之百准确的承诺， 自愿承担由该检测所带来的—切心理及生理负担
 等相应风险。</view>
   <view class="content">4.本人已获得保证， 个人信息将得到隐私保护， 本人授权检测实验室对此检测涉及的样本进行处置。</view>
-  <view style="font-size: 30rpx;font-weight: 600;margin-top: 20rpx;">“本人已详细阅读以上告知内容， 井已知晓此检测的指导价值， 愿意承担能因检测带来的潜在相关身心风险， 同意进行此检测”</view>
+  <view style="font-size: 30rpx;font-weight: bold;margin-top: 20rpx;">“本人已详细阅读以上告知内容， 井已知晓此检测的指导价值， 愿意承担能因检测带来的潜在相关身心风险， 同意进行此检测”</view>
   <view style="width: 100%;height: 50rpx;"></view>
 </view>
 </view>
