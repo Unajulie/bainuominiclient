@@ -12,7 +12,7 @@ Page({
             sex: '女',
             value: 'female'
         }] */
-        checked:true
+        checked:false
 
     },
 
@@ -143,7 +143,7 @@ Page({
                     // data: {"sampleid": 1121032800079},
                     complete: function (res) {
                         oThis.setData({
-                            identity: res.data.idCard==undefined?res.data.idCard:"",
+                            identity: res.data.idCard?res.data.idCard:"",
                             username: res.data.username
                         })
                     },
