@@ -1,6 +1,9 @@
 {
   "pages": [
     "pages/report/report",
+    "pages/agreement/epiage",
+    "pages/agreement/hpv",
+    "pages/agreement/liver",
     "pages/index/index",
     "pages/report_epihpv/report_epihpv",
     "pages/report_epiliver/report_liverstatus",
@@ -28,7 +31,6 @@
     "pages/submit/epiliversbsuccess",
     "pages/mine/qna",
     "pages/epihpvreport/epihpvreport",
-    "pages/agreemnt/agreemnt",
     "pages/intro/intro-epiliver",
     "pages/intro/intro-epiage",
     "pages/intro/intro-epihpv",
@@ -36,7 +38,7 @@
     "pages/intro/intro-dull",
     "pages/login/login",
     "pages/register/register",
-    "pages/agreement/agreement",
+   
     "pages/reser_epihpv/reser_epihpv",
     "pages/reser_epiliver/reser_epiliver",
     "pages/reser_epiage/reser_epiage",

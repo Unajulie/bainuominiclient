@@ -21,35 +21,30 @@ Page({
         this.setData({
             username: e.detail.value
         })
-        console.info(e.detail.value)
     },
     //绑定选择的性别 
     bininput_sex: function (e) {
         this.setData({
             sex: e.detail.value
         })
-        console.info(e.detail.value)
     },
     //绑定输入的身份证 
     bininput_identity: function (e) {
         this.setData({
             identity: e.detail.value
         })
-        console.info(e.detail.value)
     },
     //绑定输入的电话 
     bininput_mobile: function (e) {
         this.setData({
             phone: e.detail.value
         })
-        console.info(e.detail.value)
     },
     //绑定输入的样本编码
     bininput_sampleid: function (e) {
         this.setData({
             identity: e.detail.value
         })
-        console.info(e.detail.value)
     },
     //协议点击按钮
     checkedTap:function(){
@@ -71,7 +66,13 @@ Page({
                 icon: 'error',
                 duration: 2000
             })
-        } else if (! this.data.checked){
+        }else if(this.data.identity==""?"":(!(/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(this.data.identity)))){
+            wx.showToast({
+                title: '身份证格式错误',
+                icon: 'error',
+                duration: 2000
+            })
+        }  else if (! this.data.checked){
             wx.showToast({
               title: '请勾选用户协议',
               icon: 'none',
@@ -98,7 +99,6 @@ Page({
                     data: formdata,
                     // data: {"sampleid": 1121032800079},
                     complete: function (res) {
-                        console.info(sessionuser.data.phone)
                         let url = '../report_epiliver/report_liverstatus?sampleid=' + oThis.data.sampleid + "&phone=" + sessionuser.data.phone+"&username"+oThis.data.username
                         console.info(url)
                         wx.navigateTo({
@@ -122,7 +122,6 @@ Page({
      */
     onLoad: function (options) {
         let sampleid = options.sampleid
-        console.info("--->:"+sampleid)
         let oThis = this
         wx.getStorage({
             key: 'sessionuser',
@@ -134,7 +133,6 @@ Page({
                 let data = {}
                 data.sampleid = sampleid
                 data.tel = res.data.phone
-                console.info("xxx")
                 wx.request({
                     url: "https://bainuo.beijingepidial.com/client/liver/finduser",
                     header: {
@@ -145,10 +143,9 @@ Page({
                     // data: {"sampleid": 1121032800079},
                     complete: function (res) {
                         oThis.setData({
-                            identity: res.data.idCard,
+                            identity: res.data.idCard==undefined?res.data.idCard:"",
                             username: res.data.username
                         })
-                        console.info(res.data)  
                     },
                     fail: function (res) {
                         wx.showModal({title: '提示',content:"用户登录状态失效，请重新登录"})
@@ -159,53 +156,4 @@ Page({
         })
 
     },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
-    }
 })

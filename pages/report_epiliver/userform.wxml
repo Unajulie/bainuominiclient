@@ -70,7 +70,7 @@
             <view view style="display: flex;width: 100%;">
               <view style="width: 100%;height: auto;line-height: 100rpx; display: flex;">
                 <radio name="agreement" value="agree" checked="{{checked}}" bindtap="checkedTap" />
-                <navigator url="/pages/agreement/agreement" hover-class="navigator-hover">
+                <navigator url="/pages/agreement/liver" hover-class="navigator-hover">
                   <view style="font-size:25rpx ;height: 100rpx;line-height: 100rpx;color: #797979;">同意并接受条款</view>
                 </navigator>
               </view>

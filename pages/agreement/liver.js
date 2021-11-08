@@ -1,4 +1,4 @@
-// pages/agreemnt/agreemnt.js
+// pages/agreement/liver.js
 Page({
 
     /**

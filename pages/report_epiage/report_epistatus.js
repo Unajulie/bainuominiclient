@@ -22,10 +22,10 @@ Page({
     showpdf:function(e){
       let that=this
         let data={}
-        data.username=e.currentTarget.dataset.username
-        data.tel=e.currentTarget.dataset.tel
+        data.tel=e.currentTarget.dataset.phone
         data.barcode=e.currentTarget.dataset.sampleid
       console.info("7777777")
+      console.info(e)
         console.info(data)
         wx.showLoading({title: '加载中', mask:true,duration:10000})
         wx.request({
@@ -35,7 +35,7 @@ Page({
             data: data,
             // data: {"sampleid": 1121032800079},
             complete: function (res) {
-
+              console.info("*******************************888")
               console.info(res.data)
               console.info("https://bainuo.beijingepidial.com/public/pdffile/" +res.data.pdf)
               if(res.data.pdf){
@@ -131,14 +131,16 @@ Page({
             // data: {"sampleid": 1121032800079},
             complete: function (res) {
               console.info("%%%%%%%%%")
-              console.info(res.data)
+            
               oThis.setData({
-                tel:sessionuser.data.tel,
+                tel:sessionuser.data.phone,
                 status: res.data.status,
                 sampleid: res.data.sampleid,
                 pdfIsbuild:res.data.pdf?true:false,
                 pdfurl:res.data.pdf?"https://bainuo.beijingepidial.com/public/pdffile/" +res.data.pdf:""
               })
+
+              console.info(oThis.data)
               wx.hideLoading()
               console.info(res.data.pdf)
               console.info(oThis.data)
