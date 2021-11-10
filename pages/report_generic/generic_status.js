@@ -1,4 +1,4 @@
-// pages/reser_epiage/reser_epiage.js
+// pages/report_generic/generic_status.js
 Page({
 
     /**

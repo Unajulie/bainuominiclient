@@ -1,0 +1,33 @@
+/* pages/service/service.wxss */
+.phcolor{
+    color: #f7b759;
+    font-size: 30rpx;
+  }
+  radio .wx-radio-input{
+    height: 24rpx;
+    width: 24rpx;
+    background: transparent;
+  }
+  radio .wx-radio-input.wx-radio-input-checked::before{
+    width: 24rpx;
+      height: 24rpx;
+      border-radius: 50%;     /* 圆角 */
+      line-height: 24rpx;
+      text-align: center;
+      font-size: 30rpx;       /* 勾大小 */
+      color: #fff;			/* 白色勾  */
+      background: #f7b759;
+      transform: translate(-50%, -50%) scale(1);
+      border: 1rpx solid #f7b759;
+  }
+  /* page{
+    overflow: hidden;
+    position: fixed;
+    background-image: url("https://bainuo.beijingepidial.com/public/img/userbg.png");
+    margin: 0;
+    background-size: 100% 100%;
+  } */
+  
+  
+    
+  

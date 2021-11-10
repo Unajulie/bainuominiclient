@@ -3,6 +3,8 @@
   color: #f7b759;
   font-size: 30rpx;
 }
+/* 性别样式 */
+
 radio .wx-radio-input{
   height: 24rpx;
   width: 24rpx;

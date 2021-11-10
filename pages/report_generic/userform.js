@@ -5,34 +5,27 @@ Page({
      * 页面的初始数据
      */
     data: {
-        sex: [{
-            id: "0",
-            value: '男'
-          }, {
-            id: "1",
-            value: '女',
-          }],
+ /*        items: [{
+            sex: '男',
+            value: 'male'
+        }, {
+            sex: '女',
+            value: 'female'
+        }] */
         checked:false
 
     },
-        //绑定选择的性别
-    radioChange: function (e) {
-        // console.log('radio发生change事件，携带value值为：', e.detail.value)
-        const sex = this.data.sex
-        for (let i = 0, len = sex.length; i < len; ++i) {
-          sex[i].checked = sex[i].id == e.detail.value
-          if(sex[i].checked==true){
-              this.setData({
-                  sexid:sex[i].id
-                })
-            }
-        }
-        console.log(this.data.sexid);
-      },
+
     //绑定输入的姓名 
     bininput_name: function (e) {
         this.setData({
             username: e.detail.value
+        })
+    },
+    //绑定选择的性别 
+    bininput_sex: function (e) {
+        this.setData({
+            sex: e.detail.value
         })
     },
     //绑定输入的身份证 
@@ -66,15 +59,10 @@ Page({
                 icon: 'error',
                 duration: 2000
             })
-        }else if (!(/^1[3456789]\d{9}$/.test(this.data.phone))) {
+        }
+        else if (!(/^1[3456789]\d{9}$/.test(this.data.phone))) {
             wx.showToast({
                 title: '手机号格式错误',
-                icon: 'error',
-                duration: 2000
-            })
-        }else if (!this.data.sexid) {
-            wx.showToast({
-                title: '请选择性别',
                 icon: 'error',
                 duration: 2000
             })
@@ -99,7 +87,9 @@ Page({
             formdata.idstart= this.data.identity.length == 18 ? 16 : 14;
             formdata.sex=this.data.identity.substr(formdata.idstart, 1) % 2
          }else{formdata.sex=-1}
-        formdata.sex = this.data.sexid
+        //if(formdata.idstart){}
+        //formdata.idstart=this.data.identity? this.data.identity.length == 18 ? 16 : 14 : "未填写";
+        //formdata.sex =this.data.identity? 1 -this.data.identity.substr(formdata.idstart, 1) % 2 : -1;
         formdata.tel = this.data.phone
         formdata.sampleid = this.data.sampleid
         formdata.username = this.data.username

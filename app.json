@@ -1,14 +1,17 @@
 {
   "pages": [
     "pages/report/report",
+    "pages/report_epiliver/userform",
     "pages/agreement/epiage",
     "pages/agreement/hpv",
     "pages/agreement/liver",
     "pages/index/index",
+    "pages/report_generic/report_generic",
+    "pages/report_generic/userform",
+    "pages/report_generic/generic_status",
     "pages/report_epihpv/report_epihpv",
     "pages/report_epiliver/report_liverstatus",
     "pages/report_epiage/userform",
-    "pages/report_epiliver/userform",
     "pages/report_epihpv/userform",
     "pages/report_epiliver/report_epiliver",
     "pages/hdhpv/hdhpvrep",
@@ -38,7 +41,6 @@
     "pages/intro/intro-dull",
     "pages/login/login",
     "pages/register/register",
-   
     "pages/reser_epihpv/reser_epihpv",
     "pages/reser_epiliver/reser_epiliver",
     "pages/reser_epiage/reser_epiage",
