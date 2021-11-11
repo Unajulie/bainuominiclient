@@ -53,6 +53,13 @@ Page({
             identity: e.detail.value
         })
     },
+    //绑定输入的样本采集日期
+    bininput_collectiondate: function (e) {
+        this.setData({
+            collectiondate: e.detail.value
+        })
+        console.info(e.detail.value)
+    },
     //协议点击按钮
     checkedTap:function(){
        this.setData({
@@ -103,8 +110,8 @@ Page({
         formdata.tel = this.data.phone
         formdata.sampleid = this.data.sampleid
         formdata.username = this.data.username
-        formdata.created = new Date().toLocaleDateString()
-        console.info(this.data.identity)
+        formdata.created = this.data.collectiondate
+        console.info(this.data.collectiondate)
         console.info(formdata)
         wx.getStorage({
             key: 'sessionuser',

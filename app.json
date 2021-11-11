@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/report/report",
     "pages/report_epiliver/userform",
+    "pages/report/report",
     "pages/agreement/epiage",
     "pages/agreement/hpv",
     "pages/agreement/liver",
