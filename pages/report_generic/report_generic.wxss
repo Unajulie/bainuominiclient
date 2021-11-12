@@ -62,14 +62,14 @@
   align-self: center;
   text-align: center;
   vertical-align: middle;
-  border: 2px solid #f7b759;
+  border: 2px solid #97e2db;
 }
 .submit{
   width:50%;
   font-size: 46rpx;
   height: 100rpx;
   margin-top: 80rpx;
-  background-color: #f7b759;
+  background-color: #97e2db;
   color: white;
   border-radius: 15rpx;
   display: flex;
@@ -82,7 +82,7 @@
   font-size: 46rpx;
   height: 100rpx;
   margin-top: 40rpx;
-  background-color: #f2c988;
+  background-color: #b6f4ef;
   color: white;
   border-radius: 15rpx;
   display: flex;
@@ -112,7 +112,7 @@
   background: #fff;
  }
  .Mselect view:not(:last-of-type){
-  border-bottom: 1px solid #f2c988;
+  border-bottom: 1px solid #b6f4ef;
  }
  .Mcancel{
   background: #fff;

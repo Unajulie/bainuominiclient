@@ -5,17 +5,30 @@ Page({
      * 页面的初始数据
      */
     data: {
- /*        items: [{
-            sex: '男',
-            value: 'male'
-        }, {
-            sex: '女',
-            value: 'female'
-        }] */
+       sex: [{
+            id: "0",
+            value: '男'
+          }, {
+            id: "1",
+            value: '女',
+          }],
         checked:false
 
     },
-
+        //绑定选择的性别
+        radioChange: function (e) {
+            // console.log('radio发生change事件，携带value值为：', e.detail.value)
+            const sex = this.data.sex
+            for (let i = 0, len = sex.length; i < len; ++i) {
+              sex[i].checked = sex[i].id == e.detail.value
+              if(sex[i].checked==true){
+                  this.setData({
+                      sexid:sex[i].id
+                    })
+                }
+            }
+            console.log(this.data.sexid);
+          },
     //绑定输入的姓名 
     bininput_name: function (e) {
         this.setData({
@@ -66,6 +79,12 @@ Page({
                 icon: 'error',
                 duration: 2000
             })
+        }else if (!this.data.sexid) {
+            wx.showToast({
+                title: '请选择性别',
+                icon: 'error',
+                duration: 2000
+            })
         }else if(this.data.identity==""?"":(!(/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(this.data.identity)))){
             wx.showToast({
                 title: '身份证格式错误',
@@ -87,9 +106,7 @@ Page({
             formdata.idstart= this.data.identity.length == 18 ? 16 : 14;
             formdata.sex=this.data.identity.substr(formdata.idstart, 1) % 2
          }else{formdata.sex=-1}
-        //if(formdata.idstart){}
-        //formdata.idstart=this.data.identity? this.data.identity.length == 18 ? 16 : 14 : "未填写";
-        //formdata.sex =this.data.identity? 1 -this.data.identity.substr(formdata.idstart, 1) % 2 : -1;
+        formdata.sex = this.data.sexid
         formdata.tel = this.data.phone
         formdata.sampleid = this.data.sampleid
         formdata.username = this.data.username
@@ -100,13 +117,13 @@ Page({
             key: 'sessionuser',
             success: function (sessionuser) {
                 wx.request({
-                    url: "https://bainuo.beijingepidial.com/client/liver/saveuser",
+                    url: "https://bainuo.beijingepidial.com/client/generic/saveuser",
                     header: {"Content-Type": "application/x-www-form-urlencoded"},
                     method: "POST",
                     data: formdata,
                     // data: {"sampleid": 1121032800079},
                     complete: function (res) {
-                        let url = '../report_epiliver/report_liverstatus?sampleid=' + oThis.data.sampleid + "&phone=" + sessionuser.data.phone+"&username"+oThis.data.username
+                        let url = '../report_generic/generic_status?sampleid=' + oThis.data.sampleid + "&phone=" + sessionuser.data.phone+"&username"+oThis.data.username
                         console.info(url)
                         wx.navigateTo({
                             url: url
@@ -141,7 +158,7 @@ Page({
                 data.sampleid = sampleid
                 data.tel = res.data.phone
                 wx.request({
-                    url: "https://bainuo.beijingepidial.com/client/liver/finduser",
+                    url: "https://bainuo.beijingepidial.com/client/generic/finduser",
                     header: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     },

@@ -15,10 +15,10 @@
 <view style="width: 90%;height: auto;margin:0 auto;margin-top: 40rpx;font-family:hansans;">服务项目</view>
 <!-- 泛癌条码注册查询入口 -->
 <view style="width: 90%;height: auto;margin:0 auto;position: relative;margin-top: 10rpx;" bindtap="genericlogin">
-    <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index/index2.jpg"></image>
+    <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index/index0.png"></image>
     <view style="width: 100%;height: auto;position: absolute;top: 50rpx;display: flex;flex-direction: column;">
     <view style="width: 50%;height: auto;margin: 0 auto;font-family:hansans;color: #4d4d4d;font-size: 36rpx;font-weight: 700;"> 泛癌早期筛查</view>
-    <view style="width: 50%;height: auto;margin: 0 auto;color: #999999;"> epiLiver</view> 
+    <view style="width: 50%;height: auto;margin: 0 auto;color: #999999;">epi-panCancer</view> 
     </view>
 </view>
 <!-- 肝癌条码注册查询入口 -->

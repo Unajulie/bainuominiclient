@@ -1,22 +1,27 @@
 <view style="width: 100%;height: auto; ">
   <view style="width: 90%;height: auto; display: flex;flex-direction: column;margin: 0 auto;">
   <view style="width: 100%; height: auto;margin-top: 30rpx;">
-    <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index/more1.jpg"></image>
+    <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index/more0.jpg"></image>
   </view>
-  <view style="width: 100%; height: auto;margin-top: 50rpx;">产品推荐</view>
-  <view style="width: 100%; height: auto;">
+  <view style="width: 100%; height: auto;margin-top: 50rpx;font-weight: bold;font-size: 36rpx;">产品推荐</view>
+  <view style="width: 100%; height: auto;margin-top: 100rpx;">
+    <navigator url="/pages/intro/intro-generic" hover-class="navigator-hover">
+      <image style="width: 100%; height: auto;" lazy-load="true" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index/more1.jpg"></image>
+    </navigator>
+  </view>
+  <view style="width: 100%; height: auto;margin-top: 100rpx;">
     <navigator url="/pages/intro/intro-epiliver" hover-class="navigator-hover">
+      <image style="width: 100%; height: auto;" lazy-load="true" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index/more2.jpg"></image>
+    </navigator>
+  </view>
+  <view style="width: 100%; height: auto;margin-top: 100rpx;">
+    <navigator url="/pages/intro/intro-epihpv" hover-class="navigator-hover">
       <image style="width: 100%; height: auto;" lazy-load="true" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index/more3.jpg"></image>
     </navigator>
   </view>
-  <view style="width: 100%; height: auto;">
-    <navigator url="/pages/intro/intro-epihpv" hover-class="navigator-hover">
-      <image style="width: 100%; height: auto;" lazy-load="true" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index/more4.jpg"></image>
-    </navigator>
-  </view>
-  <view style="width: 100%; height: auto;">
+  <view style="width: 100%; height: auto;margin-top: 100rpx;">
     <navigator url="/pages/intro/intro-epiage" hover-class="navigator-hover">
-      <image style="width: 100%; height: auto;" lazy-load="true" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index/more2.jpg"></image>
+      <image style="width: 100%; height: auto;" lazy-load="true" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index/more4.jpg"></image>
     </navigator>
   </view>
   </view>

@@ -165,7 +165,7 @@ Page({
         success: function (res) {
           console.log('s:' + res.data.phone)
           wx.request({
-            url: "https://bainuo.beijingepidial.com/client/liver/barcodes",
+            url: "https://bainuo.beijingepidial.com/client/generic/barcodes",
             header: {
               "Content-Type": "application/x-www-form-urlencoded"
             },

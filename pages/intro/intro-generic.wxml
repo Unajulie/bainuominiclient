@@ -1,0 +1,6 @@
+<view class="container">
+  <image  mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/intro-generic1.jpg"></image>
+  <image  mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/intro-generic2.jpg"></image>
+  <image  mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/intro-generic3.jpg"></image>
+  <image  mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/intro-generic4.jpg"></image>
+</view>
