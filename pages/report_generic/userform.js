@@ -12,8 +12,8 @@ Page({
             id: "1",
             value: '女',
           }],
-        checked:false
-
+        checked:false,
+        collectiondate:""
     },
         //绑定选择的性别
         radioChange: function (e) {
@@ -59,6 +59,13 @@ Page({
             identity: e.detail.value
         })
     },
+      //绑定输入的样本采集日期
+      bininput_collectiondate: function (e) {
+        this.setData({
+            collectiondate: e.detail.value
+        })
+        console.info(e.detail.value)
+    },
     //协议点击按钮
     checkedTap:function(){
        this.setData({
@@ -85,7 +92,7 @@ Page({
                 icon: 'error',
                 duration: 2000
             })
-        }else if(this.data.identity==""?"":(!(/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(this.data.identity)))){
+        }else if(this.data.identity==""?false:(!(/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(this.data.identity)))){
             wx.showToast({
                 title: '身份证格式错误',
                 icon: 'error',
@@ -110,9 +117,7 @@ Page({
         formdata.tel = this.data.phone
         formdata.sampleid = this.data.sampleid
         formdata.username = this.data.username
-        formdata.created = new Date().toLocaleDateString()
-        console.info(this.data.identity)
-        console.info(formdata)
+        formdata.created = this.data.collectiondate
         wx.getStorage({
             key: 'sessionuser',
             success: function (sessionuser) {
@@ -166,9 +171,19 @@ Page({
                     data: data,
                     // data: {"sampleid": 1121032800079},
                     complete: function (res) {
+                          // 获得数据库传过来的sex:"0"的值并改变setData里面的sex
+                          const sex = oThis.data.sex
+                          for (let i = 0, len = sex.length; i < len; ++i) {
+                              if(res.data.sex==sex[i].id){
+                                  sex[i].checked=true
+                                  oThis.setData({sexid:sex[i].id})
+                                 }
+                          }
                         oThis.setData({
                             identity: res.data.idCard?res.data.idCard:"",
-                            username: res.data.username
+                            username: res.data.username,
+                            collectiondate:String(res.data.created),
+                            sex:sex
                         })
                     },
                     fail: function (res) {

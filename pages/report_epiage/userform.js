@@ -5,15 +5,8 @@ Page({
      * 页面的初始数据
      */
     data: {
- /*        items: [{
-            sex: '男',
-            value: 'male'
-        }, {
-            sex: '女',
-            value: 'female'
-        }] */
-        checked:false
-
+        checked:false,
+        collectiondate:""
     },
 
     //绑定输入的姓名 
@@ -46,6 +39,13 @@ Page({
             sampleid: e.detail.value?e.detail.value==undefined:""
         })
     },
+    //绑定输入的样本采集日期
+       bininput_collectiondate: function (e) {
+        this.setData({
+            collectiondate: e.detail.value
+        })
+        console.info(e.detail.value)
+    },
     //协议点击按钮
     checkedTap:function(){
        this.setData({
@@ -66,7 +66,7 @@ Page({
                 icon: 'error',
                 duration: 2000
             })
-        }else if(this.data.identity==""?"":(!(/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(this.data.identity)))){
+        }else if(this.data.identity==""?false:(!(/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(this.data.identity)))){
             wx.showToast({
                 title: '身份证格式错误',
                 icon: 'error',
@@ -157,7 +157,8 @@ Page({
                     complete: function (res) {
                         oThis.setData({
                             identity: res.data.idCard?res.data.idCard:"",
-                            username: res.data.username
+                            username: res.data.username,
+                            collectiondate: String(res.data.created)
                         })
                         console.info(res.data)  
                     },

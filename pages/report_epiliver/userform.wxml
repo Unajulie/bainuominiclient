@@ -102,7 +102,6 @@
                      auto-focus="true" value="{{collectiondate}}" disabled="true" placeholder="样本采集日期" placeholder-class="phcolor" />
                     </picker>
                 </view>
-              
               </view>
               <view view style="display: flex;width: 100%;">
                 <view style="width: 100%;height: auto;line-height: 100rpx; display: flex;">

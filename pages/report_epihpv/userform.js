@@ -5,17 +5,17 @@ Page({
      * 页面的初始数据
      */
     data: {
- /*        items: [{
-            sex: '男',
-            value: 'male'
-        }, {
-            sex: '女',
-            value: 'female'
-        }] */
-        checked:true
-
+         sex: [{
+            id: "0",
+            value: '男',
+            checked:false
+          }, {
+            id: "1",
+            value: '女',
+            checked:false
+          }],
+        checked:false
     },
-
     //绑定输入的姓名 
     bininput_name: function (e) {
         this.setData({
@@ -48,6 +48,13 @@ Page({
     bininput_sampleid: function (e) {
         this.setData({
             identity: e.detail.value
+        })
+        console.info(e.detail.value)
+    },
+    //绑定输入的样本采集日期
+    bininput_collectiondate: function (e) {
+        this.setData({
+            collectiondate: e.detail.value
         })
         console.info(e.detail.value)
     },
@@ -92,7 +99,7 @@ Page({
         formdata.tel = this.data.phone
         formdata.sampleid = this.data.sampleid
         formdata.username = this.data.username
-        formdata.created = new Date().toLocaleDateString()
+        formdata.created = this.data.collectiondate
         console.info(formdata)
         wx.getStorage({
             key: 'sessionuser',
@@ -149,9 +156,19 @@ Page({
                     data: data,
                     // data: {"sampleid": 1121032800079},
                     complete: function (res) {
+                          // 获得数据库传过来的sex:"0"的值并改变setData里面的sex
+                          const sex = oThis.data.sex
+                          for (let i = 0, len = sex.length; i < len; ++i) {
+                              if(res.data.sex==sex[i].id){
+                                  sex[i].checked=true
+                                  oThis.setData({sexid:sex[i].id})
+                                 }
+                          }
                         oThis.setData({
                             identity: res.data.idCard,
-                            username: res.data.username
+                            username: res.data.username,
+                            collectiondate: res.data.created.toString(),
+                            sex:sex
                         })
                         console.info(res.data)  
                     },
@@ -159,58 +176,7 @@ Page({
                         wx.showModal({title: '提示',content:"用户登录状态失效，请重新登录"})
                     }
                 })
-
             }
         })
-
     },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
-    }
 })
