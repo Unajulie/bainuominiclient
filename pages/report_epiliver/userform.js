@@ -57,8 +57,9 @@ Page({
     },
     //绑定输入的样本采集日期
     bininput_collectiondate: function (e) {
+        console.info(e.detail.value)
         this.setData({
-            collectiondate: e.detail.value
+            collectiondate:e.detail.value?e.detail.value:new Date().toLocaleString() 
         })
         console.info(e.detail.value)
     },
@@ -182,7 +183,7 @@ Page({
                         oThis.setData({
                             identity: res.data.idCard?res.data.idCard:"",
                             username: res.data.username,
-                            collectiondate: String(res.data.created),
+                            collectiondate: String(res.data.created)!="undefined"?String(res.data.created):"",
                             sex:sex
                         })
                     },

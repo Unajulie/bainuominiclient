@@ -182,7 +182,7 @@ Page({
                         oThis.setData({
                             identity: res.data.idCard?res.data.idCard:"",
                             username: res.data.username,
-                            collectiondate:String(res.data.created),
+                            collectiondate: String(res.data.created)!="undefined"?String(res.data.created):"",
                             sex:sex
                         })
                     },
