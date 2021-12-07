@@ -52,7 +52,14 @@ Page({
     //绑定输入的样本编码
     bininput_sampleid: function (e) {
         this.setData({
-            identity: e.detail.value
+            sampleid: e.detail.value
+        })
+        console.info(e.detail.value)
+    },
+    //绑定输入的样本采集日期
+    bininput_collectiondate: function (e) {
+        this.setData({
+            collectionDate: e.detail.value
         })
     },
     //绑定输入的样本采集日期
@@ -111,6 +118,7 @@ Page({
         if(this.data.identity){
             formdata.idstart= this.data.identity.length == 18 ? 16 : 14;
             formdata.sex=this.data.identity.substr(formdata.idstart, 1) % 2
+            formdata.age=new Date().getFullYear() - parseInt(this.data.identity.substr(6, 4))
          }else{formdata.sex=-1}
         formdata.sex = this.data.sexid
         formdata.tel = this.data.phone
