@@ -117,7 +117,6 @@ Page({
         formdata.sampleid = this.data.sampleid
         formdata.username = this.data.username
         formdata.created = this.data.collectiondate
-        console.info(this.data.collectiondate)
         console.info(formdata)
         wx.getStorage({
             key: 'sessionuser',
@@ -172,6 +171,7 @@ Page({
                     data: data,
                     // data: {"sampleid": 1121032800079},
                     complete: function (res) {
+                        console.info(res.data.created)
                         // 获得数据库传过来的sex:"0"的值并改变setData里面的sex
                         const sex = oThis.data.sex
                         for (let i = 0, len = sex.length; i < len; ++i) {

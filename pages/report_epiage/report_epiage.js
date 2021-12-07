@@ -105,8 +105,6 @@ showModal: function () {
       duration: 10000,
       mask: true
     })
-    console.info(e.currentTarget.dataset.sampleid)
-    console.info( this.data.sampleid)
     let barcode = e.currentTarget.dataset.sampleid ? e.currentTarget.dataset.sampleid : this.data.sampleid
     var that = this
   

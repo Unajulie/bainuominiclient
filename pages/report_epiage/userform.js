@@ -90,7 +90,7 @@ Page({
         formdata.tel = this.data.phone
         formdata.sampleid = this.data.sampleid
         formdata.username = this.data.username
-        formdata.created = new Date().toLocaleDateString()
+        formdata.created = this.data.collectiondate
         formdata.checktime=new Date().toLocaleDateString()
         console.info(formdata)
         wx.showLoading({
@@ -158,7 +158,7 @@ Page({
                         oThis.setData({
                             identity: res.data.idCard?res.data.idCard:"",
                             username: res.data.username,
-                            collectiondate: String(res.data.created)
+                            collectiondate: String(res.data.created)!="undefined"?String(res.data.created):"",
                         })
                         console.info(res.data)  
                     },

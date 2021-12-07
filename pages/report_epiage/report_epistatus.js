@@ -24,8 +24,6 @@ Page({
         let data={}
         data.tel=e.currentTarget.dataset.phone
         data.barcode=e.currentTarget.dataset.sampleid
-      console.info("7777777")
-      console.info(e)
         console.info(data)
         wx.showLoading({title: '加载中', mask:true,duration:10000})
         wx.request({
@@ -35,7 +33,6 @@ Page({
             data: data,
             // data: {"sampleid": 1121032800079},
             complete: function (res) {
-              console.info("*******************************888")
               console.info(res.data)
               console.info("https://bainuo.beijingepidial.com/public/pdffile/" +res.data.pdf)
               if(res.data.pdf){
@@ -78,7 +75,6 @@ Page({
                           })
                         },
                         complete: function (res) {
-
                           console.log(res);
                         }
                       })
@@ -89,14 +85,11 @@ Page({
                     console.log('文件下载失败');
                   },
                   complete: function (res) {},
-
                 })
               }else{
                 wx.hideLoading()
                 wx.showModal({title: '提示',content:"检测报告生成中，请稍等"})
               }
-             
-          
             },
           fail:function(res){
           }})
@@ -114,13 +107,10 @@ Page({
       wx.getStorage({
         key: 'sessionuser',
         success: function (sessionuser) {
-          console.info("woshi option")
-          console.info(options )
           let data = {}
           data.username=options.username
           data.barcode = options.sampleid
           data.tel = options.tel
-          console.info(data)
           wx.request({
             url: "https://bainuo.beijingepidial.com/client/epiage/ckstatus",
             header: {
@@ -130,8 +120,6 @@ Page({
             data: data,
             // data: {"sampleid": 1121032800079},
             complete: function (res) {
-              console.info("%%%%%%%%%")
-            
               oThis.setData({
                 tel:sessionuser.data.phone,
                 status: res.data.status,
@@ -139,11 +127,7 @@ Page({
                 pdfIsbuild:res.data.pdf?true:false,
                 pdfurl:res.data.pdf?"https://bainuo.beijingepidial.com/public/pdffile/" +res.data.pdf:""
               })
-
-              console.info(oThis.data)
               wx.hideLoading()
-              console.info(res.data.pdf)
-              console.info(oThis.data)
             }
           })
         },

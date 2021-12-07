@@ -1,3 +1,4 @@
+// pages/report_epihpv/report_epihpv.js
 Page({
   /**
    * 页面的初始数据
@@ -6,18 +7,20 @@ Page({
     sampleid: "",
     reportUrl: null,
     reportShow: false,
-    hideFlag: true,
-    animationData: {},
+    optionList:['所有','选项1','选项2'],
+ value:'所有',
+ hideFlag: true,
+ animationData: {},
   },
 // 下滑入框
 // 点击选项
-// getOption:function(e){
-//   var that = this;
-//   that.setData({
-//    value:e.currentTarget.dataset.value,
-//    hideFlag: true
-//   })
-//   },
+getOption:function(e){
+  var that = this;
+  that.setData({
+   value:e.currentTarget.dataset.value,
+   hideFlag: true
+  })
+  },
   //取消
   mCancel: function () {
   var that = this;
@@ -75,14 +78,13 @@ showModal: function () {
    animationData: this.animation.export(),
   })
   },
-
   scanCode: function () {
     var that = this;
     // 只允许从相机扫码
     wx.scanCode({
       onlyFromCamera: true,
       success(res) {
-        console.log(res.result)
+        console.log(res)
         that.setData({
           sampleid: res.result
         });
@@ -90,61 +92,70 @@ showModal: function () {
     })
   },
 
-  //获取到hpv报告页面输入的值，查询mongodb数据库，并返回状态
+  //获取到hpv报告页面输入的值，查询mysql数据库，并返回状态
   inputVal: function (e) {
     let sampleid = e.detail.value
+    console.info(sampleid)
     this.setData({
       sampleid: sampleid
     })
+
   },
-  //  
+
   checkHpvReport: function (e) {
-    //console.info("https://bainuo.beijingepidial.com/public/pdffile/"+this.data.sampleid+".pdf")
-    //wx.showToast({title: '加载中', icon: 'loading', duration: 10000});
-    let oThis = this
+    wx.showLoading({
+      title: '加载中',
+      duration: 10000,
+      mask: true
+    })
+    console.info("simpleid:" + e.currentTarget.dataset.sampleid)
+    let sampleid = e.currentTarget.dataset.sampleid ? e.currentTarget.dataset.sampleid : this.data.sampleid
+    var that = this
     wx.getStorage({
       key: 'sessionuser',
       success: function (res) {
-        console.log(res.data)
-        let data = {}
-        data.phone = e.currentTarget.dataset.phone ? e.currentTarget.dataset.phone : res.data.phone
-        data.sampleid = e.currentTarget.dataset.sampleid ? e.currentTarget.dataset.sampleid : oThis.data.sampleid
+        console.log('click history:' + res.data.phone)
+        let phone = e.currentTarget.dataset.phone ? e.currentTarget.dataset.phone : res.data.phone
         wx.request({
           url: "https://bainuo.beijingepidial.com/client/hpv/uploadbarcode",
           header: {
             "Content-Type": "application/x-www-form-urlencoded"
           },
           method: "POST",
-          data: data,
+          data: {
+            "sampleid": sampleid,
+            "tel": phone
+          },
           // data: {"sampleid": 1121032800079},
           complete: function (res) {
-            console.info(res.data)
+            console.info("xxxxx-->" + res.data.sampleid)
+            wx.hideLoading()
             //如果是空字符串
-            if (res.data.status == "fail") {
+            if (res.data == "") {
               wx.showModal({
                 title: '提示',
-                content: "库存查无此条码，请联系客服"
+                content: "库存查无该条码，请联系客服"
               })
             } else {
-              wx.hideLoading()
+              // let url = "../report_epiage/report_epistatus?status=" + res.data.status + "&barcode=" + barcode + "&phone=" + phone
+              let url = "../report_epihpv/userform?status=" + res.data.status + "&sampleid=" + sampleid + "&phone=" + phone
               wx.navigateTo({
-                url: 'userform?sampleid=' + data.sampleid
+                url: url
               })
             }
           },
           fail: function (res) {
-            console.info(res)
+
           }
         })
-      },
-      fail: function (e) {
+      },fail:function(){
         wx.navigateTo({
           url: '../user/login',
         })
       }
     })
-  },
 
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -153,7 +164,7 @@ showModal: function () {
     wx.getStorage({
       key: 'sessionuser',
       success: function (res) {
-        console.log('s:' + res.data)
+        console.log('s:' + res.data.phone)
         wx.request({
           url: "https://bainuo.beijingepidial.com/client/hpv/barcodes",
           header: {
@@ -165,6 +176,7 @@ showModal: function () {
           },
           // data: {"sampleid": 1121032800079},
           complete: function (res) {
+            console.info("hello")
             console.info(res.data)
             oThis.setData({
               barcodebox: res.data
@@ -174,12 +186,9 @@ showModal: function () {
       },
       fail: function (res) {
         wx.navigateTo({
-          url: '../epiage/login',
+          url: '../user/login',
         })
       }
     })
-    // wx.showLoading({
-    //   title: '报告加载中',
-    // })
-  },
+  }
 })

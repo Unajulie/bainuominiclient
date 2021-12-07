@@ -5,7 +5,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-         sex: [{
+        sex: [{
             id: "0",
             value: '男',
             checked:false
@@ -14,47 +14,52 @@ Page({
             value: '女',
             checked:false
           }],
-        checked:false
+          checked:false,
+         collectiondate:""
     },
+        //绑定选择的性别
+    radioChange: function (e) {
+        // console.log('radio发生change事件，携带value值为：', e.detail.value)
+        const sex = this.data.sex
+        for (let i = 0, len = sex.length; i < len; ++i) {
+          sex[i].checked = sex[i].id == e.detail.value
+          if(sex[i].checked==true){
+              this.setData({
+                  sexid:sex[i].id
+                })
+            }
+        }
+        console.log(this.data.sexid);
+      },
     //绑定输入的姓名 
     bininput_name: function (e) {
         this.setData({
             username: e.detail.value
         })
-        console.info(e.detail.value)
-    },
-    //绑定选择的性别 
-    bininput_sex: function (e) {
-        this.setData({
-            sex: e.detail.value
-        })
-        console.info(e.detail.value)
     },
     //绑定输入的身份证 
     bininput_identity: function (e) {
         this.setData({
             identity: e.detail.value
         })
-        console.info(e.detail.value)
     },
     //绑定输入的电话 
     bininput_mobile: function (e) {
         this.setData({
             phone: e.detail.value
         })
-        console.info(e.detail.value)
     },
     //绑定输入的样本编码
     bininput_sampleid: function (e) {
         this.setData({
             identity: e.detail.value
         })
-        console.info(e.detail.value)
     },
     //绑定输入的样本采集日期
     bininput_collectiondate: function (e) {
+        console.info(e.detail.value)
         this.setData({
-            collectiondate: e.detail.value
+            collectiondate:e.detail.value?e.detail.value:new Date().toLocaleString() 
         })
         console.info(e.detail.value)
     },
@@ -71,20 +76,28 @@ Page({
                 icon: 'error',
                 duration: 2000
             })
-        }
-        else if (!(/^1[3456789]\d{9}$/.test(this.data.phone))) {
+        }else if (!(/^1[3456789]\d{9}$/.test(this.data.phone))) {
             wx.showToast({
                 title: '手机号格式错误',
                 icon: 'error',
                 duration: 2000
             })
-        } else if(!(/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(this.data.identity))){
+        }else if (!this.data.sexid) {
+            wx.showToast({
+                title: '请选择性别',
+                icon: 'error',
+                duration: 2000
+            })
+        }else if(this.data.identity==""?false:(!(/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test
+        (this.data.identity)))){
+            console.info("+++++++++++++++++++==")
+            console.info(this.data.identity)
             wx.showToast({
                 title: '身份证格式错误',
                 icon: 'error',
                 duration: 2000
             })
-        }else if (! this.data.checked){
+        }  else if (! this.data.checked){
             wx.showToast({
               title: '请勾选用户协议',
               icon: 'none',
@@ -94,8 +107,12 @@ Page({
         else{
         let oThis = this
         let formdata = {}
-        formdata.idCard = this.data.identity
-        formdata.sex = 0
+        formdata.idCard = this.data.identity?this.data.identity:""
+        if(this.data.identity){
+            formdata.idstart= this.data.identity.length == 18 ? 16 : 14;
+            formdata.sex=this.data.identity.substr(formdata.idstart, 1) % 2
+         }else{formdata.sex=-1}
+        formdata.sex = this.data.sexid
         formdata.tel = this.data.phone
         formdata.sampleid = this.data.sampleid
         formdata.username = this.data.username
@@ -105,13 +122,13 @@ Page({
             key: 'sessionuser',
             success: function (sessionuser) {
                 wx.request({
-                    url: "https://bainuo.beijingepidial.com/client/liver/saveuser",
+                    url: "https://bainuo.beijingepidial.com/client/hpv/saveuser",
                     header: {"Content-Type": "application/x-www-form-urlencoded"},
                     method: "POST",
                     data: formdata,
                     // data: {"sampleid": 1121032800079},
                     complete: function (res) {
-                        let url = '../report_epiliver/report_liverstatus?sampleid=' + oThis.data.sampleid + "&phone=" + sessionuser.data.phone+"&username"+oThis.data.username
+                        let url = '../report_epihpv/report_hpvstatus?sampleid=' + oThis.data.sampleid + "&phone=" + sessionuser.data.phone+"&username"+oThis.data.username
                         console.info(url)
                         wx.navigateTo({
                             url: url
@@ -134,21 +151,19 @@ Page({
      */
     onLoad: function (options) {
         let sampleid = options.sampleid
-        console.info("--->:"+sampleid)
         let oThis = this
         wx.getStorage({
             key: 'sessionuser',
             success: function (res) {
                 oThis.setData({
                     phone: res.data.phone,
-                    sampleid: sampleid
+                    sampleid: sampleid,
                 })
                 let data = {}
                 data.sampleid = sampleid
                 data.tel = res.data.phone
-                console.info("xxx")
                 wx.request({
-                    url: "https://bainuo.beijingepidial.com/client/liver/finduser",
+                    url: "https://bainuo.beijingepidial.com/client/hpv/finduser",
                     header: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     },
@@ -156,27 +171,29 @@ Page({
                     data: data,
                     // data: {"sampleid": 1121032800079},
                     complete: function (res) {
-                          // 获得数据库传过来的sex:"0"的值并改变setData里面的sex
-                          const sex = oThis.data.sex
-                          for (let i = 0, len = sex.length; i < len; ++i) {
-                              if(res.data.sex==sex[i].id){
-                                  sex[i].checked=true
-                                  oThis.setData({sexid:sex[i].id})
-                                 }
-                          }
+                        console.info(res.data.created)
+                        // 获得数据库传过来的sex:"0"的值并改变setData里面的sex
+                        const sex = oThis.data.sex
+                        for (let i = 0, len = sex.length; i < len; ++i) {
+                            if(res.data.sex==sex[i].id){
+                                sex[i].checked=true
+                                oThis.setData({sexid:sex[i].id})
+                               }
+                        }
                         oThis.setData({
-                            identity: res.data.idCard,
+                            identity: res.data.idCard?res.data.idCard:"",
                             username: res.data.username,
-                            collectiondate: res.data.created.toString(),
+                            collectiondate: String(res.data.created)!="undefined"?String(res.data.created):"",
                             sex:sex
                         })
-                        console.info(res.data)  
                     },
                     fail: function (res) {
                         wx.showModal({title: '提示',content:"用户登录状态失效，请重新登录"})
                     }
                 })
+
             }
         })
+
     },
 })

@@ -134,7 +134,6 @@ Page({
     wx.getStorage({
       key: 'sessionuser',
       success: function (res) {
-
         //console.info(options.status )
         let data = {}
         data.sampleid = options.sampleid
