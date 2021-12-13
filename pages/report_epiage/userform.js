@@ -6,7 +6,7 @@ Page({
      */
     data: {
         checked:false,
-        collectiondate:""
+        collectiondate:"",
     },
 
     //绑定输入的姓名 
@@ -86,6 +86,7 @@ Page({
         if(this.data.identity){
             formdata.idstart= this.data.identity.length == 18 ? 16 : 14;
             formdata.sex=this.data.identity.substr(formdata.idstart, 1) % 2
+            formdata.age=new Date().getFullYear() - parseInt(this.data.identity.substr(6, 4))
          }else{formdata.sex=-1}
         formdata.tel = this.data.phone
         formdata.sampleid = this.data.sampleid
