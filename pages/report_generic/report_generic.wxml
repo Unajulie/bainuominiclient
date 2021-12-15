@@ -43,7 +43,7 @@
                 <view style="text-align: center;font-weight: 600;font-size: 40rpx;">已注册条码</view>
                 <view wx:key="i" wx:for="{{barcodebox}}" wx:for-item="data" bindtap='getOption'>
                     <view data-sampleid="{{data.sampleid}}" bindtap="checkgenericReport" style="text-align: left;font-size: 34rpx;font-weight: 500;">条码：{{data.sampleid}}
-                      状态：{{data.status=="NO_STATUS"?"等待检测中":data.status=="POST_FROM_LAB"?"已从实验室寄出":data.status=="PARCEL_RECEIVED"?"实验室已取得唾液样本":data.status=="REGISTERED_IN_LIMS"?"样本已录入检测队列":data.status=="WAITING_DNA_PREP"?"等待提取DNA":data.status=="SEQUENCING"?"分析DNA序列中":"已完成检测"}}
+                      状态：{{data.status=="NO_STATUS"?"等待检测中":data.status=="POST_FROM_LAB"?"已从实验室寄出":data.status=="PARCEL_RECEIVED"?"实验室已取得唾液样本":data.status=="REGISTERED_IN_LIMS"?"样本已录入检测队列":data.status=="WAITING_DNA_PREP"?"等待提取DNA":data.status=="SEQUENCING"||data.status=="PAUSE_DETECTION"||data.status=="RE_DETECTING"||data.status=="UNQUALIFIED"?"分析DNA序列中":"已完成检测"}}
                     </view>
                  
                 </view>

@@ -13,7 +13,8 @@ Page({
             value: '女',
           }],
         checked:false,
-        collectiondate:""
+        collectiondate:"",
+        endate:new Date().toLocaleDateString().replace("/", "-")
     },
         //绑定选择的性别
         radioChange: function (e) {

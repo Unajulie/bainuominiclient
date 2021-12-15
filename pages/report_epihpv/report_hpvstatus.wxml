@@ -30,7 +30,7 @@
                             style="border-radius: 50rpx; width: 50rpx;height:50rpx; background-color: {{status=='WAITING_DNA_PREP'?'#069ce8':'#7b7c7e'}};text-align: center;color: white;position: absolute;margin-top:600rpx;margin-left: 6rpx;font-weight: 700;">
                             <image style="width: 50rpx;height:50rpx;" mode="widthFix" src="../../img/arrow.png"></image></view>
                         <view
-                            style="border-radius: 50rpx; width: 50rpx;height:50rpx; background-color: {{status=='SEQUENCING'?'#069ce8':'#7b7c7e'}};text-align: center;color: white;position: absolute;margin-top:740rpx;margin-left: 6rpx;font-weight: 700;">
+                            style="border-radius: 50rpx; width: 50rpx;height:50rpx; background-color: {{status=='SEQUENCING'||status=='PAUSE_DETECTION'||status=='RE_DETECTING'||status=='UNQUALIFIED'?'#069ce8':'#7b7c7e'}};text-align: center;color: white;position: absolute;margin-top:740rpx;margin-left: 6rpx;font-weight: 700;">
                             <image style="width: 50rpx;height:50rpx;" mode="widthFix" src="../../img/arrow.png"></image></view>
                         <view
                             style="border-radius: 50rpx; width: 50rpx;height:50rpx; background-color: {{status=='Completed'?'#069ce8':'#7b7c7e'}};text-align: center;color: white;position: absolute;margin-top:880rpx;margin-left: 6rpx;font-weight: 700;">
@@ -40,7 +40,7 @@
                 </view>
                 <view style="width: 100%;height: auto;">
                     <view style="width: 100%;height: 60rpx;display: flex;">
-                        <!-- 空盒子 -->
+                        <!-- 试剂盒待寄出 -->
                         <view style="width:{{status=='NO_STATUS'?'20%':'0px'}};height: 60rpx;margin-left: 10rpx;"></view>
                         <view style="width: 80%;height: 80rpx;background-color: {{status=='NO_STATUS'?'#069ce8':'#7b7c7e'}};display: flex;border-radius: 10rpx;margin-top: 30rpx;">
                             <view style="width: 20%;height: 80rpx;position: relative;">
@@ -51,7 +51,7 @@
                     </view>
 
                     <view style="width: 100%;height: 60rpx;display: flex;">
-                        <!-- 空盒子 -->
+                        <!-- 试剂盒已从实验室寄出 -->
                         <view style="width: {{status=='POST_FROM_LAB'?'20%':'0px'}};height: 35px;margin-left: 10rpx;"></view>
                         <view style="width: 80%;height: 80rpx;background-color: {{status=='POST_FROM_LAB'?'#069ce8':'#7b7c7e'}};display: flex;border-radius: 10rpx;margin-top: 110rpx;">
                             <view style="width: 20%;height: 80rpx;position: relative;">
@@ -61,7 +61,7 @@
                         </view>
                     </view>
                     <view style="width: 100%;height: 60rpx;display: flex;">
-                        <!-- 空盒子 -->
+                        <!-- 实验室已收到您寄回的样本 -->
                         <view style="width: {{status=='PARCEL_RECEIVED'?'20%':'0px'}};height: 80rpx;margin-left: 10rpx;"></view>
                         <view style="width: 80%;height: 80rpx;background-color: {{status=='PARCEL_RECEIVED'?'#069ce8':'#7b7c7e'}};display: flex;border-radius: 10rpx;margin-top: 190rpx;">
                             <view style="width: 20%;height: 80rpx;position: relative;">
@@ -71,7 +71,7 @@
                         </view>
                     </view>
                     <view style="width: 100%;height: 60rpx;display: flex;">
-                        <!-- 空盒子 -->
+                        <!-- 样本已注册到实验室系统 -->
                         <view style="width:{{status=='REGISTERED_IN_LIMS'?'20%':'0px'}};height: 80rpx;margin-left: 10rpx;"></view>
                         <view style="width: 80%;height: 80rpx;background-color: {{status=='REGISTERED_IN_LIMS'?'#069ce8':'#7b7c7e'}};display: flex;border-radius: 10rpx;margin-top: 270rpx;">
                             <view style="width: 20%;height: 80rpx;position: relative;">
@@ -81,7 +81,7 @@
                         </view>
                     </view>
                     <view style="width: 100%;height: 60rpx;display: flex;">
-                        <!-- 空盒子 -->
+                        <!-- 样本等待检测中 -->
                         <view style="width:{{status=='WAITING_DNA_PREP'?'20%':'0px'}};height: 80rpx;margin-left: 5px;"></view>
                         <view style="width: 80%;height: 80rpx;background-color: {{status=='WAITING_DNA_PREP'?'#069ce8':'#7b7c7e'}};display: flex;border-radius: 10rpx;margin-top: 350rpx;">
                             <view style="width: 20%;height: 80rpx;position: relative;">
@@ -91,9 +91,9 @@
                         </view>
                     </view>
                     <view style="width: 100%;height: 60rpx;display: flex;">
-                        <!-- 空盒子 -->
-                        <view style="width:{{status=='SEQUENCING'?'20%':'0px'}};height: 80rpx;margin-left: 5px;"></view>
-                        <view style="width: 80%;height: 80rpx;background-color: {{status=='SEQUENCING'?'#069ce8':'#7b7c7e'}};display: flex;border-radius: 5px;margin-top: 430rpx;">
+                        <!-- 样本DNA序列正在分析中 -->
+                        <view style="width:{{status=='SEQUENCING'||status=='PAUSE_DETECTION'||status=='RE_DETECTING'||status=='UNQUALIFIED'?'20%':'0px'}};height: 80rpx;margin-left: 5px;"></view>
+                        <view style="width: 80%;height: 80rpx;background-color: {{status=='SEQUENCING'||status=='PAUSE_DETECTION'||status=='RE_DETECTING'||status=='UNQUALIFIED'?'#069ce8':'#7b7c7e'}};display: flex;border-radius: 5px;margin-top: 430rpx;">
                             <view style="width: 20%;height: 80rpx;position: relative;">
                                 <image style="position: absolute;top:5px;left:10rpx;;width: 60rpx;height: 60rpx ;" mode="widthFix" src="../../img/status06.png"></image>
                             </view>
@@ -102,7 +102,7 @@
                     </view>
                     <view style="width: 100%;height: 60rpx;display: flex;">
                     <view bindtap="showpdf" data-phone="{{phone}}" data-sampleid="{{sampleid}}" style="width: 100%;height: 30px;display: flex;">
-                        <!-- 空盒子 -->
+                        <!-- 点击查看报告 -->
                         <view style="width: {{status=='Completed'?'20%':'0px'}};height: 80rpx;margin-left: 5px;"></view>
                         <view style="width: 80%;height: 80rpx;background-color: {{status=='Completed'?'#069ce8':'#7b7c7e'}};display: flex;border-radius: 5px;margin-top: 520rpx;">
                             <view style="width: 20%;height: 80rpx;position: relative;">

@@ -39,7 +39,7 @@
 .privacy{
   width: 100%;
   font-size: 24rpx;
-  color: grey;
+  color: red;
   text-align: left;
 }
 

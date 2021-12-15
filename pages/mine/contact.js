@@ -16,7 +16,7 @@ Page({
   },
   makcall:function(){
     wx.makePhoneCall({
-      phoneNumber: '010-67358329',
+      phoneNumber: '400-8558-693',
     })
   },
   /**

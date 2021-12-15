@@ -15,7 +15,8 @@ Page({
             checked:false
           }],
           checked:false,
-         collectiondate:""
+         collectiondate:"",
+         endate:new Date().toLocaleDateString()
     },
         //绑定选择的性别
     radioChange: function (e) {
