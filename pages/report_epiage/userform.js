@@ -7,6 +7,7 @@ Page({
     data: {
         checked:false,
         collectiondate:"",
+        endate:new Date().toLocaleDateString().replace("/","-")
     },
 
     //绑定输入的姓名 

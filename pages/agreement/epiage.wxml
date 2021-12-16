@@ -2,15 +2,13 @@
 <view class="sub-contain">
   <view class="title">知情同意书</view>
   <view class="sub-title">尊敬的客户：</view>
-  <view class="content">您好！非常感谢您选择深圳百诺医学检验实验室（以下简称“百诺医学”）的产品。此生物学年龄检测服务是基于对您 DNA 中 DNA 甲基化评估的表观遗传年龄确定。</view>
+  <view class="content">您好！非常感谢您选择深圳百诺医学检验实验室（以下称“百诺医学”）的生物学年龄检测服务。此检测服务是对您 的唾液细胞中DNA 甲基化程度进行评估，从表观遗传层面检测您的生物学年龄。</view>
   <view class="sub-title">在检测开始之前，请您详细阅读并知晓以下内容：</view>
-  <view class="content">1.该生物学年龄检测服务需采集的样本为2ml的人体口腔内唾液，请您按照说明指引采集样本。</view>
-  <view class="content">2.生物学年龄检测(Epiage)并非旨在提供健康信息或医疗数据，也不旨在用于筛查、诊断、治疗、预防或评估任何疾病或病症的风险。</view>
-  <view class="content">3.我们不收集基因数据。</view>
-  <view class="content">4.该测试适用于 18 岁或以上的个人。</view>
-  <view class="content">5.您的个人资料和筛查结果均属于保密信息，不会被公开及用于其他目的，不会提供给任何第三方个人或机构。百诺医学遵守国家相关法规，
-    始终保护您的个人隐私。此外，您有权利在不告知我们原因的前提下随时退出本次检测。
+  <view class="content">1.该生物学年龄检测服务需采集的样本为2ml的人体口腔内唾液，请您按照说明指引采集样本；</view>
+  <view class="content">2.生物学年龄检测(epiAge)并非旨在提供健康信息或医疗数据，也不可用于筛查、诊断、治疗、预防或评估任何疾病或病症的风险；</view>
+  <view class="content">3.该检测适用于 18 岁或以上的个人；</view>
+  <view class="content">4.您的个人资料和检测结果均属于保密信息，不会被公开及用于其他目的，不会提供给任何第三方个人或机构。百诺医学遵守国家相关法规，始终保护您的个人隐私；
   </view>
-  <view style="font-size: 30rpx;font-weight: bold;margin-top: 20rpx;">如您已详细阅读以上告知内容，并已知晓该检测的指导价值，愿意承担可能因检测带来的相关身心风险，请勾选同意做此项检测。</view>
+  <view style="font-size: 30rpx;font-weight: bold;margin-top: 20rpx;">如果您已详细阅读以上告知内容，并已知晓该检测的指导价值，愿意承担可能因检测带来的相关身心风险，请勾选同意做此项检测。</view>
 </view>
 </view>
