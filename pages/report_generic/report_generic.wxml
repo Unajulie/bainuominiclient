@@ -30,6 +30,8 @@
         </view>
         <button class="submit" bindtap="checkgenericReport">注册/查询</button>
         <button class="history" bindtap="checkgenericReport" bindtap="showModal">历史查询</button>
+       
+        <view style="width: 100%;height: 20rpx;"></view>
       </form>
       <!-- 历史barcode查询下滑入框开始 -->
       <view class="wrap">

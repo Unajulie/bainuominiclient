@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/report/report",
+    "pages/ques/generic_ques",
+    "pages/survey/generic_survey",
     "pages/intro/intro-generic",
     "pages/report_epiliver/userform",
     "pages/agreement/epiage",

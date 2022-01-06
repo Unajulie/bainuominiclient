@@ -1,5 +1,8 @@
 <view style="width: 100%;height: auto; ">
   <view style="width: 90%;height: auto; display: flex;flex-direction: column;margin: 0 auto;">
+    <view style="width: 100%; height: auto;margin-top: 30rpx;">
+    <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/guidance.png"></image>
+  </view>
   <view style="width: 100%; height: auto;margin-top: 30rpx;">
     <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index/more0.jpg"></image>
   </view>

@@ -138,8 +138,6 @@ Page({
         let data = {}
         data.sampleid = options.sampleid
         data.phone = options.phone
-        console.info("xxxxxxx")
-        console.info(data)
         wx.request({
           url: "https://bainuo.beijingepidial.com/client/liver/ckstatus",
           header: {
@@ -149,8 +147,6 @@ Page({
           data: data,
           // data: {"sampleid": 1121032800079},
           complete: function (res) {
-            console.info("------")
-            console.info(res.data)
             oThis.setData({
               phone:res.data.tel,
               status: res.data.status,

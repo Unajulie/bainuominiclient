@@ -20,7 +20,7 @@
                   </image>
                 </view>
                 <view style="width: 300px;height: auto;">
-                  <input style="width: 100%;height: 45px;font-size: 15px;" type="text" placeholder="姓名"
+                  <input disabled="{{usernameDisable}}" style="width: 100%;height: 45px;font-size: 15px;" type="text" placeholder="姓名"
                   value="{{username}}" bindinput='bininput_name' placeholder-class="phcolor" />
                 </view>
               </view>
@@ -34,7 +34,7 @@
                   </image>
                 </view>
                 <view style="width: 300px;height: auto;">
-                  <input style="width: 100%;height: 45px;font-size: 15px;" type="number" value="{{phone}}" bindinput='bininput_mobile' placeholder="手机号码"
+                  <input disabled="{{phoneDisable}}"style="width: 100%;height: 45px;font-size: 15px;" type="number" value="{{phone}}" bindinput='bininput_mobile' placeholder="手机号码"
                      placeholder-class="phcolor" />
                 </view>
               </view>
@@ -47,7 +47,7 @@
                 </image>
               </view>
               <view style="width: 300px;height: auto;">
-                <input style="width: 100%;height: 45px;font-size: 15px;"  type="idcard" 
+                <input disabled="{{identityDisable}}"style="width: 100%;height: 45px;font-size: 15px;"  type="idcard" 
              value="{{identity}}" 
           bindinput='bininput_identity' auto-focus="true" placeholder="身份证（选填）" placeholder-class="phcolor" />
               </view>
@@ -60,7 +60,7 @@
                 </image>
               </view>
               <view style="width: 300px;height: auto;">
-                <input disabled="true" style="width: 100%;height: 45px;font-size: 15px;" type="text" value="{{sampleid}}" placeholder="样本编号"
+                <input disabled="{{true}}" disabled="true" style="width: 100%;height: 45px;font-size: 15px;" type="text" value="{{sampleid}}" placeholder="样本编号"
                   placeholder-class="phcolor" bindinput="cmpwdIn" />
               </view>
             </view>
@@ -72,9 +72,9 @@
                   </image>
                 </view>
                 <view style="width: 300px;height: auto;">
-                  <picker mode="date"  value="{{collectiondate}}" start="2018-01-01" end="{{endate}}" bindchange='bininput_collectiondate'>
-                  <input style="width: 100%;height: 100rpx;font-size: 15px;" type="date" 
-                     auto-focus="true" value="{{collectiondate}}" disabled="true" placeholder="样本采集日期" placeholder-class="phcolor" />
+                  <picker disabled="{{colldateDisable}}" mode="date"  value="{{collectiondate}}" start="2018-01-01" end="{{endate}}" bindchange='bininput_collectiondate'>
+                  <input disabled="{{colldateDisable}}"style="width: 100%;height: 100rpx;font-size: 15px;" type="date" disabled="true"
+                     auto-focus="true" value="{{collectiondate}}" placeholder="样本采集日期" placeholder-class="phcolor" bindchange='bininput_collectiondate'/>
                     </picker>
                 </view>
               </view>
