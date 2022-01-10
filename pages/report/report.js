@@ -75,6 +75,23 @@ Page({
       }
     })   
   },
+    // 问卷点击查询注册条码
+    survey:function(e){
+      wx.getStorage({
+        key:'sessionuser',
+        success:function (res) {
+          console.log('s:' + res.data)
+          wx.navigateTo({
+            url: "/pages/ques/generic_ques"
+          })
+        },
+        fail:function(res){
+          wx.navigateTo({
+            url: "../user/login"
+          })
+        }
+      })   
+    },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -86,7 +103,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+  
   },
 
   /**

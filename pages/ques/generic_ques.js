@@ -247,8 +247,7 @@ Page({
             count,
             survey_result
         } = this.data
-        // survey_result[curId].value
-        if (!curId) {
+        if (survey_result[curId-1]==0) {
             wx.showToast({
                 title: '请选择',
                 icon: 'error',
@@ -257,7 +256,6 @@ Page({
             return
         } 
         const step = 670 / count
-
         this.setData({
             curId: curId + 1,
             activeWidth: step * (curId + 1)
@@ -276,10 +274,10 @@ Page({
             })
         }
         const step = 670 / count
-
         this.setData({
             activeWidth: step * (curId - 1)
         })
+
     },
     // 用户仅单选
     handleSelect(e) {
@@ -319,10 +317,25 @@ Page({
             isselected
         } = e.currentTarget.dataset
         let options = this.data.survey_result[id].options ? this.data.survey_result[id].options : e.currentTarget.dataset.options
-
+// console.info(options[optionid])
+// console.info(isselected)
         //optionid为单个答案
-        options[optionid].isselected = (isselected == false ? true : false)
-        this.data.survey_result.splice(index, 2, {
+      
+        // console.info(options[optionid])
+// console.info(isselected)
+//控制单选框中只有最后一个选中的 才能被选中， 其他的都变成不选中状态
+
+options[optionid].isselected = (isselected == false ? true : false)
+
+// for(let i=0;i<options.length;i++){
+//     // console.info(optionid)
+// // console.info(options[i])
+// if(options[optionid].isselected==false){
+//     options[i].isselected==true
+//     console.info(options[i])
+// }
+// }
+        this.data.survey_result.splice(index, 1, {
             id,
             question,
             isselected,
@@ -484,10 +497,12 @@ Page({
         wx.getStorage({
             key: 'sessionuser',
             success: function (sessionuser) {
-                console.info(oThis.data.survey_result)
                 let quesarrs = {}
+                console.info(sessionuser)
                 quesarrs.phone = sessionuser.data.phone
+                quesarrs.username=sessionuser.data.username
                 quesarrs.questions=oThis.data.survey_result
+                console.info(quesarrs)
                 wx.request({
                     url: "https://bainuo.beijingepidial.com/client/users/save/ques",
                     header: {
@@ -500,17 +515,17 @@ Page({
                         //用户点击确定后没值的输入值后就不可编辑
                         //一定要写成this.data.isDisabled，不然判断出不来
                         console.info(res)
-                        if (res.data == "success") {
-                            // wx.showToast({
-                            //     title: '问卷保存成功',
-                            //     icon: 'success',
-                            //     duration: 3000,
-                            // }, wx.switchTab({ url: "/pages/report/report"}))
+                        if (res.statusCode == 200) {
                             wx.showToast({
                                 title: '问卷保存成功',
                                 icon: 'success',
                                 duration: 2000,
-                                success: function () {
+                                // success: () => {
+                                //     setTimeout(() => {
+                                //       wx.navigateBack();
+                                //     }, 2000);
+                                //   }
+                                complete: function () {
                                     setTimeout(function () {
                                         wx.switchTab({
                                             url: "/pages/report/report"

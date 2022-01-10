@@ -7,6 +7,7 @@ Page({
     data: {
       phone:'',
       pwd:'',
+      username:'',
       //是否密码框
     passwordType:true,
     // 是否显示密码
@@ -32,7 +33,7 @@ Page({
           url: "../user/register"
         })
       },
-      inputUsername:function(e){
+      inputPhone:function(e){
         console.info(e.detail.value)
         this.setData({phone: e.detail.value}) 
       },
@@ -41,14 +42,14 @@ Page({
         this.setData({pwd: e.detail.value}) 
       },
       login:function(){
+        let oThis=this
         if(!this.data.phone){
             wx.showToast({
                 title: '手机号必填',
                 icon: 'error',
                 duration: 2000
             }) 
-        }
-       else if (!(/^1[3456789]\d{9}$/.test(this.data.phone))) {
+        }else if (!(/^1[3456789]\d{9}$/.test(this.data.phone))) {
             wx.showToast({
                 title: '手机号格式错误',
                 icon: 'error',
@@ -65,19 +66,21 @@ Page({
             sessionuser.phone=this.data.phone
             sessionuser.password=this.data.pwd
         wx.request({
+
             url: "https://bainuo.beijingepidial.com/client/user/login",
             header: {"Content-Type": "application/x-www-form-urlencoded"},
             method: "POST",
             data: sessionuser,
             // data: {"barcode": 1121032800079},
             complete: function (res) {
-                console.info(res.data)
+                console.info(res.data.result.username)
+                oThis.setData({username:res.data.result.username})
+                sessionuser.username=oThis.data.username
                if(res.data.status=="success"){
                 wx.setStorage({
                   key: "sessionuser",
                   data: sessionuser,
                   success: function(res){
-                      console.info(res)
                       //直接跳到tab首页
                       wx.switchTab({url: '../index/index'})
                   },

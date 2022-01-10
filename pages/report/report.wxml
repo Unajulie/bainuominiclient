@@ -46,7 +46,7 @@
     </view>
 </view>
 <view style="width: 100%;height: 50rpx;"></view>
-<navigator url="/pages/ques/generic_ques" hover-class="none">
+<navigator bindtap="survey" hover-class="none">
 <view style="width: 90%;height: auto;margin:0 auto;position: relative;">
     <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/survey.jpg"></image>
 </view>

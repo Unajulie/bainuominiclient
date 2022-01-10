@@ -30,7 +30,8 @@ onShow:function(){
       console.info("success")
       oThis.setData({
         login:true,
-        phone:session.data.phone
+        phone:session.data.phone,
+        username:session.data.username
       })
     },
     fail:function(){

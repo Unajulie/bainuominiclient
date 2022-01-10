@@ -78,6 +78,7 @@ page {
     width: 80%;
     height: 150rpx;
     margin: auto;
+    margin-bottom: 100rpx;
     justify-content: space-between;
     align-items: center;
 }
