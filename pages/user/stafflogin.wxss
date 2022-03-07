@@ -1,0 +1,15 @@
+/* pages/liver/login.wxss */
+.phcolor{
+    color: #b8b8b8;
+    font-size: 32rpx;
+}
+button::after {
+    border: none
+  }
+  page{
+    overflow: hidden;
+    position: fixed;
+    background-image: url("https://bainuo.beijingepidial.com/public/img/linverloginbg.png");
+    margin: 0;
+    background-size: 100% 100%;
+  }

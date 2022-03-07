@@ -13,7 +13,8 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     login:false,
     username:'',
-    phone:''
+    phone:'',
+    mark:''
   },
 //事件处理函数
 bindViewTap: function() {
@@ -26,18 +27,20 @@ onShow:function(){
   wx.getStorage({
     key:"sessionuser",
     success:function(session){
-      console.info(session.data)
-      console.info("success")
+      console.info(session)
       oThis.setData({
         login:true,
+        username:session.data.username,
         phone:session.data.phone,
-        username:session.data.username
+        mark:session.data.mark
       })
+      console.info(oThis.data.mark)
     },
     fail:function(){
       oThis.setData({
         login:false,
-        phone:''
+        phone:'',
+        mark:''
       })
     }
   })
@@ -51,16 +54,15 @@ onShow:function(){
       wx.removeStorage({
         key: 'sessionuser',
         success: function(res) {
-          oThis.setData({login:false,phone:''})
+          oThis.setData({login:false,phone:'',mark:''})
           wx.switchTab({
-            url: '../index/index',
+            url: '../report/report',
           })
         },
       })
-
     }else{
       wx.navigateTo({
-        url: '../user/login',
+        url: '../user/register',
       })
     }
    

@@ -63,7 +63,7 @@
   font-size: 46rpx;
   height: 100rpx;
   margin-top: 40rpx;
-  background-color: #dfcdff;
+  background-color: #c7acf8;
   color: white;
   border-radius: 15rpx;
   display: flex;

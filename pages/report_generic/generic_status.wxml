@@ -2,9 +2,9 @@
 
 <view>
     <view style="width: 100%;height: auto;margin-bottom: 100rpx;">
-        <view style="width: 100%;height: auto; display:flex;margin-top: 50rpx;">
-            <view style="width: 100%;height: auto;">
-                <image style="width: 50%;" mode="widthFix" src="../../img/progress.png"></image>
+        <view style="width: 100%;height: 250rpx;margin-top: 50rpx;margin-bottom: 50rpx;">
+            <view style="width: 90%;height:200rpx;margin: 0 auto;">
+                <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/progress.jpg"></image>
             </view>
         </view>
         <view style="width: 100%;height: auto; margin-top: 50rpx;margin-bottom: 50rpx;">
@@ -15,100 +15,100 @@
                 <view style="width: 10%;height: 1000rpx;">
                     <view style="width: 100%;height: auto;flex-direction: column;">
                         <view
-                            style="border-radius: 50rpx; width: 50rpx;height:50rpx; background-color:{{status=='NO_STATUS'?'#069ce8':'#7b7c7e'}};text-align: center;color: white;position: absolute;margin-top:40rpx;margin-left: 6rpx; font-weight: 700;">
-                            <image style="width: 50rpx;height:50rpx;" mode="widthFix" src="../../img/arrow.png"></image></view>
+                            style="border-radius: 50rpx; width: 50rpx;height:50rpx; background-color:{{status=='NO_STATUS'?'#a7eadd':'#cccccc'}};text-align: center;color: #000;position: absolute;margin-top:40rpx;margin-left: 6rpx; font-weight: 700;">
+                           </view>
                         <view
-                            style="border-radius:  50rpx; width: 50rpx;height:50rpx; background-color:{{status=='POST_FROM_LAB'?'#069ce8':'#7b7c7e'}};text-align: center;color: white;position: absolute;margin-top:180rpx;margin-left: 6rpx;font-weight: 700;">
-                            <image style="width: 50rpx;height:50rpx;" mode="widthFix" src="../../img/arrow.png"></image></view>
+                            style="border-radius:  50rpx; width: 50rpx;height:50rpx; background-color:{{status=='POST_FROM_LAB'?'#a7eadd':'#cccccc'}};text-align: center;color: #000;position: absolute;margin-top:180rpx;margin-left: 6rpx;font-weight: 700;">
+                            </view>
                         <view
-                            style="border-radius: 50rpx; width: 50rpx;height:50rpx; background-color:{{status=='PARCEL_RECEIVED'?'#069ce8':'#7b7c7e'}};text-align: center;color: white;position: absolute;margin-top:320rpx;margin-left: 6rpx;font-weight: 700;">
-                            <image style="width: 50rpx;height:50rpx;" mode="widthFix" src="../../img/arrow.png"></image></view>
+                            style="border-radius: 50rpx; width: 50rpx;height:50rpx; background-color:{{status=='PARCEL_RECEIVED'?'#a7eadd':'#cccccc'}};text-align: center;color: #000;position: absolute;margin-top:320rpx;margin-left: 6rpx;font-weight: 700;">
+                           </view>
                         <view
-                            style="border-radius: 50rpx; width: 50rpx;height:50rpx; background-color:{{status=='REGISTERED_IN_LIMS'?'#069ce8':'#7b7c7e'}};text-align: center;color: white;position: absolute;margin-top:460rpx;margin-left: 6rpx;font-weight: 700;">
-                            <image style="width: 50rpx;height:50rpx;" mode="widthFix" src="../../img/arrow.png"></image></view>
+                            style="border-radius: 50rpx; width: 50rpx;height:50rpx; background-color:{{status=='REGISTERED_IN_LIMS'?'#a7eadd':'#cccccc'}};text-align: center;color: #000;position: absolute;margin-top:460rpx;margin-left: 6rpx;font-weight: 700;">
+                            </view>
                         <view
-                            style="border-radius: 50rpx; width: 50rpx;height:50rpx; background-color: {{status=='WAITING_DNA_PREP'?'#069ce8':'#7b7c7e'}};text-align: center;color: white;position: absolute;margin-top:600rpx;margin-left: 6rpx;font-weight: 700;">
-                            <image style="width: 50rpx;height:50rpx;" mode="widthFix" src="../../img/arrow.png"></image></view>
+                            style="border-radius: 50rpx; width: 50rpx;height:50rpx; background-color: {{status=='WAITING_DNA_PREP'?'#a7eadd':'#cccccc'}};text-align: center;color: #000;position: absolute;margin-top:600rpx;margin-left: 6rpx;font-weight: 700;">
+                           </view>
                         <view
-                            style="border-radius: 50rpx; width: 50rpx;height:50rpx; background-color: {{status=='SEQUENCING'||status=='PAUSE_DETECTION'||status=='RE_DETECTING'||status=='UNQUALIFIED'?'#069ce8':'#7b7c7e'}};text-align: center;color: white;position: absolute;margin-top:740rpx;margin-left: 6rpx;font-weight: 700;">
-                            <image style="width: 50rpx;height:50rpx;" mode="widthFix" src="../../img/arrow.png"></image></view>
+                            style="border-radius: 50rpx; width: 50rpx;height:50rpx; background-color: {{status=='SEQUENCING'||status=='PAUSE_DETECTION'||status=='RE_DETECTING'||status=='UNQUALIFIED'?'#a7eadd':'#cccccc'}};text-align: center;color: #000;position: absolute;margin-top:740rpx;margin-left: 6rpx;font-weight: 700;">
+                            </view>
                         <view
-                            style="border-radius: 50rpx; width: 50rpx;height:50rpx; background-color: {{status=='Completed'||status=='SENDEMAIL'?'#069ce8':'#7b7c7e'}};text-align: center;color: white;position: absolute;margin-top:880rpx;margin-left: 6rpx;font-weight: 700;">
-                            <image style="width: 50rpx;height:50rpx;" mode="widthFix" src="../../img/arrow.png"></image></view>
+                            style="border-radius: 50rpx; width: 50rpx;height:50rpx; background-color: {{status=='Completed'||status=='SENDEMAIL'?'#a7eadd':'#cccccc'}};text-align: center;color: #000;position: absolute;margin-top:880rpx;margin-left: 6rpx;font-weight: 700;">
+                            </view>
                     </view>
-                    <view style="width: 15%;height: 970rpx;margin: 0 auto;background-color: #b5b5b5;"></view>
+                    <view style="width: 6%;height: 970rpx;margin: 0 auto;background-color: #cccccc;"></view>
                 </view>
                 <view style="width: 100%;height: auto;">
                     <view style="width: 100%;height: 60rpx;display: flex;">
                         <!-- 空盒子 -->
-                        <view style="width:{{status=='NO_STATUS'?'20%':'0px'}};height: 60rpx;margin-left: 10rpx;"></view>
-                        <view style="width: 80%;height: 80rpx;background-color: {{status=='NO_STATUS'?'#069ce8':'#7b7c7e'}};display: flex;border-radius: 10rpx;margin-top: 30rpx;">
+                        <view style="width:{{status=='NO_STATUS'?'10%':'0px'}};height: 60rpx;margin-left: 10rpx;"></view>
+                        <view style="width: 90%;height: 80rpx;background-color: {{status=='NO_STATUS'?'#a7eadd':'#cccccc'}};display: flex;border-radius: 30px;margin-top: 30rpx;">
                             <view style="width: 20%;height: 80rpx;position: relative;">
-                                <image style="position: absolute;top:10rpx;left:10rpx;;width: 60rpx;height: 60rpx ;" mode="widthFix" src="../../img/status01.png"></image>
+                                <image style="position: absolute;top:10rpx;left:20rpx;width: 60rpx;height: 60rpx ;" mode="widthFix" src="../../img/status01.png"></image>
                             </view>
-                            <view style="width: 80%;height: 80rpx;line-height: 80rpx;margin-left:5rpx;font-size: 30rpx;color: white;">试剂盒待寄出</view>
+                            <view style="width: 80%;height: 80rpx;line-height: 80rpx;margin-left:5rpx;font-size: 30rpx;color: #000;">试剂盒待寄出</view>
                         </view>
                     </view>
 
                     <view style="width: 100%;height: 60rpx;display: flex;">
                         <!-- 空盒子 -->
-                        <view style="width: {{status=='POST_FROM_LAB'?'20%':'0px'}};height: 35px;margin-left: 10rpx;"></view>
-                        <view style="width: 80%;height: 80rpx;background-color: {{status=='POST_FROM_LAB'?'#069ce8':'#7b7c7e'}};display: flex;border-radius: 10rpx;margin-top: 110rpx;">
+                        <view style="width: {{status=='POST_FROM_LAB'?'10%':'0px'}};height: 35px;margin-left: 10rpx;"></view>
+                        <view style="width: 90%;height: 80rpx;background-color: {{status=='POST_FROM_LAB'?'#a7eadd':'#cccccc'}};display: flex;border-radius: 30px;margin-top: 110rpx;">
                             <view style="width: 20%;height: 80rpx;position: relative;">
-                                <image style="position: absolute;top:10rpx;left:10rpx;;width: 60rpx;height: 30px ;" mode="widthFix" src="../../img/status02.png"></image>
+                                <image style="position: absolute;top:10rpx;left:20rpx;width: 60rpx;height: 30px ;" mode="widthFix" src="../../img/status02.png"></image>
                             </view>
-                            <view style="width: 80%;height: 80rpx;line-height: 80rpx;margin-left:5rpx;font-size: 30rpx;color: white;">试剂盒已从实验室寄出</view>
+                            <view style="width: 80%;height: 80rpx;line-height: 80rpx;margin-left:5rpx;font-size: 30rpx;color: #000;">试剂盒已从实验室寄出</view>
                         </view>
                     </view>
                     <view style="width: 100%;height: 60rpx;display: flex;">
                         <!-- 空盒子 -->
-                        <view style="width: {{status=='PARCEL_RECEIVED'?'20%':'0px'}};height: 80rpx;margin-left: 10rpx;"></view>
-                        <view style="width: 80%;height: 80rpx;background-color: {{status=='PARCEL_RECEIVED'?'#069ce8':'#7b7c7e'}};display: flex;border-radius: 10rpx;margin-top: 190rpx;">
+                        <view style="width: {{status=='PARCEL_RECEIVED'?'10%':'0px'}};height: 80rpx;margin-left: 10rpx;"></view>
+                        <view style="width: 90%;height: 80rpx;background-color: {{status=='PARCEL_RECEIVED'?'#a7eadd':'#cccccc'}};display: flex;border-radius: 30px;margin-top: 190rpx;">
                             <view style="width: 20%;height: 80rpx;position: relative;">
-                                <image style="position: absolute;top:10rpx;left:10rpx;;width: 60rpx;height: 30px ;" mode="widthFix" src="../../img/status03.png"></image>
+                                <image style="position: absolute;top:10rpx;left:20rpx;width: 60rpx;height: 30px ;" mode="widthFix" src="../../img/status03.png"></image>
                             </view>
-                            <view style="width: 80%;height: 80rpx;line-height: 80rpx;margin-left:5rpx;font-size: 30rpx;color: white;">实验室已收到您寄回的样本</view>
+                            <view style="width: 80%;height: 80rpx;line-height: 80rpx;margin-left:5rpx;font-size: 30rpx;color: #000;">实验室已收到您寄回的样本</view>
                         </view>
                     </view>
                     <view style="width: 100%;height: 60rpx;display: flex;">
                         <!-- 空盒子 -->
-                        <view style="width:{{status=='REGISTERED_IN_LIMS'?'20%':'0px'}};height: 80rpx;margin-left: 10rpx;"></view>
-                        <view style="width: 80%;height: 80rpx;background-color: {{status=='REGISTERED_IN_LIMS'?'#069ce8':'#7b7c7e'}};display: flex;border-radius: 10rpx;margin-top: 270rpx;">
+                        <view style="width:{{status=='REGISTERED_IN_LIMS'?'10%':'0px'}};height: 80rpx;margin-left: 10rpx;"></view>
+                        <view style="width: 90%;height: 80rpx;background-color: {{status=='REGISTERED_IN_LIMS'?'#a7eadd':'#cccccc'}};display: flex;border-radius: 30px;margin-top: 270rpx;">
                             <view style="width: 20%;height: 80rpx;position: relative;">
-                                <image style="position: absolute;top:10rpx;left:10rpx;;width: 60rpx;height: 60rpx ;" mode="widthFix" src="../../img/status04.png"></image>
+                                <image style="position: absolute;top:10rpx;left:20rpx;width: 60rpx;height: 60rpx ;" mode="widthFix" src="../../img/status04.png"></image>
                             </view>
-                            <view style="width: 80%;height: 80rpx;line-height: 80rpx;margin-left:5rpx;font-size: 30rpx;color: white;">样本已注册到实验室系统</view>
+                            <view style="width: 80%;height: 80rpx;line-height: 80rpx;margin-left:5rpx;font-size: 30rpx;color: #000;">样本已注册到实验室系统</view>
                         </view>
                     </view>
                     <view style="width: 100%;height: 60rpx;display: flex;">
                         <!-- 空盒子 -->
-                        <view style="width:{{status=='WAITING_DNA_PREP'?'20%':'0px'}};height: 80rpx;margin-left: 5px;"></view>
-                        <view style="width: 80%;height: 80rpx;background-color: {{status=='WAITING_DNA_PREP'?'#069ce8':'#7b7c7e'}};display: flex;border-radius: 10rpx;margin-top: 350rpx;">
+                        <view style="width:{{status=='WAITING_DNA_PREP'?'10%':'0px'}};height: 80rpx;margin-left: 5px;"></view>
+                        <view style="width: 90%;height: 80rpx;background-color: {{status=='WAITING_DNA_PREP'?'#a7eadd':'#cccccc'}};display: flex;border-radius: 30px;margin-top: 350rpx;">
                             <view style="width: 20%;height: 80rpx;position: relative;">
-                                <image style="position: absolute;top:10rpx;left:10rpx;;width: 60rpx;height: 30px ;" mode="widthFix" src="../../img/status05.png"></image>
+                                <image style="position: absolute;top:10rpx;left:20rpx;width: 60rpx;height: 30px ;" mode="widthFix" src="../../img/status05.png"></image>
                             </view>
-                            <view style="width: 80%;height: 80rpx;line-height: 80rpx;margin-left:10rpx;font-size: 30rpx;color: white;">样本待检测</view>
+                            <view style="width: 80%;height: 80rpx;line-height: 80rpx;margin-left:10rpx;font-size: 30rpx;color: #000;">样本待检测</view>
                         </view>
                     </view>
                     <view style="width: 100%;height: 60rpx;display: flex;">
                         <!-- 空盒子 -->
-                        <view style="width:{{status=='SEQUENCING'||status=='PAUSE_DETECTION'||status=='RE_DETECTING'||status=='UNQUALIFIED'?'20%':'0px'}};height: 80rpx;margin-left: 5px;"></view>
-                        <view style="width: 80%;height: 80rpx;background-color: {{status=='SEQUENCING'||status=='PAUSE_DETECTION'||status=='RE_DETECTING'||status=='UNQUALIFIED'?'#069ce8':'#7b7c7e'}};display: flex;border-radius: 5px;margin-top: 430rpx;">
+                        <view style="width:{{status=='SEQUENCING'||status=='PAUSE_DETECTION'||status=='RE_DETECTING'||status=='UNQUALIFIED'?'10%':'0px'}};height: 80rpx;margin-left: 5px;"></view>
+                        <view style="width: 90%;height: 80rpx;background-color: {{status=='SEQUENCING'||status=='PAUSE_DETECTION'||status=='RE_DETECTING'||status=='UNQUALIFIED'?'#a7eadd':'#cccccc'}};display: flex;border-radius: 30px;margin-top: 430rpx;">
                             <view style="width: 20%;height: 80rpx;position: relative;">
-                                <image style="position: absolute;top:5px;left:10rpx;;width: 60rpx;height: 60rpx ;" mode="widthFix" src="../../img/status06.png"></image>
+                                <image style="position: absolute;top:5px;left:20rpx;width: 60rpx;height: 60rpx ;" mode="widthFix" src="../../img/status06.png"></image>
                             </view>
-                            <view style="width: 80%;height: 80rpx;line-height: 80rpx;margin-left:10rpx;font-size: 30rpx;color: white;">样本DNA序列分析中</view>
+                            <view style="width: 80%;height: 80rpx;line-height: 80rpx;margin-left:10rpx;font-size: 30rpx;color: #000;">样本DNA序列分析中</view>
                         </view>
                     </view>
                     <view style="width: 100%;height: 60rpx;display: flex;">
                     <view bindtap="showpdf" data-phone="{{phone}}" data-sampleid="{{sampleid}}" style="width: 100%;height: 30px;display: flex;">
                         <!-- 空盒子 -->
-                        <view style="width: {{status=='Completed'||status=='SENDEMAIL'?'20%':'0px'}};height: 80rpx;margin-left: 5px;"></view>
-                        <view style="width: 80%;height: 80rpx;background-color: {{status=='Completed'||status=='SENDEMAIL'?'#069ce8':'#7b7c7e'}};display: flex;border-radius: 5px;margin-top: 520rpx;">
+                        <view style="width: {{status=='Completed'||status=='SENDEMAIL'?'10%':'0px'}};height: 80rpx;margin-left: 5px;"></view>
+                        <view style="width: 90%;height: 80rpx;background-color: {{status=='Completed'||status=='SENDEMAIL'?'#a7eadd':'#cccccc'}};display: flex;border-radius: 30px;margin-top: 520rpx;">
                             <view style="width: 20%;height: 80rpx;position: relative;">
-                                <image style="position: absolute;top:5px;left:8px;;width: 25px;height: 30px ;" mode="widthFix" src="../../img/status07.png"></image>
+                                <image style="position: absolute;top:5px;left:20rpx;width: 25px;height: 30px ;" mode="widthFix" src="../../img/status07.png"></image>
                             </view>
-                            <view style="width: 80%;height: 80rpx;line-height: 80rpx;margin-left:5rpx;font-size: 30rpx;color: white;">{{pdfIsbuild?"请点击查看报告":"检测报告待生成"}}</view>   
+                            <view style="width: 80%;height: 80rpx;line-height: 80rpx;margin-left:5rpx;font-size: 30rpx;color: #000;">{{pdfIsbuild?"请点击查看报告":"检测报告待生成"}}</view>   
                         </view>
                     </view>
                     </view>
@@ -117,7 +117,7 @@
             </view>
         </view>
         <view wx:if="{{pdfIsbuild}}" style="width: 100%;height: 100rpx;margin-top: 50rpx;margin-bottom: 100rpx;">
-        <button bindtap='textPaste' style="width: 80%;height: auto;margin:0 auto;text-align: center;color: #069ce8;border: 1rpx solid grey;font-size: 24rpx; ">点击复制PDF报告链接地址,并粘贴到浏览器下载</button>
+        <button bindtap='textPaste' style="width: 80%;height: auto;margin:0 auto;text-align: center;color: #cccccc;border: 1rpx solid grey;font-size: 24rpx;font-weight: 600; ">点击复制PDF报告链接地址,并粘贴到浏览器下载</button>
         </view>
         <view wx:else></view>
 

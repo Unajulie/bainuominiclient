@@ -8,6 +8,7 @@ Page({
       phone:'',
       pwd:'',
       username:'',
+      mark:'',
       //是否密码框
     passwordType:true,
     // 是否显示密码
@@ -65,6 +66,7 @@ Page({
             let sessionuser={}
             sessionuser.phone=this.data.phone
             sessionuser.password=this.data.pwd
+            sessionuser.mark='user'
         wx.request({
 
             url: "https://bainuo.beijingepidial.com/client/user/login",
@@ -73,16 +75,16 @@ Page({
             data: sessionuser,
             // data: {"barcode": 1121032800079},
             complete: function (res) {
-                console.info(res.data.result.username)
+              if(res.data.status=="success"){
                 oThis.setData({username:res.data.result.username})
                 sessionuser.username=oThis.data.username
-               if(res.data.status=="success"){
+                sessionuser.mark=res.data.mark
                 wx.setStorage({
                   key: "sessionuser",
                   data: sessionuser,
                   success: function(res){
                       //直接跳到tab首页
-                      wx.switchTab({url: '../index/index'})
+                      wx.switchTab({url: '../report/report'})
                   },
                   fail:function(res){
                       console.info(res)
@@ -95,7 +97,7 @@ Page({
                 })                 
                }else{
                 wx.showToast({
-                    title: '账号有误',
+                    title: '账号或密码有误',
                     icon: 'error',
                     duration: 2000
                 })

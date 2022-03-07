@@ -124,7 +124,7 @@ showModal: function () {
           },
           // data: {"sampleid": 1121032800079},
           complete: function (res) {
-            console.info(res.data)
+            console.info(res)
             wx.hideLoading()
             //如果是空字符串
             if (res.data == "") {
@@ -133,9 +133,6 @@ showModal: function () {
                 content: "库存查无该条码，请联系客服"
               })
             } else {
-              // let url = "../report_epiage/report_epistatus?status=" + res.data.status + "&barcode=" + barcode + "&phone=" + phone
-
-              console.info(res.data)
               let url = "../report_epiage/userform?status=" + res.data.status + "&sampleid=" + barcode + "&phone=" + phone
               wx.navigateTo({
                 url: url
@@ -162,7 +159,12 @@ showModal: function () {
     wx.getStorage({
       key: 'sessionuser',
       success: function (res) {
-        console.log('s:' + res.data)
+        console.log(res.data)
+        oThis.setData({
+          phone:res.data.phone,
+          username:res.data.username,
+          mark:res.data.mark
+        })
         wx.request({
           url: "https://bainuo.beijingepidial.com/client/epiage/barcodes",
           header: {
@@ -172,12 +174,9 @@ showModal: function () {
           data: {
             "tel": res.data.phone
           },
-          // data: {"sampleid": 1121032800079},
           complete: function (res) {
-            console.info("hello")
-            console.info(res.data)
             oThis.setData({
-              barcodebox: res.data
+              barcodebox: res.data,
             })
           }
         })

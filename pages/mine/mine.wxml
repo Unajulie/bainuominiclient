@@ -1,41 +1,84 @@
-<view style="width: 100%;height: auto;display: flex;flex-direction: column;"> 
-<view style="width: 100%;height: 400rpx;background-color: #f6f7f9;">
-<view style="width: 30%;height: auto; display: flex;flex-direction: column;margin:0 auto;margin-top: 70rpx;">
-<view style="width: 70%;height: auto; margin:0 auto"><image style="width: 100%;height: auto; margin:0 auto" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index/center1.jpg"></image></view>
-<view style="width: 100%;height: auto;display: flex;flex-direction: row;"  bindtap="login">
-<View style="width: 100%;height:auto;text-align: center;">{{login?"退出登录":"登录 | 注册"}}</View>
-<!-- <view style="width: 5%;height: 30rpx;border-right:1px solid #b8b9bb;margin-top: 10rpx;"></view>
+<view style="width: 100%;height: auto;display: flex;flex-direction: column;">
+  <view style="width: 100%;height: 400rpx;background-color: #f6f7f9;">
+    <view style="width: 30%;height: auto; display: flex;flex-direction: column;margin:0 auto;margin-top: 70rpx;">
+      <view style="width: 70%;height: auto; margin:0 auto">
+        <image style="width: 100%;height: auto; margin:0 auto" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index/icon1.png"></image>
+      </view>
+      <view style="width: 100%;height: auto;display: flex;flex-direction: row;" bindtap="login">
+        <View style="width: 100%;height:auto;text-align: center;">{{login?"退出登录":"受检者注册"}}</View>
+        <!-- <view style="width: 5%;height: 30rpx;border-right:1px solid #b8b9bb;margin-top: 10rpx;"></view>
 <view style="width: 5%;height: 30rpx;"></view>
 <View style="width: 45%;height:auto;text-align: center;">注册</View> -->
-</view>
-</view>
-</view>
-<view style="width: 90%;height: 800rpx;margin:0 auto;margin-top: 80rpx;">
-<navigator url='../mine/qna'>
-        <view style="width: 90%;height: 120rpx;margin:0 auto">
-          <view style="width: 20%;height: 120rpx;float: left;">
-            <image mode='widthFix' lazy-load="true" style="width: 60%;height: 100rpx;margin-top: 20rpx;"
-              src='https://bainuo.beijingepidial.com/public/img/index/center2.jpg'></image>
-          </view>
-          <view style="width: 60%;height: 120rpx;float: left;line-height: 120rpx;color: #656565;">常见问题</view>
-          <view style="width: 20%;height: 120rpx;float: right;line-height: 120rpx;">
-            <image mode='widthFix' lazy-load="true" style="width: 20%;height: 100rpx;margin-top: 40rpx;float: right;"
-              src='https://bainuo.beijingepidial.com/public/img/index/center4.png'></image>
-          </view>
-        </view>
-      </navigator>
-      <navigator url='../mine/contact'>
-        <view style="width: 90%;height: 120rpx;margin:0 auto">
-          <view style="width: 20%;height: 120rpx;float: left;">
-            <image mode='widthFix' lazy-load="true" style="width: 60%;height: 100rpx;margin-top: 20rpx;"
-              src='https://bainuo.beijingepidial.com/public/img/index/center3s.jpg'></image>
-          </view>
-          <view style="width: 60%;height: 120rpx;float: left;line-height: 120rpx;color: #656565;">联系客服</view>
-          <view style="width: 20%;height: 120rpx;float: left;line-height: 120rpx;">
-            <image mode='widthFix' lazy-load="true" style="width: 20%;height: 100rpx;margin-top: 40rpx;float: right;"
-              src='https://bainuo.beijingepidial.com/public/img/index/center4.png'></image>
-          </view>
-        </view>
-      </navigator>
+      </view>
     </view>
+  </view>
+  <view style="width: 90%;height: 800rpx;margin:0 auto;margin-top: 40rpx;">
+    <!-- 我的报告 -->
+  <navigator wx:if="{{mark=='staff'}}||{{mark=='undefined'}}"></navigator>
+    <navigator wx:if="{{mark=='user'}}" url='../mine/myreport' >
+      <view style="width: 100%;height: auto;margin:0 auto;position: relative;margin-top: 10rpx;" >
+        <image mode='widthFix' style="width: 100%;height: auto;" src="https://bainuo.beijingepidial.com/public/img/mine1.jpg"></image>
+        <view style="width: 100%;height: auto;position: absolute;top: 50rpx;left: 50rpx; display: flex;flex-direction: column;">
+          <view style="width: 50%;height: auto;margin: 0 auto;font-family:hansans;color: #4d4d4d;font-size: 36rpx;font-weight: 700;">我的报告</view>
+          <view style="width: 50%;height: auto;margin: 0 auto;color: #999999;">My Report</view>
+        </view>
+      </view>
+    </navigator>
+    <!-- 受检者信息登记记录 -->
+    <navigator wx:if="{{mark=='user'||mark=='undefined'}}"></navigator>
+      <navigator wx:if="{{mark=='staff'}}" url='../mine/stafftestlist'>
+      <view style="width: 100%;height: auto;margin:0 auto;position: relative;margin-top: 10rpx;" >
+        <image mode='widthFix' style="width: 100%;height: auto;" src="https://bainuo.beijingepidial.com/public/img/mine2.jpg"></image>
+        <view style="width: 100%;height: auto;position: absolute;top: 50rpx;left: 50rpx; display: flex;flex-direction: column;">
+          <view style="width: 50%;height: auto;margin: 0 auto;font-family:hansans;color: #4d4d4d;font-size: 36rpx;font-weight: 700;">受检者信息记录</view>
+          <view style="width: 50%;height: auto;margin: 0 auto;color: #999999;">Test History</view>
+        </view>
+      </view>
+    </navigator>
+        <!-- 受检者登陆 -->
+    <navigator wx:if="{{mark=='user'}}||{{mark=='staff'}}"></navigator>
+    <navigator wx:if="{{!login}}" url='../user/login'>
+      <view style="width: 100%;height: auto;margin:0 auto;position: relative;margin-top: 10rpx;" >
+        <image mode='widthFix' style="width: 100%;height: auto;" src="https://bainuo.beijingepidial.com/public/img/mine3.jpg"></image>
+        <view style="width: 100%;height: auto;position: absolute;top: 50rpx;left: 50rpx; display: flex;flex-direction: column;">
+          <view style="width: 50%;height: auto;margin: 0 auto;font-family:hansans;color: #4d4d4d;font-size: 36rpx;font-weight: 700;">受检者登陆</view>
+          <view style="width: 50%;height: auto;margin: 0 auto;color: #999999;">Subject login</view>
+        </view>
+      </view>
+    </navigator>
+        <!-- 工作人员登陆 -->
+    <navigator wx:if="{{mark=='staff'}}||{{mark=='user'}}"></navigator>
+    <navigator  wx:if="{{!login}}" url='../user/stafflogin'>
+      <view style="width: 100%;height: auto;margin:0 auto;position: relative;margin-top: 10rpx;" >
+        <image mode='widthFix' style="width: 100%;height: auto;" src="https://bainuo.beijingepidial.com/public/img/mine4.jpg"></image>
+        <view style="width: 100%;height: auto;position: absolute;top: 50rpx;left: 50rpx; display: flex;flex-direction: column;">
+          <view style="width: 50%;height: auto;margin: 0 auto;font-family:hansans;color: #4d4d4d;font-size: 36rpx;font-weight: 700;">工作人员登陆</view>
+          <view style="width: 50%;height: auto;margin: 0 auto;color: #999999;">Staff login</view>
+        </view>
+      </view>
+    </navigator>
+    <view style="width: 100%;height: 10rpx;background-color: #f6f6f6;margin-top: 40rpx;margin-bottom: 40rpx;"></view>
+    <navigator url='../mine/qna'>
+      <view style="width: 90%;height: 120rpx;margin:0 auto;border-bottom:1rpx solid #cdcdcd;">
+        <view style="width: 20%;height: 120rpx;float: left;">
+          <image mode='widthFix' lazy-load="true" style="width: 60%;height: 100rpx;margin-top: 20rpx;border-radius: 100rpx;" src='https://bainuo.beijingepidial.com/public/img/index/center2.jpg'></image>
+        </view>
+        <view style="width: 60%;height: 120rpx;float: left;line-height: 120rpx;color: #656565;">常见问题</view>
+        <view style="width: 20%;height: 120rpx;float: right;line-height: 120rpx;">
+          <image mode='widthFix' lazy-load="true" style="width: 20%;height: 100rpx;margin-top: 40rpx;float: right;" src='https://bainuo.beijingepidial.com/public/img/index/center4.png'></image>
+        </view>
+      </view>
+    </navigator>
+    <navigator url='../mine/contact'>
+      <view style="width: 90%;height: 120rpx;margin:0 auto;border-bottom:1rpx solid #cdcdcd;">
+        <view style="width: 20%;height: 120rpx;float: left;">
+          <image mode='widthFix' lazy-load="true" style="width: 60%;height: 100rpx;margin-top: 20rpx;border-radius: 100rpx;" src='https://bainuo.beijingepidial.com/public/img/index/center3s.jpg'></image>
+        </view>
+        <view style="width: 60%;height: 120rpx;float: left;line-height: 120rpx;color: #656565;">联系客服</view>
+        <view style="width: 20%;height: 120rpx;float: left;line-height: 120rpx;">
+          <image mode='widthFix' lazy-load="true" style="width: 20%;height: 100rpx;margin-top: 40rpx;float: right;" src='https://bainuo.beijingepidial.com/public/img/index/center4.png'></image>
+        </view>
+      </view>
+    </navigator>
+  </view>
 </view>

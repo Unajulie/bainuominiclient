@@ -98,6 +98,7 @@ Page({
                             formdata.idstart = oThis.data.identity.length == 18 ? 16 : 14;
                             formdata.sex = oThis.data.identity.substr(formdata.idstart, 1) % 2
                             formdata.age = new Date().getFullYear() - parseInt(oThis.data.identity.substr(6, 4))
+                            console.info(formdata.sex)
                         } else {
                             formdata.sex = -1
                         }
@@ -129,7 +130,7 @@ Page({
                                             success: (res) => {},
                                         })
                                         //    let url = "../report_epiage/report_epistatus?status=" + res.data.status + "&barcode=" + formdata.sampleid + "&phone=" + formdata.phone
-                                        let url = '../report_epiage/report_epistatus?sampleid=' + formdata.sampleid + "&tel=" + formdata.tel + "&username=" + formdata.username
+                                        let url = '../report_epiage/report_epistatus?sampleid=' + formdata.sampleid
                                         wx.navigateTo({
                                             url: url
                                         })

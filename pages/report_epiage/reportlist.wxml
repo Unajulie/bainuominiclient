@@ -1,0 +1,26 @@
+<!-- <view class="head"></view> -->
+<view style="width:100%;height:auto">
+  <view style="width: 100%;height: 70rpx;"></view>
+  <view style="width: 90%;height: auto;margin: 0 auto;">
+    <view style="width: 100%;font-size: 40rpx;font-weight: 600;">生物学年龄报告列表</view>
+    <!-- 生物学年龄客户申请列表信息 -->
+    <view wx:if="{{barcodebox.length>0}}" style="width: 100%;height: auto;">
+      <view wx:key="i" wx:for="{{barcodebox}}" wx:for-item="data" style="width: 100%; height: 200rpx;margin-top: 80rpx;line-height: 120rpx; border: 3rpx solid #e7dfdff1;border-radius: 20rpx;display: flex;justify-content: center;box-shadow:0px 2px 4px 2px #DDDDDD;">
+        <view data-qrid="{{data._id}}" data-username="{{data.username}}" data-sampleid="{{data.sampleid}}" data-phone="{{data.phone}}" bindtap="checkepiageReport" style="width: 100%;padding: 20rpx;">
+          <!-- <view style="flex-direction: column;line-height: 50rpx;">
+                    <view style="font-family: hansans; font-weight:600;font-size: 36rpx;">{{data.username}}</view>
+                    <view style="color: grey;font-size: 30rpx;">证件号码：{{data.idCard==''?"未填写":data.idCard}}</view>
+                    <view style="color: grey;font-size: 30rpx;">采样日期：{{data.colldate}}</view>
+                </view> -->
+          <view  style="text-align: left;font-size: 34rpx;line-height: 50rpx;">样本编号：{{data.sampleid}}
+          </view>
+          <view style="text-align: left;font-size: 34rpx;line-height: 50rpx;">姓名：{{data.username}}</view>
+          <view style="text-align: left;font-size: 34rpx;line-height: 50rpx;">
+            样本状态：<text style="color: green;text-decoration: underline;">{{data.status=="NO_STATUS"?"状态待更新":data.status=="POST_FROM_LAB"?"已从实验室寄出":data.status=="PARCEL_RECEIVED"?"实验室已取得唾液样本":data.status=="REGISTERED_IN_LIMS"?"样本已注册到实验室系统":data.status=="WAITING_DNA_PREP"?"样本待检测":data.status=="SEQUENCING"||data.status=="PAUSE_DETECTION"||data.status=="RE_DETECTING"||data.status=="UNQUALIFIED"?"分析DNA序列中":"已完成检测"}}</text> 
+          </view>
+        </view>
+      </view>
+    </view>
+    <view wx:else style="width: 100%;margin-top: 50rpx;color: grey;font-size: 34rpx;text-align: center;">暂无样本报告记录</view>
+  </view>
+</view>

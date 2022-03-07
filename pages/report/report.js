@@ -14,7 +14,7 @@ Page({
       success:function (res) {
         console.log('s:' + res.data)
         wx.navigateTo({
-          url: "../report_generic/report_generic"
+          url: "../report_generic/applylist"
         })
       },
       fail:function(res){
@@ -31,7 +31,7 @@ Page({
       success:function (res) {
         console.log('s:' + res.data)
         wx.navigateTo({
-          url: "../report_epiliver/report_epiliver"
+          url: "../report_epiliver/applylist"
         })
       },
       fail:function(res){
@@ -41,6 +41,23 @@ Page({
       }
     })
   },
+     // 宫颈癌点击查询注册条码
+     hpvlogin:function(e){
+      wx.getStorage({
+        key:'sessionuser',
+        success:function (res) {
+          console.log('s:' + res.data)
+          wx.navigateTo({
+            url: "../report_epihpv/applylist"
+          })
+        },
+        fail:function(res){
+          wx.navigateTo({
+            url: "../user/login"
+          })
+        }
+      })   
+    },
   // 生物学年龄点击查询注册条码
   epilogin:function(e){
     wx.getStorage({
@@ -58,23 +75,7 @@ Page({
       }
     })   
   },
-    // 宫颈癌点击查询注册条码
-    hpvlogin:function(e){
-    wx.getStorage({
-      key:'sessionuser',
-      success:function (res) {
-        console.log('s:' + res.data)
-        wx.navigateTo({
-          url: "../report_epihpv/report_epihpv"
-        })
-      },
-      fail:function(res){
-        wx.navigateTo({
-          url: "../user/login"
-        })
-      }
-    })   
-  },
+ 
     // 问卷点击查询注册条码
     survey:function(e){
       wx.getStorage({

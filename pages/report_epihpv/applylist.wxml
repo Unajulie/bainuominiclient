@@ -1,0 +1,48 @@
+<view style="width: 100%;height: 100%;">
+<!-- 顶部用户名展示 -->
+    <!-- <view style="width: 100%;height: auto;margin:0 auto;position: relative;">
+        <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/testapply.jpg"></image>
+        <view style="width: 100%;height: 150rpx;position: absolute;top: 140rpx;display: flex;flex-direction: row;">
+            <view style="width: 25%;height: 150rpx; margin-left: 5%;justify-content: center;">
+                <image style="width: 70%;height: auto;padding-left: 40rpx;" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index/icon1.png"></image>
+            </view>
+            <view style="width: 70%;height: 150rpx;line-height:150rpx;font-size: 70rpx; color:#fff;font-family:hansans;">{{username}}</view>
+        </view>
+    </view> -->
+    <!-- 检测申请 -->
+    <!-- <view style="width: 90%;margin-left: 5%; height: 120rpx;margin-top: 30rpx;line-height: 120rpx; display: flex;justify-content: center;" bindtap="applyTest">
+        <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/applytest.jpg"></image>
+    </view> -->
+    <view wx:if='{{mark=="staff"}}' style="width: 100%;height: 80rpx;text-align: center;">请退出登陆后注册用户进行检测申请</view>
+    <view wx:else style="width: 90%;margin-left: 5%; height: 140rpx;margin-top: 100rpx;line-height: 140rpx; border: 3rpx solid #e7dfdff1;border-radius: 20rpx;display: flex;justify-content: center;box-shadow:0px 2px 4px 2px #DDDDDD;" bindtap="applyTest">
+    <view style="width: 15%;height: 140rpx;">
+            <image style="width: 80%;height: auto;margin-top: 30rpx;margin-left: 20rpx;" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/applytest.jpg"></image>
+        </view>
+        <view style="width: 60%;margin-left: 5%; display: flex;font-size: 40rpx;font-weight: 600;">检测申请</view>
+        <view style="width: 20%;display: flex;">
+            <image style="width: 30%;height: auto;margin-left: 20%;margin-top: 50rpx;" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index/center4.png"></image>
+        </view>
+    </view>
+ 
+    <!--宫颈癌客户申请列表信息 -->
+    <view wx:if="{{applylist.length>0}}" style="width: 100%;height: auto;">
+        <view wx:key="i" wx:for="{{applylist}}" wx:for-item="data" style="width: 90%;margin-left: 5%; height: 200rpx;margin-top: 50rpx;line-height: 120rpx; border: 3rpx solid #e7dfdff1;border-radius: 20rpx;display: flex;justify-content: center;box-shadow:0px 2px 4px 2px #DDDDDD;">
+            <view data-qrid="{{data._id}}" data-username="{{data.username}}" bindtap='getQrinfo' style="width: 80%;padding-left: 40rpx;padding-top: 40rpx;">
+                <view style="flex-direction: column;line-height: 50rpx;">
+                    <view style="font-family: hansans; font-weight:600;font-size: 36rpx;">{{data.username}}</view>
+                    <view style="color: grey;font-size: 30rpx;">证件号码：{{data.idCard==''?"未填写":data.idCard}}</view>
+                    <view style="color: grey;font-size: 30rpx;">采样日期：{{data.colldate}}</view>
+                </view>
+            </view>
+            <view style="width: 20%;" data-qrid="{{data._id}}" data-username="{{data.username}}" bindtap='getQrinfo'>
+                <view style="flex-direction: column;line-height: 50rpx;">
+                    <view style="margin-top: 40rpx;margin-left: 20rpx;">
+                        <image style="width: 70%;height: auto;" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/qrcode.jpg"></image>
+                    </view>
+                    <view style="color: grey;font-size: 24rpx;">打开二维码</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:else style="width: 100%;margin-top: 50rpx;color: grey;font-size: 34rpx;text-align: center;">暂无申请记录</view>
+</view>

@@ -71,6 +71,7 @@
   font-size: 46rpx;
   height: 100rpx;
   margin-top: 40rpx;
+  margin-bottom: 20rpx;
   background-color: #9ce2d1;
   color: white;
   border-radius: 15rpx;

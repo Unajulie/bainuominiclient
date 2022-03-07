@@ -47,7 +47,7 @@ Page({
                       // })
                       if (res.data.pdf) {
                          wx.downloadFile({
-                        url: "https://bainuo.beijingepidial.com/public/pdffile/" +res.data.pdf,
+                        url: "https://bainuopdf.beijingepidial.com/" +res.data.pdf,
                         header: {},
                         success: function (res) {
                           wx.showLoading({
@@ -138,7 +138,7 @@ onLoad: function (options) {
       //console.info(options.status )
       let data = {}
       data.sampleid = options.sampleid
-      data.phone = options.phone
+      // data.phone = options.phone
       console.info("xxxxxxx")
       console.info(data)
       wx.request({
@@ -157,7 +157,7 @@ onLoad: function (options) {
             status: res.data.status,
             sampleid: res.data.sampleid,
             pdfIsbuild:res.data.pdf?true:false,
-            pdfurl:res.data.pdf?"https://bainuo.beijingepidial.com/public/pdffile/" +res.data.pdf:""
+            pdfurl:res.data.pdf?"https://bainuopdf.beijingepidial.com/" +res.data.pdf:""
           })
           wx.hideLoading()
         }
