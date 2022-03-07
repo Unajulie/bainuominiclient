@@ -11,6 +11,26 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  tobuy:function(e){
+    wx.request({
+      url: "https://bainuo.beijingepidial.com/client/goods/getunitprice",
+      header: {
+          "Content-Type": "application/x-www-form-urlencoded"
+      },
+      method: "POST",
+      // data: formdata,
+      success: function (res) {
+       console.info(res)
+      },
+      fail:function (res) {
+          console.log(res)
+      },
+      complete:function (res) {
+          console.log(res)
+      }
+  })
+     wx.navigateTo({url: '../intro/epiage-buy' })
+  },
   onLoad: function (options) {
 
   },

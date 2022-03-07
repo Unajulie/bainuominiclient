@@ -1,14 +1,16 @@
 {
   "pages": [
+    "pages/index/index",
+    "pages/intro/intro-epiage",
     "pages/report/report",
+    "pages/intro/intro-generic",
     "pages/ques/generic_ques",
     "pages/survey/generic_survey",
-    "pages/intro/intro-generic",
     "pages/report_epiliver/userform",
     "pages/agreement/epiage",
     "pages/agreement/hpv",
     "pages/agreement/liver",
-    "pages/index/index",
+
     "pages/report_generic/report_generic",
     "pages/report_generic/userform",
     "pages/report_generic/generic_status",
@@ -38,7 +40,6 @@
     "pages/mine/qna",
     "pages/epihpvreport/epihpvreport",
     "pages/intro/intro-epiliver",
-    "pages/intro/intro-epiage",
     "pages/intro/intro-epihpv",
     "pages/intro/intro-depress",
     "pages/intro/intro-dull",

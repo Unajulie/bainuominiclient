@@ -1,3 +1,4 @@
 <view class="container">
   <image  mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/intro-epiage.jpg"></image>
+  <button style="height: 100rpx;background-color: #6ae2c3;width: 100%;color: white;" bindtap="tobuy">立即购买</button>
 </view>
