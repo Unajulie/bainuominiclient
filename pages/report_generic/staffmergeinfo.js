@@ -6,10 +6,21 @@ Page({
      */
     // 下拉框
     data: {
-        spotarray: ["地点1", "地点2", "地点3"],
-        salesarray: ["销售1", "销售2", "销售3"],
-        payarray: ["现金", "支付宝", "微信"],
+        spotarray: [],
+        salesarray: [],
+        payarray: [],
         sexarray: ["男", "女"],
+        ellipsis: true,
+        clickid: -1
+    },
+    /**
+     * 收起/展开按钮点击事件
+     */
+    ellipsis: function () {
+        var value = !this.data.ellipsis;
+        this.setData({
+            ellipsis: value
+        })
     },
     // 拍客户信息照
     takePhoto() {
@@ -20,29 +31,35 @@ Page({
     //输入获取泛癌样本二维码
     inputVal: function (e) {
         let sampleid = e.detail.value
-        console.info(sampleid)
         this.setData({
             sampleid: sampleid
         })
     },
     //相机扫扫描获取样本二维码
-    scanSampCode: function () {
+    scanSampCode: function (e) {
+        console.info(e)
         var that = this;
         // 只允许从相机扫码
-        wx.scanCode({
-            onlyFromCamera: true,
-            success(res) {
-                console.log(res)
-                that.setData({
-                    sampleid: res.result
-                });
-            }
-        })
+        if(e.currentTarget.dataset.disable==false){
+            wx.scanCode({
+                onlyFromCamera: true,
+                success(res) {
+                    console.log(res)
+                    that.setData({
+                        sampleid: res.result
+                    });
+                }
+            })
+        }else{
+            console.info("不可扫描")
+        }
+       
     },
     //相机扫扫描获取客户信息二维码
-    scanUserCode: function () {
+    scanUserCode: function (e) {
         var oThis = this;
         // 只允许从相机扫码
+        if(e.currentTarget.dataset.disable==false){
         wx.scanCode({
             onlyFromCamera: true,
             success(res) {
@@ -56,22 +73,21 @@ Page({
                     },
                     method: "POST",
                     data: data,
-                    // data: {"sampleid": 1121032800079},
                     complete: function (res) {
-                        console.info(res)
-                        //用户点击确定后没值的输入值后就不可编辑
-                        //一定要写成this.data.isDisabled，不然判断出不来
                         oThis.setData({
                             username: res.data.username,
                             sexval: res.data.sex,
                             identity: res.data.idCard,
                             phone: res.data.phone,
-                            age:res.data.age
+                            age: res.data.age
                         })
                     }
                 })
             }
         })
+    }else{
+        console.info("不能扫描")
+    }
     },
     //绑定输入的样本采集日期
     bitselect_colldate: function (e) {
@@ -83,7 +99,6 @@ Page({
     },
     //绑定选择的结算类型
     bitselect_paymethod: function (e) {
-        console.info(e.detail.value)
         if (e.detail.value) {
             this.setData({
                 paymethod: e.detail.value
@@ -92,7 +107,6 @@ Page({
     },
     //绑定选择的采样地点
     bitselect_collspot: function (e) {
-        console.info(e.detail)
         if (e.detail.value) {
             this.setData({
                 spotval: e.detail.value
@@ -101,7 +115,6 @@ Page({
     },
     //绑定选择的销售
     bitselect_sale: function (e) {
-        console.info(e)
         if (e.detail.value) {
             this.setData({
                 saleval: e.detail.value
@@ -212,7 +225,6 @@ Page({
                     formdata.paymethod = oThis.data.paymethod ? oThis.data.paymethod : ""
                     formdata.saleval = oThis.data.saleval ? oThis.data.saleval : ""
                     formdata.staffnote = oThis.data.staffnote ? oThis.data.staffnote : ""
-                    console.info(formdata)
                     wx.request({
                         url: "https://bainuo.beijingepidial.com/client/generic/staff/saveuserinfo",
                         header: {
@@ -221,7 +233,7 @@ Page({
                         method: "POST",
                         data: formdata,
                         complete: function (res) {
-                            console.info(res)
+                            console.info(res.data.status)
                             if (res.data.status == "success") {
                                 wx.showToast({
                                     title: '保存成功',
@@ -241,9 +253,10 @@ Page({
                                     identity: "",
                                     staffnote: ""
                                 })
-                            }else if(res.data.status == "notexist"){
+                                oThis.onLoad()
+                            } else if (res.data.status == "notexist") {
                                 wx.showToast({
-                                    title: '样本号不存在',
+                                    title: '样本号已被使用或不存在',
                                     icon: 'error',
                                     duration: 2000
                                 })
@@ -257,14 +270,90 @@ Page({
             })
         }
     },
-
-
+    // 工作人员点击临时列表信息展示后可修改保存信息
+    changeMergedinfo: function (e) {
+        let that = this
+        this.setData({
+            clickid: e.currentTarget.id,
+            clickedtab: this.data.mergedlist[e.currentTarget.id]
+        })
+        let data = {}
+        data.sampleid = e.currentTarget.dataset.sampleid
+        data.username = e.currentTarget.dataset.username
+        wx.request({
+            url: "https://bainuo.beijingepidial.com/client/generic/mergedinfo",
+            header: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            method: "POST",
+            data: data,
+            complete: function (res) {
+                that.setData({
+                    mergedinfolist: res.data,
+                    sampleid: res.data.sampleid,
+                    sexval: res.data.sex,
+                    age: res.data.age,
+                    phone: res.data.tel,
+                    username: res.data.username,
+                    colldate: res.data.created,
+                    paymethod: res.data.paymethod,
+                    saleval: res.data.saleval,
+                    spotval: res.data.sex,
+                    identity: res.data.idCard,
+                    staffnote: res.data.staffnote
+                })
+            }
+        })
+    },
+    // 点击全部采样信息上传后给所有记录加上一个disable标记，返回来的值有了disable:1后就让所有带这个标记的不可编辑
+    uploadall: function (e) {
+        let that = this
+        let samplelist = []
+        if(that.data.mergedlist==0){
+            wx.showToast({
+                title: '请绑定采样信息',
+                icon: 'error',
+                duration: 2000
+            })
+        }else{
+        for (var i = 0; i < that.data.mergedlist.length; i++) {
+            that.data.mergedlist[i].sampleid
+            samplelist.push(that.data.mergedlist[i].sampleid)
+        }
+        wx.request({
+            url: "https://bainuo.beijingepidial.com/client/generic/markmergedinfo",
+            header: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            method: "POST",
+            data: samplelist,
+            complete: function (res) {
+                for (var i = 0; i < res.data.length; i++) {
+                    if (res.data[i].sampleid && res.data[i].disable == 1) {
+                        that.setData({
+                            textdisable: 1
+                        })
+                    }
+                }
+                wx.showToast({
+                    title: '批量上传成功',
+                    icon: 'error',
+                    duration: 2000
+                })
+                that.onLoad()
+            }
+        })
+       
+    }
+    },
     onLoad: function (options) {
-        if (options.sampleid) {
-            let that = this
+        // 判断进来该页面时有无options或带sampleid进来，有则是已有客户信息展示，无则是新增绑定
+        let that = this
+        if (options && options.sampleid) {
             let data = {}
             data.sampleid = options.sampleid
             data.username = options.username
+            data.disable = options.disable
             wx.request({
                 url: "https://bainuo.beijingepidial.com/client/generic/mergedinfo",
                 header: {
@@ -273,8 +362,8 @@ Page({
                 method: "POST",
                 data: data,
                 complete: function (res) {
-                    console.info(res)
                     that.setData({
+                        disable: res.data.disable,
                         mergedinfolist: res.data,
                         sampleid: res.data.sampleid,
                         sexval: res.data.sex,
@@ -284,7 +373,7 @@ Page({
                         colldate: res.data.created,
                         paymethod: res.data.paymethod,
                         saleval: res.data.saleval,
-                        spotval: res.data.sex,
+                        spotval: res.data.spot,
                         identity: res.data.idCard,
                         staffnote: res.data.staffnote
                     })
@@ -294,6 +383,56 @@ Page({
         } else {
             console.info("新绑定")
         }
+        // 一加载进页面就展示未点击上传的绑定条码信息
+        wx.getStorage({
+            key: 'sessionuser',
+            success: function (res) {
+                let data = {}
+                data.stafftel = res.data.phone
+                wx.request({
+                    url: "https://bainuo.beijingepidial.com/client/generic/unmergedlist",
+                    header: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    method: "POST",
+                    data: data,
+                    complete: function (res) {
+                        that.setData({
+                            mergedlist: res.data,
+                        })
+                        wx.hideLoading()
+                    }
+                })
+
+                wx.request({
+                    url: "https://bainuo.beijingepidial.com/client/salenspot/search",
+                    header: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    method: "POST",
+                    data: data,
+                    complete: function (res) {
+                        let spotdata = []
+                        let saledata = []
+                        let paydata = []
+                        for (var i = 0; i < res.data.spots.length; i++) {
+                            spotdata.push(res.data.spots[i].spotname)
+                        }
+                        for (var j = 0; j < res.data.sales.length; j++) {
+                            saledata.push(res.data.sales[j].salesname)
+                        }
+                        for (var k = 0; k < res.data.pays.length; k++) {
+                                paydata.push(res.data.pays[k].payname)
+                            }
+                        that.setData({
+                            spotarray: spotdata,
+                            salesarray: saledata,
+                            payarray: paydata
+                        })
+                    }
+                })
+            },
+        })
     },
 
     /**

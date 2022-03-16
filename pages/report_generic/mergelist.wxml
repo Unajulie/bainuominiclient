@@ -11,7 +11,7 @@
     <!-- 泛癌客户申请列表信息 -->
     <view wx:if="{{mergedlist.length>0}}" style="width: 100%;height: auto;">
         <view wx:key="i" wx:for="{{mergedlist}}" wx:for-item="data" style="width: 90%;margin-left: 5%; height: 100rpx;margin-top: 60rpx;line-height: 100rpx; border: 3rpx solid #e7dfdff1;border-radius: 20rpx;display: flex;justify-content: center;box-shadow:0px 2px 4px 2px #DDDDDD;">
-            <view data-sampleid="{{data.sampleid}}" data-username="{{data.username}}" bindtap='getMergedinfo' style="width: 90%;">
+            <view data-sampleid="{{data.sampleid}}" data-username="{{data.username}}" data-disable="{{data.disabled}}" bindtap='getMergedinfo' style="width: 90%;">
                 <view style="flex-direction: row;line-height: 100rpx;">
                     <text style="font-family: hansans; font-weight:600;font-size: 36rpx;">{{data.sampleid}} </text>
                     <text style="font-size: 36rpx;"> {{data.username}} </text>

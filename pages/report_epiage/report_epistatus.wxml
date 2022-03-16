@@ -4,7 +4,7 @@
     <view style="width: 100%;height: auto;margin-bottom: 100rpx;">
         <view style="width: 100%;height: 250rpx;margin-top: 50rpx;margin-bottom: 50rpx;">
             <view style="width: 90%;height:200rpx;margin: 0 auto;">
-                <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/progress.jpg"></image>
+                <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/progress.jpg"></image>
             </view>
         </view>
         <view style="width: 100%;height: auto; margin-top: 50rpx;margin-bottom: 50rpx;">

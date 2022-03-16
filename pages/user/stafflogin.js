@@ -67,13 +67,11 @@ Page({
             header: {"Content-Type": "application/x-www-form-urlencoded"},
             method: "POST",
             data: sessionuser,
-            // data: {"barcode": 1121032800079},
             complete: function (res) {
-              console.info(res)
+               if(res.data.status=="success"){
                 oThis.setData({username:res.data.result.username})
                 sessionuser.username=oThis.data.username
                 sessionuser.mark=res.data.mark
-               if(res.data.status=="success"){
                 wx.setStorage({
                   key: "sessionuser",
                   data: sessionuser,
@@ -92,7 +90,7 @@ Page({
                 })                 
                }else{
                 wx.showToast({
-                    title: '账号有误,请联系客服',
+                    title: '账号或密码有误',
                     icon: 'error',
                     duration: 2000
                 })

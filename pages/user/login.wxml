@@ -1,5 +1,5 @@
 <view style="width:100%;height: auto;margin-bottom: 100rpx; ">
-    <view style="width: 100%;text-align: center;top: 300rpx;position: relative;color: #167af5;font-weight: 700;">受检者登陆</view>
+    <!-- <view style="width: 100%;text-align: center;top: 300rpx;position: relative;color: #167af5;font-weight: 700;">受检者登陆</view> -->
     <view style="position: absolute; width: 100%;height: auto;top: 200px;flex: auto;">
         <view style="width: 80%;height: auto;margin: 0 auto;">
             <view style="width: 100%;height: auto;">
@@ -13,7 +13,7 @@
 
                     </view>
                     <view style="width: 300px;height: auto;">
-                        <input style="width:100%;height: 45px;border-bottom: solid 1px #b8b8b8;font-size: 40rpspx;color: #b8b8b8" type="text" placeholder="请输入手机号" placeholder-class="phcolor" bindinput="inputPhone" />
+                        <input style="width:100%;height: 45px;border-bottom: solid 1px #b8b8b8;font-size: 40rpspx;color: #b8b8b8" type="text" placeholder="受检者手机号" placeholder-class="phcolor" bindinput="inputPhone" />
                     </view>
                 </view>
 

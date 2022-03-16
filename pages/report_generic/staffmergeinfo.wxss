@@ -1,0 +1,24 @@
+.pay-hint-content{
+    margin-top: 10px;
+    font-size: 13px;
+    color: #888;
+    display: -webkit-box;
+    -webkit-box-orient:vertical;
+    text-overflow: ellipsis;
+    overflow:hidden; 
+  }
+  /* 通过以上四行实现收缩功能 */
+  .ellipsis{
+    /* -webkit-line-clamp:3;  */
+    /* // 最多显示3行,适用于text文本控制行数 */
+    height: 200rpx;
+    opacity: 0.75 
+    /* 透明度75% */
+  }
+  .unellipsis{
+    /* -webkit-line-clamp:3;  */
+    /* // 全部显示适用于text文本控制行数*/
+    height: 100%;
+    opacity: 1 
+    /* // 不透明 */
+  }

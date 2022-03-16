@@ -6,7 +6,7 @@
         </view>
     </view>
     <view style="width: 90%;height: auto;margin:0 auto;position: relative;">
-        <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index/index1.jpg"></image>
+        <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/index1.jpg"></image>
         <view style="width: 90%;height: auto;position: absolute;top: 100rpx;display: flex;flex-direction: column;">
             <view style="width: 90%;height: auto;margin: 0 auto;color:#666666;font-family:hansans;"> 请点击选择</view>
             <view style="width: 90%;height: auto;margin: 0 auto;color:#666666;font-family:hansans;"> 您预约的检测项目</view>
@@ -16,7 +16,7 @@
     <view style="width: 90%;height: auto;margin:0 auto;margin-top: 40rpx;font-family:hansans;">服务项目</view>
     <!-- 泛癌条码注册查询入口 -->
     <view style="width: 90%;height: auto;margin:0 auto;position: relative;margin-top: 10rpx;" bindtap="genericlogin">
-        <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index/index0.jpg"></image>
+        <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/index0.jpg"></image>
         <view style="width: 100%;height: auto;position: absolute;top: 50rpx;display: flex;flex-direction: column;">
             <view style="width: 50%;height: auto;margin: 0 auto;font-family:hansans;color: #4d4d4d;font-size: 36rpx;font-weight: 700;"> 泛癌早期筛查</view>
             <view style="width: 50%;height: auto;margin: 0 auto;color: #999999;">epiPanCancer</view>
@@ -24,7 +24,7 @@
     </view>
     <!-- 肝癌条码注册查询入口 -->
     <view style="width: 90%;height: auto;margin:0 auto;position: relative;margin-top: 10rpx;" bindtap="liverlogin">
-        <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index/index2.jpg"></image>
+        <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/index2.jpg"></image>
         <view style="width: 100%;height: auto;position: absolute;top: 50rpx;display: flex;flex-direction: column;">
             <view style="width: 50%;height: auto;margin: 0 auto;font-family:hansans;color: #4d4d4d;font-size: 36rpx;font-weight: 700;"> 肝癌早期筛查</view>
             <view style="width: 50%;height: auto;margin: 0 auto;color: #999999;"> epiLiver</view>
@@ -32,7 +32,7 @@
     </view>
     <!-- 宫颈癌条码注册查询入口 -->
     <view style="width: 90%;height: auto;margin:0 auto;position: relative;margin:20rpx auto" bindtap="hpvlogin">
-        <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index/index3.jpg"></image>
+        <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/index3.jpg"></image>
         <view style="width: 100%;height: auto;position: absolute;top: 50rpx;display: flex;flex-direction: column;">
             <view style="width: 50%;height: auto;margin: 0 auto;font-family:hansans;color: #4d4d4d;font-size: 36rpx;font-weight: 700;"> 宫颈癌早期筛查</view>
             <view style="width: 50%;height: auto;margin: 0 auto;color: #999999;"> epiCervix</view>
@@ -40,16 +40,16 @@
     </view>
     <!-- 生物学年龄条码注册查询入口 -->
     <view style="width: 90%;height: auto;margin:0 auto;position: relative;" bindtap="epilogin">
-        <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index/index4.jpg"></image>
+        <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/index4.jpg"></image>
         <view style="width: 100%;height: auto;position: absolute;top: 50rpx;display: flex;flex-direction: column;">
             <view style="width: 50%;height: auto;margin: 0 auto;font-family:hansans;color: #4d4d4d;font-size: 36rpx;font-weight: 700;"> 生物学年龄</view>
             <view style="width: 50%;height: auto;margin: 0 auto;color: #999999;"> epiAge</view>
         </view>
     </view>
     <view style="width: 100%;height: 50rpx;"></view>
-    <navigator bindtap="survey" hover-class="none">
+    <view bindtap="survey">
         <view style="width: 90%;height: auto;margin:0 auto;position: relative;">
-            <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/survey.jpg"></image>
+            <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/survey.jpg"></image>
         </view>
-    </navigator>
+    </view>
 </view>

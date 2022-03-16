@@ -12,7 +12,6 @@ Page({
             value: '女',
         }],
         checked: false,
-        collectiondate: "",
         endate: new Date().toLocaleDateString().replace(new RegExp('/', 'g'), '-')
     },
     //绑定选择的性别
@@ -60,12 +59,12 @@ Page({
     //     })
     // },
     //绑定输入的样本采集日期
-    bininput_collectiondate: function (e) {
-        this.setData({
-            collectiondate: e.detail.value
-        })
-        console.info(e.detail.value)
-    },
+    // bininput_collectiondate: function (e) {
+    //     this.setData({
+    //         collectiondate: e.detail.value
+    //     })
+    //     console.info(e.detail.value)
+    // },
     //协议点击按钮
     checkedTap: function () {
         this.setData({
@@ -125,12 +124,6 @@ Page({
                 icon: 'error',
                 duration: 2000
             })
-        } else if (!this.data.collectiondate) {
-            wx.showToast({
-                title: '请选择采样时间',
-                icon: 'none',
-                duration: 2000
-            })
         } else if (!this.data.checked) {
             wx.showToast({
                 title: '请勾选用户协议',
@@ -151,7 +144,7 @@ Page({
             formdata.sex = oThis.data.sexid
             formdata.phone = oThis.data.phone
             formdata.username = oThis.data.username
-            formdata.colldate = oThis.data.collectiondate
+            // formdata.colldate = oThis.data.collectiondate
             formdata.qrid=oThis.data.qrid
             wx.getStorage({
                 key: 'sessionuser',
@@ -212,7 +205,7 @@ Page({
                 sex: sex,
                 phone: options.phone,
                 identity: options.idCard,
-                collectiondate: options.colldate,
+                // collectiondate: options.colldate,
             })
         } else {
             wx.getStorage({
@@ -245,7 +238,7 @@ Page({
                             oThis.setData({
                                 identity: res.data.idCard ? res.data.idCard : "",
                                 username: res.data.username,
-                                collectiondate: String(res.data.colldate) != "undefined" ? String(res.data.colldate) : "",
+                                // collectiondate: String(res.data.colldate) != "undefined" ? String(res.data.colldate) : "",
                                 sex: sex,
                             })
                         },

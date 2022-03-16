@@ -1,7 +1,7 @@
 <view wx:if='{{mark=="staff"}}' style="width: 100%;height: 80rpx;margin-top: 100rpx; text-align: center;">请退出登陆后注册用户进行检测申请</view>
 <view wx:else style="width:100%;height:auto">
   <view style="position: absolute;width: 100%;height: auto;">
-    <image src="https://bainuo.beijingepidial.com/public/img/03age.jpg" style="width: 100%;height: auto;" mode="widthFix"></image>
+    <image src="https://bainuopdf.beijingepidial.com/img/03age.jpg" style="width: 100%;height: auto;" mode="widthFix"></image>
     <view style="position: absolute;width: 100%;height: auto;top: 180rpx;flex: auto;">
       <view style="width: 100%;font-size: 46rpx;font-weight: 700;text-align: center;color: grey;">生物学年龄检测</view>
       <view style="width: 100%;height: 280rpx;"></view>

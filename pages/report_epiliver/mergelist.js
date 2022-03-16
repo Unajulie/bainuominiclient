@@ -32,7 +32,7 @@ Page({
             method: "POST",
             data: data,
             complete: function (res) {
-                let url = '../report_epiliver/staffmergeinfo?sampleid=' + res.data.sampleid + "&username=" + res.data.username
+                let url = '../report_epiliver/staffmergeinfo?sampleid=' + res.data.sampleid + "&username=" + res.data.username+"&disable="+res.data.disable
                 console.info(url)
                 wx.navigateTo({
                     url: url

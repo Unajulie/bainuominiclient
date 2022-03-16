@@ -1,6 +1,6 @@
 <view style="width: 100%;height: auto;display: flex;flex-direction: column;">
     <view style="width: 100%;height: auto;margin:0 auto;position: relative;">
-        <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/myrep.jpg"></image>
+        <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/myrep.jpg"></image>
         <view style="width: 90%;height: auto;position: absolute;top: 100rpx;display: flex;flex-direction: column;">
             <view style="width: 90%;height: auto;text-align: center; margin: 0 auto;color:#fff;font-family:hansans;font-size: 50rpx; font-weight: 700;">{{username}}</view>
             <view style="width: 90%;height: auto;text-align: center; margin: 0 auto;color:#fff;font-family:hansans;"> 基因检测报告</view>
@@ -9,25 +9,25 @@
     <view style="width: 90%;height: auto;margin:0 auto;margin-top: 30rpx;font-size: 50rpx; font-weight: 700; font-family:hansans;">报告</view>
     <!-- 泛癌报告查看 -->
     <view style="width: 90%;height: auto;margin:0 auto;position: relative;margin-top: 20rpx;" bindtap="genericlogin">
-        <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/myrep1.jpg"></image>
+        <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/myrep1.jpg"></image>
         <view style="width: 100%;height: auto;position: absolute;top: 50rpx;display: flex;flex-direction: column;">
         </view>
     </view>
     <!-- 肝癌报告查看 -->
     <view style="width: 90%;height: auto;margin:0 auto;position: relative;margin-top: 10rpx;" bindtap="liverlogin">
-        <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/myrep2.jpg"></image>
+        <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/myrep2.jpg"></image>
         <view style="width: 100%;height: auto;position: absolute;top: 50rpx;display: flex;flex-direction: column;">
         </view>
     </view>
     <!-- 宫颈癌报告查看-->
     <view style="width: 90%;height: auto;margin:0 auto;position: relative;margin:20rpx auto" bindtap="hpvlogin">
-        <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/myrep3.jpg"></image>
+        <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/myrep3.jpg"></image>
         <view style="width: 100%;height: auto;position: absolute;top: 50rpx;display: flex;flex-direction: column;">
         </view>
     </view>
     <!-- 生物学年龄检测报告查看-->
     <view style="width: 90%;height: auto;margin:0 auto;position: relative;margin:20rpx auto" bindtap="epiagelogin">
-        <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/myrep4.jpg"></image>
+        <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/myrep4.jpg"></image>
         <view style="width: 100%;height: auto;position: absolute;top: 50rpx;display: flex;flex-direction: column;">
         </view>
     </view>

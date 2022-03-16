@@ -20,7 +20,7 @@ See_download: function (e) {
     mask: true
   })
   wx.downloadFile({//下载
-    url: "https://bainuo.beijingepidial.com/public/excel/guidance.pdf",//服务器上的pdf地址
+    url: "https://bainuopdf.beijingepidial.com/guidance.pdf",//服务器上的pdf地址
     header: {},
     success: function (res) {
       var filePath = res.tempFilePath

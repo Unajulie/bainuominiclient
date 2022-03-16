@@ -81,9 +81,30 @@ Page({
       wx.getStorage({
         key:'sessionuser',
         success:function (res) {
-          console.log('s:' + res.data)
-          wx.navigateTo({
-            url: "/pages/ques/generic_ques"
+          wx.request({
+            url: "https://bainuo.beijingepidial.com/client/surveypermit/search",
+            header: {
+              "Content-Type": "application/x-www-form-urlencoded"
+            },
+            method: "POST",
+            data: {
+              "tel":res.data.phone
+            },
+            complete: function (res) {
+              console.info("返回的信息")
+              console.info(res)
+            if(res.data.status=="success"){
+              wx.navigateTo({
+                url: "/pages/ques/generic_ques"
+              })
+            }else{
+              wx.showToast({
+                title: '请先体验检测并绑定信息',
+                icon: 'none',
+                duration: 2000
+            })
+            }
+          }
           })
         },
         fail:function(res){

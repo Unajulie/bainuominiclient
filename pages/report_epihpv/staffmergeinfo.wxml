@@ -6,9 +6,9 @@
             <view style="display: flex;width: 95%; margin: 0 auto;">
                 <view style="width: 30%;height: 80rpx;line-height: 80rpx;font-size: 30rpx;margin-top: 20rpx;font-weight: 700;">样本二维码 <text style="color: red;">*</text> : </view>
                 <view style='width:70%;height:80rpx;margin-top: 20rpx; border: 2rpx solid grey; display:inline-block; background:#fff;align-self: center;position: relative;'>
-                    <input style='width:80%;display:inline-block;height:80rpx;left: 10rpx; color: black;font-size: 40rpx; position: absolute;' placeholder-style='font-size:30rpx;' placeholder='手动输入' type='text' bindinput="inputVal" value='{{sampleid}}'></input>
+                    <input style='width:80%;display:inline-block;height:80rpx;left: 10rpx; color: black;font-size: 40rpx; position: absolute;' placeholder-style='font-size:30rpx;' placeholder='手动输入' type='text' bindinput="inputVal" value='{{sampleid}}'disabled="{{disable=='1'?true:false}}"></input>
                     <view style='width:16%;display:inline-block;height:70rpx;bottom: 5rpx;right: 10rpx; position: absolute;'>
-                        <image src='https://bainuo.beijingepidial.com/public/img/scan.jpg' bindtap="scanSampCode" style='display:inline;' mode="aspectFit">
+                        <image src='https://bainuo.beijingepidial.com/public/img/scan.jpg' bindtap="scanSampCode"data-disable="{{disable=='1'?true:false}}" style='display:inline;' mode="aspectFit">
                         </image>
                     </view>
                 </view>
@@ -19,23 +19,23 @@
                 <!-- <view style="width: 100%;height:auto">
                     <view style="width: 100%;height: 80rpx;display: flex;font-size: 30rpx;">检测项目 <text style="color: red;">*</text>：<input disabled="true" type="text" value='宫颈癌检测' style="width: auto;height: 50rpx;border: 1rpx solid grey;" /></view>
                 </view> -->
-                <view style="width: 100%;height: 80rpx;display: flex;font-size: 30rpx;">采样时间 <text style="color: red;">*</text>： <picker style="width: 50%;height: 50rpx;font-size: 30rpx;" mode="date" value="{{colldate}}" start="2018-01-01" bindchange='bitselect_colldate'>
+                <view style="width: 100%;height: 80rpx;display: flex;font-size: 30rpx;">采样时间 <text style="color: red;">*</text>： <picker style="width: 50%;height: 50rpx;font-size: 30rpx;" mode="date" value="{{colldate}}"disabled="{{disable=='1'?true:false}}" start="2018-01-01" bindchange='bitselect_colldate'>
                         <input style="width: 100%;height: 50rpx;border: 1rpx solid grey;font-size: 30rpx;" type="date" bindchange='bitselect_colldate' auto-focus="true" value="{{colldate}}" placeholder="请选择" disabled="true" />
                     </picker>
                 </view>
                 <!-- 结算类型，业务人员 -->
 
-                <view style="width: 100%;height: 80rpx;display: flex;font-size: 30rpx;">结算类型：<picker style="width: 50%;height: 50rpx;font-size: 30rpx;" mode="selector" range="{{payarray}}" bindchange='bitselect_paymethod'>
+                <view style="width: 100%;height: 80rpx;display: flex;font-size: 30rpx;">结算类型：<picker style="width: 50%;height: 50rpx;font-size: 30rpx;" mode="selector" range="{{payarray}}"disabled="{{disable=='1'?true:false}}" bindchange='bitselect_paymethod'>
                         <input style="width: 100%;height: 50rpx;border: 1rpx solid grey;font-size: 30rpx;" type="text" bindchange='bitselect_paymethod' auto-focus="true" value="{{payarray[paymethod]}}" placeholder="请选择" disabled="true" />
                     </picker>
                 </view>
-                <view style="width: 100%;height: 80rpx;display: flex;font-size: 30rpx;">业务人员：<picker style="width: 50%;height: 50rpx;font-size: 30rpx;" mode="selector" range="{{salesarray}}" bindchange='bitselect_sale'>
+                <view style="width: 100%;height: 80rpx;display: flex;font-size: 30rpx;">业务人员<text style="color: red;">*</text>：<picker style="width: 50%;height: 50rpx;font-size: 30rpx;" mode="selector" range="{{salesarray}}"disabled="{{disable=='1'?true:false}}" bindchange='bitselect_sale'>
                         <input style="width: 100%;height: 50rpx;border: 1rpx solid grey;font-size: 30rpx;" type="text" bindchange='bitselect_sale' auto-focus="true" value="{{salesarray[saleval]}}" placeholder="请选择" disabled="true" />
                     </picker>
                 </view>
                 <!-- 采样地点 -->
                 <view style="width:100%;height:80rpx;">
-                    <view style="width: 100%;height: 80rpx;display: flex;font-size: 30rpx;">采样地点 <text style="color: red;">*</text>：<picker style="width: 70%;height: 50rpx;font-size: 30rpx;" mode="selector" range="{{spotarray}}" bindchange='bitselect_collspot'>
+                    <view style="width: 100%;height: 80rpx;display: flex;font-size: 30rpx;">采样地点 <text style="color: red;">*</text>：<picker style="width: 70%;height: 50rpx;font-size: 30rpx;" mode="selector" range="{{spotarray}}" disabled="{{disable=='1'?true:false}}"bindchange='bitselect_collspot'>
                             <input style="width: 100%;height: 50rpx;border: 1rpx solid grey;font-size: 30rpx;" type="text" bindchange='bitselect_collspot' auto-focus="true" value="{{spotarray[spotval]}}" placeholder="采样地点" disabled="true" />
                         </picker>
                     </view>
@@ -48,16 +48,16 @@
                 <view style="display: flex;width: 100%; margin: 0 auto;">
                     <view style="width: 80%;height: 80rpx;line-height: 80rpx;font-size: 30rpx;margin-top: 20rpx;font-weight: 700;">客户信息二维码(请务必核实样本信息)</view>
                     <view style='width:16%;height:70rpx;margin-top: 20rpx;'>
-                        <image src='https://bainuo.beijingepidial.com/public/img/scan.jpg' bindtap="scanUserCode" style='display:inline;' mode="aspectFit">
+                        <image src='https://bainuo.beijingepidial.com/public/img/scan.jpg' bindtap="scanUserCode"data-disable="{{disable=='1'?true:false}}" style='display:inline;' mode="aspectFit">
                         </image>
                     </view>
                 </view>
                 <!-- 姓名，性别 -->
                 <view style="width: 100%;height:auto">
                     <view style="width:100%;height:80rpx;display: flex;">
-                        <view style="width: 50%;height: 80rpx;display: flex;font-size: 30rpx;">姓名 <text style="color: red;">*</text>：<input type="text" value='' placeholder="请输入" value="{{username}}" bindinput='bininput_name' style="width: 60%;height: 50rpx;border: 1rpx solid grey;" />
+                        <view style="width: 50%;height: 80rpx;display: flex;font-size: 30rpx;">姓名 <text style="color: red;">*</text>：<input type="text" value='' placeholder="请输入" value="{{username}}"disabled="{{disable=='1'?true:false}}" bindinput='bininput_name' style="width: 60%;height: 50rpx;border: 1rpx solid grey;" />
                         </view>
-                        <view style="width: 50%;height: 80rpx;display: flex;font-size: 30rpx;">性别 <text style="color: red;">*</text>：<picker style="width: 50%;height: 50rpx;font-size: 30rpx;" mode="selector" range="{{sexarray}}" value="{{sex}}" bindchange='bitselect_sex'>
+                        <view style="width: 50%;height: 80rpx;display: flex;font-size: 30rpx;">性别 <text style="color: red;">*</text>：<picker style="width: 50%;height: 50rpx;font-size: 30rpx;" mode="selector" range="{{sexarray}}" value="{{sex}}" disabled="{{disable=='1'?true:false}}"bindchange='bitselect_sex'>
                                 <input style="width: 100%;height: 50rpx;border: 1rpx solid grey;font-size: 30rpx;" type="text" bindchange='bitselect_sex' auto-focus="true" value="{{sexarray[sexval]!=null?sexarray[sexval]:sexval}}" placeholder="请输入" disabled="true" />
                             </picker>
                         </view>
@@ -66,10 +66,10 @@
                 <!-- 年龄，手机号码-->
                 <view style="width: 100%;height:auto">
                     <view style="width:100%;height:80rpx;display: flex;">
-                        <view style="width: 40%;height: 80rpx;display: flex;font-size: 30rpx;">年龄：<input type="text" bindinput="bitinput_age" value='{{age}}' placeholder="请输入" style="width: 60%;height: 50rpx;border: 1rpx solid grey;" />
+                        <view style="width: 40%;height: 80rpx;display: flex;font-size: 30rpx;">年龄：<input type="text" bindinput="bitinput_age" value='{{age}}'disabled="{{disable=='1'?true:false}}" placeholder="请输入" style="width: 60%;height: 50rpx;border: 1rpx solid grey;" />
                         </view>
                         <view style="width: 60%;height: 80rpx;display: flex;font-size: 30rpx;">手机号 <text style="color: red;">*</text>：
-                            <input style="width: 60%;height: 50rpx;border: 1rpx solid grey;font-size: 30rpx;" type="text" bindinput="bininput_phone" auto-focus="true" value="{{phone}}" placeholder="请输入" />
+                            <input style="width: 60%;height: 50rpx;border: 1rpx solid grey;font-size: 30rpx;" type="text" bindinput="bininput_phone" auto-focus="true" value="{{phone}}"disabled="{{disable=='1'?true:false}}" placeholder="请输入" />
                         </view>
                     </view>
                 </view>
@@ -77,7 +77,7 @@
                 <view style="width: 100%;height:auto">
                     <view style="width:100%;height:80rpx;display: flex;">
                         <view style="width: 100%;height: 80rpx;display: flex;font-size: 30rpx;">身份证号码：
-                            <input style="width: 60%;height: 50rpx;border: 1rpx solid grey;font-size: 30rpx;" type="text" bindchange='bininput_identity' auto-focus="true" value="{{identity}}" placeholder="请输入(选填)" />
+                            <input style="width: 60%;height: 50rpx;border: 1rpx solid grey;font-size: 30rpx;" type="text" bindchange='bininput_identity' auto-focus="true" value="{{identity}}"disabled="{{disable=='1'?true:false}}" placeholder="请输入(选填)" />
                         </view>
                     </view>
                 </view>
@@ -92,5 +92,44 @@
     </view>
     <view style="width: 100%;height: 200rpx;margin-top: 50rpx;">
         <button style="width: 90%;margin: 0 auto;" bindtap="savebindedrep" type="primary" loading="" disabled="">保存并上传</button>
+    </view>
+    <view style="width: 90%;margin: 0 auto; height: 5rpx;background-color: grey;margin-bottom: 10rpx;"></view>
+    <!-- 已绑定采样信息临时列表展开与收缩 -->
+    <view style="width: 90%;margin: 0 auto;">
+        <text style="font-size: 40rpx;font-weight: 600;">已采样信息</text>
+        <view class="pay-hint-content {{ellipsis?'ellipsis':'unellipsis'}}">
+            <!-- 已绑定信息临时展示，点击还能编辑修改信息 -->
+           
+                <view wx:if="{{mergedlist.length>0}}" style="width: 100%;height: auto;">
+                    <view wx:key="i" wx:for="{{mergedlist}}" wx:if="{{data.disable!='1'}}" wx:for-item="data" style="width: 100%; height: 100rpx;margin-top: 10rpx;line-height: 100rpx; border: 3rpx solid #e7dfdff1;border-radius: 20rpx;display: flex;justify-content: center;box-shadow:0px 2px 4px 2px #DDDDDD;">
+                        <block wx:if="{{index==clickid}}">
+                            <view data-sampleid="{{data.sampleid}}" data-username="{{data.username}}" id="{{index}}" bindtap='changeMergedinfo' style="width: 100%;background-color: #f4e2e2;">
+                                <view style="flex-direction: row;line-height: 100rpx;">
+                                    <text style="font-family: hansans; font-weight:600;font-size: 36rpx;">{{data.sampleid}} </text>
+                                    <text style="font-size: 36rpx;"> {{data.username}} </text>
+                                    <text style="color: grey;font-size: 36rpx;"> {{data.created}}</text>
+                                </view>
+                            </view>
+                        </block>
+                        
+                        <block wx:else>
+                            <view data-sampleid="{{data.sampleid}}" data-username="{{data.username}}" id="{{index}}" bindtap='changeMergedinfo' style="width: 100%">
+                                <view style="flex-direction: row;line-height: 100rpx;">
+                                    <text style="font-family: hansans; font-weight:600;font-size: 36rpx;">{{data.sampleid}} </text>
+                                    <text style="font-size: 36rpx;"> {{data.username}} </text>
+                                    <text style="color: grey;font-size: 36rpx;"> {{data.created}}</text>
+                                </view>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+                <view wx:else style="width: 100%;margin-top: 50rpx;color: grey;font-size: 34rpx;text-align: center;">暂无宫颈癌信息绑定记录</view>
+        </view>
+        <view class='bg-white-ellipsis' bindtap='ellipsis'>
+            <image class='img-ellipsis' style="width: 100%;align-self: center;height: 30rpx;" mode="center" src="{{ellipsis?'https://bainuo.beijingepidial.com/public/img/pulldown.png':'https://bainuo.beijingepidial.com/public/img/pullup.png'}}"></image>
+        </view>
+    </view>
+    <view style="width: 100%;height: 200rpx;margin-top: 50rpx;">
+        <button style="width: 90%;margin: 0 auto;" bindtap="uploadall" type="primary" loading="" disabled="">全部采样信息上传</button>
     </view>
 </view>

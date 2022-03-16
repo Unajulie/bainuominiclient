@@ -9,7 +9,7 @@ button::after {
   page{
     overflow: hidden;
     position: fixed;
-    background-image: url("https://bainuo.beijingepidial.com/public/img/linverloginbg.png");
+    background-image: url("https://bainuopdf.beijingepidial.com/img/linverloginbg.png");
     margin: 0;
     background-size: 100% 100%;
   }

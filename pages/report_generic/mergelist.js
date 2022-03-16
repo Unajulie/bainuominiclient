@@ -1,4 +1,3 @@
-// pages/report_generic/mergedlist.js
 Page({
 
     /**
@@ -25,6 +24,7 @@ Page({
         let data={}
         data.sampleid=e.currentTarget.dataset.sampleid
         data.username=e.currentTarget.dataset.username
+        console.info(data)
         wx.request({
             url: "https://bainuo.beijingepidial.com/client/generic/mergedinfo",
             header: {
@@ -33,7 +33,7 @@ Page({
             method: "POST",
             data: data,
             complete: function (res) {
-                let url = '../report_generic/staffmergeinfo?sampleid=' + res.data.sampleid + "&username=" + res.data.username
+                let url = '../report_generic/staffmergeinfo?sampleid=' + res.data.sampleid + "&username=" + res.data.username+"&disable="+res.data.disable
                 console.info(url)
                 wx.navigateTo({
                     url: url

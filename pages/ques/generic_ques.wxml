@@ -9,7 +9,7 @@
                     <view class="title">{{item.question}}</view>
                     <!-- 单选页面 -->
                     <view class="option-con" wx:if="{{item.type===2}}">
-                        <block wx:for="{{item.options}}" wx:for-item="option" wx:key="id">
+                        <block wx:for="{{item.options}}" wx:for-item="option">
                             <view class="option {{survey_result[i-1].value===option.id?'select-active':''}}" bindtap="handleSelect" data-question="{{item.question}}" data-id="{{item.id}}" data-value="{{option.id}}" data-index="{{i-1}}"data-options="{{item.options}}" data-text="{{option.text}}">
                             {{option.text}}
                             </view>
