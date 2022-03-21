@@ -126,6 +126,8 @@ Page({
    */
   onShow: function () {
   
+  
+
   },
 
   /**

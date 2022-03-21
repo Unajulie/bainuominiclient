@@ -125,6 +125,19 @@ Page({
  * 生命周期函数--监听页面加载
  */
 onLoad: function (options) {
+  if(options.pdf=='undefined'){
+    wx.showModal({
+      title: '温馨提示',
+      content: '受深圳疫情影响需停工实施封闭管理（至3月20日），样本无法如期进入检测流程，敬请谅解。',
+      success:function(res){
+          if(res.confirm){
+             console.log('弹框后点取消')
+          }else{
+             console.log('弹框后点取消')
+          }
+      }
+   })
+  }
   wx.showLoading({
     title: '加载中',
     duration:10000,

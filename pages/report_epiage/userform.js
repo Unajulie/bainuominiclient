@@ -130,7 +130,7 @@ Page({
                                             success: (res) => {},
                                         })
                                         //    let url = "../report_epiage/report_epistatus?status=" + res.data.status + "&barcode=" + formdata.sampleid + "&phone=" + formdata.phone
-                                        let url = '../report_epiage/report_epistatus?sampleid=' + formdata.sampleid
+                                        let url = '../report_epiage/report_epistatus?sampleid=' + formdata.sampleid+ "&pdf=" + res.data.pdf
                                         wx.navigateTo({
                                             url: url
                                         })

@@ -95,9 +95,27 @@ Page({
   },
 
   checkliverReport: function (e) {
-    wx.navigateTo({
-      url:  "../report_epiliver/report_liverstatus?sampleid=" + e.currentTarget.dataset.sampleid
+    let vdata={}
+    vdata.sampleid=e.currentTarget.dataset.sampleid
+    wx.request({
+      url: "https://bainuo.beijingepidial.com/client/liver/checkpdf",
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      method: "POST",
+      data: vdata,
+      // data: {"sampleid": 1121032800079},
+      complete: function (res) {
+        console.info("------")
+        console.info(res.data.pdf)
+        wx.navigateTo({
+          url:  "../report_epiliver/report_liverstatus?sampleid=" + e.currentTarget.dataset.sampleid+ "&pdf=" + res.data.pdf
+        })
+      }
     })
+    // wx.navigateTo({
+    //   url:  "../report_epiliver/report_liverstatus?sampleid=" + e.currentTarget.dataset.sampleid
+    // })
   },
   /**
    * 生命周期函数--监听页面加载
