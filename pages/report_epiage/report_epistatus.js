@@ -24,7 +24,7 @@ Page({
     data.tel = e.currentTarget.dataset.phone
     data.barcode = e.currentTarget.dataset.sampleid
     wx.showLoading({
-      title: '加载中',
+      title: '请耐心等待加载',
       mask: true,
       duration: 10000
     })
@@ -42,7 +42,7 @@ Page({
             header: {},
             success: function (res) {
               wx.showLoading({
-                title: '加载中',
+                title: '请耐心等待加载',
                 duration: 10000,
                 mask: true
               })

@@ -3,8 +3,10 @@ Page({
      * 页面的初始数据
      */
     data: {
+      firstJump:undefined
     },
     checkepiageReport: function (e) {
+      var that = this;
       let vdata={}
     vdata.sampleid=e.currentTarget.dataset.sampleid
     wx.request({
@@ -18,9 +20,15 @@ Page({
       complete: function (res) {
         console.info("------")
         console.info(res.data.pdf)
-        wx.navigateTo({
-          url:  "../report_epiage/report_epistatus?sampleid=" + e.currentTarget.dataset.sampleid+ "&pdf=" + res.data.pdf
-        })
+        if (that.data.firstJump) {
+          wx.navigateTo({
+            url:  "../report_epiage/report_epistatus?sampleid=" + e.currentTarget.dataset.sampleid+ "&pdf=" + res.data.pdf,
+            success: function (res) {
+              that.setData({ firstJump: false });
+             }
+          })
+        }
+       
       }
     })
       //   console.info(e)
@@ -59,5 +67,8 @@ Page({
           })
         }
       })
-    }
+    },
+    onShow: function () {
+      this.setData({ firstJump:true})
+      }
   })

@@ -10,6 +10,7 @@ Page({
     value: '所有',
     hideFlag: true,
     animationData: {},
+    firstJump:undefined
   },
 
   //取消
@@ -94,6 +95,7 @@ Page({
   },
 
   checkhpvReport: function (e) {
+    var that = this;
     let vdata={}
     vdata.sampleid=e.currentTarget.dataset.sampleid
     wx.request({
@@ -107,9 +109,14 @@ Page({
       complete: function (res) {
         console.info("------")
         console.info(res.data.pdf)
+        if (that.data.firstJump) {
         wx.navigateTo({
-          url:  "../report_epihpv/report_hpvstatus?sampleid=" + e.currentTarget.dataset.sampleid+ "&pdf=" + res.data.pdf
+          url:  "../report_epihpv/report_hpvstatus?sampleid=" + e.currentTarget.dataset.sampleid+ "&pdf=" + res.data.pdf,
+          success: function (res) {
+            that.setData({ firstJump: false });
+           }
         })
+      }
       }
     })
     // wx.navigateTo({
@@ -145,7 +152,10 @@ Page({
         wx.navigateTo({
           url: '../user/login',
         })
-      }
+      },
+      onShow: function () {
+        this.setData({ firstJump:true})
+        }
     })
   }
 })

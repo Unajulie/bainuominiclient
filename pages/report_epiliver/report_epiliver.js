@@ -95,6 +95,7 @@ Page({
   },
 
   checkliverReport: function (e) {
+    var that = this;
     let vdata={}
     vdata.sampleid=e.currentTarget.dataset.sampleid
     wx.request({
@@ -108,9 +109,14 @@ Page({
       complete: function (res) {
         console.info("------")
         console.info(res.data.pdf)
+        if (that.data.firstJump) {
         wx.navigateTo({
-          url:  "../report_epiliver/report_liverstatus?sampleid=" + e.currentTarget.dataset.sampleid+ "&pdf=" + res.data.pdf
+          url:  "../report_epiliver/report_liverstatus?sampleid=" + e.currentTarget.dataset.sampleid+ "&pdf=" + res.data.pdf,
+          success: function (res) {
+            that.setData({ firstJump: false });
+           }
         })
+      }
       }
     })
     // wx.navigateTo({
@@ -149,5 +155,8 @@ Page({
         })
       }
     })
-  }
+  },
+  onShow: function () {
+    this.setData({ firstJump:true})
+    }
 })

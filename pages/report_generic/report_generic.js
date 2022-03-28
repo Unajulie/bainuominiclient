@@ -11,6 +11,7 @@ Page({
     value: '所有',
     hideFlag: true,
     animationData: {},
+    firstJump:undefined
   },
 
   //取消
@@ -95,6 +96,7 @@ Page({
   },
 
   checkgenericReport: function (e) {
+    var that = this;
     let vdata={}
     vdata.sampleid=e.currentTarget.dataset.sampleid
     wx.request({
@@ -108,9 +110,14 @@ Page({
       complete: function (res) {
         console.info("------")
         console.info(res.data.pdf)
+        if (that.data.firstJump) {
         wx.navigateTo({
-          url:  "../report_generic/generic_status?sampleid=" + e.currentTarget.dataset.sampleid+ "&pdf=" + res.data.pdf
+          url:  "../report_generic/generic_status?sampleid=" + e.currentTarget.dataset.sampleid+ "&pdf=" + res.data.pdf,
+          success: function (res) {
+            that.setData({ firstJump: false });
+           }
         })
+      }
       }
     })
     
@@ -148,5 +155,8 @@ Page({
         })
       }
     })
-  }
+  },
+  onShow: function () {
+    this.setData({ firstJump:true})
+    }
 })

@@ -29,7 +29,7 @@ Page({
               data.sampleid = e.currentTarget.dataset.barcode ? e.currentTarget.dataset.barcode : oThis.data.sampleid
               console.info(data)
               wx.showLoading({
-                title: '加载中',
+                title: '请耐心等待加载',
                 duration:10000,
                 mask: true
               })
@@ -51,7 +51,7 @@ Page({
                         header: {},
                         success: function (res) {
                           wx.showLoading({
-                            title: '加载中',
+                            title: '请耐心等待加载',
                             duration:10000,
                             mask: true
                           })
