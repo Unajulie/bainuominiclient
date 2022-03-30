@@ -17,6 +17,65 @@ Page({
             },
         })
     },
+            // 选择开始时间
+            selStartdate: function (e) {
+                this.setData({
+                    startdate: e.detail.value
+                })
+            },
+            // 选择结束时间
+            selTilldate: function (e) {
+                this.setData({
+                    tilldate: e.detail.value
+                })
+            },
+            search: function (e) {
+                let that = this
+                let startime = that.data.startdate
+                let totime = that.data.tilldate
+                console.info(startime)
+                console.info(totime)
+                if (!totime||!startime|| totime < startime) {
+                    wx.showToast({
+                        title: '时间段无效',
+                        icon: 'error',
+                        duration: 2000
+                    })
+                    this.setData({
+                        startdate: "",
+                        tilldate: ""
+                    })
+                } else {
+                    wx.getStorage({
+                        key: 'sessionuser',
+                        success: function (sessionuser) {
+                            let data = {}
+                            data.startdate = that.data.startdate
+                            data.tilldate = that.data.tilldate
+                            data.stafftel=sessionuser.data.phone
+                            wx.request({
+                                url: "https://bainuo.beijingepidial.com/client/hpv/mergedlist/search",
+                                header: {
+                                    "Content-Type": "application/x-www-form-urlencoded"
+                                },
+                                method: "POST",
+                                data: data,
+                                complete: function (res) {
+                                    console.info(res)
+                                    that.setData({
+                                        searchedlist:res.data.rows
+                                    })
+                                }
+                            })
+                        },
+                        fail:function(res){
+                            wx.navigateTo({
+                              url: "../user/stafflogin"
+                            })
+                          }
+                    })
+                }
+            },
     // 工作人员肝癌已绑定列表查看已绑定信息
     getMergedinfo: function (e) {
         let that=this
@@ -62,9 +121,8 @@ Page({
                     data: data,
                     complete: function (res) {
                         oThis.setData({
-                            mergedlist: res.data,
+                            mergedlist: res.data.rows,
                         })
-                        wx.hideLoading()
                     }
                 })
             },

@@ -10,7 +10,7 @@ Page({
     value: '所有',
     hideFlag: true,
     animationData: {},
-    firstJump:undefined
+    firstJump:true
   },
 
   //取消
@@ -96,8 +96,8 @@ Page({
 
   checkhpvReport: function (e) {
     var that = this;
-    let vdata={}
-    vdata.sampleid=e.currentTarget.dataset.sampleid
+    let vdata = {}
+    vdata.sampleid = e.currentTarget.dataset.sampleid
     wx.request({
       url: "https://bainuo.beijingepidial.com/client/hpv/checkpdf",
       header: {
@@ -105,23 +105,20 @@ Page({
       },
       method: "POST",
       data: vdata,
-      // data: {"sampleid": 1121032800079},
       complete: function (res) {
-        console.info("------")
-        console.info(res.data.pdf)
         if (that.data.firstJump) {
-        wx.navigateTo({
-          url:  "../report_epihpv/report_hpvstatus?sampleid=" + e.currentTarget.dataset.sampleid+ "&pdf=" + res.data.pdf,
-          success: function (res) {
-            that.setData({ firstJump: false });
-           }
-        })
-      }
+          console.info("0000")
+          wx.navigateTo({
+            url: "../report_epihpv/report_hpvstatus?sampleid=" + e.currentTarget.dataset.sampleid + "&pdf=" + res.data.pdf,
+            success: function (res) {
+              that.setData({
+                firstJump: false
+              });
+            }
+          })
+        }
       }
     })
-    // wx.navigateTo({
-    //   url:  "../report_epihpv/report_hpvstatus?sampleid=" + e.currentTarget.dataset.sampleid
-    // })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -141,7 +138,6 @@ Page({
             "tel": res.data.phone
           },
           complete: function (res) {
-            console.info(res.data)
             oThis.setData({
               barcodebox: res.data
             })
@@ -153,9 +149,9 @@ Page({
           url: '../user/login',
         })
       },
-      onShow: function () {
-        this.setData({ firstJump:true})
-        }
     })
-  }
+  },
+  onShow: function () {
+    this.setData({ firstJump:true})
+    }
 })

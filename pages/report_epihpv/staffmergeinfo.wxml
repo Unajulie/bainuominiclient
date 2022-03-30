@@ -130,6 +130,6 @@
         </view>
     </view>
     <view style="width: 100%;height: 200rpx;margin-top: 50rpx;">
-        <button style="width: 90%;margin: 0 auto;" bindtap="uploadall" type="primary" loading="" disabled="">全部采样信息上传</button>
+        <button style="width: 90%;margin: 0 auto;" bindtap="uploadall" type="primary" loading="" disabled="">确定信息无误并提交</button>
     </view>
 </view>

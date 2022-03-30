@@ -91,6 +91,7 @@ Page({
     },
     //绑定输入的样本采集日期
     bitselect_colldate: function (e) {
+        console.info(e)
         if (e.detail.value) {
             this.setData({
                 colldate: e.detail.value ? e.detail.value : new Date().toLocaleString(),
@@ -99,6 +100,8 @@ Page({
     },
     //绑定选择的结算类型
     bitselect_paymethod: function (e) {
+        console.info(e)
+        console.info(this.data.payarray[e.detail.value])
         if (e.detail.value) {
             this.setData({
                 paymethod: e.detail.value
@@ -107,6 +110,7 @@ Page({
     },
     //绑定选择的采样地点
     bitselect_collspot: function (e) {
+        console.info(e)
         if (e.detail.value) {
             this.setData({
                 spotval: e.detail.value
@@ -424,11 +428,15 @@ Page({
                         for (var k = 0; k < res.data.pays.length; k++) {
                                 paydata.push(res.data.pays[k].payname)
                             }
+
                         that.setData({
                             spotarray: spotdata,
                             salesarray: saledata,
                             payarray: paydata
                         })
+                        console.info(that.data.spotarray)
+                        console.info(that.data.salesarray)
+                        console.info(that.data.payarray)
                     }
                 })
             },

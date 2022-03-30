@@ -11,7 +11,7 @@ Page({
     value: '所有',
     hideFlag: true,
     animationData: {},
-    firstJump:undefined
+    firstJump:true
   },
 
   //取消
@@ -106,10 +106,7 @@ Page({
       },
       method: "POST",
       data: vdata,
-      // data: {"sampleid": 1121032800079},
       complete: function (res) {
-        console.info("------")
-        console.info(res.data.pdf)
         if (that.data.firstJump) {
         wx.navigateTo({
           url:  "../report_generic/generic_status?sampleid=" + e.currentTarget.dataset.sampleid+ "&pdf=" + res.data.pdf,
@@ -117,7 +114,7 @@ Page({
             that.setData({ firstJump: false });
            }
         })
-      }
+        }
       }
     })
     
@@ -140,9 +137,8 @@ Page({
           data: {
             "tel": res.data.phone
           },
-          // data: {"sampleid": 1121032800079},
           complete: function (res) {
-            console.info(res.data)
+            console.info(res)
             oThis.setData({
               barcodebox: res.data
             })

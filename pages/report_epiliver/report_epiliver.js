@@ -11,6 +11,7 @@ Page({
     value: '所有',
     hideFlag: true,
     animationData: {},
+    firstJump:true
   },
 
   //取消
@@ -107,8 +108,6 @@ Page({
       data: vdata,
       // data: {"sampleid": 1121032800079},
       complete: function (res) {
-        console.info("------")
-        console.info(res.data.pdf)
         if (that.data.firstJump) {
         wx.navigateTo({
           url:  "../report_epiliver/report_liverstatus?sampleid=" + e.currentTarget.dataset.sampleid+ "&pdf=" + res.data.pdf,
@@ -142,7 +141,6 @@ Page({
           },
           // data: {"sampleid": 1121032800079},
           complete: function (res) {
-            console.info(res.data)
             oThis.setData({
               barcodebox: res.data
             })

@@ -74,7 +74,7 @@ Page({
                 id: 2,
                 inputval: "",
                 options: [{
-                        id:6,
+                        id: 6,
                         text: '有，帮助我更理解了该产品的优势所在',
                         isselected: false
                     },
@@ -247,14 +247,14 @@ Page({
             count,
             survey_result
         } = this.data
-        if (survey_result[curId-1]==0) {
+        if (survey_result[curId - 1] == 0) {
             wx.showToast({
                 title: '请选择',
                 icon: 'error',
                 duration: 2000
             })
             return
-        } 
+        }
         const step = 670 / count
         this.setData({
             curId: curId + 1,
@@ -297,7 +297,7 @@ Page({
             text,
             options
         })
-        this.data.survey_result[id].inputval=""
+        this.data.survey_result[id].inputval = ""
         let survey_result = this.data.survey_result
         this.setData({
             survey_result
@@ -317,24 +317,16 @@ Page({
             isselected
         } = e.currentTarget.dataset
         let options = this.data.survey_result[id].options ? this.data.survey_result[id].options : e.currentTarget.dataset.options
-// console.info(options[optionid])
-// console.info(isselected)
-        //optionid为单个答案
-      
-        // console.info(options[optionid])
-// console.info(isselected)
-//控制单选框中只有最后一个选中的 才能被选中， 其他的都变成不选中状态
 
-options[optionid].isselected = (isselected == false ? true : false)
-
-// for(let i=0;i<options.length;i++){
-//     // console.info(optionid)
-// // console.info(options[i])
-// if(options[optionid].isselected==false){
-//     options[i].isselected==true
-//     console.info(options[i])
-// }
-// }
+        //控制单选框中只有最后一个选中的 才能被选中， 其他的都变成不选中状态
+        options[optionid].isselected = (isselected == false ? true : false)
+        // for (let i = 0; i < options.length; i++) {
+        //     console.info(options[optionid].isselected)
+        //     if (options[optionid].isselected == true) {
+        //         options[i].isselected == false
+        //         console.info(options[i].isselected)
+        //     }
+        // }
         this.data.survey_result.splice(index, 1, {
             id,
             question,
@@ -344,7 +336,6 @@ options[optionid].isselected = (isselected == false ? true : false)
             text
         })
         this.data.survey_result[id].inputval = this.data.questions[id].inputval
-        // console.info(this.data.survey_result[id])
         let survey_result = this.data.survey_result
         this.setData({
             survey_result
@@ -367,7 +358,7 @@ options[optionid].isselected = (isselected == false ? true : false)
             isselected: true,
             extra: true
         }
-        let inputval=this.data.survey_result[id].inputval?this.data.survey_result[id].inputval:e.detail.value
+        let inputval = this.data.survey_result[id].inputval ? this.data.survey_result[id].inputval : e.detail.value
         this.data.survey_result.splice(index, 1, {
             id,
             question,
@@ -424,7 +415,7 @@ options[optionid].isselected = (isselected == false ? true : false)
             isselected: true,
             extra: true
         }
-        let inputval=this.data.survey_result[id].inputval?this.data.survey_result[id].inputval:e.detail.value
+        let inputval = this.data.survey_result[id].inputval ? this.data.survey_result[id].inputval : e.detail.value
         this.data.survey_result.splice(index, 1, {
             id,
             question,
@@ -500,8 +491,8 @@ options[optionid].isselected = (isselected == false ? true : false)
                 let quesarrs = {}
                 console.info(sessionuser)
                 quesarrs.phone = sessionuser.data.phone
-                quesarrs.username=sessionuser.data.username
-                quesarrs.questions=oThis.data.survey_result
+                quesarrs.username = sessionuser.data.username
+                quesarrs.questions = oThis.data.survey_result
                 console.info(quesarrs)
                 wx.request({
                     url: "https://bainuo.beijingepidial.com/client/users/save/ques",
@@ -509,7 +500,7 @@ options[optionid].isselected = (isselected == false ? true : false)
                         "Content-Type": "application/json"
                     },
                     method: "POST",
-                    data:quesarrs,
+                    data: quesarrs,
                     // data: {"sampleid": 1121032800079},
                     complete: function (res) {
                         //用户点击确定后没值的输入值后就不可编辑

@@ -54,6 +54,7 @@ onShow:function(){
       wx.removeStorage({
         key: 'sessionuser',
         success: function(res) {
+          console.info(res)
           oThis.setData({login:false,phone:'',mark:''})
           wx.switchTab({
             url: '../report/report',
@@ -68,13 +69,23 @@ onShow:function(){
    
   },
   
-  /* onLoad: function (options) {
+onLoad: function (options) {
     let oThis = this
+      wx.showModal({
+        title: '温馨提示',
+        content: '已检测客户若无法查看检测报告，请退出登陆后再次登入，感谢您的理解！',
+        success:function(res){
+            if(res.confirm){
+               console.info('弹框后点确认')
+            }else{
+               console.log('弹框后点取消')
+            }
+        }
+     })
       wx.getStorage({
         key: 'sessionuser',
         success: function (res) {
           oThis.setData({
-            
             phone: res.data.phone
           })
         },
@@ -90,7 +101,7 @@ onShow:function(){
         }
       })
    
-  }, */
+  }, 
   getUserInfo: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo

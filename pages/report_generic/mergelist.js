@@ -33,7 +33,9 @@ Page({
         let that = this
         let startime = that.data.startdate
         let totime = that.data.tilldate
-        if (totime < startime) {
+        console.info(startime)
+        console.info(totime)
+        if (!totime||!startime|| totime < startime) {
             wx.showToast({
                 title: '时间段无效',
                 icon: 'error',
@@ -47,7 +49,6 @@ Page({
             wx.getStorage({
                 key: 'sessionuser',
                 success: function (sessionuser) {
-                    console.info(sessionuser)
                     let data = {}
                     data.startdate = that.data.startdate
                     data.tilldate = that.data.tilldate
@@ -60,11 +61,17 @@ Page({
                         method: "POST",
                         data: data,
                         complete: function (res) {
-                            console.info(res)
+                            that.setData({
+                                searchedlist:res.data.rows
+                            })
                         }
                     })
                 },
-                fail: {}
+                fail:function(res){
+                    wx.navigateTo({
+                      url: "../user/stafflogin"
+                    })
+                  }
             })
         }
     },
@@ -113,7 +120,7 @@ Page({
                     data: data,
                     complete: function (res) {
                         oThis.setData({
-                            mergedlist: res.data,
+                            mergedlist: res.data.rows,
                         })
                         wx.hideLoading()
                     }
@@ -128,8 +135,7 @@ Page({
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
-    onReady: function () {
-
+    onShow: function () {
     }
 
 

@@ -18,8 +18,6 @@ Page({
       data: vdata,
       // data: {"sampleid": 1121032800079},
       complete: function (res) {
-        console.info("------")
-        console.info(res.data.pdf)
         if (that.data.firstJump) {
           wx.navigateTo({
             url:  "../report_epiage/report_epistatus?sampleid=" + e.currentTarget.dataset.sampleid+ "&pdf=" + res.data.pdf,

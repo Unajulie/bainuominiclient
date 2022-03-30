@@ -125,6 +125,7 @@ textPaste:function(){
 * 生命周期函数--监听页面加载
 */
 onLoad: function (options) {
+  console.info(options)
   if(options.pdf=='undefined'){
     wx.showModal({
       title: '温馨提示',
