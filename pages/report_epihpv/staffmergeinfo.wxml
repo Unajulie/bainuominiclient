@@ -2,7 +2,7 @@
     <view style="width: 90%;height: 100%;margin: 0 auto;">
         <view style="font-size: 40rpx;font-weight: 600;margin-bottom: 20rpx;">宫颈癌检测采样信息绑定</view>
         <!--样本二维码信息录入模块 -->
-        <view style="width: 100%;height: 550rpx;border: 2rpx solid green;">
+        <view style="width: 100%;height: 550rpx;border: 2rpx solid #c477f2;">
             <view style="display: flex;width: 95%; margin: 0 auto;">
                 <view style="width: 30%;height: 80rpx;line-height: 80rpx;font-size: 30rpx;margin-top: 20rpx;font-weight: 700;">样本二维码 <text style="color: red;">*</text> : </view>
                 <view style='width:70%;height:80rpx;margin-top: 20rpx; border: 2rpx solid grey; display:inline-block; background:#fff;align-self: center;position: relative;'>
@@ -43,7 +43,7 @@
             </view>
         </view>
         <!-- 客户信息录入模块 -->
-        <view style="width: 100%;height: 500rpx;border: 2rpx solid green;margin-top: 50rpx;">
+        <view style="width: 100%;height: 500rpx;border: 2rpx solid #c477f2;margin-top: 50rpx;">
             <view style="width: 95%;margin: 0 auto;">
                 <view style="display: flex;width: 100%; margin: 0 auto;">
                     <view style="width: 80%;height: 80rpx;line-height: 80rpx;font-size: 30rpx;margin-top: 20rpx;font-weight: 700;">客户信息二维码(请务必核实样本信息)</view>
@@ -91,7 +91,9 @@
         <!-- 保存并更新按钮 -->
     </view>
     <view style="width: 100%;height: 200rpx;margin-top: 50rpx;">
-        <button style="width: 90%;margin: 0 auto;" bindtap="savebindedrep" type="primary" loading="" disabled="">保存并上传</button>
+        <button style="width: 90%;margin: 0 auto;background-color: #c477f2;" bindtap="savebindedrep" type="primary" loading="" disabled="">保存并新增</button>
+        <view style="margin-top: 30rpx;">
+            <image style="width: 100%;align-self: center;height: 50rpx;" mode="aspectFit" src="https://bainuo.beijingepidial.com/public/img/pulldown.png"></image></view>
     </view>
     <view style="width: 90%;margin: 0 auto; height: 5rpx;background-color: grey;margin-bottom: 10rpx;"></view>
     <!-- 已绑定采样信息临时列表展开与收缩 -->
@@ -103,22 +105,18 @@
                 <view wx:if="{{mergedlist.length>0}}" style="width: 100%;height: auto;">
                     <view wx:key="i" wx:for="{{mergedlist}}" wx:if="{{data.disable!='1'}}" wx:for-item="data" style="width: 100%; height: 100rpx;margin-top: 10rpx;line-height: 100rpx; border: 3rpx solid #e7dfdff1;border-radius: 20rpx;display: flex;justify-content: center;box-shadow:0px 2px 4px 2px #DDDDDD;">
                         <block wx:if="{{index==clickid}}">
-                            <view data-sampleid="{{data.sampleid}}" data-username="{{data.username}}" id="{{index}}" bindtap='changeMergedinfo' style="width: 100%;background-color: #f4e2e2;">
-                                <view style="flex-direction: row;line-height: 100rpx;">
-                                    <text style="font-family: hansans; font-weight:600;font-size: 36rpx;">{{data.sampleid}} </text>
-                                    <text style="font-size: 36rpx;"> {{data.username}} </text>
-                                    <text style="color: grey;font-size: 36rpx;"> {{data.created}}</text>
-                                </view>
+                            <view data-sampleid="{{data.sampleid}}" data-username="{{data.username}}" id="{{index}}" bindtap='changeMergedinfo' style="width: 100%;width: 100%;display: flex; justify-content: space-evenly;">
+                                    <text style="font-family: hansans;font-size: 32rpx; font-weight:600;">{{data.sampleid}} </text>
+                                    <text style="font-size: 32rpx; font-weight:600;"> {{data.username}} </text>
+                                    <text style="color: grey;font-size: 32rpx;"> {{data.created}}</text>
                             </view>
                         </block>
                         
                         <block wx:else>
-                            <view data-sampleid="{{data.sampleid}}" data-username="{{data.username}}" id="{{index}}" bindtap='changeMergedinfo' style="width: 100%">
-                                <view style="flex-direction: row;line-height: 100rpx;">
-                                    <text style="font-family: hansans; font-weight:600;font-size: 36rpx;">{{data.sampleid}} </text>
-                                    <text style="font-size: 36rpx;"> {{data.username}} </text>
-                                    <text style="color: grey;font-size: 36rpx;"> {{data.created}}</text>
-                                </view>
+                            <view data-sampleid="{{data.sampleid}}" data-username="{{data.username}}" id="{{index}}" bindtap='changeMergedinfo' style="width: 100%;width: 100%;display: flex; justify-content: space-evenly;">
+                                    <text style="font-family: hansans; font-weight:600;font-size: 32rpx;">{{data.sampleid}} </text>
+                                    <text style="font-size: 32rpx; font-weight:600;"> {{data.username}} </text>
+                                    <text style="color: grey;font-size: 32rpx;"> {{data.created}}</text>
                             </view>
                         </block>
                     </view>
@@ -126,10 +124,10 @@
                 <view wx:else style="width: 100%;margin-top: 50rpx;color: grey;font-size: 34rpx;text-align: center;">暂无宫颈癌信息绑定记录</view>
         </view>
         <view class='bg-white-ellipsis' bindtap='ellipsis'>
-            <image class='img-ellipsis' style="width: 100%;align-self: center;height: 30rpx;" mode="center" src="{{ellipsis?'https://bainuo.beijingepidial.com/public/img/pulldown.png':'https://bainuo.beijingepidial.com/public/img/pullup.png'}}"></image>
+            <image class='img-ellipsis' style="width: 100%;align-self: center;height: 50rpx;" mode="aspectFit" src="{{ellipsis?'https://bainuo.beijingepidial.com/public/img/pulldown.png':'https://bainuo.beijingepidial.com/public/img/pullup.png'}}"></image>
         </view>
     </view>
     <view style="width: 100%;height: 200rpx;margin-top: 50rpx;">
-        <button style="width: 90%;margin: 0 auto;" bindtap="uploadall" type="primary" loading="" disabled="">确定信息无误并提交</button>
+        <button style="width: 90%;margin: 0 auto;background-color: #c477f2;" bindtap="uploadall" type="primary" loading="" disabled="">确定信息无误并提交</button>
     </view>
 </view>

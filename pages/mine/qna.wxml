@@ -1,10 +1,36 @@
 <!--pages/mine/qna.wxml-->
 <view style="width: 100%;height: auto;">
-<view style="width: 90%;margin: 0 auto;">
-  <image mode='widthFix' lazy-load='true' style="width: 100%;height: 150rpx;"
-    src='https://bainuopdf.beijingepidial.com/img/qa.jpg'></image>
+  <view style="width: 90%;margin: 0 auto;">
+    <image mode='widthFix' lazy-load='true' style="width: 100%;height: 150rpx;" src='https://bainuopdf.beijingepidial.com/img/qa.jpg'></image>
     <view style="width: 100%;height: 20rpx;"></view>
-<view style="width: 100%;height: 100rpx;line-height: 100rpx;font-size: 30rpx;">1.如何进行生物学年龄检测？</view>
-<view style="width: 100%;height: 100rpx;line-height: 100rpx;font-size: 30rpx;">2.每个检测需要多长时间？</view>
-</view>
+    <view class='help'>
+      <view class='help_item'>
+        <view class='title' data-index='1' catchtap='panel'>
+          <view class='title_1'>1.如何进行生物学年龄检测？</view>
+          <view class='title_2'>
+            <image src="https://bainuo.beijingepidial.com/public/img/{{showIndex == 1 ? 'pullup':'pulldown'}}.png"></image>
+          </view>
+        </view>
+        <view class='detail' wx:if="{{showIndex == 1}}">注册并登陆账号后，进入“首页”选择“生物学年龄”，观看采样视频收集唾液样本，返回“条码绑定”界面，输入或扫描收集好唾液的样本条码，点击“绑定/查询”按钮，填写个人信息，确认无误后即可绑定成功。</view>
+      </view>
+      <view class='help_item'>
+        <view class='title' data-index='2' catchtap='panel'>
+          <view class='title_1'>1.如何进行癌症早筛项目检测？</view>
+          <view class='title_2'>
+            <image src="https://bainuo.beijingepidial.com/public/img/{{showIndex == 1 ? 'pullup':'pulldown'}}.png"></image>
+          </view>
+        </view>
+        <view class='detail' wx:if="{{showIndex == 2}}">注册并登陆账号后，进入“首页”选择相应的癌症早筛项目（“泛癌早筛”，“肝癌早筛”，“宫颈癌早筛”），点击“检测申请”，填写用户信息登记表，点击“保存并生成二维码”，即可生成个人信息二维码。在采样时，将个人信息二维码出示给工作人员扫描绑定你的个人信息二维码跟样本条码信息后，即可完成绑定。成功绑定后，你可在“我的”--“我的报告”界面查看相应的检测报告进度及报告。</view>
+      </view>
+      <view class='help_item'>
+        <view class='title' data-index='3' catchtap='panel'>
+          <view class='title_1'>2. 每个检测需要多长时间？</view>
+          <view class='title_2'>
+            <image src="https://bainuo.beijingepidial.com/public/img/{{showIndex == 1 ? 'pullup':'pulldown'}}.png"></image>
+          </view>
+        </view>
+        <view class='detail' wx:if="{{showIndex == 3}}">每个检测大概需要15个工作日左右即可出检测结果</view>
+      </view>
+    </view>
+  </view>
 </view>

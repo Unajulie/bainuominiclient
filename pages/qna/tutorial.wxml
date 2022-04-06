@@ -1,0 +1,63 @@
+<view style="width: 90%;margin: 0 auto;margin-top: 50rpx;">
+    <view style="width: 100%;font-size: 30rpx;font-weight: 600;margin-top: 50rpx;">
+        1. 扫描下方小程序二维码，或者在微信搜索“深圳百诺医学检验实验室”，打开小程序
+        <image style="width: 100%; height: auto;margin-top: 25rpx;" lazy-load="true" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/bainuo-miniqrcode.png"></image>
+    </view>
+    <view style="width: 100%;font-size: 30rpx;font-weight: 600;margin-top: 50rpx;">
+        2. 点击“我的”，点击“受检者注册”，注册账号，绑定手机号
+        <image style="width: 100%; height: auto;margin-top: 25rpx;" lazy-load="true" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/01.png"></image>
+    </view>
+    <view style="width: 100%;font-size: 30rpx;font-weight: 600;margin-top: 50rpx;">
+        3. 对于生物学年龄检测： 客户收到样本采集管后，登录账号，点击“首页”，选择对应的“生物学年龄”项目；
+        <image style="width: 100%; height: auto;margin-top: 25rpx;" lazy-load="true" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/02.png"></image>
+    </view>
+    <view style="width: 100%;font-size: 30rpx;font-weight: 600;margin-top: 50rpx;">
+        4. 为确保成功采样后绑定条码信息，请先根据采样视频进行样本采集后，再扫描绑定个人信息和采样管条码；
+        <image style="width: 100%; height: auto;margin-top: 25rpx;" lazy-load="true" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/04.png"></image>
+        注意事项：请确认填写信息是否正确，一旦提交后无法更改！
+        <image style="width: 100%; height: auto;margin-top: 25rpx;" lazy-load="true" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/05.png"></image>
+    </view>
+    <view style="width: 100%;font-size: 30rpx;font-weight: 600;margin-top: 50rpx;">
+        5. 绑定客户并采集好样本之后，小程序将展示样本检测进程。
+        <image style="width: 100%; height: auto;margin-top: 25rpx;" lazy-load="true" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/06.png"></image>
+    </view>
+    <view style="width: 100%;font-size: 30rpx;font-weight: 600;margin-top: 50rpx;">
+        6. 当需要再次查询报告时，点击“我的”-“我的报告”；
+        <image style="width: 100%; height: auto;margin-top: 25rpx;" lazy-load="true" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/07.png"></image>
+    </view>
+    <view style="width: 100%;font-size: 30rpx;font-weight: 600;margin-top: 50rpx;">
+        7. 选择相应报告点击查看。
+        <image style="width: 100%; height: auto;margin-top: 25rpx;" lazy-load="true" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/08.png"></image>
+        <image style="width: 100%; height: auto;margin-top: 25rpx;" lazy-load="true" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/09.png"></image>
+    </view>
+    <view style="width: 100%;font-size: 30rpx;font-weight: 600;margin-top: 50rpx;">
+        8. 对于癌症甲基化检测（需要医护人员采样，采血，采宫颈脱落细胞）： 客户点击“我的”-“受检者登录”登录账号；
+        <image style="width: 100%; height: auto;margin-top: 25rpx;" lazy-load="true" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/017.png"></image>
+    </view>
+    <view style="width: 100%;font-size: 30rpx;font-weight: 600;margin-top: 50rpx;">
+        9. 点击“首页”,选择对应的“癌症早筛”项目
+        <image style="width: 100%; height: auto;margin-top: 25rpx;" lazy-load="true" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/010.png"></image>
+    </view>
+    <view style="width: 100%;font-size: 30rpx;font-weight: 600;margin-top: 50rpx;">
+        10. 选择相应的检测后点击“检测申请”，登记受检者信息，同一个登录账号（客户）可以登记多个受检者信息，为他的朋友家人登记受检者信息
+        <image style="width: 100%; height: auto;margin-top: 25rpx;" lazy-load="true" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/012.png"></image>
+    </view>
+    <view style="width: 100%;font-size: 30rpx;font-weight: 600;margin-top: 50rpx;">
+        11. 录入受检者信息，保存生成个人信息二维码。
+        <image style="width: 100%; height: auto;margin-top: 25rpx;" lazy-load="true" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/013.png"></image>
+        12. 出示二维码给采样工作人员进行条码信息绑定。
+        <image style="width: 100%; height: auto;margin-top: 25rpx;" lazy-load="true" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/014.png"></image>
+    </view>
+    <view style="width: 100%;font-size: 30rpx;font-weight: 600;margin-top: 50rpx;">
+        13. 工作人员完成采样，将信息上传到实验室后台系统之后，客户可以点击“我的”-“我的报告”，在线查看报告进展
+        <image style="width: 100%; height: auto;margin-top: 25rpx;" lazy-load="true" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/07.png"></image>
+    </view>
+    <view style="width: 100%;font-size: 30rpx;font-weight: 600;margin-top: 50rpx;">
+        14.待检验报告生成后点击查看在线PDF报告（也可复制链接下载pdf报告）
+        <image style="width: 100%; height: auto;margin-top: 25rpx;" lazy-load="true" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/015.png"></image>
+    </view>
+    <view style="width: 100%;font-size: 30rpx;font-weight: 600;margin-top: 50rpx;">
+        15. 如有其它疑问，请联系客服（小程序“我的”模块--“联系客服”）：400-8558-693，进行咨询。
+        <image style="width: 100%; height: auto;margin-top: 25rpx;" lazy-load="true" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/016.png"></image>
+    </view>
+</view>

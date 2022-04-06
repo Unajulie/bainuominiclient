@@ -27,23 +27,23 @@ getOption:function(e){
   that.hideModal();
   },
 // 显示遮罩层
-showModal: function () {
-  var that = this;
-  that.setData({
-   hideFlag: false
-  })
-  // 创建动画实例
-  var animation = wx.createAnimation({
-   duration: 400,//动画的持续时间
-   timingFunction: 'ease',//动画的效果 默认值是linear->匀速，ease->动画以低速开始，然后加快，在结束前变慢
-  })
-  this.animation = animation; //将animation变量赋值给当前动画
-  var time1 = setTimeout(function () {
-   that.slideIn();//调用动画--滑入
-   clearTimeout(time1);
-   time1 = null;
-  }, 100)
-  },
+// showModal: function () {
+//   var that = this;
+//   that.setData({
+//    hideFlag: false
+//   })
+//   // 创建动画实例
+//   var animation = wx.createAnimation({
+//    duration: 400,//动画的持续时间
+//    timingFunction: 'ease',//动画的效果 默认值是linear->匀速，ease->动画以低速开始，然后加快，在结束前变慢
+//   })
+//   this.animation = animation; //将animation变量赋值给当前动画
+//   var time1 = setTimeout(function () {
+//    that.slideIn();//调用动画--滑入
+//    clearTimeout(time1);
+//    time1 = null;
+//   }, 100)
+//   },
    
   // 隐藏遮罩层
   hideModal: function () {
@@ -99,6 +99,7 @@ showModal: function () {
     })
 
   },
+  // 点击查询生物学年龄
   checkEpiageReport: function (e) {
     wx.showLoading({
       title: '加载中',
@@ -150,6 +151,12 @@ showModal: function () {
       }
     })
 
+  },
+  // 采样教程
+  checkTutorial:function(e){
+    wx.navigateTo({
+      url: '../report_epiage/tutorial',
+    })
   },
   /**
    * 生命周期函数--监听页面加载

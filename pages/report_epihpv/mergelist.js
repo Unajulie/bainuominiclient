@@ -4,7 +4,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        endate: new Date().toLocaleDateString().replace(new RegExp('/', 'g'), '-')
     },
     // 肝癌客户申请检测
     Mergeinfo: function (e) {

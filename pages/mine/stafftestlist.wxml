@@ -6,26 +6,26 @@
             <view style="width: 90%;height: auto;text-align: center; margin: 0 auto;color:#fff;font-family:hansans;">选择检测项目扫码绑定信息</view>
         </view>
     </view>
-    <view style="width: 90%;height: auto;margin:0 auto;margin-top: 30rpx;font-size: 50rpx; font-weight: 700; font-family:hansans;">绑定采样信息</view>
+    <view style="width: 90%;height: auto;margin:0 auto;margin-top: 30rpx;font-size: 46rpx; font-weight: 700; font-family:hansans;">绑定采样信息</view>
     <!-- 工作人员泛癌绑定信息 -->
-    <view style="width: 90%;height: auto;margin:0 auto;position: relative;margin-top: 10rpx;" bindtap="genericlogin">
-    <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/index0.jpg"></image>
+    <view style="width: 90%;height: 185rpx;margin:0 auto;position: relative;margin-top: 50rpx;border-radius: 25rpx; box-shadow: 2px 5px 10px 3px #e5e5e5;" bindtap="genericlogin">
+    <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/rep1.png"></image>
     <view style="width: 100%;height: auto;position: absolute;top: 50rpx;display: flex;flex-direction: column;">
     <view style="width: 50%;height: auto;margin: 0 auto;font-family:hansans;color: #4d4d4d;font-size: 36rpx;font-weight: 700;"> 泛癌信息绑定</view>
     <view style="width: 50%;height: auto;margin: 0 auto;color: #999999;">epiPanCancer</view> 
     </view>
 </view>
 <!-- 肝癌条码注册查询入口 -->
-<view style="width: 90%;height: auto;margin:0 auto;position: relative;margin-top: 10rpx;" bindtap="liverlogin">
-    <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/index2.jpg"></image>
+<view style="width: 90%;height: 185rpx;margin:0 auto;position: relative;margin-top: 50rpx;border-radius: 25rpx; box-shadow: 2px 5px 10px 3px #e5e5e5;" bindtap="liverlogin">
+    <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/rep2.png"></image>
     <view style="width: 100%;height: auto;position: absolute;top: 50rpx;display: flex;flex-direction: column;">
     <view style="width: 50%;height: auto;margin: 0 auto;font-family:hansans;color: #4d4d4d;font-size: 36rpx;font-weight: 700;"> 肝癌信息绑定</view>
     <view style="width: 50%;height: auto;margin: 0 auto;color: #999999;"> epiLiver</view> 
     </view>
 </view>
 <!-- 宫颈癌条码注册查询入口 -->
-<view style="width: 90%;height: auto;margin:0 auto;position: relative;margin:20rpx auto" bindtap="hpvlogin">
-    <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/index3.jpg"></image>
+<view style="width: 90%;height: 185rpx;margin:0 auto;position: relative;margin-top:50rpx;margin-bottom: 50rpx; border-radius: 25rpx; box-shadow: 2px 5px 10px 3px #e5e5e5;" bindtap="hpvlogin">
+    <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/rep3.png"></image>
     <view style="width: 100%;height: auto;position: absolute;top: 50rpx;display: flex;flex-direction: column;">
     <view style="width: 50%;height: auto;margin: 0 auto;font-family:hansans;color: #4d4d4d;font-size: 36rpx;font-weight: 700;"> 宫颈癌信息绑定</view>
     <view style="width: 50%;height: auto;margin: 0 auto;color: #999999;"> epiCervix</view> 

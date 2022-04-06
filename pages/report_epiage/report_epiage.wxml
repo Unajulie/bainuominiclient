@@ -5,7 +5,7 @@
     <view style="position: absolute;width: 100%;height: auto;top: 180rpx;flex: auto;">
       <view style="width: 100%;font-size: 46rpx;font-weight: 700;text-align: center;color: grey;">生物学年龄检测</view>
       <view style="width: 100%;height: 280rpx;"></view>
-      <view style="width: 100%;font-size: 50rpx;text-align: center;">条码绑定/报告查询</view>
+      <view style="width: 100%;font-size: 50rpx;text-align: center;">条码绑定/采样教程</view>
       <form bindsubmit='searchBox'>
         <view style="width: 100%;height: 100rpx;"></view>
         <view style="width: 100%;height: 110rpx;overflow: hidden;">
@@ -24,11 +24,12 @@
           <text class="privacy">*1个手机号只绑定一个人的条码，如需绑定多个人的条码，请输入不同姓名以区分报告！</text>
         </view>
         <button class="submit" bindtap="checkEpiageReport">绑定/查询</button>
-        <button class="history" bindtap="checkEpiageReport" bindtap="showModal">历史查询</button>
+        <button class="history" bindtap="checkTutorial" >采样教程</button>
+        <view style="width: 90%;margin: 0 auto;font-size: 24rpx;text-align: center;">条码绑定后，请在“我的报告”查看样本检测进度及报告</view>
+        <view style="width: 90%;margin: 0 auto;font-size: 24rpx;text-align: center;">请参考纸质说明或样本采集视频完成样本采集</view>
       </form>
       <!-- 历史barcode查询下滑入框开始 -->
-      <view class="wrap">
-        <!-- modal -->
+      <!-- <view class="wrap">
         <view class="modal modal-bottom-dialog" hidden="{{hideFlag}}">
           <view class="modal-cancel" bindtap="hideModal"></view>
           <view class="bottom-dialog-body bottom-positon" animation="{{animationData}}">
@@ -51,7 +52,7 @@
             </view>
           </view>
         </view>
-      </view>
+      </view> -->
       <!-- 下滑入框结束 -->
       <!-- <view style="width: 100%;height: 10px;"></view>
       <view wx:if="{{barcodebox.length>0}}" style="width: 100%;height: auto;">

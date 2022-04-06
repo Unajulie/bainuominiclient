@@ -18,8 +18,8 @@
     <!-- 我的报告 -->
   <navigator wx:if="{{mark=='staff'}}||{{mark=='undefined'}}"></navigator>
     <navigator wx:if="{{mark=='user'}}" url='../mine/myreport' >
-      <view style="width: 100%;height: auto;margin:0 auto;position: relative;margin-top: 10rpx;" >
-        <image mode='widthFix' style="width: 100%;height: auto;" src="https://bainuopdf.beijingepidial.com/img/mine1.jpg"></image>
+      <view style="width: 100%;height: 185rpx;position: relative;margin-top: 10rpx;margin-bottom: 40rpx;border-radius: 25rpx; box-shadow: 2px 5px 10px 3px #e5e5e5; " >
+        <image mode='widthFix' style="width: 100%;height: auto;" src="https://bainuopdf.beijingepidial.com/img/mine1.png"></image>
         <view style="width: 100%;height: auto;position: absolute;top: 50rpx;left: 50rpx; display: flex;flex-direction: column;">
           <view style="width: 50%;height: auto;margin: 0 auto;font-family:hansans;color: #4d4d4d;font-size: 36rpx;font-weight: 700;">我的报告</view>
           <view style="width: 50%;height: auto;margin: 0 auto;color: #999999;">My Report</view>
@@ -29,8 +29,8 @@
     <!-- 受检者信息登记记录 -->
     <navigator wx:if="{{mark=='user'||mark=='undefined'}}"></navigator>
       <navigator wx:if="{{mark=='staff'}}" url='../mine/stafftestlist'>
-      <view style="width: 100%;height: auto;margin:0 auto;position: relative;margin-top: 10rpx;" >
-        <image mode='widthFix' style="width: 100%;height: auto;" src="https://bainuopdf.beijingepidial.com/img/mine2.jpg"></image>
+      <view style="width: 100%;height: 185rpx;margin:0 auto;position: relative;margin-top: 10rpx;box-shadow: 2px 5px 10px 3px #e5e5e5;border-radius: 25rpx;" >
+        <image mode='widthFix' style="width: 100%;height: auto;" src="https://bainuopdf.beijingepidial.com/img/mine2.png"></image>
         <view style="width: 100%;height: auto;position: absolute;top: 50rpx;left: 50rpx; display: flex;flex-direction: column;">
           <view style="width: 50%;height: auto;margin: 0 auto;font-family:hansans;color: #4d4d4d;font-size: 36rpx;font-weight: 700;">受检者信息记录</view>
           <view style="width: 50%;height: auto;margin: 0 auto;color: #999999;">Test History</view>
@@ -40,9 +40,9 @@
         <!-- 受检者登陆 -->
     <navigator wx:if="{{mark=='user'}}||{{mark=='staff'}}"></navigator>
     <navigator wx:if="{{!login}}" url='../user/login'>
-      <view style="width: 100%;height: auto;margin:0 auto;position: relative;margin-top: 10rpx;" >
-        <image mode='widthFix' style="width: 100%;height: auto;" src="https://bainuopdf.beijingepidial.com/img/mine3.jpg"></image>
-        <view style="width: 100%;height: auto;position: absolute;top: 50rpx;left: 50rpx; display: flex;flex-direction: column;">
+      <view style="width: 100%;height: 185rpx;margin:0 auto;position: relative;margin-top: 10rpx;box-shadow: 2px 5px 10px 3px #e5e5e5;border-radius: 25rpx;" >
+        <image mode='widthFix' style="width: 100%;height: auto;" src="https://bainuopdf.beijingepidial.com/img/mine3.png"></image>
+        <view style="width: 100%;height: auto;position: absolute;top: 70rpx;left: 50rpx; display: flex;flex-direction: column;">
           <view style="width: 50%;height: auto;margin: 0 auto;font-family:hansans;color: #4d4d4d;font-size: 36rpx;font-weight: 700;">受检者登陆</view>
           <view style="width: 50%;height: auto;margin: 0 auto;color: #999999;">Subject login</view>
         </view>
@@ -51,8 +51,8 @@
         <!-- 工作人员登陆 -->
     <navigator wx:if="{{mark=='staff'}}||{{mark=='user'}}"></navigator>
     <navigator  wx:if="{{!login}}" url='../user/stafflogin'>
-      <view style="width: 100%;height: auto;margin:0 auto;position: relative;margin-top: 10rpx;" >
-        <image mode='widthFix' style="width: 100%;height: auto;" src="https://bainuopdf.beijingepidial.com/img/mine4.jpg"></image>
+      <view style="width: 100%;height: 185rpx;margin:0 auto;position: relative;margin-top: 40rpx;box-shadow: 2px 5px 10px 3px #e5e5e5;border-radius: 25rpx;" >
+        <image mode='widthFix' style="width: 100%;height: auto;" src="https://bainuopdf.beijingepidial.com/img/mine4.png"></image>
         <view style="width: 100%;height: auto;position: absolute;top: 50rpx;left: 50rpx; display: flex;flex-direction: column;">
           <view style="width: 50%;height: auto;margin: 0 auto;font-family:hansans;color: #4d4d4d;font-size: 36rpx;font-weight: 700;">工作人员登陆</view>
           <view style="width: 50%;height: auto;margin: 0 auto;color: #999999;">Staff login</view>

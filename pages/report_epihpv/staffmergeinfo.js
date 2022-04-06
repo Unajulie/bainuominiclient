@@ -97,6 +97,8 @@ Page({
     },
     //绑定选择的结算类型
     bitselect_paymethod: function (e) {
+        console.info(e)
+        console.info(this.data.payarray[e.detail.value])
         if (e.detail.value) {
             this.setData({
                 paymethod: e.detail.value

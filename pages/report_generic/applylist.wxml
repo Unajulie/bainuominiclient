@@ -23,7 +23,7 @@
             <image style="width: 30%;height: auto;margin-left: 20%;margin-top: 50rpx;" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index/center4.png"></image>
         </view>
     </view> -->
-    <view wx:else style="width: 90%;height: 150rpx;margin:0 auto;position: relative;border-radius: 15rpx; margin-top: 100rpx; box-shadow:0px 2px 4px 2px #DDDDDD;" bindtap="applyTest">
+    <view wx:else style="width: 90%;height: 150rpx;margin:0 auto;position: relative;border-radius: 25rpx; margin-top: 100rpx; box-shadow:2px 2px 4px 2px #e5e5e5;" bindtap="applyTest">
         <image style="width: 100%;height: 100%;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/applygenericbar.png"></image>
         <view style="width: 100%;height: auto;position: absolute;top: 50rpx;display: flex;flex-direction: column;">
             <view style="width: 50%;height: auto;margin: 0 auto;font-family:hansans;font-size: 40rpx;font-weight: 700;">泛癌检测申请</view>

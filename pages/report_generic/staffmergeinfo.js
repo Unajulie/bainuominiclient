@@ -100,11 +100,10 @@ Page({
     },
     //绑定选择的结算类型
     bitselect_paymethod: function (e) {
-        console.info(e)
-        console.info(this.data.payarray[e.detail.value])
         if (e.detail.value) {
             this.setData({
-                paymethod: e.detail.value
+                paymethod: e.detail.value,
+                // paymethod:this.data.payarray[e.detail.value] 该处可获得下拉框的具体选中的值，而不是下标
             })
         }
     },
@@ -261,7 +260,7 @@ Page({
                             } else if (res.data.status == "notexist") {
                                 wx.showToast({
                                     title: '样本号已被使用或不存在',
-                                    icon: 'error',
+                                    icon: 'none',
                                     duration: 2000
                                 })
                             }
@@ -292,6 +291,7 @@ Page({
             method: "POST",
             data: data,
             complete: function (res) {
+                console.info(res)
                 that.setData({
                     mergedinfolist: res.data,
                     sampleid: res.data.sampleid,
@@ -434,9 +434,6 @@ Page({
                             salesarray: saledata,
                             payarray: paydata
                         })
-                        console.info(that.data.spotarray)
-                        console.info(that.data.salesarray)
-                        console.info(that.data.payarray)
                     }
                 })
             },

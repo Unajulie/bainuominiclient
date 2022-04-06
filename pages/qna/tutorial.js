@@ -1,4 +1,4 @@
-// pages/epiage/fgpwd.js
+// pages/qna/tutorial.js
 Page({
 
     /**

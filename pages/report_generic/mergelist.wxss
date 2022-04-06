@@ -1,1 +1,7 @@
-/* pages/report_generic/mergelist.wxss */
+.main-scroll{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 680rpx;
+    bottom: 50rpx;
+  }

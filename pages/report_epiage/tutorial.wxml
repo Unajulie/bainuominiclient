@@ -1,0 +1,13 @@
+<view style="width: 100%;height: auto;">
+    <view style="width: 95%;margin: 0 auto;margin-top: 100rpx;margin-bottom: 30rpx; font-size: 38rpx;font-weight: 600;">生物学年龄检测，唾液采集操作视频
+    </view>
+    <video id="myVideo" src="https://bainuopdf.beijingepidial.com/videos/epiage-saliva-collection-tutorial.mp4" binderror="videoErrorCallback" show-center-play-btn='{{true}}' show-play-btn="{{true}}" style="width: 100%;height: 500rpx; align-self: center;"></video>
+    <view style="width: 95%;margin: 0 auto;">
+        <view style="width: 100%;height: auto;font-size: 34rpx;font-weight: 600;margin-top: 20rpx;margin-bottom: 20rpx;">1.根据以上视频完成唾液采样后，请返回到生物学年龄“条码绑定”页面，通过扫码或输入条形码编号绑定条码。</view>
+        <view style="width: 100%;height: auto; font-size: 34rpx;font-weight: 600;margin-top: 20rpx;margin-bottom: 20rpx;">2.样本回寄地址为: </view>
+            <view>电话：<text selectable="true">+86-0755-86546563</text></view>
+            <view>邮箱：<text selectable="true">info@epi-age.com</text></view>
+            <view>邮寄地址：<text selectable="true">深圳市南山区松坪山路1号源兴科技大厦南座2层202室</text></view>
+       
+    </view>
+</view>
