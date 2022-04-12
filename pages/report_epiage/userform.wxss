@@ -1,4 +1,15 @@
 /* pages/service/service.wxss */
+.privacy{
+  width: 100%;
+  font-size: 24rpx;
+  color: red;
+  text-align: center;
+}
+#check-contain{
+  width: 88%;
+  height: 100%;
+  margin: 0 auto;
+}
 .phcolor{
   color: #6ae2c3;
   font-size: 30rpx;

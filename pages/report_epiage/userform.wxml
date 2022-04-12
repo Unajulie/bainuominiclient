@@ -5,10 +5,12 @@
       <view style="width: 100%;font-size: 46rpx;font-weight: 700;text-align: center;color: grey;">生物学年龄检测</view>
     <view style="width: 100%;height: 280rpx;"></view>
     <view style="width: 100%;font-size: 50rpx;text-align: center;">用户信息登记表</view>
-    <view style="width: 100%;height: 100rpx;"></view>
+    <view id="check-contain">
+          <text class="privacy">提示：1个手机号只绑定一个人的条码，如需绑定多个人的条码，请输入不同姓名以区分报告！</text>
     </view>
-    <view>
-      <view style="position: absolute; width: 100%;height: auto;top: 550rpx;flex: auto;">
+    <view style="width: 100%;height: 200rpx;"></view>
+    </view>
+      <view style="position: absolute; width: 100%;height: auto;top: 630rpx;flex: auto;">
         <view style="width: 80%;height: auto;margin: 0 auto;">
           <view style="width: 90%;height: auto;margin:20px auto;">
             <view>
@@ -93,5 +95,5 @@
           </view>
         </view>
       </view>
-    </view>
+  
   </view>

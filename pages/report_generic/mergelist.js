@@ -17,6 +17,20 @@ Page({
             },
         })
     },
+    // 获取输入的姓名
+    searchName: function (e) {
+        console.info(e)
+        this.setData({
+            username: e.detail.value
+        })
+    },
+    // 获取输入的样本编号
+    searchSampleid: function (e) {
+        console.info(e)
+        this.setData({
+            sampleid: e.detail.value
+        })
+    },
     // 选择开始时间
     selStartdate: function (e) {
         this.setData({
@@ -31,28 +45,22 @@ Page({
     },
     search: function (e) {
         let that = this
+        let username = that.data.username
+        let sampleid = that.data.sampleid
         let startime = that.data.startdate
         let totime = that.data.tilldate
-        console.info(startime)
-        console.info(totime)
-        if (!totime||!startime|| totime < startime) {
-            wx.showToast({
-                title: '时间段无效',
-                icon: 'error',
-                duration: 2000
-            })
-            this.setData({
-                startdate: "",
-                tilldate: ""
-            })
-        } else {
+        console.info(username)
+        console.info(sampleid)
+        if (username || sampleid || startime || totime) {
             wx.getStorage({
                 key: 'sessionuser',
                 success: function (sessionuser) {
                     let data = {}
-                    data.startdate = that.data.startdate
-                    data.tilldate = that.data.tilldate
-                    data.stafftel=sessionuser.data.phone
+                    data.stafftel = sessionuser.data.phone
+                    data.startdate = that.data.startdate?that.data.startdate:''
+                    data.tilldate = that.data.tilldate?that.data.tilldate:''
+                    data.username = that.data.username?that.data.username:''
+                    data.sampleid = that.data.sampleid?that.data.sampleid:''
                     wx.request({
                         url: "https://bainuo.beijingepidial.com/client/generic/mergedlist/search",
                         header: {
@@ -61,19 +69,44 @@ Page({
                         method: "POST",
                         data: data,
                         complete: function (res) {
-                            that.setData({
-                                searchedlist:res.data.rows
-                            })
+                            console.info(res)
+                            if (res.data.total == 0) {
+                                wx.showToast({
+                                    title: '无符合条件结果',
+                                    icon: 'error',
+                                    duration: 2000
+                                })
+                                that.setData({
+                                    searchedlist: res.data.rows
+                                })
+                            } else {
+                                that.setData({
+                                    searchedlist: res.data.rows
+                                })
+                            }
                         }
                     })
                 },
-                fail:function(res){
+                fail: function (res) {
                     wx.navigateTo({
-                      url: "../user/stafflogin"
+                        url: "../user/stafflogin"
                     })
-                  }
+                }
             })
+
         }
+        // if (!totime||!startime|| totime < startime) {
+        //     wx.showToast({
+        //         title: '时间段无效',
+        //         icon: 'error',
+        //         duration: 2000
+        //     })
+        //     this.setData({
+        //         startdate: "",
+        //         tilldate: ""
+        //     })
+        // }
+
     },
     // 工作人员泛癌已绑定列表查看已绑定信息
     getMergedinfo: function (e) {
@@ -135,8 +168,7 @@ Page({
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
-    onShow: function () {
-    }
+    onShow: function () {}
 
 
 })
