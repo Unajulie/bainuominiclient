@@ -76,44 +76,7 @@ Page({
     })   
   },
  
-    // 问卷点击查询注册条码
-    survey:function(e){
-      wx.getStorage({
-        key:'sessionuser',
-        success:function (res) {
-          wx.request({
-            url: "https://bainuo.beijingepidial.com/client/surveypermit/search",
-            header: {
-              "Content-Type": "application/x-www-form-urlencoded"
-            },
-            method: "POST",
-            data: {
-              "tel":res.data.phone
-            },
-            complete: function (res) {
-              console.info("返回的信息")
-              console.info(res)
-            if(res.data.status=="success"){
-              wx.navigateTo({
-                url: "/pages/ques/generic_ques"
-              })
-            }else{
-              wx.showToast({
-                title: '请先体验检测并绑定信息',
-                icon: 'none',
-                duration: 2000
-            })
-            }
-          }
-          })
-        },
-        fail:function(res){
-          wx.navigateTo({
-            url: "../user/login"
-          })
-        }
-      })   
-    },
+  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

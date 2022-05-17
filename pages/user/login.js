@@ -35,8 +35,10 @@ Page({
         })
       },
       inputPhone:function(e){
-        console.info(e.detail.value)
-        this.setData({phone: e.detail.value}) 
+        var phone = e.currentTarget.dataset.name;
+        this.setData({
+          [phone]: e.detail.value.replace(/\s+/g, '')
+        })
       },
       userPwd:function(e){
         console.info(e.detail.value)
@@ -53,7 +55,7 @@ Page({
         }else if (!(/^1[3456789]\d{9}$/.test(this.data.phone))) {
             wx.showToast({
                 title: '手机号格式错误',
-                icon: 'error',
+                icon: 'none',
                 duration: 2000
             })
         }else if(!this.data.pwd){
@@ -98,7 +100,7 @@ Page({
                }else{
                 wx.showToast({
                     title: '账号或密码有误',
-                    icon: 'error',
+                    icon: 'none',
                     duration: 2000
                 })
                }

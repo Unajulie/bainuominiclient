@@ -250,10 +250,7 @@ Page({
                                     phone: "",
                                     sampleid: "",
                                     username: "",
-                                    colldate: "",
                                     paymethod: "",
-                                    saleval: "",
-                                    spotval: "",
                                     identity: "",
                                     staffnote: ""
                                 })

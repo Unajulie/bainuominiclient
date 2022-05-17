@@ -1,0 +1,81 @@
+<view class="question-con">
+    <view class="line">
+        <view class="active" style="width:{{activeWidth}}rpx;background-color: #37C2BC;"></view>
+    </view>
+    <view class='qs-con'>
+        <swiper class='sheet' current='{{curId}}'>
+            <block wx:for="{{read==true?questions:questions2}}" wx:key="id" wx:for-index="i">
+                <swiper-item catchtouchmove="forbid">
+                    <view class="title">{{item.question}}</view>
+                    <!-- 单选页面 -->
+                    <view class="option-con" wx:if="{{item.type===2}}">
+                        <block wx:for="{{item.options}}" wx:for-item="option">
+                            <view class="option {{survey_result[i-1].value===option.id?'select-active':''}}" bindtap="handleSelect" data-question="{{item.question}}" data-id="{{item.id}}" data-value="{{option.id}}" data-index="{{i-1}}" data-options="{{item.options}}" data-text="{{option.text}}">
+                                {{option.text}}
+                            </view>
+                        </block>
+                    </view>
+                    <!-- 单选页面 -->
+                    <view wx:elif="{{item.type===1}}">
+                        <input data-id="{{item.id}}" data-question="{{item.question}}" data-index="{{i}}" data-text="{{option.text}}" placeholder="{{item.placeholder}}" data-options="{{item.options}}" class="range" type="number" placeholder-style="color:#C7C7C7;font-size:36rpx;" bindinput="handleInput" />
+                    </view>
+                    <!-- 介绍页面 -->
+                    <view wx:elif="{{item.type===3}}">
+                        <view style="font-size: 30rpx;line-height: 50rpx;font-weight: 600; margin-top: 30rpx;">
+                            <text space="emsp"> 非常感谢您对我们公司与产品的信任与支持。为了优化我们的报告系统，给您提供更满意的体验和更优质的服务，需要花费您几分钟的时间参与到此次产品的满意度调查。\n 请如实填写，我们想了解您的看法与感受，并获得您的宝贵意见和建议，这对于我们精进产品和服务很重要！</text>
+                        </view>
+                    </view>
+
+                    <view wx:elif="{{item.type===7}}">
+                        <view style="font-size: 30rpx;line-height: 50rpx;font-weight: 600; margin-top: 30rpx;">
+                            <text space="emsp"> 该指南参考了来自Nature、Cell、柳叶刀和新英格兰医学期刊等国际顶级学术杂志上发表的最新权威研究，旨在去除传统的生活习惯的陈弊，让读者从防癌的视角重新审视生活的点滴，以期作为您全新的生活实践指南针。强烈建议您不要放弃这次阅读机会，请务必深入学习!</text>
+                        </view>
+                    </view>
+                    <!-- 多选加填写 -->
+                    <view class="option-con" wx:elif="{{item.type===4}}">
+                        <block wx:for="{{item.options}}" wx:for-item="option" wx:for-index="id">
+                            <view data-optionid="{{id}}" data-isselected="{{(survey_result[i-1].options==undefined ||survey_result[i-1].options[id].isselected==false) ?false:survey_result[i-1].options[id].isselected }}" class="option {{(survey_result[i-1].options==undefined ||survey_result[i-1].options[id].isselected==false) ?'':'select-active'}}" data-question="{{item.question}}" data-id="{{item.id}}" data-value="{{option.id}}" data-text="{{option.text}}" data-index="{{i-1}}" data-options="{{item.options}}" bindtap="handleMultiSelect">
+                                {{option.text}}
+                            </view>
+                            <view style="width: 100%;height: 100rpx;" wx:if="{{id==item.options.length-1}}">
+                                <input placeholder="欢迎您展开说明需要改进的地方" data-index="{{i-1}}" data-question="{{item.question}}" data-id="{{i-1}}" data-options="{{item.options}}" value="{{item.inputval}}" bindinput="handleInput" type="text" style="border-bottom: 1px solid #2aabd2;height: 100rpx;outline-color:2aabd2;border-bottom:1rpx solid 2aabd2;color:#2aabd2;" placeholder-style="color:#C7C7C7;font-size:36rpx;" />
+                            </view>
+                        </block>
+                    </view>
+                    <!-- 单选加填写 -->
+                    <view class="option-con" wx:if="{{item.type===5}}">
+                        <block wx:for="{{item.options}}" wx:for-item="option" wx:for-index="id">
+                            <view data-optionid="{{id}}" data-isselected="{{(survey_result[i-1].options==undefined ||survey_result[i-1].options[id].isselected==false) ?false:survey_result[i-1].options[id].isselected }}" class="option {{(survey_result[i-1].options==undefined ||survey_result[i-1].options[id].isselected==false) ?'':'select-active'}}" data-question="{{item.question}}" data-id="{{item.id}}" data-value="{{option.id}}" data-text="{{option.text}}" data-index="{{i-1}}" data-options="{{item.options}}" bindtap="handleSinSelect">
+                                {{option.text}}
+                            </view>
+                            <view style="width: 100%;height: 100rpx;" wx:if="{{id==item.options.length-1}}">
+                                <input placeholder="欢迎您展开说明" data-index="{{i-1}}" data-question="{{item.question}}" data-id="{{i-1}}" data-options="{{item.options}}" value="{{item.inputval}}" bindinput="handlesinInput" type="text" style="border-bottom: 1px solid #2aabd2;height: 100rpx;outline-color:2aabd2;border-bottom:1rpx solid 2aabd2;color:#2aabd2;" placeholder-style="color:#C7C7C7;font-size:36rpx;" />
+                            </view>
+                        </block>
+                    </view>
+                    <!-- 仅填写 -->
+          
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <view class='button-group'>
+        <block wx:if="{{curId==0}}">
+            <view class='button' hover-class='none' bindtap='handleStart' disabled='{{curId==0}}' style="margin-left:30%;margin-bottom: 20%;">
+                开始问卷
+            </view>
+        </block>
+        <block wx:else>
+            <view class='button' hover-class='none' bindtap='handleLast' disabled='{{curId==0}}'>
+                上一题
+            </view>
+
+            <view wx:if="{{curId<count-1}}" class='button' hover-class='none' form-type='submit' bindtap='handleNext'>
+                下一题
+            </view>
+            <view wx:else class='button' hover-class='none' form-type='submit' bindtap='submitQues'>
+                提交
+            </view>
+        </block>
+    </view>
+</view>

@@ -13,10 +13,10 @@
           <!-- 通过姓名筛选，采集日期，样本编号 -->
           <view style="width: 100%;;display:flex;flex-direction: column;">
             <view style="border-bottom: 1rpx solid #b3b3b3;height: 70rpx;line-height: 70rpx; font-size: 32rpx; display: flex;flex-direction: row;">
-                姓名：<input type="text" value="" bindchange="searchName" style="height: 70rpx;line-height: 70rpx;" />
+                姓名：<input type="text" value="" bindchange="searchName" style="width: 60%; height: 70rpx;line-height: 70rpx;" />
             </view>
             <view style="border-bottom: 1rpx solid #b3b3b3;height: 70rpx;line-height: 70rpx; font-size: 32rpx; display: flex;flex-direction: row;">
-                样本编号：<input type="text" value="" bindchange="searchSampleid" style="height: 70rpx;line-height: 70rpx;" />
+                样本编号：<input type="text" value="" bindchange="searchSampleid" style="width: 60%;height: 70rpx;line-height: 70rpx;" />
             </view>
         </view>
         <!-- 通过时间段筛选栏 -->

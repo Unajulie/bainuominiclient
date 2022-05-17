@@ -9,7 +9,7 @@
                         </image>
                     </view>
                     <view style="width: 300px;height: auto;">
-                        <input style="width:100%;height: 45px;border-bottom: solid 1px #b8b8b8;font-size: 40rpspx;color: #b8b8b8" type="text" placeholder="工作人员账号" placeholder-class="phcolor" bindinput="inputPhone" />
+                        <input style="width:100%;height: 45px;border-bottom: solid 1px #b8b8b8;font-size: 40rpx;" type="text" placeholder="工作人员账号" placeholder-class="phcolor" bindinput="inputPhone" data-name='phone' value='{{phone}}' name="phone"/>
                     </view>
                 </view>
 
@@ -23,10 +23,10 @@
                             <input style="width: 100%;height: 45px;border-bottom: solid 1px #b8b8b8;font-size: 40rpx;" password='{{passwordType}}' placeholder="请输入密码" placeholder-class="phcolor" bindinput="userPwd" />
 
                         </view>
-                        <view style="position:relative ;z-index: 9999;">
-                            <image style="width: 20px;position:absolute; top:20px ;right:20px" mode="widthFix" src="../../img/eye02.png" bindtap="seeTap" wx:if="{{show_pass}}">
+                        <view style="position:relative ;z-index: 9999; width:100rpx;height: auto;border-bottom: solid 1px #b8b8b8;">
+                            <image style="width: 50rpx;height: 100rpx;position:absolute; top:25rpx ;right:20px" mode="widthFix" src="../../img/eye02.png" bindtap="seeTap" wx:if="{{show_pass}}">
                             </image>
-                            <image style="width: 20px;position:absolute; top:20px ;right:20px" mode="widthFix" src="../../img/eye01.png" bindtap="seeTap" wx:else></image>
+                            <image style="width: 50rpx;height: 100rpx;position:absolute; top:40rpx ;right:20px" mode="widthFix" src="../../img/eye01.png" bindtap="seeTap" wx:else></image>
                         </view>
                     </view>
                 </view>

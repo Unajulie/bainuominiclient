@@ -1,8 +1,14 @@
 {
-  "pages": [
+    "pages": [
+    "pages/mine/mine",
+    "pages/index/epidial",
+    "pages/survey/guide_survey",
     "pages/report/report",
-    "pages/mine/stafftestlist",
+    "pages/report_epihpv/mergelist",
+    "pages/report_epiliver/mergelist",
     "pages/report_generic/mergelist",
+    "pages/report_generic/staffmergeinfo",
+    "pages/mine/stafftestlist",
     "pages/report_epiage/userform",
     "pages/mine/contact",
     "pages/mine/qna",
@@ -10,12 +16,8 @@
     "pages/index/index",
     "pages/report_epiage/report_epiage",
     "pages/report_epiage/tutorial",
-    "pages/mine/mine",
-    "pages/report_generic/staffmergeinfo",
     "pages/report_epiliver/staffmergeinfo",
     "pages/report_epihpv/staffmergeinfo",
-    "pages/report_epihpv/mergelist",
-    "pages/report_epiliver/mergelist",
     "pages/report_generic/generic_status",
     "pages/photo/photo",
     "pages/report_generic/report_generic",
@@ -31,6 +33,7 @@
     "pages/user/login",
     "pages/user/stafflogin",
     "pages/ques/generic_ques",
+    
     "pages/report_epiliver/userform",
     "pages/agreement/epiage",
     "pages/agreement/hpv",
@@ -38,7 +41,6 @@
     "pages/report_generic/userform",
     "pages/report_epihpv/report_epihpv",
     "pages/report_epiliver/report_liverstatus",
-    
     "pages/report_epiage/reportlist",
     "pages/report_epihpv/userform",
     "pages/report_epiliver/report_epiliver",

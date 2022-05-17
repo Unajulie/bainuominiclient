@@ -35,8 +35,10 @@ Page({
         })
       },
       inputPhone:function(e){
-        console.info(e.detail.value)
-        this.setData({phone: e.detail.value}) 
+        var phone = e.currentTarget.dataset.name;
+        this.setData({
+          [phone]: e.detail.value.replace(/\s+/g, '')
+        })
       },
       userPwd:function(e){
         console.info(e.detail.value)

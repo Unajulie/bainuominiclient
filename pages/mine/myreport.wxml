@@ -13,7 +13,7 @@
         <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/myrep1.png"></image>
         <view style="width: 100%;height: auto;position: absolute;top: 50rpx;display: flex;flex-direction: column;">
             <view style="width: 80%;height: auto;margin: 0 auto;font-family:hansans;color: #4d4d4d;font-size: 36rpx;font-weight: 700;"> 泛癌报告</view>
-            <view style="width: 80%;height: auto;margin: 0 auto;color: #999999;"> epi-PanCancer</view>
+            <view style="width: 80%;height: auto;margin: 0 auto;color: #999999;">epiPanCancer</view>
         </view>
     </view>
     <!-- 肝癌报告查看 -->

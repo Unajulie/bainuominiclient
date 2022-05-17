@@ -1,0 +1,5 @@
+<web-view src="https://mp.weixin.qq.com/s/onmr5yg2pFvAfe546UeIvA">
+    <view style="width: 90%; height: auto;margin: 0 auto;margin-top: 30rpx;margin-bottom: 50rpx;">
+      <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/epidial.png"></image>
+    </view>
+</web-view>

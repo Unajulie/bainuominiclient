@@ -40,7 +40,7 @@ Page({
         console.info(e)
         var that = this;
         // 只允许从相机扫码
-        if(e.currentTarget.dataset.disable==false){
+        if (e.currentTarget.dataset.disable == false) {
             wx.scanCode({
                 onlyFromCamera: true,
                 success(res) {
@@ -50,44 +50,44 @@ Page({
                     });
                 }
             })
-        }else{
+        } else {
             console.info("不可扫描")
         }
-       
+
     },
     //相机扫扫描获取客户信息二维码
     scanUserCode: function (e) {
         var oThis = this;
         // 只允许从相机扫码
-        if(e.currentTarget.dataset.disable==false){
-        wx.scanCode({
-            onlyFromCamera: true,
-            success(res) {
-                console.log(res)
-                let data = {}
-                data.qrid = res.result
-                wx.request({
-                    url: "https://bainuo.beijingepidial.com/client/generic/checkqrinfo",
-                    header: {
-                        "Content-Type": "application/x-www-form-urlencoded"
-                    },
-                    method: "POST",
-                    data: data,
-                    complete: function (res) {
-                        oThis.setData({
-                            username: res.data.username,
-                            sexval: res.data.sex,
-                            identity: res.data.idCard,
-                            phone: res.data.phone,
-                            age: res.data.age
-                        })
-                    }
-                })
-            }
-        })
-    }else{
-        console.info("不能扫描")
-    }
+        if (e.currentTarget.dataset.disable == false) {
+            wx.scanCode({
+                onlyFromCamera: true,
+                success(res) {
+                    console.log(res)
+                    let data = {}
+                    data.qrid = res.result
+                    wx.request({
+                        url: "https://bainuo.beijingepidial.com/client/generic/checkqrinfo",
+                        header: {
+                            "Content-Type": "application/x-www-form-urlencoded"
+                        },
+                        method: "POST",
+                        data: data,
+                        complete: function (res) {
+                            oThis.setData({
+                                username: res.data.username,
+                                sexval: res.data.sex,
+                                identity: res.data.idCard,
+                                phone: res.data.phone,
+                                age: res.data.age
+                            })
+                        }
+                    })
+                }
+            })
+        } else {
+            console.info("不能扫描")
+        }
     },
     //绑定输入的样本采集日期
     bitselect_colldate: function (e) {
@@ -118,6 +118,7 @@ Page({
     },
     //绑定选择的销售
     bitselect_sale: function (e) {
+        console.info(e)
         if (e.detail.value) {
             this.setData({
                 saleval: e.detail.value
@@ -249,10 +250,7 @@ Page({
                                     phone: "",
                                     sampleid: "",
                                     username: "",
-                                    colldate: "",
                                     paymethod: "",
-                                    saleval: "",
-                                    spotval: "",
                                     identity: "",
                                     staffnote: ""
                                 })
@@ -313,42 +311,42 @@ Page({
     uploadall: function (e) {
         let that = this
         let samplelist = []
-        if(that.data.mergedlist==0){
+        if (that.data.mergedlist == 0) {
             wx.showToast({
                 title: '请绑定采样信息',
                 icon: 'error',
                 duration: 2000
             })
-        }else{
-        for (var i = 0; i < that.data.mergedlist.length; i++) {
-            that.data.mergedlist[i].sampleid
-            samplelist.push(that.data.mergedlist[i].sampleid)
-        }
-        wx.request({
-            url: "https://bainuo.beijingepidial.com/client/generic/markmergedinfo",
-            header: {
-                "Content-Type": "application/x-www-form-urlencoded"
-            },
-            method: "POST",
-            data: samplelist,
-            complete: function (res) {
-                for (var i = 0; i < res.data.length; i++) {
-                    if (res.data[i].sampleid && res.data[i].disable == 1) {
-                        that.setData({
-                            textdisable: 1
-                        })
-                    }
-                }
-                wx.showToast({
-                    title: '批量上传成功',
-                    icon: 'error',
-                    duration: 2000
-                })
-                that.onLoad()
+        } else {
+            for (var i = 0; i < that.data.mergedlist.length; i++) {
+                that.data.mergedlist[i].sampleid
+                samplelist.push(that.data.mergedlist[i].sampleid)
             }
-        })
-       
-    }
+            wx.request({
+                url: "https://bainuo.beijingepidial.com/client/generic/markmergedinfo",
+                header: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                },
+                method: "POST",
+                data: samplelist,
+                complete: function (res) {
+                    for (var i = 0; i < res.data.length; i++) {
+                        if (res.data[i].sampleid && res.data[i].disable == 1) {
+                            that.setData({
+                                textdisable: 1
+                            })
+                        }
+                    }
+                    wx.showToast({
+                        title: '批量上传成功',
+                        icon: 'error',
+                        duration: 2000
+                    })
+                    that.onLoad()
+                }
+            })
+
+        }
     },
     onLoad: function (options) {
         // 判断进来该页面时有无options或带sampleid进来，有则是已有客户信息展示，无则是新增绑定
@@ -391,6 +389,7 @@ Page({
         wx.getStorage({
             key: 'sessionuser',
             success: function (res) {
+                console.info(res)
                 let data = {}
                 data.stafftel = res.data.phone
                 wx.request({
@@ -426,8 +425,8 @@ Page({
                             saledata.push(res.data.sales[j].salesname)
                         }
                         for (var k = 0; k < res.data.pays.length; k++) {
-                                paydata.push(res.data.pays[k].payname)
-                            }
+                            paydata.push(res.data.pays[k].payname)
+                        }
 
                         that.setData({
                             spotarray: spotdata,
@@ -446,14 +445,6 @@ Page({
     onReady: function () {
 
     },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-
-    },
-
     /**
      * 生命周期函数--监听页面隐藏
      */
