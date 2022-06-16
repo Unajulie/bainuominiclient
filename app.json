@@ -1,9 +1,10 @@
 {
     "pages": [
+    "pages/report/report",
+    "pages/mine/age_accelerator",
     "pages/mine/mine",
     "pages/index/epidial",
     "pages/survey/guide_survey",
-    "pages/report/report",
     "pages/report_epihpv/mergelist",
     "pages/report_epiliver/mergelist",
     "pages/report_generic/mergelist",
@@ -33,7 +34,6 @@
     "pages/user/login",
     "pages/user/stafflogin",
     "pages/ques/generic_ques",
-    
     "pages/report_epiliver/userform",
     "pages/agreement/epiage",
     "pages/agreement/hpv",

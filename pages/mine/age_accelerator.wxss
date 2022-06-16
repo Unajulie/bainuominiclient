@@ -1,0 +1,37 @@
+.section__title{
+   font-size: 34rpx;
+   font-weight: 600;
+   text-align: center;
+   margin-top: 30rpx;
+}
+.body-view{
+    width: 100%;
+    height: 160rpx;
+}
+.slider_value{
+    font-size: 60rpx;
+    font-weight: 700;
+    height: 30rpx;
+}
+.description{
+    width: 90%;
+    margin: 0 auto;
+    height: auto;
+    font-size: 34rpx;
+    background-color: #e9f7e6;
+    margin-top: 50rpx;
+    padding: 10rpx;
+}
+.result{
+    width: 90%;
+    margin: 0 auto;
+    font-size: 40rpx;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 50rpx;
+}
+.val{
+font-size: 50rpx;
+font-weight: 600;
+color: #1aad19;
+}

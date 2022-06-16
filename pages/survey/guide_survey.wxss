@@ -90,6 +90,19 @@ page {
     line-height: 88rpx;
     height: 88rpx;
     width: 172rpx;
+    /* width: 100%; */
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+}
+.buttonstar{
+    background: #37C2BC;
+    border-radius: 8rpx;
+    font-size: 32rpx;
+    line-height: 88rpx;
+    height: 88rpx;
+    /* width: 172rpx; */
+    width: 100%;
     font-weight: bold;
     text-align: center;
     color: #fff;

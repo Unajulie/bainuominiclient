@@ -49,27 +49,27 @@ Page({
                 type: 3
             },
             {
-                question: '1.阅读防癌健康生活指南后您觉得哪些因素影响了您的阅读体验？(多选)',
+                question: '1.阅读防癌健康生活指南什么因素最影响您的阅读体验？(多选)',
                 type: 4,
                 id: 0,
                 inputval: "",
                 options: [{
-                        id: 2,
-                        text: '想下载指南详细阅读但不知道在哪下载',
+                        id: 0,
+                        text: '想下载指南但不知道在哪下载',
                         isselected: false
                     },
                     {
-                        id: 3,
+                        id: 1,
                         text: '字体太小，太模糊看不清',
                         isselected: false
                     },
                     {
-                        id: 4,
-                        text: '没有问题',
+                        id: 2,
+                        text: '篇幅太冗长',
                         isselected: false
                     },
                     {
-                        id: 5,
+                        id: 3,
                         text: '其他问题',
                         isselected: false
                     },
@@ -81,12 +81,12 @@ Page({
                 id: 1,
                 inputval: "",
                 options: [{
-                        id: 6,
+                        id: 4,
                         text: '篇幅很长',
                         isselected: false
                     },
                     {
-                        id: 7,
+                        id: 5,
                         text: '篇幅合适',
                         isselected: false
                     },
@@ -98,17 +98,17 @@ Page({
                 id: 2,
                 inputval: "",
                 options: [{
-                        id: 8,
+                        id: 6,
                         text: '完全没有了解过，改变了我的认知',
                         isselected: false
                     },
                     {
-                        id: 9,
+                        id: 7,
                         text: '有些知识了解过，大多数没听说过',
                         isselected: false
                     },
                     {
-                        id: 10,
+                        id: 8,
                         text: '绝大多数知识了解过，少数不知道',
                         isselected: false
                     },
@@ -120,22 +120,22 @@ Page({
                 id: 3,
                 inputval: "",
                 options: [{
+                        id: 9,
+                        text: '饮食建议中的《防癌健康饮食建议表》',
+                        isselected: false
+                    },
+                    {
+                        id: 10,
+                        text: '运动建议中的运动强度量化标准 ',
+                        isselected: false
+                    },
+                    {
                         id: 11,
-                        text: '饮食建议中的《防癌健康饮食建议表》对预防癌症非常有用',
+                        text: '心里情绪和癌症发生相关的内容',
                         isselected: false
                     },
                     {
                         id: 12,
-                        text: '运动建议中的运动强度量化标准对指导防癌运动非常有用 ',
-                        isselected: false
-                    },
-                    {
-                        id: 13,
-                        text: '心里情绪和癌症发生相关的内容对预防癌症非常有用',
-                        isselected: false
-                    },
-                    {
-                        id: 14,
                         text: '其他内容',
                         isselected: false
                     },
@@ -147,12 +147,12 @@ Page({
                 id: 4,
                 inputval: "",
                 options: [{
-                        id: 15,
+                        id: 13,
                         text: '我会部分按照防癌健康生活指南更改生活习惯',
                         isselected: false
                     },
                     {
-                        id: 16,
+                        id: 14,
                         text: '我会再评估一下指南能给我的生活带来的变化 ',
                         isselected: false
                     },
@@ -165,27 +165,22 @@ Page({
                 id: 5,
                 inputval: "",
                 options: [{
-                        id: 17,
+                        id: 15,
                         text: '会给他们看，但是仅仅给他们展示一下',
                         isselected: false
                     },
                     {
-                        id: 24,
-                        text: '一般 ',
-                        isselected: false
-                    },
-                    {
-                        id: 18,
+                        id: 16,
                         text: '会给他们看，并且也建议他们按照指南调整生活习惯',
                         isselected: false
                     },
                     {
-                        id: 19,
-                        text: '暂时还未分享',
+                        id: 17,
+                        text: '不会分享',
                         isselected: false
                     },
                     {
-                        id: 20,
+                        id: 18,
                         text: '已经分享过了',
                         isselected: false
                     },
@@ -193,38 +188,38 @@ Page({
             },
             {
                 question: '7.报告中呈现的文字内容是否有您不理解的地方？',
-                type: 4,
+                type: 5,
                 id: 6,
                 inputval: "",
                 options: [{
-                        id: 21,
+                        id: 19,
                         text: '没有',
                         isselected: false
                     },
                     {
-                        id: 22,
+                        id: 20,
                         text: '有 ',
                         isselected: false
                     },
                 ]
             },
             {
-                question: '8.报告中呈现的文字内容是否有您不理解的地方？',
+                question: '8.您觉得针对M值低风险人群的防癌健康生活建议是否有可参考性，以及您是否会参照建议尝试改变生活习惯？',
                 type: 2,
                 id: 7,
                 inputval: "",
                 options: [{
-                        id: 23,
+                        id: 21,
                         text: '很有参考性，会按照建议改变',
                         isselected: false
                     },
                     {
-                        id: 24,
+                        id: 22,
                         text: '很有参考性，但是总体难以改变',
                         isselected: false
                     },
                     {
-                        id: 25,
+                        id: 23,
                         text: '没有参考性，也不会尝试改变',
                         isselected: false
                     },
@@ -236,12 +231,12 @@ Page({
                 id: 8,
                 inputval: "",
                 options: [{
-                        id: 26,
+                        id: 24,
                         text: '很长，希望能够缩短检测周期',
                         isselected: false
                     },
                     {
-                        id: 27,
+                        id: 25,
                         text: '不算很长，能够接受',
                         isselected: false
                     },
@@ -253,12 +248,12 @@ Page({
                 id: 9,
                 inputval: "",
                 options: [{
-                        id: 28,
+                        id: 26,
                         text: '没有',
                         isselected: false
                     },
                     {
-                        id: 29,
+                        id: 27,
                         text: '有',
                         isselected: false
                     },
@@ -270,22 +265,22 @@ Page({
                 id: 10,
                 inputval: "",
                 options: [{
-                        id: 30,
+                        id: 28,
                         text: '非常满意',
                         isselected: false
                     },
                     {
-                        id: 31,
+                        id: 29,
                         text: '满意',
                         isselected: false
                     },
                     {
-                        id: 32,
+                        id: 30,
                         text: '普通',
                         isselected: false
                     },
                     {
-                        id: 33,
+                        id: 31,
                         text: '非常不满意',
                         isselected: false
                     },
@@ -297,12 +292,12 @@ Page({
                 id: 11,
                 inputval: "",
                 options: [{
-                        id: 34,
+                        id: 32,
                         text: '会',
                         isselected: false
                     },
                     {
-                        id: 35,
+                        id: 33,
                         text: '不会',
                         isselected: false
                     },
@@ -314,12 +309,12 @@ Page({
                 id: 12,
                 inputval: "",
                 options: [{
-                        id: 36,
+                        id: 34,
                         text: '不需要',
                         isselected: false
                     },
                     {
-                        id: 37,
+                        id: 35,
                         text: '需要',
                         isselected: false
                     },
@@ -341,22 +336,22 @@ Page({
             },
             {
                 question: '1.您没有仔细阅读防癌健康生活指南的原因是？',
-                type: 2,
+                type: 4,
                 id: 0,
                 inputval: "",
                 options: [{
                         id: 0,
-                        text: '不知道在哪里领取防癌健康生活指南',
+                        text: '不知道在哪里领取指南',
                         isselected: false
                     },
                     {
                         id: 1,
-                        text: '防癌健康生活指南内容太多，且主要内容不突出，没耐心看',
+                        text: '指南内容太多，且主要内容不突出，没耐心看',
                         isselected: false
                     },
                     {
                         id: 2,
-                        text: '防癌健康生活指南内容字太小看不清',
+                        text: '指南内容字太小看不清',
                         isselected: false
                     },
                     {
@@ -575,6 +570,7 @@ Page({
             index,
             value,
             options,
+            isselected,
             text
         } = e.currentTarget.dataset
         console.info(options)
@@ -583,9 +579,17 @@ Page({
             question,
             value,
             text,
+            isselected,
             options
         })
-        this.data.survey_result[id].inputval = ""
+   
+        if (this.data.read == true) {
+            this.data.survey_result[id].inputval = this.data.questions[id].inputval
+
+        } else {
+            this.data.survey_result[id].inputval = this.data.questions2[id].inputval
+        }
+        // this.data.survey_result[id].inputval = ""
         let survey_result = this.data.survey_result
         this.setData({
             survey_result
@@ -605,18 +609,21 @@ Page({
             isselected
         } = e.currentTarget.dataset
         let options = this.data.survey_result[id].options ? this.data.survey_result[id].options : e.currentTarget.dataset.options
-
         //控制单选框中只有最后一个选中的才能被选中， 其他的都变成不选中状态
         options[optionid].isselected = (isselected == false ? true : false)
-        for (let i = 0; i < options.length; i++) {
-            console.info(i)
-            if (options[optionid].isselected == true) {
-                console.info(options[i].isselected)
-                options[i].isselected == false
-                return
-            }
-        }
-  
+
+        // for (let i = 0; i < options.length; i++) {
+        //     if (options[optionid].isselected==true) {
+        //         options[i + 1].isselected == false
+        //         console.info(options[i + 1].isselected)
+        //         options[optionid].isselected == options[i + 1].isselected
+        //     } else {
+        //         options[i - 1].isselected = false
+        //         console.info(options[i-1 ].isselected)
+        //         options[optionid].isselected == options[i - 1].isselected
+              
+        //     }
+        // }
         this.data.survey_result.splice(index, 1, {
             id,
             question,
@@ -625,11 +632,11 @@ Page({
             value,
             text
         })
-        if (this.data.read==true) {
+        if (this.data.read == true) {
             this.data.survey_result[id].inputval = this.data.questions[id].inputval
-        
-        }else{
-            this.data.survey_result[id].inputval=this.data.questions2[id].inputval
+
+        } else {
+            this.data.survey_result[id].inputval = this.data.questions2[id].inputval
         }
         let survey_result = this.data.survey_result
         this.setData({
@@ -645,7 +652,7 @@ Page({
             question
         } = e.currentTarget.dataset
         let options = this.data.survey_result[id].options ? this.data.survey_result[id].options : e.currentTarget.dataset.options
-        console.info(options)
+        // console.info(options)
         options.splice(options.length - 1, 1)
         options[options.length] = {
             id: options.length + 1,
@@ -687,9 +694,9 @@ Page({
             value,
             text
         })
-        if (this.data.read==true) {
+        if (this.data.read == true) {
             this.data.survey_result[id].inputval = this.data.questions[id].inputval
-        }else{
+        } else {
             this.data.survey_result[id].inputval = this.data.questions2[id].inputval
         }
         let survey_result = this.data.survey_result
@@ -698,7 +705,7 @@ Page({
         })
         console.info(survey_result)
     },
-    //用户填写
+    //多选加填写
     handleInput(e) {
         console.info(e.detail.value)
         let {
@@ -782,6 +789,7 @@ Page({
     forbid() {
         return false
     },
+    // 提交问卷
     submitQues() {
         let oThis = this
         wx.getStorage({
