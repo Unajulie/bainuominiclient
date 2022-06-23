@@ -80,7 +80,7 @@
       </view>
     </navigator>
     <navigator url='../mine/contact'>
-      <view style="width: 90%;height: 120rpx;margin:0 auto;border-bottom:1rpx solid #cdcdcd;">
+      <view style="width: 90%;height: 120rpx;margin:0 auto;border-bottom:1rpx solid #cdcdcd;margin-bottom: 50rpx;">
         <view style="width: 20%;height: 120rpx;float: left;">
           <image mode='widthFix' lazy-load="true" style="width: 60%;height: 100rpx;margin-top: 20rpx;border-radius: 100rpx;" src='https://bainuopdf.beijingepidial.com/img/center3s.jpg'></image>
         </view>
@@ -90,6 +90,5 @@
         </view>
       </view>
     </navigator>
-
   </view>
 </view>

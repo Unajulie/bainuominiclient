@@ -1,6 +1,7 @@
 {
     "pages": [
     "pages/report/report",
+    "pages/report/epiagechart",
     "pages/mine/age_accelerator",
     "pages/mine/mine",
     "pages/index/epidial",
@@ -103,5 +104,11 @@
     "color": "#cdcdcd",
     "selectedColor": "#000000"
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+    "plugins": {
+      "echarts": {
+        "version": "2.1.1",
+        "provider": "wx1db9e5ab1149ea03"
+      }
+    }
 }

@@ -1,29 +1,33 @@
-<view class="section section_gap">
-    <view class="description">请在下方的滑块上选择您的实际年龄，计算您所在年龄组的平均生物学年龄(EpiAge)</view>
-    <view class="section__title">您的实际年龄*:{{inpchroage}}</view>
+<view style="background-color: #efefef;width: 100%;height: 100%;">
     <view style="width: 100%;height: 50rpx;"></view>
-    <view class="body-view">
-        <slider class="slider_value" bindchange="expepiage" min="0" max="120" show-value block-color="#1aad19" />
-    </view>
-    <view bindchange="expepiage" class="result">您的预期生物学年龄：<text class="val">{{expepiageval}}</text> </view>
-</view>
-<view style="width: 100%;height: 30rpx;background-color: grey;"></view>
-<view class="section section_gap">
-    <view class="description">请在下方的滑块上选择你的生物学年龄(EpiAge)结果，与跟你有相同生物学年龄结果的人的平均年龄进行比较</view>
-    <view class="section__title">您的生物学年龄*:{{inpepiage}}</view>
-    <view style="width: 100%;height: 50rpx;"></view>
-    <view class="body-view">
-        <slider class="slider_value" bindchange="expchroage" min="0" max="120" show-value block-color="#1aad19" block-size="28" />
-    </view>
-    <view bindchange="expchroage" class="result">您的预期实际年龄：<text class="val">{{expchroageval}}</text> </view>
-</view>
-<view style="width: 100%;height: 30rpx;background-color: grey;"></view>
-<view class="section section_gap">
-    <view class="description">请在上面的滑块上选择您的生物学年龄结果和实际年龄，以计算您的生物学年龄加速度</view>
-    <view style="width: 100%;height: 50rpx;"></view>
-
-    <!-- <view wx:if="{{expepiageval!=0}}&&{{expchroageval!=0}}"></view> -->
-
-        <view class="result">您的生物学年龄加速度为：<text class="val">{{epiageaccelerateval}}</text> </view>
+    <view class="outer">
+        <view class="description">请在下方的滑块上选择您的实际年龄，计算您所在年龄组的平均生物学年龄(EpiAge)</view>
+        <view class="section__title">您的实际年龄*:{{inpchroage}}</view>
         <view style="width: 100%;height: 50rpx;"></view>
+        <view class="body-view">
+            <slider class="slider_value" bindchange="expepiage" min="0" max="120" activeColor="#6ae1c3" show-value block-color="#6ae1c3" />
+        </view>
+        <view bindchange="expepiage" class="result">您的预期生物学年龄：<text class="val">{{expepiageval}}</text> </view>
+    </view>
+
+    <view class="outer">
+        <view class="description">请在下方的滑块上选择你的生物学年龄(EpiAge)结果，与跟你有相同生物学年龄结果的人的平均年龄进行比较</view>
+        <view class="section__title">您的生物学年龄*:{{inpepiage}}</view>
+        <view style="width: 100%;height: 50rpx;"></view>
+        <view class="body-view">
+            <slider class="slider_value" bindchange="expchroage" min="0" max="120" activeColor="#6ae1c3" show-value block-color="#6ae1c3" block-size="28" />
+        </view>
+        <view bindchange="expchroage" class="result">您的预期实际年龄：<text class="val">{{expchroageval}}</text> </view>
+    </view>
+
+    <view class="outer-last">
+        <view class="description">请在上面的滑块上选择您的生物学年龄结果和实际年龄，以计算您的生物学年龄加速度</view>
+        <view style="width: 100%;height: 50rpx;"></view>
+
+        <!-- <view wx:if="{{expepiageval!=0}}&&{{expchroageval!=0}}"></view> -->
+
+        <view class="result">您的生物学年龄加速度为：</view>
+        <view style="font-size: 70rpx;font-weight: 700;font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;color: #6ae1c3;text-align: center;">{{epiageaccelerateval}}</view>
+    </view>
+    <view style="width: 100%;height: 50rpx;"></view>
 </view>

@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "chart": "plugin://echarts/chart"
+    },
+    "navigationBarTitleText": "生物学年龄计算器"
+  }
+  
+  

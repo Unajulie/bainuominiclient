@@ -61,7 +61,7 @@ Page({
     // 去计算生物学年龄
     gotocalculator:function(e){
         wx.navigateTo({
-            url: "../mine/age_accelerator"
+            url: "../report/epiagechart"
           })
     },
   // 生物学年龄点击查询注册条码

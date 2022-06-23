@@ -56,7 +56,12 @@
             </view>
         </view>
     </view>
-    <view style="width: 100%;height: 100rpx;"></view>
-    <view bindtap="gotocalculator" style="width: 90%;height: 100rpx;font-size: 32rpx;font-weight: 600; text-align: center;text-decoration: underline;">计算您的预期生物学年龄/年龄加速度</view>
-
+    <view bindtap="gotocalculator" style="width: 100%;height: 170rpx;position: relative;margin-top: 50rpx; border-radius: 50rpx;">
+        <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/calculator.jpg">
+    </image>
+    <view style="width: 100%;height: auto;position: absolute;top: 80rpx;left: 120rpx; display: flex;flex-direction: column;">
+        <view style="width: 100%;height: auto;margin: 0 auto;font-family:hansans;color: #4d4d4d;font-size: 32rpx;font-weight: 700;"> 计算您的预期生物学年龄/年龄加速度</view>
+            </view>
+       
+    </view>
 </view>
