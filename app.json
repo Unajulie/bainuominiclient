@@ -1,5 +1,6 @@
 {
     "pages": [
+    "pages/report/suggest",
     "pages/report/report",
     "pages/report/epiagechart",
     "pages/mine/age_accelerator",
