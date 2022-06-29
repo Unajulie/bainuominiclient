@@ -14,7 +14,7 @@ Page({
         success:function (res) {
           console.log('s:' + res.data)
           wx.navigateTo({
-            url: "../report_generic/mergelist"
+            url: "../../packageA/pages/report_generic/mergelist"
           })
         },
       })
@@ -26,7 +26,7 @@ Page({
         success:function (res) {
           console.log('s:' + res.data)
           wx.navigateTo({
-            url: "../report_epiliver/mergelist"
+            url: "../../packageA/pages/report_epiliver/mergelist"
           })
         },
       })
@@ -38,7 +38,7 @@ Page({
         success:function (res) {
           console.log('s:' + res.data)
           wx.navigateTo({
-            url: "../report_epiage/report_epiage"
+            url: "../../packageB/pages/report_epiage/report_epiage"
           })
         },
         fail:function(res){
@@ -55,7 +55,7 @@ Page({
         success:function (res) {
           console.log('s:' + res.data)
           wx.navigateTo({
-            url: "../report_epihpv/mergelist"
+            url: "../../packageB/pages/report_epihpv/mergelist"
           })
         },
       })   

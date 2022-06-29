@@ -11,22 +11,22 @@
     <view style="width: 100%; height: auto;margin-top: 50rpx;font-weight: bold;font-size: 36rpx;">产品推荐</view>
     <!-- 泛癌介绍按钮 -->
     <view style="width: 100%; height:auto;margin-top: 40rpx;background-color: white;border-radius: 30rpx;">
-      <navigator url="/pages/intro/intro-generic" hover-class="none">
+      <navigator url="../../packageB/pages/intro/intro-generic" hover-class="none">
         <image style="width: 100%; height: auto;margin-top: 25rpx;" lazy-load="true" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/more1.jpg"></image>
       </navigator>
     </view>
     <view style="width: 100%; height:auto;margin-top: 40rpx;background-color: white;border-radius: 30rpx;">
-      <navigator url="/pages/intro/intro-epiliver" hover-class="none">
+      <navigator url="../../packageB/pages/intro/intro-epiliver" hover-class="none">
         <image style="width: 100%; height: auto;margin-top: 25rpx;" lazy-load="true" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/more2.jpg"></image>
       </navigator>
     </view>
     <view style="width: 100%; height:auto;margin-top: 40rpx;background-color: white;border-radius: 30rpx;">
-      <navigator url="/pages/intro/intro-epihpv" hover-class="none">
+      <navigator url="../../packageB/pages/intro/intro-epihpv" hover-class="none">
         <image style="width: 100%; height: auto;margin-top: 25rpx;" lazy-load="true" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/more3.jpg"></image>
       </navigator>
     </view>
     <view style="width: 100%; height:auto;margin-top: 40rpx;background-color: white;border-radius: 30rpx;">
-      <navigator url="/pages/intro/intro-epiage" hover-class="none">
+      <navigator url="../../packageB/pages/intro/intro-epiage" hover-class="none">
         <image style="width: 100%; height: auto;margin-top: 25rpx;" lazy-load="true" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/more4.jpg"></image>
         <view style="width: 100%;height: 100rpx;display: flex;flex-direction: row;float:right;">
           <view style="width: 40%;height: 100rpx;"></view>

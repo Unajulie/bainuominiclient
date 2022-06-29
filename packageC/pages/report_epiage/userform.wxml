@@ -1,0 +1,99 @@
+
+  <view style="width: 100%;height: 100%; position:absolute">
+    <image src="https://bainuopdf.beijingepidial.com/img/03age.jpg"style="width: 100%;height: auto;" mode="widthFix" ></image>
+    <view style="position: absolute;width: 100%;height: auto;top: 180rpx;flex: auto;">
+      <view style="width: 100%;font-size: 46rpx;font-weight: 700;text-align: center;color: grey;">生物学年龄检测</view>
+    <view style="width: 100%;height: 280rpx;"></view>
+    <view style="width: 100%;font-size: 50rpx;text-align: center;">用户信息登记表</view>
+    <view id="check-contain">
+          <text class="privacy">提示：1个手机号只绑定一个人的条码，如需绑定多个人的条码，请输入不同姓名以区分报告！</text>
+    </view>
+    <view style="width: 100%;height: 200rpx;"></view>
+    </view>
+      <view style="position: absolute; width: 100%;height: auto;top: 630rpx;flex: auto;">
+        <view style="width: 80%;height: auto;margin: 0 auto;">
+          <view style="width: 90%;height: auto;margin:20px auto;">
+            <view>
+            <!-- 姓名 -->
+              <view view style="display: flex;width: 100%;border-bottom: solid 1px #6ae2c3;">
+                <view style="width: 30px;height: 45px;position: relative;">
+                  <image style="width: 18px;height: 45px;position: absolute;top: 15px;right: 5px;" mode="widthFix"
+                    src="https://bainuopdf.beijingepidial.com/img%2Finfo-user.jpg">
+                  </image>
+                </view>
+                <view style="width: 300px;height: auto;">
+                  <input disabled="{{usernameDisable}}" style="width: 100%;height: 45px;font-size: 15px;" type="text" placeholder="姓名"
+                  value="{{username}}" bindinput='bininput_name' placeholder-class="phcolor" />
+                </view>
+              </view>
+            </view>
+            <view>
+            <!-- 电话号码 -->
+              <view view style="display: flex;width: 100%;border-bottom: solid 1px #6ae2c3;">
+                <view style="width: 60rpx;height: 60rpx;position: relative;">
+                  <image style="width: 30rpx;height: 30rpx;position: absolute;top: 20rpx;right: 15rpx;" mode="widthFix"
+                    src="https://bainuopdf.beijingepidial.com/img%2Finfo-phone.jpg">
+                  </image>
+                </view>
+                <view style="width: 300px;height: auto;">
+                  <input disabled="{{phoneDisable}}"style="width: 100%;height: 45px;font-size: 15px;" type="number" value="{{phone}}" bindinput='bininput_mobile' placeholder="手机号码"
+                     placeholder-class="phcolor" />
+                </view>
+              </view>
+            </view>
+<!-- 身份证 -->
+            <view view style="display: flex;width: 100%;border-bottom: solid 1px #6ae2c3;">
+              <view style="width: 60rpx;height: 60rpx;position: relative;">
+                <image style="width: 40rpx;height: 60rpx;position: absolute;top: 15px;right: 5px;" mode="widthFix"
+                  src="https://bainuopdf.beijingepidial.com/img%2Finfo-idcard.jpg">
+                </image>
+              </view>
+              <view style="width: 300px;height: auto;">
+                <input disabled="{{identityDisable}}"style="width: 100%;height: 45px;font-size: 15px;"  type="idcard" 
+             value="{{identity}}" 
+          bindinput='bininput_identity' auto-focus="true" placeholder="身份证（选填）" placeholder-class="phcolor" />
+              </view>
+            </view>
+            <!-- 条形码 -->
+            <view view style="display: flex;width: 100%;border-bottom: solid 1px #6ae2c3;">
+              <view style="width: 60rpx;height: 60rpx;position: relative;">
+                <image style="width: 40rpx;height: 60rpx;position: absolute;top: 15px;right: 5px;" mode="widthFix"
+                  src="https://bainuopdf.beijingepidial.com/img%2Finfo-barcode.jpg">
+                </image>
+              </view>
+              <view style="width: 300px;height: auto;">
+                <input disabled="{{true}}" disabled="true" style="width: 100%;height: 45px;font-size: 15px;" type="text" value="{{sampleid}}" placeholder="样本编号"
+                  placeholder-class="phcolor" bindinput="cmpwdIn" />
+              </view>
+            </view>
+             <!-- 样本采集日期 -->
+             <view view style="display: flex;width: 100%;border-bottom: solid 1px #6ae2c3;">
+                <view style="width: 60rpx;height: 60rpx;position: relative;">
+                  <image style="width: 40rpx;height: 60rpx;position: absolute;top: 15px;right: 15rpx;" mode="widthFix"
+                    src="https://bainuopdf.beijingepidial.com/img%2Fdate.png">
+                  </image>
+                </view>
+                <view style="width: 300px;height: auto;">
+                  <picker disabled="{{colldateDisable}}" mode="date"  value="{{collectiondate}}" start="2018-01-01" end="{{endate}}" bindchange='bininput_collectiondate'>
+                  <input disabled="{{colldateDisable}}"style="width: 100%;height: 100rpx;font-size: 15px;" type="date" disabled="true" auto-focus="true" value="{{collectiondate}}" placeholder="样本采集日期" placeholder-class="phcolor" bindchange='bininput_collectiondate'/>
+                    </picker>
+                </view>
+              </view>
+            <view view style="display: flex;width: 100%;">
+              <view style="width: 100%;height: auto;line-height: 100rpx; display: flex;">
+                <radio name="agreement" value="agree" checked="{{checked}}" bindtap="checkedTap" />
+                <navigator url="../../../packageB/pages/agreement/epiage" hover-class="none">
+                  <view style="font-size:25rpx ;height: 100rpx;line-height: 100rpx;color: #797979;">同意并接受条款</view>
+                </navigator>
+              </view>
+            </view>
+            <view style="width: 100%; height: auto;margin-top: 50rpx;">
+              <button bindtap="btnckreport"
+                style="margin: 0 auto ;width: 70%;color: white;text-align: center;line-height: 45px;font-size: 43rpx; border-radius:15rpx;background: #6ae2c3;box-shadow: 0px 5px 10px 3px #D1D1D1;">
+                查询报告</button>
+            </view>
+          </view>
+        </view>
+      </view>
+  
+  </view>

@@ -1,0 +1,9 @@
+.container{
+    padding: 0;
+    top: 50rpx;
+  }
+  .echart_panel{
+    width:100%;      /* 宽高自行设置 */
+    height: 900rpx;
+  }
+  

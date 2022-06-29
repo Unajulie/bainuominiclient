@@ -14,7 +14,7 @@ Page({
       success: function (res) {
         console.log('s:' + res.data)
         wx.navigateTo({
-          url: "../report_generic/report_generic"
+          url: "../../packageA/pages/report_generic/report_generic"
         })
       },
       fail: function (res) {
@@ -31,7 +31,7 @@ Page({
       success: function (res) {
         console.log('s:' + res.data)
         wx.navigateTo({
-          url: "../report_epiliver/report_epiliver"
+          url: "../../packageA/pages/report_epiliver/report_epiliver"
         })
       },
       fail: function (res) {
@@ -48,7 +48,7 @@ Page({
       success: function (res) {
         console.log('s:' + res.data)
         wx.navigateTo({
-          url: "../report_epihpv/report_epihpv"
+          url: "../../packageB/pages/report_epihpv/report_epihpv"
         })
       },
       fail: function (res) {
@@ -65,7 +65,7 @@ Page({
         success: function (res) {
           console.log('s:' + res.data)
           wx.navigateTo({
-            url: "../report_epiage/reportlist"
+            url: "../../packageC/pages/report_epiage/report_epiage"
           })
         },
         fail: function (res) {

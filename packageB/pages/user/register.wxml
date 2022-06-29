@@ -1,0 +1,65 @@
+<view style="width:100%;height: 100%;margin-bottom: 100rpx;">
+    <view style="position: absolute; width: 100%;height: auto;top: 180px;flex: auto;margin-bottom: 100rpx;">
+        <view style="width: 80%;height: auto;margin: 0 auto;border: 1px solid white;background-color: white;border-radius: 10px;box-shadow: 0px 5px 10px 3px #D1D1D1;">
+            <view style="width: 90%;height: auto;margin:20px auto;">
+                <view style="display: flex;width: 100%;border-bottom: solid 1px #cecece;">
+                    <view style="width: 30px;height: 45px;position: relative;">
+                        <image mage style="width: 18px;height: 45px;position: absolute;top: 15px;right: 5px;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/phone.png">
+                        </image>
+                    </view>
+                    <view style="width: 300px;height: auto;display:flex;">
+                        <input style="width:100%;height: 45px;;font-size: 30rpx;" type="text" placeholder="请输入电话号码" placeholder-class="phcolor" bindinput="phoneInput" />
+                        <view><button disabled="{{disabled}}" bindtap="btnclic" style="height: 60rpx;width: 200rpx;background: {{color}};line-height: 60rpx;font-size: 28rpx;color: white;">{{msg}}</button>
+                        </view>
+                    </view>
+                </view>
+                <view view style="display: flex;width: 100%;border-bottom: solid 1px #cecece;margin-top: 25rpx;">
+                    <view style="width: 30px;height: 45px;position: relative;">
+                        <image style="width: 18px;height: 45px;position: absolute;top: 15px;right: 5px;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/user02.png">
+                        </image>
+                    </view>
+                    <view style="width: 300px;height: auto;">
+                        <input style="width: 100%;height: 45px;font-size: 30rpx;" type="text" placeholder="用户名" bindinput="userIn" placeholder-class="phcolor" />
+                    </view>
+                </view>
+                <view>
+                    <view view style="display: flex;width: 100%;border-bottom: solid 1px #cecece;margin-top: 25rpx">
+                        <view style="width: 30px;height: 45px;position: relative;">
+                            <image style="width: 18px;height: 45px;position: absolute;top: 15px;right: 5px;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/check.png">
+                            </image>
+                        </view>
+                        <view style="width: 300px;height: auto;">
+                            <input style="width: 100%;height: 45px;font-size: 30rpx;" type="number" placeholder="验证码" bindinput="vdcodeIn" placeholder-class="phcolor" />
+                        </view>
+                    </view>
+                </view>
+                <!-- 第一次密码 -->
+                <view view style="display: flex;width: 100%;border-bottom: solid 1px #cecece;margin-top: 25rpx">
+                    <view style="width: 30px;height: 45px;position: relative;">
+                        <image style="width: 18px;height: 45px;position: absolute;top: 15px;right: 5px;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/lock01.png">
+                        </image>
+                    </view>
+                    <view style="width: 300px;height: auto;">
+                        <input style="width: 100%;height: 45px;font-size: 30rpx;" type="password" placeholder="请输入6到12位密码" placeholder-class="phcolor" bindblur="vdpwd" bindinput="passwordInput" />
+                    </view>
+                </view>
+                <!-- 确认密码 -->
+                <view view style="display: flex;width: 100%;border-bottom: solid 1px #cecece;margin-top: 25rpx">
+                    <view style="width: 30px;height: 45px;position: relative;">
+                        <image style="width: 18px;height: 45px;position: absolute;top: 15px;right: 5px;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/lock01.png">
+                        </image>
+                    </view>
+                    <view style="width: 300px;height: auto;">
+                        <input style="width: 100%;height: 45px;font-size: 30rpx;" type="password" placeholder="确认密码" placeholder-class="phcolor" bindinput="cmpwdIn" />
+                    </view>
+                </view>
+                <!-- 注册按钮 -->
+                <view style="width: 100%; height: auto;margin-top: 20px;margin-bottom: 50rpx;">
+                    <button disabled="{{enablereg}}" bindtap="btnreg" style="margin: 0 auto ;width: 80%;color: white;text-align: center;line-height: 45px;border-radius: 5px;background: {{regcolor}};">
+                        注册</button>
+                </view>
+            </view>
+
+        </view>
+    </view>
+</view>

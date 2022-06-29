@@ -1,0 +1,94 @@
+<!--pages/report/suggest.wxml-->
+<wxs module="filters" src="../../../utils/addmul.wxs"></wxs>
+<view style="width: 100%;height: auto;display: flex;flex-direction: column;">
+    <view style="width: 100%;height:auto;display: flex;flex-direction: column;background: -webkit-linear-gradient(left,#edf8ec,#fbecee);">
+        <view style="width: 95%;height: auto;margin:0 auto;border: 1px white solid;border-radius: 10rpx;background: white;display: flex;flex-direction: column;margin: 20rpx;">
+            <view style="width: 80%;height: 60rpx;margin:0 auto;margin-top: 40rpx;text-align: center;font-size: 40rpx;color: rgb(44, 44, 44);">请输入您的日历年龄</view>
+            <view style="width: 80%;height: 70rpx;margin:0 auto;margin-top: 20rpx;display: flex;flex-direction: row;">
+                <view style="width: 10%;height: 70rpx;border: 8rpx #f2f2f2 solid;border-radius: 50% 0 0 50%;border-right: none;"></view>
+                <view style="width: 90%;height: 70rpx;border: 8rpx #f2f2f2 solid;border-left: none;border-right: none;text-align: center;line-height: 70rpx;font-weight: 700;color: rgb(186, 187, 187);"><input type="number" bindinput='bininput_chroage' value="{{inpchroage}}" style="width: 100%;height: 50rpx; font-size: 40rpx;margin-top:10rpx" /></view>
+                <view style="width: 10%;height: 70rpx;border: 8rpx #f2f2f2 solid;border-radius: 0 50% 50% 0;border-left: none;"></view>
+            </view>
+            <view style="width: 80%;height: 60rpx;margin:0 auto;margin-top: 40rpx;margin-bottom: 20rpx;text-align: center;font-size: 38rpx;color: rgb(44, 44, 44);font-weight: 700;">请输入您的生物学年龄检查结果:</view>
+            <view style="width: 80%;height: 70rpx;margin:0 auto;display: flex;flex-direction: row;">
+                <view style="width: 10%;height: 70rpx;border: 8rpx #92eacd solid;border-radius: 50% 0 0 50%;border-right: none;"></view>
+                <view style="width: 90%;height: 70rpx;border: 8rpx #92eacd solid;border-left: none;border-right: none;text-align: center;line-height: 70rpx;font-weight: 700;color: rgb(186, 187, 187);"><input type="number" bindinput='bininput_epiage' value="{{inpepiage}}" style="width: 100%;height: 50rpx; font-size: 40rpx;margin-top:10rpx" /></view>
+                <view style="width: 10%;height: 70rpx;border: 8rpx #92eacd solid;border-radius: 0 50% 50% 0;border-left: none;"></view>
+            </view>
+            <view style="width: 80%;height: 70rpx;margin:0 auto;display: flex;flex-direction: row;margin-top: 80rpx;">
+                <view style="width: 10%;height: 70rpx;background: #b7edd9;border: 8rpx #b7edd9 solid;border-radius: 50% 0 0 50%;border-right: none;"></view>
+                <view bindtap="genchart" style="width: 90%;height: 70rpx;background: #b7edd9;border: 8rpx #b7edd9 solid;border-left: none;border-right: none;text-align: center;line-height: 70rpx;font-weight: 700;color: rgb(101, 102, 102);">确定</view>
+                <view style="width: 10%;height: 70rpx;background: #b7edd9;border: 8rpx #b7edd9 solid;border-radius: 0 50% 50% 0;border-left: none;"></view>
+            </view>
+            <view style="width: 80%;height: 60rpx;margin:0 auto;margin-top: 20rpx;margin-bottom: 20rpx;text-align: center;font-size: 28rpx;color: rgb(172, 171, 171);">点击确定即可生成图表</view>
+        </view>
+        <view style="width: 95%;height: auto;margin:0 auto;border: 1px white solid;border-radius: 10rpx;background: white;margin-top: 20rpx;margin-bottom: 40rpx;">
+            <!-- 图表位置 -->
+            <!-- <view class="container">
+                <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"force-use-old-canvas="true"></ec-canvas>
+            </view> -->
+            <view class="container">
+                <ec-canvas id="mychart-radar" canvas-id="mychart-radar" ec="{{ ec }}" class="radarmap">
+                </ec-canvas>
+            </view>
+            <view style="width: 100%;height: 30px;margin-top: 40rpx;line-height: 30px;text-align: center;font-size: 38rpx;color: rgb(44, 44, 44);font-weight: 700;">您的生物学年龄为：</view>
+            <!-- <view style="width: 60%;height: 70rpx;margin:0 auto;display: flex;flex-direction: row;margin-top: 20rpx;">
+                <view style="width: 10%;height: 70rpx;background: #fff3fa;border: 8rpx #fff3fa solid;border-radius: 50% 0 0 50%;border-right: none;"></view>
+                <view style="width: 90%;height: 70rpx;background: #fff3fa;border: 8rpx #fff3fa solid;border-left: none;border-right: none;text-align: center;line-height: 70rpx;font-weight: 700;color:#edabc9;">{{inpepiage}}</view>
+                <view style="width: 10%;height: 70rpx;background: #fff3fa;border: 8rpx #fff3fa solid;border-radius: 0 50% 50% 0;border-left: none;"></view>
+            </view> -->
+            <view style="width: 60%;height: 70rpx;margin:0 auto;display: flex;flex-direction: row;margin-top: 40rpx;">
+                <view style="width: 10%;height: 70rpx;background: #ebfff8;border: 8rpx #ebfff8 solid;border-radius: 50% 0 0 50%;border-right: none;"></view>
+                <view style="width: 90%;height: 70rpx;background: #ebfff8;border: 8rpx #ebfff8 solid;border-left: none;border-right: none;text-align: center;line-height: 70rpx;font-weight: 700;color:#6ae2c3;">{{inpepiage}}</view>
+                <view style="width: 10%;height: 70rpx;background: #ebfff8;border: 8rpx #ebfff8 solid;border-radius: 0 50% 50% 0;border-left: none;"></view>
+            </view>
+            <view style="width: 100%;height: 30px;;margin-top: 40rpx;line-height: 30px;text-align: center;font-size: 28rpx;color: rgb(172, 171, 171);">在函数线下方为绿色，在函数线上为粉色</view>
+            <view style="width: 100%;height: 30px;;line-height: 30px;text-align: center;font-size: 38rpx;color: rgb(44, 44, 44);font-weight: 700;">相同日历年龄人群预期生物学年龄为：</view>
+            <view style="width: 60%;height: 70rpx;margin:0 auto;display: flex;flex-direction: row;margin-top: 20rpx;">
+                <view style="width: 10%;height: 70rpx;background: #f2f3f4;border: 8rpx #f2f3f4 solid;border-radius: 50% 0 0 50%;border-right: none;"></view>
+                <view style="width: 90%;height: 70rpx;background: #f2f3f4;border: 8rpx #f2f3f4 solid;border-left: none;border-right: none;text-align: center;line-height: 70rpx;font-weight: 700;color:#9db2ed;">{{expepiageval}}</view>
+                <view style="width: 10%;height: 70rpx;background: #f2f3f4;border: 8rpx #f2f3f4 solid;border-radius: 0 50% 50% 0;border-left: none;"></view>
+            </view>
+            <view style="width: 100%;height: 30px;line-height: 30px;text-align: center;font-size: 38rpx;color: rgb(44, 44, 44);margin-top: 40rpx;">您比相同日历年龄人群的生物学年龄</view>
+            <block wx:if="{{inpepiage!=null&&expepiageval!=null}}">
+                <view wx:if="{{inpepiage-expepiageval>=0}}">
+                    <view style="width: 50%;height: 70rpx;margin:0 auto;display: flex;flex-direction: row;margin-top: 20rpx;margin-bottom: 50rpx;">
+                        <view style="width: 30%;height: 30px;color: #edabc9;line-height: 30px;text-align: right;font-size: 38rpx">大</view>
+                        <view style="width: 60%;height: 30px;border-bottom: 1px rgb(79, 79, 80) solid;color: #edabc9;line-height: 30px;text-align: center;font-size: 38rpx;font-weight: 700;">{{filters.abs(inpepiage,expepiageval)}}</view>
+
+                    </view>
+
+                    <view style="width: 100%;height: auto;">
+                        <view style="width: 95%;height: 400rpx;margin:0 auto;display: flex;flex-direction: row;margin-top: 20rpx;background:#f7f8fa;border-radius: 10rpx;margin-bottom: 30rpx;">
+                            <view style="width: 20%;height: 30px;color: #6ae2c3;text-align: center;">
+                                <image style="margin-top: 30rpx;width: 50%;height: auto;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img%2Feachar5.jpg"></image>
+                            </view>
+                            <view style="width: 80%;height: 30px;margin-top: 20rpx;color: rgb(44, 44, 44);line-height: 30px;text-align: left;font-size: 38rpx;">您的生物学年龄比预期更大，我们为您准备了科学的健康生活指导意见，您可根据自身情况酌情改变您的生活方式，以期达到健康生命目标！</view>
+
+                        </view>
+                        <view style="width: 100%;height: 70rpx;background:#f7f8fa;padding-bottom: 40rpx;">
+                            <view style="background:#f7f8fa;width: 95%;height: 70rpx;margin:0 auto;margin-top: 20rpx;line-height: 70rpx;text-align: left;font-size: 38rpx;color: rgb(61, 228, 144);font-weight: 700;">健康生活指导意见</view>
+                        </view>
+                        <view style="width: 100%;height: auto;">
+                            <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/eachar4.jpg"></image>
+                        </view>
+                        <view style="width: 100%;height: auto;">
+                            <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/eachar3.jpg"></image>
+                        </view>
+                        <view style="width: 100%;height: auto;">
+                            <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/eachar2.jpg"></image>
+                        </view>
+                        <view style="width: 100%;height: auto;">
+                            <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/eachar1.jpg"></image>
+                        </view>
+                    </view>
+                </view>
+                <view wx:else style="width: 50%;height: 70rpx;margin:0 auto;display: flex;flex-direction: row;margin-top: 20rpx;margin-bottom: 50rpx;">
+                    <view style="width: 30%;height: 30px;color: #6ae2c3;line-height: 30px;text-align: right;font-size: 38rpx">小</view>
+                    <view style="width: 60%;height: 30px;border-bottom: 1px rgb(79, 79, 80) solid;color: #6ae2c3;line-height: 30px;text-align: center;font-size: 38rpx;font-weight: 700;">{{filters.abs(inpepiage,expepiageval)}}</view>
+                </view>
+            </block>
+        </view>
+    </view>
+
+</view>

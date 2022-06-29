@@ -1,0 +1,12 @@
+<!-- <view class="echart_panel">
+    <ec-canvas  ec="{{ ecLine }}"></ec-canvas>
+  </view> -->
+  <view class="echart_panel">
+      <ec-canvas
+        id="mychart-radar" 
+        canvas-id="mychart-radar"
+        ec="{{ ec }}"
+        class="radarmap"
+      >
+      </ec-canvas>
+</view>

@@ -6,8 +6,6 @@ Page({
     data: {
         imgpath: {
             scroll1: "https://bainuo.beijingepidial.com/public/img/scroll1.jpg",
-
-
         },
         clicktimes: 0
 

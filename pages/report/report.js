@@ -14,12 +14,12 @@ Page({
       success:function (res) {
         console.log('s:' + res.data)
         wx.navigateTo({
-          url: "../report_generic/applylist"
+          url: "../../packageA/pages/report_generic/applylist"
         })
       },
       fail:function(res){
         wx.navigateTo({
-          url: "../user/login"
+          url: "../../packageC/pages/user/login"
         })
       }
     })
@@ -31,12 +31,12 @@ Page({
       success:function (res) {
         console.log('s:' + res.data)
         wx.navigateTo({
-          url: "../report_epiliver/applylist"
+          url: "../../packageA/pages/report_epiliver/applylist"
         })
       },
       fail:function(res){
         wx.navigateTo({
-          url: "../user/login"
+          url: "../../packageC/pages/user/login"
         })
       }
     })
@@ -48,20 +48,32 @@ Page({
         success:function (res) {
           console.log('s:' + res.data)
           wx.navigateTo({
-            url: "../report_epihpv/applylist"
+            url: "../../packageB/pages/report_epihpv/applylist"
           })
         },
         fail:function(res){
           wx.navigateTo({
-            url: "../user/login"
+            url: "../../packageC/pages/user/login"
           })
         }
       })   
     },
     // 去计算生物学年龄
     gotocalculator:function(e){
-        wx.navigateTo({
-            url: "../report/epiagechart"
+          wx.getStorage({
+            key:'sessionuser',
+            success:function (res) {
+              console.log('s:' + res.data)
+              wx.navigateTo({
+                // url: "../../packageD/pages/report/epiagechart"
+                url: "../../packageD/pages/report/suggest"
+              })
+            },
+            fail:function(res){
+              wx.navigateTo({
+                url: "../../packageC/pages/user/login"
+              })
+            }
           })
     },
   // 生物学年龄点击查询注册条码
@@ -71,12 +83,12 @@ Page({
       success:function (res) {
         console.log('s:' + res.data)
         wx.navigateTo({
-          url: "../report_epiage/report_epiage"
+          url: "../../packageC/pages/report_epiage/report_epiage"
         })
       },
       fail:function(res){
         wx.navigateTo({
-          url: "../user/login"
+          url: "../../packageC/pages/user/login"
         })
       }
     })   
@@ -94,9 +106,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
-  
-
   },
 
   /**

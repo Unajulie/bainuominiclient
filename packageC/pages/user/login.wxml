@@ -1,0 +1,54 @@
+<view style="width:100%;height: auto;margin-bottom: 100rpx; ">
+    <!-- <view style="width: 100%;text-align: center;top: 300rpx;position: relative;color: #167af5;font-weight: 700;">受检者登陆</view> -->
+    <view style="position: absolute; width: 100%;height: auto;top: 200px;flex: auto;">
+        <view style="width: 80%;height: auto;margin: 0 auto;">
+            <view style="width: 100%;height: auto;">
+                <view style="display: flex;width: 100%;">
+                    <!--要移动子元素，必须要在父元素加position: relative;子元素加position: absolute或releteve，子元素才能相对与父元素的右上脚点进行左右上下的移动-->
+                    <!--如果父元素没有加position: relative，那么就会去一直往上层找设置了position的view作为父，改父的右上角点进行定位-->
+                    <!--position: absolute;我允许兄弟节点压在我上面，-position: reletive;我不允许兄弟节点压在我上面，-->
+                    <view style="width: 30px;height: 45px;position: relative;">
+                        <image style="width: 18px;height: 45px;position: absolute;top: 15px;right: 5px;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img%2Fuser01.png">
+                        </image>
+
+                    </view>
+                    <view style="width: 300px;height: auto;">
+                        <input style="width:100%;height: 45px;border-bottom: solid 1px #b8b8b8;font-size: 40rpx;" type="text" placeholder="受检者手机号" placeholder-class="phcolor" bindinput="inputPhone" data-name='phone' value='{{phone}}' name="phone"/>
+                    </view>
+                </view>
+
+                <view>
+                    <view view style="display: flex;width: 100%;margin-top: 40rpx;">
+                        <view style="width: 30px;height: 45px;position: relative;">
+                            <image style="width: 18px;height: 45px;position: absolute;top: 15px;right: 5px;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/lock.png">
+                            </image>
+                        </view>
+                        <view style="width: 300px;height: auto;z-index: 0;">
+                            <input style="width: 100%;height: 45px;border-bottom: solid 1px #b8b8b8;font-size: 40rpx;" password='{{passwordType}}' placeholder="请输入用户密码" placeholder-class="phcolor" bindinput="userPwd" />
+
+                        </view>
+                        <view style=" width:100rpx;height: auto;position:relative ;z-index: 9999;border-bottom: solid 1px #b8b8b8;">
+                            <image style="width: 50rpx;height: 100rpx; position:absolute; top:25rpx ;right:40rpx" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/eye02.png" bindtap="seeTap" wx:if="{{show_pass}}">
+                            </image>
+                            <image style="width: 50rpx;height: 100rpx; position:absolute; top:40rpx ;right:40rpx" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/eye01.png" bindtap="seeTap" wx:else ></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view style="width: 100%; height: auto;margin-top: 10px;">
+            <button style="text-align:right ;font-size:28rpx;color: #b8b8b8;width: 75%;margin: 0 auto;border: none;background-color:transparent ;" bindtap="btnForget">忘记密码?
+            </button>
+        </view>
+        <view style="width: 100%; height: auto;margin-top: 50px;">
+            <view bindtap="login" style="border:1px solid #5095fe;margin: 0 auto; background-color:#5095fe ;width: 80%;color: white;text-align: center;line-height: 45px;border-radius: 20px;background: linear-gradient(#64a3ff,#307ffd);font-weight: 700;">
+                登录</view>
+        </view>
+        <view style="width:100%;margin-top: 15px;">
+            <view style="display: flex; width: 80%;margin: 0 auto;justify-content: center">
+                <view style="font-size: 25rpx;color: #b8b8b8">还没有账号？</view>
+                <view style="font-size: 25rpx;color:#5095fe" bindtap="next">立即注册</view>
+            </view>
+        </view>
+    </view>
+</view>

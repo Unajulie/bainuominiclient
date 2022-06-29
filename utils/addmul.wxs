@@ -1,0 +1,10 @@
+var filters = {
+   
+      abs: function(number1,number2){
+        return (Math.abs(number1-number2).toFixed(2))
+    }
+  }
+  module.exports = {
+    abs: filters.abs
+  }
+  

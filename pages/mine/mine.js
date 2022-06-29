@@ -19,7 +19,7 @@ Page({
 //事件处理函数
 bindViewTap: function() {
   wx.navigateTo({
-    url: '../logs/logs'
+    url: '../../pages/logs/logs'
   })
 },
 onShow:function(){
@@ -57,13 +57,13 @@ onShow:function(){
           console.info(res)
           oThis.setData({login:false,phone:'',mark:''})
           wx.switchTab({
-            url: '../report/report',
+            url: '../../pages/report/report.wxml',
           })
         },
       })
     }else{
       wx.navigateTo({
-        url: '../user/register',
+        url: '../../packageC/pages/user/register',
       })
     }
    
@@ -119,7 +119,7 @@ onShow:function(){
       },
       fail:function(res){
         wx.navigateTo({
-          url: "../user/login"
+          url: "../../packageC/pages/user/login"
         })
       }
     })   
@@ -144,7 +144,7 @@ onShow:function(){
                 console.info(res)
               if(res.data.status=="success"){
                 wx.navigateTo({
-                  url: "/pages/survey/guide_survey"
+                  url: "../../packageB/pages/survey/guide_survey"
                 })
               }else{
                 wx.showToast({
@@ -158,7 +158,7 @@ onShow:function(){
           },
           fail:function(res){
             wx.navigateTo({
-              url: "../user/login"
+              url: "../../packageC/pages/user/login"
             })
           }
         })   

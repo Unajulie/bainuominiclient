@@ -1,4 +1,0 @@
-<view class="ec-container">
-    <chart chart-class="chart" option="{{ option }}" bindinstance="onInstance" />
-</view>
-

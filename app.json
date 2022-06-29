@@ -1,115 +1,127 @@
 {
     "pages": [
-    "pages/report/suggest",
-    "pages/report/report",
-    "pages/report/epiagechart",
-    "pages/mine/age_accelerator",
-    "pages/mine/mine",
-    "pages/index/epidial",
-    "pages/survey/guide_survey",
-    "pages/report_epihpv/mergelist",
-    "pages/report_epiliver/mergelist",
-    "pages/report_generic/mergelist",
-    "pages/report_generic/staffmergeinfo",
-    "pages/mine/stafftestlist",
-    "pages/report_epiage/userform",
-    "pages/mine/contact",
-    "pages/mine/qna",
-    "pages/qna/tutorial",
-    "pages/index/index",
-    "pages/report_epiage/report_epiage",
-    "pages/report_epiage/tutorial",
-    "pages/report_epiliver/staffmergeinfo",
-    "pages/report_epihpv/staffmergeinfo",
-    "pages/report_generic/generic_status",
-    "pages/photo/photo",
-    "pages/report_generic/report_generic",
-    "pages/mine/testhistory",
-    "pages/mine/myreport",
-    "pages/report_generic/applyqr",
-    "pages/report_epiliver/applyqr",
-    "pages/report_epihpv/applyqr",
-    "pages/user/register",
-    "pages/report_generic/applylist",
-    "pages/report_epiliver/applylist",
-    "pages/report_epihpv/applylist",
-    "pages/user/login",
-    "pages/user/stafflogin",
-    "pages/ques/generic_ques",
-    "pages/report_epiliver/userform",
-    "pages/agreement/epiage",
-    "pages/agreement/hpv",
-    "pages/agreement/liver",
-    "pages/report_generic/userform",
-    "pages/report_epihpv/report_epihpv",
-    "pages/report_epiliver/report_liverstatus",
-    "pages/report_epiage/reportlist",
-    "pages/report_epihpv/userform",
-    "pages/report_epiliver/report_epiliver",
-    "pages/hdhpv/hdhpvrep",
-    "pages/report_epiage/report_epistatus",
-    "pages/user/fgpwd",
-    "pages/pdf/epiliverpdf",
-    "pages/pdf/epihpvpdf",
-    "pages/pdf/epiagepdf",
-    "pages/report_epihpv/report_hpvstatus",
-    "pages/service/service",
-    "pages/submit/epiagesbsuccess",
-    "pages/submit/epihpvsbsuccess",
-    "pages/submit/epiliversbsuccess",
-    "pages/epihpvreport/epihpvreport",
-    "pages/intro/intro-generic",
-    "pages/intro/intro-epiliver",
-    "pages/intro/intro-epihpv",
-    "pages/intro/intro-epiage",
-    "pages/intro/intro-depress",
-    "pages/intro/intro-dull",
-    "pages/login/login",
-    "pages/register/register",
-    "pages/logs/logs"
-    
-    
-  ],
-  "window": {
-    "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "深圳百诺医学检验",
-    "navigationBarTextStyle": "black",
-    "enablePullDownRefresh": true
-  },
-  "tabBar": {
-    "list": [
-      {
-        "pagePath": "pages/report/report",
-        "text": "首页",
-        "iconPath": "/img/tab1.jpg",
-        "selectedIconPath": "/img/_tab1.jpg",
-        "selectedColor": "red"
-      },
-      {
-        "pagePath": "pages/index/index",
-        "text": "更多",
-        "iconPath": "/img/tab2.jpg",
-        "selectedIconPath": "/img/_tab2.jpg",
-        "selectedColor": "green"
-      },
-
-      {
-        "pagePath": "pages/mine/mine",
-        "text": "我的",
-        "iconPath": "/img/tab3.jpg",
-        "selectedIconPath": "/img/_tab3.jpg",
-        "selectedColor": "pink"
-      }
+        "pages/report/report",
+        "pages/mine/mine",
+        "pages/mine/age_accelerator",
+        "pages/index/epidial",
+        "pages/mine/stafftestlist",
+        "pages/mine/contact",
+        "pages/mine/qna",
+        "pages/index/index",
+        "pages/mine/testhistory",
+        "pages/mine/myreport",
+        "pages/hdhpv/hdhpvrep",
+        "pages/epihpvreport/epihpvreport",
+        "pages/logs/logs"
     ],
-    "color": "#cdcdcd",
-    "selectedColor": "#000000"
-  },
-  "sitemapLocation": "sitemap.json",
+    "subpackages": [{
+        "root": "packageA",
+        "name": "pack1",
+        "pages": [
+            "pages/report_epiliver/userform",
+            "pages/report_generic/applylist",
+            "pages/report_epiliver/applylist",
+            "pages/report_epiliver/mergelist",
+            "pages/report_generic/mergelist",
+            "pages/report_generic/staffmergeinfo",
+            "pages/report_generic/userform",
+            "pages/report_epiliver/report_liverstatus",
+          
+            "pages/report_epiliver/report_epiliver",
+            "pages/report_epiliver/staffmergeinfo",
+            "pages/report_generic/generic_status",
+            "pages/report_generic/applyqr",
+            "pages/report_epiliver/applyqr",
+            "pages/report_generic/report_generic"
+       
+        ]
+    }, {
+        "root": "packageB",
+        "name": "pack2",
+        "pages": [
+            "pages/report_epihpv/mergelist",
+            "pages/report_epihpv/applyqr",
+            "pages/report_epihpv/userform",
+            "pages/report_epihpv/applylist",
+            "pages/report_epihpv/report_hpvstatus",
+            "pages/report_epihpv/staffmergeinfo",
+            "pages/report_epihpv/report_epihpv",
+            "pages/intro/intro-generic",
+            "pages/intro/intro-epiliver",
+            "pages/intro/intro-epihpv",
+            "pages/intro/intro-epiage",
+            "pages/intro/intro-depress",
+            "pages/intro/intro-dull",
+            "pages/qna/tutorial",
+            "pages/ques/generic_ques",
+            "pages/survey/guide_survey",
+            "pages/agreement/epiage",
+            "pages/agreement/hpv",
+            "pages/agreement/liver"
+        ]
+    },{
+        "root": "packageC",
+        "name": "pack3",
+        "pages": [
+            "pages/user/register",
+            "pages/user/login",
+            "pages/user/stafflogin",
+            "pages/user/fgpwd",
+            "pages/report_epiage/report_epistatus",
+            "pages/report_epiage/report_epiage",
+            "pages/report_epiage/tutorial",
+            "pages/report_epiage/reportlist",
+            "pages/report_epiage/userform"
+        ]
+    },{
+        "root": "packageD",
+        "name": "pack4",
+        "pages": [
+           "ec-canvas/ec-canvas",
+           "pages/report/epiagechart",
+           "pages/report/suggest"
+        ] 
+    }],
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "深圳百诺医学检验",
+        "navigationBarTextStyle": "black",
+        "enablePullDownRefresh": true
+    },
+    "tabBar": {
+        "list": [{
+                "pagePath": "pages/report/report",
+                "text": "首页",
+                "iconPath": "/img/tab1.jpg",
+                "selectedIconPath": "/img/_tab1.jpg",
+                "selectedColor": "red"
+            },
+            {
+                "pagePath": "pages/index/index",
+                "text": "更多",
+                "iconPath": "/img/tab2.jpg",
+                "selectedIconPath": "/img/_tab2.jpg",
+                "selectedColor": "green"
+            },
+
+            {
+                "pagePath": "pages/mine/mine",
+                "text": "我的",
+                "iconPath": "/img/tab3.jpg",
+                "selectedIconPath": "/img/_tab3.jpg",
+                "selectedColor": "pink"
+            }
+        ],
+        "color": "#cdcdcd",
+        "selectedColor": "#000000"
+    },
+    "sitemapLocation": "sitemap.json",
     "plugins": {
-      "echarts": {
-        "version": "2.1.1",
-        "provider": "wx1db9e5ab1149ea03"
-      }
-    }
+        "echarts": {
+            "version": "2.1.1",
+            "provider": "wx1db9e5ab1149ea03"
+        }
+    },
+   "lazyCodeLoading": "requiredComponents"
 }
