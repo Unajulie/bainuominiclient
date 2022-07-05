@@ -1,8 +1,9 @@
 .container{
     padding: 0;
-    top: 50rpx;
+    margin-top: 50rpx;
+    z-index: 999;
   }
-  ec-canvas{
+  .radarmap{
     width:100%;      /* 宽高自行设置 */
-    height: 900rpx;
+    height: 600rpx;
   }

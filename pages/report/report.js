@@ -60,20 +60,8 @@ Page({
     },
     // 去计算生物学年龄
     gotocalculator:function(e){
-          wx.getStorage({
-            key:'sessionuser',
-            success:function (res) {
-              console.log('s:' + res.data)
-              wx.navigateTo({
-                // url: "../../packageD/pages/report/epiagechart"
-                url: "../../packageD/pages/report/suggest"
-              })
-            },
-            fail:function(res){
-              wx.navigateTo({
-                url: "../../packageC/pages/user/login"
-              })
-            }
+        wx.navigateTo({
+            url: "../../packageD/pages/report/suggest"
           })
     },
   // 生物学年龄点击查询注册条码

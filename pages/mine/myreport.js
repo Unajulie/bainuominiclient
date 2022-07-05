@@ -65,7 +65,7 @@ Page({
         success: function (res) {
           console.log('s:' + res.data)
           wx.navigateTo({
-            url: "../../packageC/pages/report_epiage/report_epiage"
+            url: "../../packageC/pages/report_epiage/reportlist"
           })
         },
         fail: function (res) {

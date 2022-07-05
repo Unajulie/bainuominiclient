@@ -1,6 +1,0 @@
-{
-    "usingComponents": {
-        "ec-canvas": "../../../packageD/ec-canvas/ec-canvas"
-    },
-    "navigationBarTitleText": "生物学年龄计算器"
-  }

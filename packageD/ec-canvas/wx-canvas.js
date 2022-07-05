@@ -102,4 +102,7 @@ export default class WxCanvas {
       return this.canvasNode.height
     return 0
   }
+    // 新增空函数，修复调用 echarts.init 时报错
+    addEventListener() {}
+
 }

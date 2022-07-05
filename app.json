@@ -26,7 +26,6 @@
             "pages/report_generic/staffmergeinfo",
             "pages/report_generic/userform",
             "pages/report_epiliver/report_liverstatus",
-          
             "pages/report_epiliver/report_epiliver",
             "pages/report_epiliver/staffmergeinfo",
             "pages/report_generic/generic_status",
@@ -78,7 +77,6 @@
         "name": "pack4",
         "pages": [
            "ec-canvas/ec-canvas",
-           "pages/report/epiagechart",
            "pages/report/suggest"
         ] 
     }],
@@ -122,6 +120,5 @@
             "version": "2.1.1",
             "provider": "wx1db9e5ab1149ea03"
         }
-    },
-   "lazyCodeLoading": "requiredComponents"
+    }
 }

@@ -5,7 +5,7 @@
             <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuo.beijingepidial.com/public/img/index/cir.jpg"></image>
         </view>
     </view> -->
-    <navigator url="/pages/qna/tutorial" hover-class="none">
+    <navigator url="../../packageB/pages/qna/tutorial" hover-class="none">
         <view style="width: 90%;height: auto;margin:0 auto;position: relative;">
             <image style="width: 100%;height: auto;" mode="widthFix" src="https://bainuopdf.beijingepidial.com/img/index1.jpg"></image>
             <view style="width: 90%;height: auto;position: absolute;top: 100rpx;display: flex;flex-direction: column;">
